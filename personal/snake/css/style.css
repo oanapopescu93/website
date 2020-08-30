@@ -1,0 +1,8 @@
+body{
+	background-color:black;
+	color:#5E5E3C;
+	font-family:"Comic Sans MS", cursive, sans-serif
+}
+#myCanvas{
+	border:solid 2px #5E5E3C;
+}

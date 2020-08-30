@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+	<title>Holloween card game</title>
+	<meta http-equiv="content" content="text/html" charset="utf-8">	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<meta name="description" content="holloween card game">
+	<meta name="spacing-bottom keywords" content="holloween, card, game">
+	<meta name="author" content="Oana Popescu">	<meta name="copyright" content="2019. All rights reserved.">
+	
+	<link rel='shortcut icon' type='image/ico' href='img/Cobweb.ico'> <!-- IE -->
+	<link rel='apple-touch-icon' type='image/png' href='img/Cobweb.png'> <!-- iPhone -->
+	<link rel='apple-touch-icon' type='image/png' sizes='72x72' href='img/Cobweb.png'> <!-- iPad -->
+	<link rel='apple-touch-icon' type='image/png' sizes='114x114' href='img/Cobweb.png'> <!-- iPhone4 -->
+	<link rel='icon' type='image/png' href='img/Cobweb.png'> <!-- Opera Speed Dial, at least 144×114 px -->	
+	
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="overlay" class="overlay_container">
+		<div class="overlay_text">
+			<h1 class="text-uppercase">Game over</h1>
+			<h5 class="overlay_text_small">Click here to restart</h5>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div id="game01" class="col-sm-12"></div>
+		</div>
+	</div>
+
+	<footer><h6>Copyright &copy; <span>2019</span> Oana Popescu. All rights reserved.</h6></footer>
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="../../js/bootstrap.js"></script>
+<script src="js/script.js"></script>
+<script>
+	$(document).ready(function(){
+		var cardgame = new cardGame('game01'); 
+		cardgame.ready();
+		
+		if( $('img').attr('alt') == "www.000webhost.com"){
+			$(this)[0].images[0].parentNode.parentNode.style.visibility = "hidden";
+		}
+		
+		var d = new Date().getFullYear();
+		$('footer h6 span').text(d)
+	});
+</script>

@@ -1,0 +1,136 @@
+:focus {
+    outline: -webkit-focus-ring-color auto 0px !important;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100% !important;
+    font-family: arial;
+	background-color:black;
+    color: green;
+    position: relative;
+    font-size: 14px;
+	padding-bottom:40px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, address {
+    margin: 0px;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 32px;
+    font-family: impact;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 28px;
+    font-family: impact;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 20px;
+    font-family: impact;
+}
+
+h4 {
+    font-size: 22px;
+    line-height: 22px;
+    font-family: impact;
+}
+
+h5 {
+    font-size: 18px;
+    line-height: 18px;
+    font-family: arial;
+}
+
+h6 {
+    font-size: 12px;
+    line-height: 12px;
+	font-family: arial;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+a, a:hover, a:focus {
+    text-decoration: none;
+}
+
+hr{
+	background:green;
+	color:green;
+	border:solid 0.5px green;
+}
+
+/*---------------------front---------------------*/
+
+.title_box{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+.quiz_verb_group li{
+	border:solid 1px green;
+	padding:5px 10px;
+	text-align:center;
+	margin:0px auto 5px auto;
+	width:100%;
+	max-width:300px;
+	cursor: pointer;
+}
+.quiz_verb_group li:hover{
+	background-color:rgba(0, 128, 0, 0.3);
+	color:green;
+}
+
+.box_answer{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.box_answer input{
+	background:transparent;
+	border:solid 0px transparent;
+	border-bottom:solid 1px green;
+	width:100%;
+	max-width:280px;
+	margin:0px auto;
+	display:block;
+}
+.button_green{
+	background:transparent;
+	border:solid 1px green;
+	margin:20px auto 10px auto;
+	padding:5px 20px;
+	display:block;
+}
+.button_green:hover{
+	background-color:rgba(0, 128, 0, 0.3);
+	color:green;
+}
+
+
+/*---------------------footer---------------------*/
+footer { 	
+    padding: 10px 0px;
+    color: green;
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	right:0px;
+}
+footer ~ div {
+  visibility: hidden;
+}
