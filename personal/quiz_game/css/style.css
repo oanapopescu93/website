@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, Chrome and Opera */
+}
+
+:focus {
+    outline: -webkit-focus-ring-color auto 0px !important;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100% !important;
+    height: 100%;
+    font-family: courier new;
+    color: green;
+    position: relative;
+    font-size: 14px;
+	background-color:black;
+}
+
+h1{	
+	font-size:40px;
+	line-height:40px;
+}
+h2{	
+	font-size:28px;
+	line-height:28px;
+}
+h2{	
+	font-size:28px;
+	line-height:28px;
+}
+.container{
+	padding-top:20px;
+}
+.button-green{
+	padding:10px;
+	margin:10px auto;
+	border:solid 1px green;
+	border-radius:10px;
+	background-color:transparent;
+	display:block;
+}
+
+/*---------------------quiz---------------------*/
+
+.quiz_title, .quiz_info, .quiz_container{
+	padding-bottom:15px;
+	margin-bottom:25px;
+	border-bottom:solid 1px green;
+}
+.quiz_container{
+	margin-bottom:0px;
+}
+.box_answer{
+	padding:10px;
+	margin:10px 0px;
+	border:solid 1px green;
+	border-radius:10px;
+	cursor: pointer;
+	height: 43px;
+}
+.box_answer:hover, .box_answer.clicked{
+	background-color:rgba(0, 128, 0, 0.3);
+	color:green;
+}
+
+.quiz_result_table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.quiz_result_table table tr td, .quiz_result_table table tr th{
+  border-bottom: 1px solid green;
+  padding: 10px;
+  width:33.33%;
+  vertical-align:top;
+}
+.quiz_result_table table tr:last-child td {
+	border-bottom: 1px solid transparent;
+}
+.quiz_result_table table tr td, .quiz_result_table table tr th {
+	border-right: 1px solid green;
+}
+.quiz_result_table table tr td:last-child, .quiz_result_table table tr th:last-child {
+	border-right: 1px solid transparent;
+}
+
+/*---------------------footer---------------------*/
+footer {   
+    padding: 10px 20px;
+    color: green; 
+	text-align: center;	
+}

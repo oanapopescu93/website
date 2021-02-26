@@ -103,21 +103,36 @@ h6 {
 	padding:5px 10px;
 	border-radius:5px;
 	display:inline-block;
-	margin-bottom:5px;
+    margin-bottom:5px;
+    min-width:100px;
 }
 
-.chatbot_textarea .text_oana{
+.chatbot_textarea .text_oana, .chatbot_textarea #wait{
 	float:right;
-	text-align:right
+	text-align:right;
 }
 
-.chatbot_button{
+.chatbot_button, .chatbot_button_options{
 	width:100%;
 	border: solid 1px #123043;
 	border-radius:20px;
 	color:white;
 	background: #123043;
-	padding:5px 10px;
+    padding:5px 10px;
+    margin-bottom:5px;
+    text-align: center;
+}
+
+a.chatbot_button, a.chatbot_button:hover, a.chatbot_button:focus{
+	width:100%;
+	border: solid 1px #123043;
+	border-radius:20px;
+	color:white;
+	background: #123043;
+    padding:5px 10px;
+    margin-bottom:5px;
+    text-align: center;
+	text-decoration: none;
 }
 
 .chatbot_input{
@@ -127,6 +142,12 @@ h6 {
 	color:#123043;
 	background: white;
 	padding:5px 10px;
+}
+
+#wait{
+    width: 100%;
+    text-align: left!important;
+    float: right!important;
 }
 
 footer{
@@ -139,4 +160,22 @@ footer{
 	padding:10px 0px;
 }
 
-/*---------------------media---------------------*/
+a, a:hover, a:focus{
+	color:#123043;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border: solid 1px darkgrey;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+    border-radius: 50px;
+}

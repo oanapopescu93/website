@@ -7,6 +7,10 @@ $(document).ready(function(){
 	}
 });
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
 var somedata;
 
 function website(){
@@ -86,6 +90,7 @@ function website(){
 		scroll_anywhere();
 		
 		self.mycv();
+		self.mytutorials();
 	}
 	
 	this.structure_header = function(){
@@ -93,8 +98,8 @@ function website(){
 		
 		$('#header-title').append('<a href="index.html"><img><h1></h1><h2></h2></a>');
 		$('#header-sapou').append('<hr class="line"><p></p><hr class="line">');
-		$('#header-buttons').append('<a href="#'+ subtitles[1] + '" class="text-black scroll-button"><button class="button-white" style="margin:5px 10px;"><h6 class="text-uppercase">Read more</h6></button></a><a href="#'+ subtitles[3] + '" class="text-black scroll-button"><button class="button-white" style="margin:5px 10px;"><h6 class="text-uppercase">Contact me</h6></button></a>');
-		$('.header-scroll').append('<a href="#'+ subtitles[1] + '" class="text-black scroll-button"><span class="glyphicon glyphicon-menu-down" style="font-size:30px;"></span></a>');
+		$('#header-buttons').append('<a href="#'+ subtitles[1] + '" class="text-black scroll-button"><button class="button-white" style="margin:5px 10px;"><h6 class="text-uppercase">Read more</h6></button></a><a href="#'+ subtitles[3] + '" class="text-black scroll-button"><button class="button-white" style="margin:5px 10px;"><h6 class="text-uppercase">Contact me</h6></button></a><a href="/personal/chatbot/index.html" target="_blank" class="text-black"><button class="button-white" style="margin:5px 10px;"><h6 class="text-uppercase">Chatbot</h6></button></a>');
+		$('.header-scroll').append('<a href="#'+ subtitles[1] + '" class="text-black scroll-button"><i class="fa fa-caret-down" style="font-size:30px;" aria-hidden="true"></i></a>');
 		
 		$('#header-title img').attr('src', header_info[0]);
 		$('#header-title img').addClass('logo');
@@ -455,6 +460,27 @@ function website(){
 		
 		$('body').on('click', '.cv_close', function (e) {
 			$('.mycv_container').toggleClass('closed');
+		});
+	}
+	
+	this.mytutorials = function(){
+		$('body').append('<div class="mytutorials_container"><div class="mytutorials_close"><i class="fa fa-times"></i></div><div id="mytutorials" class="mytutorials" data-toggle="modal" data-target="#myModal_tutorials"><i class="fa fa-book" data-toggle="tooltip" data-placement="left" title="My tutorials"></i></div></div>');
+		$('body').append('<div class="modal fade" id="myModal_tutorials" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"><div class="modal-dialog" role="document"><div class="modal-content mymodal"><div class="modal-header"> <button type="button" class="close whitetext" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button></div><div class="modal-body text-center"></div></div></div></div>');
+		$('#myModal_tutorials .modal-body').append('<h3 class="text-uppercase" id="myModalLabel">Tutorials</h3><div id="tutorial_box_container"></div>');
+		
+		for(var i in tutorials){
+			$('#tutorial_box_container').append('<h4 class="tutorial_name">' + tutorials[i].name + '</h4>');
+			$('#tutorial_box_container').append('<p>' + tutorials[i].description + '</p>');
+			$('#tutorial_box_container').append('<p>What I used:</p>');
+			for (var j in tutorials[i].used){
+				$('#tutorial_box_container').append('<span class="box">' + tutorials[i].used[j] + '</span>');
+			}
+			$('#tutorial_box_container').append('<p><span>Link: </span><a class="tutorial_link" href="' + tutorials[i].link + '" target="_blank">Click here</a></p>');
+		}
+		
+		
+		$('body').on('click', '.mytutorials_close', function (e) {
+			$('.mytutorials_container').toggleClass('closed');
 		});
 	}
 }

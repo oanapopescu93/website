@@ -567,13 +567,33 @@ hr {
 .grid-info{
 	padding:10px;
 }
-.grid-info .used span.box, .used span.box{
-	padding: 5px 15px;
+#tutorial_box_container{
+	max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 10px;
+    margin-top: 10px;
+}
+.grid-info .used span.box, .used span.box, #tutorial_box_container span.box{
+	padding: 0px 15px;
     border: solid 1px #666;
     color: #666;
     border-radius: 20px;
     margin: 5px 5px 5px 0px;
     display: inline-block;
+}
+#tutorial_box_container .tutorial_link{
+	padding: 0px 15px;
+    border: solid 1px #189cb0;
+    color: white;
+    border-radius: 20px;
+    margin: 5px 5px 10px 5px;
+    display: inline-block;
+    background: #189cb0;
+}
+.modal_button:hover, .modal_button:focus{
+	color:#189cb0;
+	background:white;
 }
 .modal_button{
 	padding: 5px 15px;
@@ -867,20 +887,90 @@ footer ~ div {
     color: #189cb0;
 }
 
-::-webkit-scrollbar {
-    width: 8px;
+/*---------------------cv---------------------*/
+.mytutorials_container{
+	position: fixed;
+    z-index: 9999;
+    top: 135px;
+    right: 0px;
+    width: 83px;
+	transition: 0.4s;
+}
+.mymytutorials_container.closed{
+	right:-65px;
+}
+.mytutorials{
+	background: #189cb0;
+    color: white;
+    border-radius: 0px 0px 0px 10px;
+    width: 65px;
+    height: 65px;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+	cursor:pointer;
+}
+.mytutorials i{
+	font-size: 30px;
+    padding-top: 8px;
+    width: 100%;
+    height: 100%;
+}
+.mytutorials .rotate_90_minus{
+	margin-left: 20px;
+    margin-top: 48px;
+}
+.mytutorials_close{
+	background: #189cb0;
+    color: white;
+    border-radius: 50px 0px 0px 50px;
+    width: 18px;
+    height: 24px;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0px 7px;
+	cursor:pointer;
 }
 
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    border: solid 1px darkgrey;
-    border-radius: 50px;
+.rotate_90_minus {
+  transform: rotate(-90deg);  
+  -webkit-transform: rotate(-90deg); /* Safari */  
+  -moz-transform: rotate(-90deg); /* Firefox */  
+  -ms-transform: rotate(-90deg); /* IE */  
+  -o-transform: rotate(-90deg); /* Opera */  
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); /* Internet Explorer */
+  transform-origin: 0 0;
+}
+.rotate_90_plus {
+  transform: rotate(90deg);  
+  -webkit-transform: rotate(90deg); /* Safari */  
+  -moz-transform: rotate(90deg); /* Firefox */  
+  -ms-transform: rotate(90deg); /* IE */  
+  -o-transform: rotate(90deg); /* Opera */  
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1); /* Internet Explorer */
+  transform-origin: 0 0;
 }
 
-::-webkit-scrollbar-thumb {
-    background-color: darkgrey;
-    outline: 1px solid slategrey;
-    border-radius: 50px;
+
+::-webkit-scrollbar{
+	width: 10px;
+	border-radius: 10px;
+	background-color: #f3f4f6;
+	border: 1px solid darkgrey;
+}
+
+::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	background-color: darkgrey;
+	border: 3px solid transparent;
+    border-radius: 10px;
+    background-clip: content-box;
 }
 
 /*---------------------media---------------------*/

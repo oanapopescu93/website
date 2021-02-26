@@ -181,6 +181,7 @@ var portofolio_items = [
 	[	
 		{
 			title: "Casino roulette",
+			link: "https://casino00.herokuapp.com/",
 			src: "img/pics/casino_roulette.png",
 			used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, React JS, Redux, Node JS, Express, HTML Canvas",
 			git: "https://github.com/oanapopescu93/casino_roulette"
@@ -271,3 +272,36 @@ var portofolio_items = [
 		},
 	],	
 ];
+
+var tutorials = [
+	{
+		name: "Javascript promises",
+		description: "Understand and use promises in javascript",
+		used: ["javascript", "jquery"],
+		link: "https://github.com/oanapopescu93/tutorial_javascript_promises"
+	},
+	{
+		name: "React crud",
+		description: "react app for managing books",
+		used: ["javascript", "jquery", "react", "redux"],
+		link: "https://github.com/oanapopescu93/tutorial_react_crud"
+	},
+	{
+		name: "React print pdf",
+		description: "React app to print a pdf",
+		used: ["javascript", "react", "jquery"],
+		link: "https://github.com/oanapopescu93/tutorial_react_print_pdf"
+	},
+	{
+		name: "React module",
+		description: "Tutorial react module",
+		used: ["javascript", "react", "jquery"],
+		link: "https://github.com/oanapopescu93/tutorial_react_module"
+	},
+	{
+		name: "Python basics",
+		description: "python fundamentals",
+		used: ["python"],
+		link: "https://github.com/oanapopescu93/tutorial_python_basics"
+	},
+]
