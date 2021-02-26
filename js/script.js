@@ -98,7 +98,7 @@ function website(){
 		
 		$('#header-title').append('<a href="index.html"><img><h1></h1><h2></h2></a>');
 		$('#header-sapou').append('<hr class="line"><p></p><hr class="line">');
-		$('#header-buttons').append('<a href="#'+ subtitles[1] + '" class="text-black scroll-button"><button class="button-white" style="margin:5px 10px;"><h6 class="text-uppercase">Read more</h6></button></a><a href="#'+ subtitles[3] + '" class="text-black scroll-button"><button class="button-white" style="margin:5px 10px;"><h6 class="text-uppercase">Contact me</h6></button></a><a href="/personal/chatbot/index.html" target="_blank" class="text-black"><button class="button-white" style="margin:5px 10px;"><h6 class="text-uppercase">Chatbot</h6></button></a>');
+		$('#header-buttons').append('<a href="#'+ subtitles[1] + '" class="text-black scroll-button"><button class="button-white" style="margin:5px 10px;"><h6 class="text-uppercase">Read more</h6></button></a><a href="#'+ subtitles[3] + '" class="text-black scroll-button"><button class="button-white" style="margin:5px 10px;"><h6 class="text-uppercase">Contact me</h6></button></a><a href="personal/chatbot/index.html" target="_blank" class="text-black"><button class="button-white" style="margin:5px 10px;"><h6 class="text-uppercase">Chatbot</h6></button></a>');
 		$('.header-scroll').append('<a href="#'+ subtitles[1] + '" class="text-black scroll-button"><i class="fa fa-caret-down" style="font-size:30px;" aria-hidden="true"></i></a>');
 		
 		$('#header-title img').attr('src', header_info[0]);
