@@ -44,12 +44,12 @@ class Navbar extends Component {
                             <ul className="nav-right hidden-xs" style={{"marginRight":"0px"}}>
 								<li><a href="tel:+40729699148" target="_top"><span>0729.699.148</span></a></li>
 								<li>
-									<a href="https://www.linkedin.com/in/oanapopescu93/" target="_blank">
+									<a href="https://www.linkedin.com/in/oanapopescu93/" rel="noopener noreferrer" target="_blank">
 										<span className="fa fa-linkedin"></span>
 									</a>
 								</li>
 								<li>
-									<a href="https://github.com/oanapopescu93" target="_blank">
+									<a href="https://github.com/oanapopescu93" rel="noopener noreferrer" target="_blank">
 										<span className="fa fa-github"></span>
 									</a>
 								</li>

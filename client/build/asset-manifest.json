@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1739a2b1.chunk.css",
+    "main.js": "/static/js/main.ef1f6593.chunk.js",
+    "main.js.map": "/static/js/main.ef1f6593.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.83c3e0c4.js",
+    "runtime-main.js.map": "/static/js/runtime-main.83c3e0c4.js.map",
+    "static/css/2.c3594674.chunk.css": "/static/css/2.c3594674.chunk.css",
+    "static/js/2.871fd869.chunk.js": "/static/js/2.871fd869.chunk.js",
+    "static/js/2.871fd869.chunk.js.map": "/static/js/2.871fd869.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.b1146e05979e82a61d88b9032f77711b.js": "/precache-manifest.b1146e05979e82a61d88b9032f77711b.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.c3594674.chunk.css.map": "/static/css/2.c3594674.chunk.css.map",
+    "static/css/main.1739a2b1.chunk.css.map": "/static/css/main.1739a2b1.chunk.css.map",
+    "static/js/2.871fd869.chunk.js.LICENSE.txt": "/static/js/2.871fd869.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/static/media/bg-desk.768ded36.jpg",
+    "static/media/logo-bear.png": "/static/media/logo-bear.8944d57a.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.83c3e0c4.js",
+    "static/css/2.c3594674.chunk.css",
+    "static/js/2.871fd869.chunk.js",
+    "static/css/main.1739a2b1.chunk.css",
+    "static/js/main.ef1f6593.chunk.js"
+  ]
+}

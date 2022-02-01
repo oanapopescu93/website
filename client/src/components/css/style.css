@@ -525,8 +525,6 @@ hr {
     transform: scale(1);
 }
 .item {
-    display: inline-block;
-    width: 33.33%;
     padding: 10px;    
 }
 .item-container{
@@ -574,18 +572,18 @@ hr {
 .portofolio-container{
 	margin-top:10px;
 }
-.portofolio-container .owl-carousel{
+.portofolio-container .owl_container{
 	display:none;
 }
-.portofolio-container .owl-carousel.active{
+.portofolio-container #owl_carousel_0{
 	display:block;
 }
 .portofolio-container .owl-nav{
 	text-align:center;
 	margin-top:10px;
 }
-.portofolio-container .owl-carousel .owl-nav button.owl-next, 
-.portofolio-container .owl-carousel .owl-nav button.owl-prev{
+.portofolio-container .owl_container .owl-nav button.owl-next, 
+.portofolio-container .owl_container .owl-nav button.owl-prev{
 	background-color: transparent;
     border: solid 1px black;
     border-radius: 100px;
@@ -596,10 +594,10 @@ hr {
 	width:25px;
 	margin:0px 5px;
 }
-.portofolio-container .owl-carousel .owl-nav button.owl-next:hover, 
-.portofolio-container .owl-carousel .owl-nav button.owl-prev:hover,
-.portofolio-container .owl-carousel .owl-nav button.owl-next:focus, 
-.portofolio-container .owl-carousel .owl-nav button.owl-prev:focus{
+.portofolio-container .owl_container .owl-nav button.owl-next:hover, 
+.portofolio-container .owl_container .owl-nav button.owl-prev:hover,
+.portofolio-container .owl_container .owl-nav button.owl-next:focus, 
+.portofolio-container .owl_container .owl-nav button.owl-prev:focus{
     border: solid 1px var(--blue);
     color: var(--blue);
 }
@@ -1077,6 +1075,10 @@ th, td {
 	border: 3px solid transparent;
     border-radius: 10px;
     background-clip: content-box;
+}
+
+.modal-open .modal.show{
+    opacity: 1!important;
 }
 
 /*---------------------media---------------------*/

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Row from 'react-bootstrap/Row'
 import $ from 'jquery'; 
-import Col from 'react-bootstrap/Col'
 
 var self;
 class Experience extends Component {	
@@ -48,7 +47,7 @@ class Experience extends Component {
 			if(typeof self.state.experience[i].job_description_list != "undefined"){
 				var job_description_list = self.state.experience[i].job_description_list;
 				var job_description_list_element = "";
-				for(var j in job_description_list){					
+				for(let j in job_description_list){					
 					job_description_list_element = job_description_list_element + '<li>' + job_description_list[j] + '</li>';					
 				}
 				$('#about_content_box .row > div .job_body').eq(i).append('<div class="projects"><b>My work: </b><ul>'+ job_description_list_element +'</ul></div>');
@@ -62,8 +61,8 @@ class Experience extends Component {
 			if(typeof self.state.experience[i].projects != "undefined"){
 				var projects = self.state.experience[i].projects;
 				var project_element = "";
-				for(var j in projects){
-					if(projects[j].project_link == "portofolio"){
+				for(let j in projects){
+					if(projects[j].project_link === "portofolio"){
 						project_element = project_element + '<li><a href="#' + projects[j].project_link + '" class="scroll-button">' + projects[j].project_name + '</li>';
 					} else {
 						project_element = project_element + '<li><a target="_blank" href="' + projects[j].project_link + '">' + projects[j].project_name + '</li>';

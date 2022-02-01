@@ -33,11 +33,11 @@ class About extends Component {
 				$(this).parent().parent().removeClass('open');
 			}	
 
-			if(parent_id == "skills"){
+			if(parent_id === "skills"){
 				self.setState({ visible: "skills" });
-			} else if(parent_id == "experience"){
+			} else if(parent_id === "experience"){
 				self.setState({ visible: "experience" });
-			} else if(parent_id == "education"){
+			} else if(parent_id === "education"){
 				self.setState({ visible: "education" });	
 			};
 		});

@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
-import $ from 'jquery'; 
-
+import $ from 'jquery';
 class Footer extends Component {
-	constructor(props) {
-		super(props);
-	}
-
 	componentDidMount(){
         var date = new Date();
 		date = date.getFullYear();
 		$('#copyright_year').text(date);	
     }
-
 	render() {
         return (
             <footer className="text-center">
@@ -20,5 +14,4 @@ class Footer extends Component {
         );
     }
 }
-
 export default Footer;

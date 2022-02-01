@@ -12,10 +12,10 @@ function Piechart(mycanvas, mylegend, dataSource, colors, doughnutHoleSize, w, h
     this.draw = function(){		
 		var total_value = 100;
         var color_index = 0;
-		var start_angle = 0;           
+		var start_angle = 0;     
 		
 		for (var i in dataSource){ 
-			var slice_angle = 2 * Math.PI * dataSource[i].value / total_value;						
+			let slice_angle = 2 * Math.PI * dataSource[i].value / total_value;						
 			drawPieSlice(
                 ctx,
                 canvas.width/2,
@@ -29,8 +29,8 @@ function Piechart(mycanvas, mylegend, dataSource, colors, doughnutHoleSize, w, h
             color_index = color_index + 1;
         }
 		
-		if(dataSource.length == 1){
-			var slice_angle = (2 * Math.PI) - (2 * Math.PI * dataSource[i].value / total_value);						
+		if(dataSource.length === 1){
+			let slice_angle = (2 * Math.PI) - (2 * Math.PI * dataSource[i].value / total_value);						
 			drawPieSlice(
 				ctx,
 				canvas.width/2,
@@ -54,19 +54,19 @@ function Piechart(mycanvas, mylegend, dataSource, colors, doughnutHoleSize, w, h
             );
 		} 
 		
-		for (var i in dataSource){ 
+		for (let i in dataSource){ 
 			if (doughnutHoleSize > 0){
-				var labelText = Math.round(100 * dataSource[i].value / total_value);
+				let labelText = Math.round(100 * dataSource[i].value / total_value);
 				ctx.fillStyle = "black";
 				ctx.font = "bold 16px Arial";
 				ctx.fillText(labelText+"%", canvas.width/2-20, canvas.height/2+5);	
 			} else {
-				var val = dataSource[i].value;
-				var slice_angle = 2 * Math.PI * val / total_value;
-				var pieRadius = Math.min(canvas.width/2,canvas.height/2);
-				var labelX = canvas.width/2 + (pieRadius / 2) * Math.cos(start_angle + slice_angle/2);
-				var labelY = canvas.height/2 + (pieRadius / 2) * Math.sin(start_angle + slice_angle/2);			
-				var offset = (pieRadius * doughnutHoleSize ) / 2;
+				let val = dataSource[i].value;
+				let slice_angle = 2 * Math.PI * val / total_value;
+				let pieRadius = Math.min(canvas.width/2,canvas.height/2);
+				let labelX = canvas.width/2 + (pieRadius / 2) * Math.cos(start_angle + slice_angle/2);
+				let labelY = canvas.height/2 + (pieRadius / 2) * Math.sin(start_angle + slice_angle/2);			
+				let offset = (pieRadius * doughnutHoleSize ) / 2;
 				
 				labelX = canvas.width/2 + (offset + pieRadius / 2) * Math.cos(start_angle + slice_angle/2);
 				labelY = canvas.height/2 + (offset + pieRadius / 2) * Math.sin(start_angle + slice_angle/2);     
@@ -79,7 +79,7 @@ function Piechart(mycanvas, mylegend, dataSource, colors, doughnutHoleSize, w, h
 				ctx.stroke();
 				ctx.closePath();
 			 
-				var labelText = Math.round(100 * dataSource[i].value / total_value);
+				let labelText = Math.round(100 * dataSource[i].value / total_value);
 				ctx.fillStyle = "black";
 				ctx.font = "bold 16px Arial";
 				ctx.fillText(labelText+"%", labelX-20,labelY-10);	
@@ -90,8 +90,8 @@ function Piechart(mycanvas, mylegend, dataSource, colors, doughnutHoleSize, w, h
 		
 		if(mylegend){
 			$('#' + mycanvas).after('<div class="legend" id="' + mylegend + '"></div>');			
-            var legendHTML = "";
-            for (var i in dataSource){ 
+            let legendHTML = "";
+            for (let i in dataSource){ 
                 legendHTML = legendHTML + "<div><span style='display:inline-block;width:20px;background-color:"+colors[i]+";'>&nbsp;</span> "+dataSource[i].name+"</div>";
             }
             $('#' + mylegend).html(legendHTML);
@@ -132,7 +132,7 @@ class Skills extends Component {
 		for(var k in self.state.skills_title){
 			$('#skills_row').append('<div class="col-xs-12"><h4 class="grey666">' + capitalizeFirstLetter(self.state.skills_title[k]) + '</h4></div>');
 			for(var i in self.state.skills){
-				if(self.state.skills[i].type == self.state.skills_title[k]){
+				if(self.state.skills[i].type === self.state.skills_title[k]){
 					pie_element = [];					
 					$('#skills_row').append('<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center"><canvas id="myskill_'+ i +'"></canvas></div>');
 					pie_element.push(self.state.skills[i]);
@@ -143,7 +143,7 @@ class Skills extends Component {
 		}
 
 		$('#language_row').append('<div class="col-sm-12"><h4 class="grey666">Languages</h4></div><div id="language_bar_container" class="col-sm-6 col-md-4 col-lg-3"></div>');		
-		for (var i in self.state.languages){
+		for (let i in self.state.languages){
 			$('#language_bar_container').append('<p>' + capitalizeFirstLetter(self.state.languages[i].name) + '</p><div class="language_bar_box"><div class="language_bar ' + self.state.languages[i].name + '">' + self.state.languages[i].perc + '%</div></div>');
 			$('#language_bar_container .language_bar').last().css("width", self.state.languages[i].perc+"%");
 		}

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Row from 'react-bootstrap/Row'
 import $ from 'jquery'; 
-import Col from 'react-bootstrap/Col'
 
 var self;
 class Education extends Component {	

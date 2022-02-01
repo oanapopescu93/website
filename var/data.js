@@ -1,4 +1,19 @@
 module.exports = Object.freeze({
+    CONTACT: [
+        [
+            {link: "tel:+40729699148", icon: "fa fa-phone", text: "0729.699.148"},
+            {link: "mailto:oanapopescu93@gmail.com", icon: "fa fa-envelope", text: "oanapopescu93@gmail.com"},
+        ],
+        [
+            {link: "https://www.linkedin.com/in/oanapopescu93/", icon: "fa fa-linkedin"},
+            {link: "https://github.com/oanapopescu93", icon: "fa fa-github"},
+        ],
+    ],
+    HEADER_INFO: [
+        "Oana Popescu", 
+        "Frontend / Javascript developer", 
+        "I'm a self-taught frontend and javascript developer.<br>My passion is to create <b>websites</b>, <b>web applications</b>, and <b>games</b>."
+    ],
     SKILLS_TITLE: ['frontend', 'backend', 'other'],
     SKILLS: [
         {name: "HTML / CSS / Bootstrap", value: "100", type: "frontend"},
