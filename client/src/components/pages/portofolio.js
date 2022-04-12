@@ -166,14 +166,14 @@ class Portofolio extends Component {
 																		{
 																			item1.used.map(function(item2, j){
 																				return (
-																					<span key={j} class="box">{item2}</span> 
+																					<span key={j} className="box">{item2}</span> 
 																				)
 																			})
 																		}
 																	</>
 																</Col>
 																<Col sm={4} className="box02">
-																	<a class="tutorial_link" href={tutorials[i].link} target="_blank" rel="noopener noreferrer">Link</a>
+																	<a className="tutorial_link" href={tutorials[i].link} target="_blank" rel="noopener noreferrer">Link</a>
 																</Col>
 															</Row>
 														)
@@ -184,6 +184,8 @@ class Portofolio extends Component {
 									} else {
 										return <div>No tutorials yet</div>
 									}
+								} else {
+									return <div>No tutorials yet</div>
 								}
 							})()}
 						</div>
