@@ -69,7 +69,6 @@ class About extends Component {
 							{(() => {
 								switch (self.state.visible) {
 									case "skills":
-										console.log('xxx', self.state.language)
 										return (
 											<Skills language={self.state.language} pie_colors={self.state.pie_colors} skills={self.state.skills} skills_title={self.state.skills_title}></Skills>
 										)

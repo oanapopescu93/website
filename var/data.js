@@ -358,8 +358,26 @@ module.exports = Object.freeze({
         {
             name: "Python basics",
             description: "python fundamentals and idiot proofing an app",
-            used: ["python"],
+            used: ["arduino", "embeded C"],
             link: "https://github.com/oanapopescu93/tutorial_python_basics"
+        },
+        {
+            name: "weather_arduino",
+            description: "python fundamentals and idiot proofing an app",
+            used: ["arduino", "embeded C"],
+            link: "https://github.com/oanapopescu93/weather_arduino"
+        },
+        {
+            name: "weather_api_arduino",
+            description: "python fundamentals and idiot proofing an app",
+            used: ["arduino", "embeded C"],
+            link: "https://github.com/oanapopescu93/weather_api_arduino"
+        },
+        {
+            name: "arduino_date_time",
+            description: "python fundamentals and idiot proofing an app",
+            used: ["arduino", "embeded C"],
+            link: "https://github.com/oanapopescu93/arduino_date_time"
         },
     ]
 })

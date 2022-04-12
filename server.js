@@ -3,7 +3,7 @@ const app = express();
 
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 5000;
 app.set("port", port);
 
 var data = require('./var/data');
@@ -16,6 +16,7 @@ var experience = data.EXPERIENCE;
 var pie_colors = data.PIE_COLORS;
 var portofolio_list = data.PORTOFOLIO_LIST;
 var portofolio_items = data.PORTOFOLIO_ITEMS;
+var tutorials = data.TUTORIALS;
 var contact = data.CONTACT;
 
 io.on('connection', function(socket) {
@@ -33,6 +34,7 @@ io.on('connection', function(socket) {
             portofolio: {
                 portofolio_list: portofolio_list,
                 portofolio_items: portofolio_items,
+                tutorials: tutorials, 
             },
             contact: contact,
         });

@@ -18,19 +18,23 @@ class Portofolio extends Component {
 		super(props);
 		this.state = {
 			portofolio: props.data,
-			isOpen: false
+			isOpen_portofolio: false,
+			isOpen_tutorials: false
 		};
 		this.portofolio_click = this.portofolio_click.bind(this);
 		this.portofolio_image_click = this.portofolio_image_click.bind(this);
+		this.portofolio_tutorials_click = this.portofolio_tutorials_click.bind(this);
 	}
 
-	openModal = () => this.setState({ isOpen: true });
-  	closeModal = () => this.setState({ isOpen: false });
+	openModal_portofolio = () => this.setState({ isOpen_portofolio: true });
+  	closeModal_portofolio = () => this.setState({ isOpen_portofolio: false });
+	openModal_tutorials = () => this.setState({ isOpen_tutorials: true });
+  	closeModal_tutorials = () => this.setState({ isOpen_tutorials: false });
 
 	portofolio_image_click(){
         let self = this;
 		$('body').on('click', '.item-info img', function (e) {
-			self.openModal();
+			self.openModal_portofolio();
 			$('#myModal_portofolio .modal-body .title').empty();
 			$('#myModal_portofolio .modal-body .platform').empty();
 			$('#myModal_portofolio .modal-body .used').empty();
@@ -72,6 +76,10 @@ class Portofolio extends Component {
 		}
 	}
 
+	portofolio_tutorials_click(){
+		this.openModal_tutorials();
+	}
+
 	componentDidMount() {
 		this.portofolio_image_click();
 	}
@@ -95,7 +103,7 @@ class Portofolio extends Component {
 										)
 									})
 								} 
-							</ul>''
+							</ul>
 							<div className="portofolio-container text-left">
 								{
 									self.state.portofolio.portofolio_items.map(function(item, i){
@@ -110,14 +118,20 @@ class Portofolio extends Component {
 					<Row>
 						<Col sm={12} className="text-center">
 							<div id="portofolio_links_other">
-								<a id="portofolio_git" href="https://github.com/oanapopescu93" rel="noopener noreferrer" target="_blank"><i className="fa fa-github"></i><span>github.com/oanapopescu93</span></a>
-								<Button id="portofolio_tutorials" data-toggle="modal" data-target="#myModal_tutorials"><i className="fa fa-book"></i><span>Tutorials</span></Button>
+								<a id="portofolio_git" href="https://github.com/oanapopescu93" rel="noopener noreferrer" target="_blank">
+									<Button>
+										<i className="fa fa-github"></i> <span>github.com/oanapopescu93</span>
+									</Button>
+								</a>
+								<Button id="portofolio_tutorials" data-toggle="modal" data-target="#myModal_tutorials" onClick={()=>{this.portofolio_tutorials_click()}}>
+									<i className="fa fa-book"></i> <span>Tutorials</span>
+								</Button>
 							</div>
 						</Col>
 					</Row>
 				</Container>
 
-				<Modal id="myModal_portofolio" className="mymodal text-center" show={self.state.isOpen} onHide={self.closeModal}>
+				<Modal id="myModal_portofolio" className="mymodal text-center" show={self.state.isOpen_portofolio} onHide={self.closeModal_portofolio}>
 					<Modal.Header closeButton>
 					<Modal.Title>Details</Modal.Title>
 					</Modal.Header>
@@ -128,7 +142,53 @@ class Portofolio extends Component {
 						<div className="status"></div>
 					</Modal.Body>
 				</Modal>
-
+				<Modal id="myModal_tutorials" className="mymodal text-center" show={self.state.isOpen_tutorials} onHide={self.closeModal_tutorials}>
+					<Modal.Header closeButton>
+					<Modal.Title>Tutorials</Modal.Title>
+					</Modal.Header>
+					<Modal.Body>
+						<div id="tutorial_box_container">
+							{(() => {
+								let tutorials = this.state.portofolio.tutorials;
+								if(typeof tutorials !== "undefined" && tutorials !== null){
+									if(tutorials.length>0){
+										return(
+											<>
+												{
+													tutorials.map(function(item1, i){
+														return (
+															<Row key={i} id={"tutorial_box_"+i}>
+																<Col sm={8} className="box01">
+																	<h4 className="tutorial_name">{item1.name}</h4>
+																	<p>{item1.description}</p>
+																	<p>What I used:</p>
+																	<>
+																		{
+																			item1.used.map(function(item2, j){
+																				return (
+																					<span key={j} class="box">{item2}</span> 
+																				)
+																			})
+																		}
+																	</>
+																</Col>
+																<Col sm={4} className="box02">
+																	<a class="tutorial_link" href={tutorials[i].link} target="_blank" rel="noopener noreferrer">Link</a>
+																</Col>
+															</Row>
+														)
+													})
+												}
+											</>
+										)
+									} else {
+										return <div>No tutorials yet</div>
+									}
+								}
+							})()}
+						</div>
+					</Modal.Body>
+				</Modal>
 			</>
 		);
 	}

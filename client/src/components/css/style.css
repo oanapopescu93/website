@@ -317,7 +317,6 @@ hr {
 .nav-left, .nav-right {
     width: 100%;
     display: block;
-    vertical-align: middle;
     text-align: left;
 }
 
@@ -677,6 +676,13 @@ hr {
 	margin:5px;
 	display:inline-block;
 	vertical-align:middle;
+}
+
+#portofolio_links_other button{
+    background-color: transparent;
+    border: solid 0px transparent;
+    color:black;
+    box-shadow: none;
 }
 
 /*---------------------contact---------------------*/
