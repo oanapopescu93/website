@@ -8,6 +8,8 @@
 	--text-muted: #3272a0;
 	--white: #fff;
 	--black: #000;
+    --red: red;
+    --green: green;
 }
 
 html {
@@ -89,6 +91,12 @@ a:focus {
 }
 .text-big {
     text-transform: uppercase;
+}
+.text-red {
+    color:var(--red);
+}
+.text-green {
+    color:var(--green);
 }
 
 hr {
@@ -813,12 +821,12 @@ hr {
     transform-origin: 100% 0 0;
 }
 
-.contact-info ul li .fa, .contact-info-mobile ul li .fa{
+.contact-info ul li .fa, .contact-page-mobile ul li .fa{
 	width:20px;
 	margin-right:5px;
 	text-align:right;
 }
-.contact-info ul:last-child li, .contact-info-mobile ul:last-child li{
+.contact-info ul:last-child li, .contact-page-mobile ul:last-child li{
 	display: inline-block;
     padding: 10px 5px;
     font-size: 24px;
@@ -828,14 +836,19 @@ hr {
     transform: rotate(-45deg);
 	cursor: pointer;
 }
-.contact-info-mobile ul:first-child{
+.contact-page-mobile ul:first-child{
 	margin-left: 50%;
     transform: translate(-43%, 0%);
     width: 210px;
 }
 
+.box-contact-form .message{
+    opacity: 1;
+}
+
 .box-contact-form label{
 	color:var(--grey666);
+    display: block;
 }
 .box-contact-form .form-control{
 	border: solid 1px var(--grey888);
@@ -855,9 +868,14 @@ hr {
 .box-contact-form .button-white:hover, .box-contact-form .button-white:focus{
     border: solid 1px var(--blue);
 	color:var(--blue);
+    background-color: transparent;
 }
 .box-contact-form textarea {
   resize: none;
+}
+
+.contact_error{
+    display:none;
 }
 
 /*---------------------footer---------------------*/
@@ -904,6 +922,9 @@ footer {
 }
 .modal-title{
 	display:inline-block;
+}
+.modal-open .modal.show{
+    opacity: 1!important;
 }
 
 /*---------------------cv---------------------*/
@@ -1077,8 +1098,44 @@ th, td {
     background-clip: content-box;
 }
 
-.modal-open .modal.show{
-    opacity: 1!important;
+/*---------------------show_results---------------------*/
+.show_results_container{
+	background:rgba(0,0,0,0.5);
+	position: fixed;
+	z-index: 1;
+	top:0px;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	width:100%;
+	text-align: center;
+	padding:10px;
+	display:none;
+}
+.show_results{
+	position: absolute;
+	z-index: 1;
+	top:50%;
+	left: 50%;
+    transform: translate(-50%, -50%);
+	width:100%;
+	max-width: 200px;
+	padding:10px;
+	background: var(--blue);
+	border-radius: 10px;
+	color: white;
+}
+.show_results_container.success .show_results{
+    background-color: var(--green);
+}
+.show_results_container.error .show_results{
+    background-color: var(--red);
+}
+.show_results h1{
+	font-size: 24px;
+}
+.show_results p{
+	font-size: 14px;
 }
 
 /*---------------------media---------------------*/

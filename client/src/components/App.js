@@ -57,11 +57,11 @@ class App extends Component {
 	};
 
 	render() {
-		//my_console.disable();	
+		my_console.disable();	
 		return (
 			<div className="App">	
 				{ 
-					!self.state.data ? <Splash></Splash> : <Home data={self.state.data}></Home> 
+					!self.state.data ? <Splash></Splash> : <Home socket={socket} data={self.state.data}></Home> 
 				}    			
 		  	</div>
 		);

@@ -11,6 +11,7 @@ class Section extends Component {
 		this.state = {
             template: props.template,
 			data: props.data,
+            socket: props.socket
 		};
 	}
 	render() {
@@ -24,19 +25,19 @@ class Section extends Component {
                         switch (this.props.template) {
                             case "about":
                                 return (
-                                    <About data={this.state.data}></About>
+                                    <About socket={this.state.socket} data={this.state.data}></About>
                                 );
                             case "portofolio":
                                 return (
-                                    <Portofolio data={this.state.data}></Portofolio>
+                                    <Portofolio socket={this.state.socket} data={this.state.data}></Portofolio>
                                 );
                             case "contact":
                                 return (
-                                    <Contact data={this.state.data}></Contact>
+                                    <Contact socket={this.state.socket} data={this.state.data}></Contact>
                                 );
                             default:
                                 return (
-                                    <Header data={this.state.data}></Header>
+                                    <Header socket={this.state.socket} data={this.state.data}></Header>
                                 );
                         }
                     })()}

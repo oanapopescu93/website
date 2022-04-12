@@ -133,7 +133,7 @@ class Portofolio extends Component {
 
 				<Modal id="myModal_portofolio" className="mymodal text-center" show={self.state.isOpen_portofolio} onHide={self.closeModal_portofolio}>
 					<Modal.Header closeButton>
-					<Modal.Title>Details</Modal.Title>
+						<Modal.Title>Details</Modal.Title>
 					</Modal.Header>
 					<Modal.Body>
 						<div className="title"></div>
@@ -144,7 +144,7 @@ class Portofolio extends Component {
 				</Modal>
 				<Modal id="myModal_tutorials" className="mymodal text-center" show={self.state.isOpen_tutorials} onHide={self.closeModal_tutorials}>
 					<Modal.Header closeButton>
-					<Modal.Title>Tutorials</Modal.Title>
+						<Modal.Title>Tutorials</Modal.Title>
 					</Modal.Header>
 					<Modal.Body>
 						<div id="tutorial_box_container">
