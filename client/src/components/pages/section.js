@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Header from './header';
 import Sapou from './partials/sapou';
-import { scroll_anywhere } from './utils';
+import About from './about'
+import Portofolio from './portofolio';
+import Contact from './contact';
 
 class Section extends Component {
 	constructor(props) {
@@ -22,15 +24,15 @@ class Section extends Component {
                         switch (this.props.template) {
                             case "about":
                                 return (
-                                    <>aaa01</>
+                                    <About data={this.state.data}></About>
                                 );
                             case "portofolio":
                                 return (
-                                    <>aaa02</>
+                                    <Portofolio data={this.state.data}></Portofolio>
                                 );
                             case "contact":
                                 return (
-                                    <>aaa03</>
+                                    <Contact data={this.state.data}></Contact>
                                 );
                             default:
                                 return (

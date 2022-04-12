@@ -12,7 +12,7 @@ module.exports = Object.freeze({
     HEADER_INFO: [
         "Oana Popescu", 
         "Frontend / Javascript developer", 
-        "I'm a self-taught frontend and javascript developer.<br>My passion is to create <b>websites</b>, <b>web applications</b>, and <b>games</b>."
+        "My passion is to create <b>websites</b>, <b>web applications</b>, and <b>games</b>.<br>I work with <b>Javascript</b>, <b>ReactJS</b> and <b>NodeJS</b>."
     ],
     SKILLS_TITLE: ['frontend', 'backend', 'other'],
     SKILLS: [
@@ -29,7 +29,7 @@ module.exports = Object.freeze({
     LANGUAGES: [
         {name: "English", name: "english", level: "advanced", perc: 90},
         {name: "German", name: "german", level: "beginner", perc: 20},
-        {name: "French", name: "french", level: "beginner", perc: 20},
+        // {name: "French", name: "french", level: "beginner", perc: 20},
         {name: "Romania", name: "romanian", level: "native", perc: 100},
     ],
     EDUCATION: [
@@ -128,7 +128,7 @@ module.exports = Object.freeze({
         },
     ],
     PIE_COLORS: ["#189cb0","#bebebe"],
-    PORTOFOLIO_LIST: ["games", "react/node", "websites/webapps", "web pages"],
+    PORTOFOLIO_LIST: ["games", "react/node", "websites/webapps", "other"],
     PORTOFOLIO_ITEMS: [
         [		
             {
@@ -185,15 +185,15 @@ module.exports = Object.freeze({
                 img_alt: "irregular verbs quiz game",
                 img_title: "irregular verbs quiz game",
             },
-            {
-                title: "Hexapawn", 
-                link: "personal/hexapawn/index.html", 							
-                src: "img/pics/hexapawn_img.png", 
-                used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, Canvas", 
-                git: "https://github.com/oanapopescu93/hexapawn",
-                img_alt: "hexapawn",
-                img_title: "hexapawn - the game that learns",
-            },
+            // {
+            //     title: "Hexapawn", 
+            //     link: "personal/hexapawn/index.html", 							
+            //     src: "img/pics/hexapawn_img.png", 
+            //     used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, Canvas", 
+            //     git: "https://github.com/oanapopescu93/hexapawn",
+            //     img_alt: "hexapawn",
+            //     img_title: "hexapawn - the game that learns",
+            // },
         ],
         [	
             {
@@ -284,7 +284,7 @@ module.exports = Object.freeze({
                 platform: "Magento",
                 img_alt: "exclusive doors",
                 img_title: "exclusive doors",
-                //status: "still in localhost",
+                status: "still in localhost",
             },		
         ],
         [

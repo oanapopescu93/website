@@ -17,7 +17,6 @@ class Header extends Component {
 		};
 	}
 	render() {
-		console.log(this.state.data)
         return (
 			<Container className="text-center">
 				<Row>
@@ -33,7 +32,7 @@ class Header extends Component {
 					<Col sm={12}>
 						<Row>
 							<Col sm={2}></Col>
-							<Col sm={8}>
+							<Col sm={8} id="header-sapou">
 								<hr className="line"></hr>
 								<p>{Parser(this.state.description)}</p>
 								<hr className="line"></hr>
@@ -50,7 +49,7 @@ class Header extends Component {
 					</Col>
 				</Row>
 				<div className="scroll">
-					<a href="#about" className="scroll-button"><i className="fa fa-angle-down"></i></a>
+					<a href="#about" className="scroll-button fa fa-angle-down" onClick={(e)=>{scroll_anywhere(e)}}> </a>
 				</div>
 			</Container>
         );

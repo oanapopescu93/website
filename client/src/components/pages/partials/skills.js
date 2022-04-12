@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Row from 'react-bootstrap/Row'
 import $ from 'jquery'; 
 import { capitalizeFirstLetter } from '../utils';
+import { Col } from 'react-bootstrap';
 
 function Piechart(mycanvas, mylegend, dataSource, colors, doughnutHoleSize, w, h){	
     var canvas = document.getElementById(mycanvas);
@@ -109,12 +110,10 @@ function Piechart(mycanvas, mylegend, dataSource, colors, doughnutHoleSize, w, h
     }
 }
 
-var self;
 class Skills extends Component {	
 	constructor(props) {
 		super(props);
-		self = this;
-        self.state = {
+        this.state = {
 			skills_title: props.skills_title,
             skills: props.skills,
             pie_colors: props.pie_colors,
@@ -129,23 +128,17 @@ class Skills extends Component {
 
         var pie_element = [];
 		var myPiechart = [];		
-		for(var k in self.state.skills_title){
-			$('#skills_row').append('<div class="col-xs-12"><h4 class="grey666">' + capitalizeFirstLetter(self.state.skills_title[k]) + '</h4></div>');
-			for(var i in self.state.skills){
-				if(self.state.skills[i].type === self.state.skills_title[k]){
+		for(var k in this.state.skills_title){
+			$('#skills_row').append('<div class="col-xs-12"><h4 class="grey666">' + capitalizeFirstLetter(this.state.skills_title[k]) + '</h4></div>');
+			for(var i in this.state.skills){
+				if(this.state.skills[i].type === this.state.skills_title[k]){
 					pie_element = [];					
 					$('#skills_row').append('<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center"><canvas id="myskill_'+ i +'"></canvas></div>');
-					pie_element.push(self.state.skills[i]);
-					myPiechart[i] = new Piechart("myskill_"+ i, "pie_legend"+ i, pie_element, self.state.pie_colors, 0.8, 120, 120); 
+					pie_element.push(this.state.skills[i]);
+					myPiechart[i] = new Piechart("myskill_"+ i, "pie_legend"+ i, pie_element, this.state.pie_colors, 0.8, 120, 120); 
 					myPiechart[i].draw();
 				}
 			}	
-		}
-
-		$('#language_row').append('<div class="col-sm-12"><h4 class="grey666">Languages</h4></div><div id="language_bar_container" class="col-sm-6 col-md-4 col-lg-3"></div>');		
-		for (let i in self.state.languages){
-			$('#language_bar_container').append('<p>' + capitalizeFirstLetter(self.state.languages[i].name) + '</p><div class="language_bar_box"><div class="language_bar ' + self.state.languages[i].name + '">' + self.state.languages[i].perc + '%</div></div>');
-			$('#language_bar_container .language_bar').last().css("width", self.state.languages[i].perc+"%");
 		}
 	}
     
@@ -153,7 +146,36 @@ class Skills extends Component {
 		return (
             <>
                 <Row id="skills_row"></Row>
-                <Row id="language_row"></Row>
+                <Row id="language_row">
+					<Col sm={12}>
+						<h4 className="grey666">Languages</h4>
+					</Col>
+					<Col id="language_bar_container" sm={6} md={4} lg={3}>
+						{(() => {
+							if(typeof this.state.language !== "undefined" && this.state.language !== "null" && this.state.language !== null && this.state.language !== ""){
+								if(this.state.language.length>0){
+									return(
+										<>
+											{
+												this.state.language.map(function(item, i){
+													let width = {'width': item.perc+"%"}
+													return (
+														<div key={i}>
+															<p>{capitalizeFirstLetter(item.name)}</p>
+															<div className="language_bar_box">
+																<div style={width} className={"language_bar " + item.name}>{item.perc}%</div>
+															</div>
+														</div>
+													)
+												})
+											}
+										</>
+									)
+								}
+							}
+						})()}
+					</Col>
+				</Row>
             </>
 	    );
     }

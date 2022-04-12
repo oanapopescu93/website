@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery'; 
+import { scroll_anywhere } from '../utils';
 
 var self;
 class Top extends Component {
@@ -28,7 +29,7 @@ class Top extends Component {
 
 	render() {
         return (
-            <a href="#home" id="top" title="Back to top" className="text-uppercase scroll-button"><i className="fa fa-arrow-circle-up"></i></a>
+            <a href="#header" id="top" title="Back to top" className="text-uppercase scroll-button fa fa-arrow-circle-up" onClick={(e)=>{scroll_anywhere(e)}}> </a>
         );
     }
 }

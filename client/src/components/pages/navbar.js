@@ -2,14 +2,9 @@ import React, { Component } from 'react';
 import $ from 'jquery'; 
 import Container from 'react-bootstrap/Container'
 import '../css/style.css';
+import { scroll_anywhere } from './utils';
 
-var self;
 class Navbar extends Component {
-	constructor(props) {
-		super(props);
-		self = this;
-	}
-
 	componentDidMount(){
 		$("#menu").click(function(){
 			$(".bar1").toggleClass("change");	
@@ -35,11 +30,11 @@ class Navbar extends Component {
                         <div className="navbar-box">
                             <ul className="nav-left">
 								<li className="active">
-									<a href="#home" className="scroll-button"><span className="glyphicon glyphicon-home"></span></a>
+									<a href="#header" className="scroll-button glyphicon glyphicon-home" onClick={(e)=>{scroll_anywhere(e)}}> </a>
 								</li>
-								<li><a href="#about" className="scroll-button">About</a></li>
-								<li><a href="#portofolio" className="scroll-button">Portofolio</a></li>
-								<li><a href="#contact" className="scroll-button">Contact</a></li>
+								<li><a href="#about" className="scroll-button" onClick={(e)=>{scroll_anywhere(e)}}>About</a></li>
+								<li><a href="#portofolio" className="scroll-button" onClick={(e)=>{scroll_anywhere(e)}}>Portofolio</a></li>
+								<li><a href="#contact" className="scroll-button" onClick={(e)=>{scroll_anywhere(e)}}>Contact</a></li>
 							</ul>
                             <ul className="nav-right hidden-xs" style={{"marginRight":"0px"}}>
 								<li><a href="tel:+40729699148" target="_top"><span>0729.699.148</span></a></li>

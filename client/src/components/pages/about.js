@@ -6,6 +6,7 @@ import Skills from './partials/skills';
 import Experience from './partials/experience';
 import Education from './partials/education';
 import $ from 'jquery'; 
+import { scroll_anywhere } from './utils';
 
 var self;
 class About extends Component {
@@ -68,6 +69,7 @@ class About extends Component {
 							{(() => {
 								switch (self.state.visible) {
 									case "skills":
+										console.log('xxx', self.state.language)
 										return (
 											<Skills language={self.state.language} pie_colors={self.state.pie_colors} skills={self.state.skills} skills_title={self.state.skills_title}></Skills>
 										)
@@ -91,9 +93,7 @@ class About extends Component {
 				<Row>
 					<Col xs={12} sm={4} md={4} lg={2}></Col>
 					<Col id="go_portofolio" className="about_content_main" xs={12} sm={8} md={8} lg={10}>
-						<a href="#portofolio" className="text-black scroll-button">
-							<button className="button-white"><h6 className="text-uppercase">See my projects</h6></button>
-						</a>
+						<a href="#portofolio" className="button-white text-black text-uppercase scroll-button" onClick={(e)=>{scroll_anywhere(e)}}>See my projects</a>
 					</Col>
 				</Row>
 			</Container>

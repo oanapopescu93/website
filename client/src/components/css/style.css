@@ -133,25 +133,19 @@ hr {
 }
 
 .button-white {
+    display:inline-block;
+    vertical-align: top;
     background-color: transparent;
     border: solid 1px var(--black);
     border-radius: 10px;
     color: var(--black);
     padding: 10px 20px;
+    margin: 5px;
     font-weight: bold;
 }
 .button-white:hover, .button-white:focus {
     border: solid 1px var(--blue);
-    color: var(--blue);
-}
-.button-white h6{
-	font-size:14px;
-	font-weight: bold;
-}
-.portofolio-container .button-white{
-	padding: 5px 10px;
-	margin: 5px;
-	border-radius:100%;
+    color: var(--blue)!important;
 }
 #header-sapou{
 	margin-top: 20px;
@@ -400,7 +394,7 @@ hr {
 
 /*---------------------home---------------------*/
 
-#home {
+#header {
     background-image: url(../img/bg-desk.jpg);
     background-repeat: repeat-x;
     background-attachment: fixed;
@@ -423,7 +417,9 @@ hr {
     bottom: 25px;
     left: 0px;
     right: 0px;
-    text-align: center;	
+    text-align: center;
+    font-size:30px;
+	font-weight:bold;
 }
 .scroll a, .scroll a:focus {
     color: black
@@ -431,15 +427,9 @@ hr {
 .scroll a:hover {
     color: var(--blue);
 }
-.scroll i {
-    font-size:30px;
-	font-weight:bold;
-}
 
 #header-buttons .button-white{
 	width:140px;
-    margin:0px 5px 5px 5px;
-    display: inline-block;
 }
 
 /*---------------------about---------------------*/
@@ -874,6 +864,9 @@ footer {
 }
 
 /*---------------------modale---------------------*/
+.modal-dialog{
+    margin-top: 80px;
+}
 .mymodal {
     margin-top: 50px;
 }
@@ -1246,10 +1239,7 @@ th, td {
     .logo {
         width: 120px;
     }
-	
-    .modal-dialog {
-        margin: 60px auto 30px auto;
-    }
+    
 	.dropdown.open  .mydropdown-content{
 		margin: -20px 0px 0px 0px;
 		height: 360px;

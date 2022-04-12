@@ -23,7 +23,7 @@ function Sapou(props) {
                     <Row>
                         <Col sm={12}>
                             <hr className="line"></hr>
-                            <h3 className="text-uppercase">My portofolio<span className="glyphicon glyphicon-user title-icon"></span></h3>
+                            <h3 className="text-uppercase">My portofolio<span className="glyphicon glyphicon-folder-open title-icon"></span></h3>
                             <hr className="line"></hr>
                         </Col>
                     </Row>
@@ -35,7 +35,7 @@ function Sapou(props) {
                     <Row>
                         <Col sm={12}>
                             <hr className="line"></hr>
-                            <h3 className="text-uppercase">Contact me<span className="glyphicon glyphicon-user title-icon"></span></h3>
+                            <h3 className="text-uppercase">Contact me<span className="glyphicon glyphicon-send title-icon"></span></h3>
                             <hr className="line"></hr>
                         </Col>
                     </Row>

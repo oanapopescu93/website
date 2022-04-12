@@ -3,7 +3,7 @@ const app = express();
 
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 app.set("port", port);
 
 var data = require('./var/data');
@@ -18,7 +18,7 @@ var portofolio_list = data.PORTOFOLIO_LIST;
 var portofolio_items = data.PORTOFOLIO_ITEMS;
 var contact = data.CONTACT;
 
-io.on('connection', function(socket) {	
+io.on('connection', function(socket) {
     socket.on('info_send', function(data) {
 		io.emit('info_read', {
             header: header,
