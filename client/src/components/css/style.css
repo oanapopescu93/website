@@ -439,6 +439,7 @@ hr {
 #header-buttons .button-white{
 	width:140px;
     margin:0px 5px 5px 5px;
+    display: inline-block;
 }
 
 /*---------------------about---------------------*/

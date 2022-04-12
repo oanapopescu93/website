@@ -4,58 +4,55 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import '../css/style.css';
 import logo_icon from '../img/logo-bear.png';
+import Parser from 'react-html-parser';
+import { scroll_anywhere } from './utils';
 
 class Header extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			title: props.data[0],
+			subtitle: props.data[1],
+			description: props.data[2],
+		};
+	}
 	render() {
+		console.log(this.state.data)
         return (
-            <header id="home" className="full-height">
-				<div className="full-height-content">
-					<Container className="text-center">
+			<Container className="text-center">
+				<Row>
+					<Col id="header-title" sm={12}>
+						<a href="/">
+							<img className="logo" alt="logo_icon" src={logo_icon} />
+							<h1 className="text-uppercase blacktext">{this.state.title}</h1>
+							<h2 className="text-uppercase color_text_blue">{this.state.subtitle}</h2>
+						</a>
+					</Col>
+				</Row>
+				<Row>
+					<Col sm={12}>
 						<Row>
-							<Col id="header-title" sm={12}>
-								<a href="/">
-									<img className="logo" alt="logo_icon" src={logo_icon} />
-									<h1 className="text-uppercase blacktext">Oana Popescu</h1>
-									<h2 className="text-uppercase color_text_blue">Frontend / Javascript developer</h2>
-								</a>
+							<Col sm={2}></Col>
+							<Col sm={8}>
+								<hr className="line"></hr>
+								<p>{Parser(this.state.description)}</p>
+								<hr className="line"></hr>
 							</Col>
+							<Col sm={2}></Col>
 						</Row>
-						<Row>
-							<Col sm={12}>
-								<Row>
-									<Col sm={2}></Col>
-									<Col sm={8}>
-										<hr className="line"></hr>
-										<p>
-											<span>I'm a self-taught frontend and javascript developer.</span>
-											<br></br>
-											<span>My passion is to create <b>websites</b>, <b>web applications</b>, and <b>games</b>.</span>
-										</p>
-										<hr className="line"></hr>
-									</Col>
-									<Col sm={2}></Col>
-								</Row>
-							</Col>
-						</Row>
-						<Row>
-							<Col id="header-buttons" sm={12}>
-								<a href="#about" className="text-black scroll-button">
-									<button className="button-white"><h6 className="text-uppercase">Read more</h6></button>
-								</a>
-								<a href="#contact" className="text-black scroll-button">
-									<button className="button-white"><h6 className="text-uppercase">Contact me</h6></button>
-								</a>
-								<a href="/personal/chatbot/index.html" target="_blank" className="text-black">
-									<button className="button-white"><h6 className="text-uppercase">Chatbot</h6></button>
-								</a>
-							</Col>
-						</Row>
-						<div className="scroll">
-							<a href="#about" className="scroll-button"><i className="fa fa-angle-down"></i></a>
-						</div>
-					</Container>
+					</Col>
+				</Row>
+				<Row>
+					<Col id="header-buttons" sm={12}>
+						<a href="#about" className="text-black button-white text-uppercase scroll-button" onClick={(e)=>{scroll_anywhere(e)}}>Read more</a>
+						<a href="#contact" className="text-black button-white text-uppercase scroll-button" onClick={(e)=>{scroll_anywhere(e)}}>Contact me</a>
+						<a href="/" target="_blank" className="text-black button-white text-uppercase">Chatbot</a>
+					</Col>
+				</Row>
+				<div className="scroll">
+					<a href="#about" className="scroll-button"><i className="fa fa-angle-down"></i></a>
 				</div>
-			</header>
+			</Container>
         );
     }
 }
