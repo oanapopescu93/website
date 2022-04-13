@@ -1,0 +1,275 @@
+html{
+	height:100%;
+	min-height:100%;
+}
+body{
+	background:radial-gradient(#9D5900, #3D2200);
+	height:100%;
+	position:relative;
+}
+.card_title{
+	margin-bottom:25px;
+}
+.card_info{
+	margin-bottom:15px;
+}
+h1{
+	color:#FF6D00;
+	font-size:40px;
+	line-height:40px;
+}
+h2{
+	color:#FFBB89;
+	font-size:28px;
+	line-height:28px;
+}
+.container{
+	padding-top:20px;
+	padding-bottom:20px;
+}
+.mycard{	
+	height: 175px;
+    width: 125px;
+    display: inline-block;
+    overflow: hidden;
+	margin:3px;
+}
+
+.card-face{
+	position:relative;
+	text-align:center;
+	height:100%;
+	backface-visibility:hidden;	
+	border-radius:15px;
+	overflow:hidden;
+	transition: transform 0.5s ease-in-out;
+}
+.card-back{
+	top:0px;
+	background-color:black;
+	border:solid 2px #FF6D00;
+	cursor:pointer;
+}
+.card-back:hover .cob-web{
+	width:50px;
+	height:50px;
+}
+.card-back:hover .spider{
+	width:95px;
+}
+.card-front{
+	top:-175px;
+	transform:rotateY(180deg);
+	background-color: #FFBB89;
+	display: flex;
+	border:solid 2px #333;
+	cursor:pointer;
+}
+.card-front:hover .cob-web{
+	width:50px;
+	height:50px;
+}
+.card-front:hover .spider{
+	width:95px;
+}
+.mycard.clicked .card-back, 
+.mycard.identical .card-back {
+	transform:rotateY(-180deg);
+}
+.mycard.clicked .card-front, 
+.mycard.identical .card-front {
+	transform:rotateY(0deg);
+}
+.cob-web{
+	position:absolute;
+	width:45px;
+	height:45px;
+	transition: width 0.1s ease-in-out, height 0.1s ease-in-out;
+}
+.cob-web-top-left{
+	transform: rotate(270deg);
+	top:-2px;
+	left:-2px;
+}
+.cob-web-top-right{
+	transform: rotate(0deg);
+	top:-2px;
+	right:-2px;
+}
+.cob-web-bottom-left{
+	transform: rotate(180deg);
+	bottom:-2px;
+	left:-2px;
+}
+.cob-web-bottom-right{
+	transform: rotate(90deg);
+	bottom:-2px;
+	right:-2px;
+}
+.spider{
+	display:inline-block;
+	width:90px;
+	transition: width 0.1s ease-in-out;
+	margin: auto;
+}
+.overlay_container{
+	display:flex;
+	position:fixed;
+	top:0px;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	width:100%;
+	text-align:center;
+	z-index: 999;
+    background: rgba(0,0,0,0.7);
+}
+.overlay_container.closed{
+	display:none;
+}
+.overlay_text{
+	margin:auto;	
+}
+.overlay_text h5{
+	color: #FF6D00;
+    font-size: 20px;
+    line-height: 40px;
+	cursor:pointer;
+}
+
+footer{
+    color: black;
+	text-align:center;
+	padding:10px 20px;
+}
+footer h6{
+	font-size:12px;
+	margin:0px;
+}
+footer ~ div {
+  visibility: hidden;
+}
+
+@media (max-width: 767px) {
+    .mycard{	
+		height: 140px;
+		width: 90px;
+	}
+	.card-front {
+		top: -140px;
+	}
+	.cob-web{
+		width: 35px;
+		height: 35px;
+	}
+	.spider {
+		width: 65px;
+	}
+	.card-back:hover .cob-web{
+		width:30px;
+		height:30px;
+	}
+	.card-back:hover .spider{
+		width:70px;
+	}
+	.card-front:hover .cob-web{
+		width:30px;
+		height:30px;
+	}
+	.card-front:hover .spider{
+		width:70px;
+	}
+}
+
+@media (max-width: 480px) {
+	h1{
+		font-size:24px;
+		line-height:24px;
+		margin:0px;
+	}
+	h2{
+		font-size:20px;
+		line-height:20px;
+		margin:0px;
+	}
+	.card_title{
+		margin-bottom:15px;
+	}
+	.card_info{
+		margin-bottom:10px;
+	}
+    .mycard{	
+		height: 100px;
+		width: 65px;
+	}
+	.card-face{
+		border-radius: 5px;
+	}
+	.card-front {
+		top: -100px;
+	}
+	.cob-web{
+		width: 25px;
+		height: 25px;
+	}
+	.spider {
+		width: 45px;
+	}
+	.card-back:hover .cob-web{
+		width:30px;
+		height:30px;
+	}
+	.card-back:hover .spider{
+		width:50px;
+	}
+	.card-front:hover .cob-web{
+		width:30px;
+		height:30px;
+	}
+	.card-front:hover .spider{
+		width:50px;
+	}
+}
+
+@media (max-width: 320px) {
+	h1{
+		font-size:20px;
+		line-height:20px;
+	}
+	h2{
+		font-size:16px;
+		line-height:16px;
+	}
+	h6{
+		font-size:10px;
+		line-height:10px;
+	}
+    .mycard{	
+		height: 90px;
+		width: 58px;
+	}
+	.card-front {
+		top: -90px;
+	}
+	.cob-web{
+		width: 20px;
+		height: 20px;
+	}
+	.spider {
+		width: 40px;
+	}
+	.card-back:hover .cob-web{
+		width:25px;
+		height:25px;
+	}
+	.card-back:hover .spider{
+		width:45px;
+	}
+	.card-front:hover .cob-web{
+		width:25px;
+		height:25px;
+	}
+	.card-front:hover .spider{
+		width:45px;
+	}
+}

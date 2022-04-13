@@ -1,27 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.1739a2b1.chunk.css",
-    "main.js": "/static/js/main.ef1f6593.chunk.js",
-    "main.js.map": "/static/js/main.ef1f6593.chunk.js.map",
+    "main.css": "/static/css/main.73188341.chunk.css",
+    "main.js": "/static/js/main.dd577fd9.chunk.js",
+    "main.js.map": "/static/js/main.dd577fd9.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.83c3e0c4.js",
     "runtime-main.js.map": "/static/js/runtime-main.83c3e0c4.js.map",
-    "static/css/2.c3594674.chunk.css": "/static/css/2.c3594674.chunk.css",
-    "static/js/2.871fd869.chunk.js": "/static/js/2.871fd869.chunk.js",
-    "static/js/2.871fd869.chunk.js.map": "/static/js/2.871fd869.chunk.js.map",
+    "static/css/2.e47182b0.chunk.css": "/static/css/2.e47182b0.chunk.css",
+    "static/js/2.0d7b54dd.chunk.js": "/static/js/2.0d7b54dd.chunk.js",
+    "static/js/2.0d7b54dd.chunk.js.map": "/static/js/2.0d7b54dd.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.b1146e05979e82a61d88b9032f77711b.js": "/precache-manifest.b1146e05979e82a61d88b9032f77711b.js",
+    "precache-manifest.daddeb804aeb371fe8578628d613713e.js": "/precache-manifest.daddeb804aeb371fe8578628d613713e.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/2.c3594674.chunk.css.map": "/static/css/2.c3594674.chunk.css.map",
-    "static/css/main.1739a2b1.chunk.css.map": "/static/css/main.1739a2b1.chunk.css.map",
-    "static/js/2.871fd869.chunk.js.LICENSE.txt": "/static/js/2.871fd869.chunk.js.LICENSE.txt",
+    "static/css/2.e47182b0.chunk.css.map": "/static/css/2.e47182b0.chunk.css.map",
+    "static/css/main.73188341.chunk.css.map": "/static/css/main.73188341.chunk.css.map",
+    "static/js/2.0d7b54dd.chunk.js.LICENSE.txt": "/static/js/2.0d7b54dd.chunk.js.LICENSE.txt",
+    "static/media/CV - Oana Popescu.pdf": "/static/media/CV - Oana Popescu.95dda7c0.pdf",
+    "static/media/CV - Oana Popescu.doc": "/static/media/CV - Oana Popescu.fc970891.doc",
     "static/media/style.css": "/static/media/bg-desk.768ded36.jpg",
     "static/media/logo-bear.png": "/static/media/logo-bear.8944d57a.png"
   },
   "entrypoints": [
     "static/js/runtime-main.83c3e0c4.js",
-    "static/css/2.c3594674.chunk.css",
-    "static/js/2.871fd869.chunk.js",
-    "static/css/main.1739a2b1.chunk.css",
-    "static/js/main.ef1f6593.chunk.js"
+    "static/css/2.e47182b0.chunk.css",
+    "static/js/2.0d7b54dd.chunk.js",
+    "static/css/main.73188341.chunk.css",
+    "static/js/main.dd577fd9.chunk.js"
   ]
 }

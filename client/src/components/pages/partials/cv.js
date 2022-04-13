@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Modal} from "react-bootstrap";
+import cv_pdf from '../../files/CV - Oana Popescu.pdf';
+import cv_doc from '../../files/CV - Oana Popescu.doc';
 
 class Cv extends Component {
 	constructor(props) {
@@ -34,8 +36,8 @@ class Cv extends Component {
 					<Modal.Header closeButton></Modal.Header>
 					<Modal.Body>
                         <h3 className="text-uppercase" id="myModalLabel">Choose</h3>
-                        <a href="/img/CV - Oana Popescu.pdf"><span className="cv-lang">PDF</span></a>
-                        <a href="/img/CV - Oana Popescu.doc"><span className="cv-lang">WORD</span></a>
+                        <a href={cv_pdf} target = "_blank"><span className="cv-lang">PDF</span></a>
+                        <a href={cv_doc} target = "_blank"><span className="cv-lang">WORD</span></a>
 					</Modal.Body>
 				</Modal>
             </>
