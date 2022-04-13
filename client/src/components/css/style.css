@@ -1161,7 +1161,7 @@ th, td {
 		overflow: hidden;
 		margin: auto;
 	}
-    #home {
+    #header {
         background-image:none;
 		background-color:var(--grey);
     }
