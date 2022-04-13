@@ -8,16 +8,34 @@ import $ from 'jquery';
 import { showResults } from './utils';
 
 function Child(props){
+	let contact = [];
+	let social = [];
+	if(props.data[0]){
+		contact = props.data[0];
+	}
+	if(props.data[1]){
+		social = props.data[1];
+	}
 	return (
 		<div className={props.div_class + " text-left"}>
 			<ul>
-				<li><i className="fa fa-phone"></i><a href="tel:+40729699148">0729.699.148</a></li>
-				<li><i className="fa fa-envelope"></i><a href="mailto:oanapopescu93@gmail.com">oanapopescu93@gmail.com</a></li>
+				{
+					contact.map(function(item, i){						
+						return (
+							<li key={i}><i className={item.icon}></i><a href={item.link}>{item.text}</a></li>
+						)
+					})
+				}
 			</ul>
 			<p className="text-center">Or get social with me:</p>
 			<ul className="text-center">
-				<li><a href="https://www.linkedin.com/in/oanapopescu93/" target="_blank"  rel="noopener noreferrer"><i className="fa fa-linkedin"></i></a></li>
-				<li><a href="https://github.com/oanapopescu93" target="_blank"  rel="noopener noreferrer"><i className="fa fa-github"></i></a></li>
+				{
+					social.map(function(item, i){						
+						return (
+							<li key={i}><a href={item.link} target="_blank"  rel="noopener noreferrer"><i className={item.icon}></i></a></li>
+						)
+					})
+				}
 			</ul>
 		</div>
 	);
@@ -27,7 +45,7 @@ class Contact extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			contact: props.data,
+			data: props.data,
 			socket: props.socket,
 		};
 		this.send_form = this.send_form.bind(this);
@@ -94,7 +112,7 @@ class Contact extends Component {
 			<Container>
 					<Row>
 						<Col sm={6} className="visible-xs-block">
-							<Child div_class="contact-page-mobile"></Child>
+							<Child div_class="contact-page-mobile" data={this.state.data}></Child>
 						</Col>
 						<Col sm={6} className="box-contact-form">
 							<Form>
@@ -149,7 +167,7 @@ class Contact extends Component {
 									</div>
 								</div>
 								<div className="contact_front">
-									<Child div_class="contact-info"></Child>
+									<Child div_class="contact-info" data={this.state.data}></Child>
 									<div className="corner corner-1"></div>
 									<div className="corner corner-2"></div>
 									<div className="corner corner-3"></div>

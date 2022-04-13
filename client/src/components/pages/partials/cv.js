@@ -36,8 +36,8 @@ class Cv extends Component {
 					<Modal.Header closeButton></Modal.Header>
 					<Modal.Body>
                         <h3 className="text-uppercase" id="myModalLabel">Choose</h3>
-                        <a href={cv_pdf} target = "_blank"><span className="cv-lang">PDF</span></a>
-                        <a href={cv_doc} target = "_blank"><span className="cv-lang">WORD</span></a>
+                        <a href={cv_pdf} target = "_blank" rel="noopener noreferrer"><span className="cv-lang">PDF</span></a>
+                        <a href={cv_doc} target = "_blank" rel="noopener noreferrer"><span className="cv-lang">WORD</span></a>
 					</Modal.Body>
 				</Modal>
             </>
