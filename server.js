@@ -8,6 +8,7 @@ app.set("port", port);
 
 var nodemailer = require('nodemailer');
 var data = require('./var/data');
+var routes = require("./router");
 
 var header = data.HEADER_INFO;
 var skills_title = data.SKILLS_TITLE;
@@ -35,6 +36,8 @@ var mailOptions = {
 	subject: 'WEBSITE!!!',
 	html: ''
 };
+
+app.use(routes);
 
 io.on('connection', function(socket) {
     socket.on('info_send', function(data) {
