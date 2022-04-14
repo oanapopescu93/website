@@ -45,7 +45,7 @@ class Header extends Component {
 					<Col id="header-buttons" sm={12}>
 						<a href="#about" className="text-black button-white text-uppercase scroll-button" onClick={(e)=>{scroll_anywhere(e)}}>Read more</a>
 						<a href="#contact" className="text-black button-white text-uppercase scroll-button" onClick={(e)=>{scroll_anywhere(e)}}>Contact me</a>
-						<a href="/" target="_blank" className="text-black button-white text-uppercase">Chatbot</a>
+						<a href="personal/chatbot/index.html" target="_blank" className="text-black button-white text-uppercase">Chatbot</a>
 					</Col>
 				</Row>
 				<div className="scroll">
