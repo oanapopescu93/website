@@ -21,7 +21,10 @@ body, #root, .App  {
     font-family: arial;
     color: var(--black);
     position: relative;
-    font-size: 14px;
+    font-size: 14px;    
+}
+body{
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, address {
@@ -98,6 +101,9 @@ a:focus {
 .text-green {
     color:var(--green);
 }
+.text-stroke-black{
+    text-shadow:-1px -1px 0 var(--black), 1px -1px 0 var(--black), -1px 1px 0 var(--black), 1px 1px 0 var(--black);
+}
 
 hr {
     margin: 10px 0px;
@@ -160,6 +166,12 @@ hr {
     margin-bottom: 20px;
 }
 
+.full-height,
+.full-height-title,
+.full-height-content{
+    display: block!important;
+}
+
 .full-height {
     position: relative;
     display: table;
@@ -212,6 +224,17 @@ hr {
 .line {
     border: 0;
     border-top: 1px solid var(--black);    
+}
+
+textarea.shadow_concav, input.shadow_concav, .button_yellow.shadow_concav, .shadow_concav{
+	-moz-box-shadow:    inset 2px 2px 5px rgba(0,0,0,0.5)!important;
+   	-webkit-box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5)!important;
+   	box-shadow:         inset 2px 2px 5px rgba(0,0,0,0.5)!important;
+}
+textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .button_table.shadow_convex, .shadow_convex{
+	-moz-box-shadow:    2px 2px 5px rgba(0,0,0,0.5)!important;
+   	-webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.5)!important;
+   	box-shadow:         2px 2px 5px rgba(0,0,0,0.5)!important;
 }
 
 /*---------------------loader---------------------*/
@@ -401,16 +424,18 @@ hr {
 
 /*---------------------home---------------------*/
 
+.header-title-container{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 #header {
     background-image: url(../img/bg-desk.jpg);
     background-repeat: repeat-x;
     background-attachment: fixed;
     background-size: cover;
     background-color: white;
-    -webkit-box-shadow: 0px 0px 15px 5px black;
-    -o-box-shadow: 0px 0px 15px 5px black;
-    -moz-box-shadow: 0px 0px 15px 5px black;
-    box-shadow: 0px 0px 15px 5px black;
 }
 .logo {
     width: 100px;
@@ -919,6 +944,7 @@ footer {
 .modal-open .modal, body {
     padding: 0px !important;
 	z-index: 99999;
+    margin: 0px !important;
 }
 .modal-title{
 	display:inline-block;
@@ -940,6 +966,8 @@ footer {
 	right:-65px;
 }
 .mycv{
+    position: relative;
+    z-index: 1;
 	background: var(--blue);
     color: white;
     border-radius: 0px 0px 0px 10px;
@@ -954,6 +982,8 @@ footer {
 	cursor:pointer;
 }
 .cv_close{
+    position: relative;
+    z-index: 1;
 	background: var(--blue);
     color: white;
     border-radius: 50px 0px 0px 50px;
@@ -993,11 +1023,14 @@ footer {
     right: 0px;
     width: 83px;
 	transition: 0.4s;
+    text-align: right;
 }
 .mytutorials_container.closed{
 	right:-65px;
 }
 .mytutorials{
+    position: relative;
+    z-index: 1;
 	background: var(--blue);
     color: white;
     border-radius: 0px 0px 0px 10px;
@@ -1022,6 +1055,8 @@ footer {
     margin-top: 48px;
 }
 .mytutorials_close{
+    position: relative;
+    z-index: 1;
 	background: var(--blue);
     color: white;
     border-radius: 50px 0px 0px 50px;
@@ -1048,6 +1083,10 @@ th, td {
   min-width:100px;
 }
 
+.language_bar_title span{
+    padding-left: 5px;
+    font-size: 12px;
+}
 .language_bar_box {
   background-color: var(--light_grey);
   border:solid 3px var(--light_grey);
@@ -1152,7 +1191,7 @@ th, td {
 }
 @media (max-height: 600px) {
 	.about_content_box{
-		height:280px;
+		height:220px;
 	}
 }
 @media (max-width: 767px) {
@@ -1161,6 +1200,22 @@ th, td {
 		overflow: hidden;
 		margin: auto;
 	}
+    .header-title-container{
+        background: none;
+        border-radius: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        box-shadow: none!important;
+    }
+    .header-title-container h1{
+        font-size: 28px;
+        line-height: 28px;
+    }
+    .header-title-container h2{
+        font-size: 20px;
+        line-height: 20px;
+    }
+
     #header {
         background-image:none;
 		background-color:var(--grey);
@@ -1188,10 +1243,10 @@ th, td {
 	}
 	
 	.full-height{
-		-webkit-box-shadow: none;
-		-o-box-shadow: none;
-		-moz-box-shadow: none;
-		box-shadow: none;
+		-webkit-box-shadow: none!important;
+		-o-box-shadow: none!important;
+		-moz-box-shadow: none!important;
+		box-shadow: none!important;
 	}
 	
 	.about_tabs_main{
@@ -1204,17 +1259,61 @@ th, td {
 		border-radius:10px;
 		border-right:solid 1px #666;
 	}
-	
+	#header-sapou {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 	#header-buttons .button-white{
-		width:100%;
+		width: 100%;
+        margin: 5px 0px;        
 	}
 	.full-height{
-		padding:40px 0px;
+		padding:50px 0px;
 	}
+    .full-height-content {
+        padding: 10px 0px;
+    }
+
+    .button-white{
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .about_content_box h4{
+        padding: 0px 0px 5px 0px;
+    }
 }
 @media (max-width: 480px) {
     .logo {
         width: 70px;
+    }
+    .mycv_container{
+        width: 58px;
+        top: 50px;
+    }
+    .mytutorials_container {
+        width: 58px;
+        top: 100px;
+    }
+    .mycv_container.closed, .mytutorials_container.closed{
+        right:-40px;
+    }
+    .mycv, .mytutorials {
+        width: 40px;
+        height: 45px;
+        font-size: 12px;
+        line-height: 18px;
+        padding: 5px;
+    }
+    .mycv i{
+        font-size: 16px;
+        line-height: 18px;
+        padding: 0px;
+    }
+    .mytutorials i{
+        font-size: 20px;
+        line-height: 35px;
+        padding: 0px;
     }
 }
 @media (max-width: 321px) {	
@@ -1297,10 +1396,6 @@ th, td {
 
     .nav-left li:last-child, .nav-right li:last-child {
         border-right: none;
-    }
-
-    .logo {
-        width: 120px;
     }
     
 	.dropdown.open  .mydropdown-content{

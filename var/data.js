@@ -30,8 +30,8 @@ module.exports = Object.freeze({
         {name: "Photoshop", value: "30", type: "other"},
     ],
     LANGUAGES: [
-        {name: "English", name: "english", level: "advanced", perc: 90},
-        {name: "German", name: "german", level: "beginner", perc: 20},
+        {name: "English", name: "english", level: "B2", perc: 90},
+        {name: "German", name: "german", level: "A2", perc: 20},
         // {name: "French", name: "french", level: "beginner", perc: 20},
         {name: "Romania", name: "romanian", level: "native", perc: 100},
     ],

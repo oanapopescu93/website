@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Modal} from "react-bootstrap";
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import $ from 'jquery'; 
 
 class Tutorial extends Component {
 	constructor(props) {
@@ -11,6 +12,7 @@ class Tutorial extends Component {
             tutorials: props.tutorials,
 		};
 		this.handle_click = this.handle_click.bind(this);
+		this.handle_slide = this.handle_slide.bind(this);
 	}
 	
 	openModal_tutorials = () => this.setState({ isOpen_tutorials: true });
@@ -19,15 +21,20 @@ class Tutorial extends Component {
     handle_click(){
         this.openModal_tutorials();
     }
+	handle_slide(){
+        if($('.mytutorials_container')){
+            $('.mytutorials_container').toggleClass('closed');
+        }
+    }
 
 	render() {
         return (
             <>
                 <div className="mytutorials_container">
-                    <div className="mytutorials_close">
+                    <div className="mytutorials_close shadow_convex" onClick={()=>{this.handle_slide()}}>
                         <i className="fa fa-times"></i>
                     </div>
-                    <div id="mytutorials" className="mytutorials" onClick={()=>{this.handle_click()}}>
+                    <div id="mytutorials" className="mytutorials shadow_convex" onClick={()=>{this.handle_click()}}>
                         <i className="fa fa-book" data-toggle="tooltip" data-placement="left" title="" data-original-title="My tutorials"></i>
                     </div>
                 </div>

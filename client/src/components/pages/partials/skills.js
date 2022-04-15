@@ -161,7 +161,7 @@ class Skills extends Component {
 													let width = {'width': item.perc+"%"}
 													return (
 														<div key={i}>
-															<p>{capitalizeFirstLetter(item.name)}</p>
+															<p className="language_bar_title">{capitalizeFirstLetter(item.name)}<span>({item.level})</span></p>
 															<div className="language_bar_box">
 																<div style={width} className={"language_bar " + item.name}>{item.perc}%</div>
 															</div>

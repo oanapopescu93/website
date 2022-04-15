@@ -5,8 +5,8 @@ import Col from 'react-bootstrap/Col'
 import Skills from './partials/skills';
 import Experience from './partials/experience';
 import Education from './partials/education';
-import $ from 'jquery'; 
 import { scroll_anywhere } from './utils';
+import $ from 'jquery'; 
 
 var self;
 class About extends Component {
