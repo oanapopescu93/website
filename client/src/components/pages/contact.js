@@ -119,42 +119,42 @@ class Contact extends Component {
 								<Row>
 									<Col sm={6}>
 										<label htmlFor="first_name">First Name</label>
-										<input id="contact_first_name" className="form-control" type="text" name="first_name"></input>
+										<input id="contact_first_name" className="form-control shadow_concav" type="text" name="first_name"></input>
 									</Col>
 									<Col sm={6}>
 										<label htmlFor="last_name">Last Name</label>
-										<input id="contact_last_name" className="form-control" type="text" name="last_name"></input>
+										<input id="contact_last_name" className="form-control shadow_concav" type="text" name="last_name"></input>
 									</Col>
 								</Row>
 								<Row>
 									<Col sm={12}>
 										<label htmlFor="email">Email Address *</label>
-										<input id="contact_email" className="form-control" type="text" name="email"></input>
+										<input id="contact_email" className="form-control shadow_concav" type="text" name="email"></input>
 										<p className="contact_error text-red" id="contact_email_error">Please provide an email.</p>
 									</Col>
 								</Row>
 								<Row>
 									<Col sm={12}>
 										<label htmlFor="telephone">Telephone Number</label>
-										<input id="contact_telephone" className="form-control" type="text" name="telephone"></input>
+										<input id="contact_telephone" className="form-control shadow_concav" type="text" name="telephone"></input>
 									</Col>
 								</Row>
 								<Row>
 									<Col sm={12}>
 										<label htmlFor="message">Title</label>
-										<input id="contact_title" className="form-control" type="text" name="title"></input>
+										<input id="contact_title" className="form-control shadow_concav" type="text" name="title"></input>
 									</Col>
 								</Row>
 								<Row>
 									<Col sm={12}>
 										<label htmlFor="message">Message *</label>
-										<textarea id="contact_message" className="form-control" name="message" cols="25" rows="6"></textarea>
+										<textarea id="contact_message" className="form-control shadow_concav" name="message" cols="25" rows="6"></textarea>
 										<p className="contact_error text-red" id="contact_message_error">Please provide a message.</p>
 									</Col>
 								</Row>
 								<Row>
 									<Col sm={12}>
-										<Button onClick={()=>{this.send_form()}} className="button-white" name="send" type="button">Send</Button>
+										<Button onClick={()=>{this.send_form()}} className="button-white shadow_convex" name="send" type="button">Send</Button>
 									</Col>
 								</Row>
 							</Form>

@@ -3,8 +3,6 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import '../css/style.css';
-import logo_icon from '../img/logo-bear.png';
-import logo_icon_blue from '../img/logo-bear-blue.png';
 import logo_icon_white from '../img/logo-bear-white.png';
 import Parser from 'react-html-parser';
 import { scroll_anywhere } from './utils';

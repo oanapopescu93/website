@@ -50,22 +50,22 @@ class About extends Component {
 					<Col id="about_tabs_main" className="about_tabs_main" xs={12} sm={4} md={4} lg={2}>
 						<div id="about_tabs_0" className="about_tabs open">
 							<div id="skills" className="about_tabs_header">
-								<h3 className="about_tabs_title text-uppercase grey666">skills</h3>
+								<h3 className="about_tabs_title text-uppercase grey666 shadow_convex">skills</h3>
 							</div>
 						</div>
 						<div id="about_tabs_1" className="about_tabs">
 							<div id="experience" className="about_tabs_header">
-								<h3 className="about_tabs_title text-uppercase grey666">experience</h3>
+								<h3 className="about_tabs_title text-uppercase grey666 shadow_convex">experience</h3>
 							</div>
 						</div>
 						<div id="about_tabs_2" className="about_tabs">
 							<div id="education" className="about_tabs_header">
-								<h3 className="about_tabs_title text-uppercase grey666">education</h3>
+								<h3 className="about_tabs_title text-uppercase grey666 shadow_convex">education</h3>
 							</div>
 						</div>
 					</Col>
 					<Col id="about_content_main" className="about_content_main" xs={12} sm={8} md={8} lg={10}>
-						<div id="about_content_box" className="about_content_box">									
+						<div id="about_content_box" className="about_content_box shadow_concav">									
 							{(() => {
 								switch (self.state.visible) {
 									case "skills":
@@ -92,7 +92,7 @@ class About extends Component {
 				<Row>
 					<Col xs={12} sm={4} md={4} lg={2}></Col>
 					<Col id="go_portofolio" className="about_content_main" xs={12} sm={8} md={8} lg={10}>
-						<a href="#portofolio" className="button-white text-black text-uppercase scroll-button" onClick={(e)=>{scroll_anywhere(e)}}>See my projects</a>
+						<a href="#portofolio" className="button-white text-black text-uppercase scroll-button shadow_convex" onClick={(e)=>{scroll_anywhere(e)}}>See my projects</a>
 					</Col>
 				</Row>
 			</Container>

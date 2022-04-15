@@ -221,9 +221,9 @@ hr {
 }
 
 textarea.shadow_concav, input.shadow_concav, .button_yellow.shadow_concav, .shadow_concav{
-	-moz-box-shadow:    inset 2px 2px 5px rgba(0,0,0,0.5)!important;
-   	-webkit-box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5)!important;
-   	box-shadow:         inset 2px 2px 5px rgba(0,0,0,0.5)!important;
+	-moz-box-shadow:    inset 1px 1px 2px rgba(0,0,0,0.5)!important;
+   	-webkit-box-shadow: inset 1px 1px 2px rgba(0,0,0,0.5)!important;
+   	box-shadow:         inset 1px 1px 2px rgba(0,0,0,0.5)!important;
 }
 textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .button_table.shadow_convex, .shadow_convex{
 	-moz-box-shadow:    2px 2px 5px rgba(0,0,0,0.5)!important;
@@ -466,7 +466,8 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
 .about_tabs_title{
 	background-color: transparent;
     border: solid 1px var(--grey666);
-	border-right: solid 0px transparent;
+	border-right: solid 2px var(--grey666);
+    color:var(--grey666);
     border-radius: 10px 0px 0px 10px;
     padding: 5px 10px;
 	margin-bottom:5px;
@@ -474,12 +475,18 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
 	font-size:20px;
 	line-height:20px;
 }
+.about_tabs_title:hover{
+    color:var(--blue);
+	border-color:var(--blue);
+}
 
 .about_content_main{	
 	padding-left:0px;
 }
 .about_content_box{
+    background-color: var(--grey);
 	border:solid 1px var(--grey666);
+    border-radius: 0px 5px 5px 5px;
 	padding:10px 20px;
 	height:630px;
 	overflow-y: auto;
