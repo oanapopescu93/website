@@ -166,12 +166,6 @@ hr {
     margin-bottom: 20px;
 }
 
-.full-height,
-.full-height-title,
-.full-height-content{
-    display: block!important;
-}
-
 .full-height {
     position: relative;
     display: table;
@@ -1195,6 +1189,11 @@ th, td {
 	}
 }
 @media (max-width: 767px) {
+    .full-height,
+    .full-height-title,
+    .full-height-content{
+        display: block!important;
+    }
 	.portofolio-container{
 		width:300px;
 		overflow: hidden;

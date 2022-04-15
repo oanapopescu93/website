@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.96869c79.chunk.css",
+    "main.css": "/static/css/main.31ad26ce.chunk.css",
     "main.js": "/static/js/main.3a91e969.chunk.js",
     "main.js.map": "/static/js/main.3a91e969.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.83c3e0c4.js",
@@ -9,10 +9,10 @@
     "static/js/2.9a0fb1f0.chunk.js": "/static/js/2.9a0fb1f0.chunk.js",
     "static/js/2.9a0fb1f0.chunk.js.map": "/static/js/2.9a0fb1f0.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.f56d59c5e0982a07ba2c43457fdd7643.js": "/precache-manifest.f56d59c5e0982a07ba2c43457fdd7643.js",
+    "precache-manifest.9127b4ba98048392d9165f6a27aeb582.js": "/precache-manifest.9127b4ba98048392d9165f6a27aeb582.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.e47182b0.chunk.css.map": "/static/css/2.e47182b0.chunk.css.map",
-    "static/css/main.96869c79.chunk.css.map": "/static/css/main.96869c79.chunk.css.map",
+    "static/css/main.31ad26ce.chunk.css.map": "/static/css/main.31ad26ce.chunk.css.map",
     "static/js/2.9a0fb1f0.chunk.js.LICENSE.txt": "/static/js/2.9a0fb1f0.chunk.js.LICENSE.txt",
     "static/media/CV - Oana Popescu.pdf": "/static/media/CV - Oana Popescu.251eb545.pdf",
     "static/media/CV - Oana Popescu.doc": "/static/media/CV - Oana Popescu.eb1e2e9f.doc",
@@ -25,7 +25,7 @@
     "static/js/runtime-main.83c3e0c4.js",
     "static/css/2.e47182b0.chunk.css",
     "static/js/2.9a0fb1f0.chunk.js",
-    "static/css/main.96869c79.chunk.css",
+    "static/css/main.31ad26ce.chunk.css",
     "static/js/main.3a91e969.chunk.js"
   ]
 }
