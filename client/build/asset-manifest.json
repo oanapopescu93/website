@@ -1,29 +1,30 @@
 {
   "files": {
-    "main.css": "/static/css/main.445275eb.chunk.css",
-    "main.js": "/static/js/main.99f9f5e4.chunk.js",
-    "main.js.map": "/static/js/main.99f9f5e4.chunk.js.map",
+    "main.css": "/static/css/main.c1c7450f.chunk.css",
+    "main.js": "/static/js/main.b67edbca.chunk.js",
+    "main.js.map": "/static/js/main.b67edbca.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.83c3e0c4.js",
     "runtime-main.js.map": "/static/js/runtime-main.83c3e0c4.js.map",
     "static/css/2.e47182b0.chunk.css": "/static/css/2.e47182b0.chunk.css",
-    "static/js/2.db334e44.chunk.js": "/static/js/2.db334e44.chunk.js",
-    "static/js/2.db334e44.chunk.js.map": "/static/js/2.db334e44.chunk.js.map",
+    "static/js/2.0270cac9.chunk.js": "/static/js/2.0270cac9.chunk.js",
+    "static/js/2.0270cac9.chunk.js.map": "/static/js/2.0270cac9.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.63b0f91c9bbd852f047a19038968b0dc.js": "/precache-manifest.63b0f91c9bbd852f047a19038968b0dc.js",
+    "precache-manifest.e9f7623f6ed4308fd3dc759a65b40de1.js": "/precache-manifest.e9f7623f6ed4308fd3dc759a65b40de1.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.e47182b0.chunk.css.map": "/static/css/2.e47182b0.chunk.css.map",
-    "static/css/main.445275eb.chunk.css.map": "/static/css/main.445275eb.chunk.css.map",
-    "static/js/2.db334e44.chunk.js.LICENSE.txt": "/static/js/2.db334e44.chunk.js.LICENSE.txt",
+    "static/css/main.c1c7450f.chunk.css.map": "/static/css/main.c1c7450f.chunk.css.map",
+    "static/js/2.0270cac9.chunk.js.LICENSE.txt": "/static/js/2.0270cac9.chunk.js.LICENSE.txt",
     "static/media/CV - Oana Popescu.pdf": "/static/media/CV - Oana Popescu.251eb545.pdf",
     "static/media/CV - Oana Popescu.doc": "/static/media/CV - Oana Popescu.eb1e2e9f.doc",
     "static/media/style.css": "/static/media/bg-desk.768ded36.jpg",
-    "static/media/logo-bear-white.png": "/static/media/logo-bear-white.480e867a.png"
+    "static/media/logo-bear-white.png": "/static/media/logo-bear-white.480e867a.png",
+    "static/media/ukraine.svg": "/static/media/ukraine.4b7a1deb.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.83c3e0c4.js",
     "static/css/2.e47182b0.chunk.css",
-    "static/js/2.db334e44.chunk.js",
-    "static/css/main.445275eb.chunk.css",
-    "static/js/main.99f9f5e4.chunk.js"
+    "static/js/2.0270cac9.chunk.js",
+    "static/css/main.c1c7450f.chunk.css",
+    "static/js/main.b67edbca.chunk.js"
   ]
 }
