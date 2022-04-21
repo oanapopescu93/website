@@ -1337,7 +1337,7 @@ th, td {
 		line-height: 18px;
 	}
 	.portofolio-list li{
-		width:100%;
+		width:100%; 
         line-height: 14px;
 	}
 	.portofolio-list li.active{
