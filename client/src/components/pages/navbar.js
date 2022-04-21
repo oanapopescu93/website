@@ -3,6 +3,7 @@ import $ from 'jquery';
 import Container from 'react-bootstrap/Container'
 import '../css/style.css';
 import { scroll_anywhere } from './utils';
+import ukraine from '../img/ukraine.svg'
 
 class Navbar extends Component {
 	componentDidMount(){
@@ -47,6 +48,9 @@ class Navbar extends Component {
 									<a href="https://github.com/oanapopescu93" rel="noopener noreferrer" target="_blank">
 										<span className="fa fa-github"></span>
 									</a>
+								</li>
+								<li>
+									<img id="ukraine_icon" alt="ukraine_icon" src={ukraine} style={{"width":"20px"}}/>
 								</li>
 							</ul>
                         </div>

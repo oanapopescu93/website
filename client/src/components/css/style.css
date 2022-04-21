@@ -19,7 +19,7 @@ body, #root, .App  {
     min-height: 100% !important;
     height: 100%;
     font-family: arial;
-    color: var(--black);
+    color: var(--grey333);
     position: relative;
     font-size: 14px;    
 }
@@ -33,12 +33,18 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, address {
 h1 {
     font-size: 32px;
     line-height: 32px;
-    font-family: impact;
+    /* font-family: impact; */
+    font-family: courier new;
+    font-weight: bold;
+    letter-spacing: -2px;
 }
 h2 {
     font-size: 28px;
     line-height: 28px;
-    font-family: impact;
+    /* font-family: impact; */
+    font-family: courier new;
+    font-weight: bold;
+    letter-spacing: -2px;
 }
 h3 {
     font-size: 20px;
@@ -150,9 +156,9 @@ hr {
     display:inline-block;
     vertical-align: top;
     background-color: transparent;
-    border: solid 1px var(--black);
+    border: solid 1px var(--grey333);
     border-radius: 10px;
-    color: var(--black);
+    color: var(--grey333);
     padding: 10px 20px;
     margin: 5px;
     font-weight: bold;
@@ -181,7 +187,7 @@ hr {
 .full-height hr {
     margin: 5px 0px;
     border: 0;
-    border-top: 1px solid var(--black);
+    border-top: 1px solid var(--grey333);
     -mox-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -194,7 +200,7 @@ hr {
 }
 
 .full-height a, .full-height a:hover, .full-height a:focus {
-    color: var(--black);
+    color: var(--grey333);
 }
 
 .full-height .text-muted {
@@ -217,7 +223,7 @@ hr {
 
 .line {
     border: 0;
-    border-top: 1px solid var(--black);    
+    border-top: 1px solid var(--grey333);    
 }
 
 textarea.shadow_concav, input.shadow_concav, .button_yellow.shadow_concav, .shadow_concav{
@@ -440,7 +446,7 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
 
 .scroll {
     position: absolute;
-    bottom: 25px;
+    bottom: 0px;
     left: 0px;
     right: 0px;
     text-align: center;
@@ -1332,6 +1338,7 @@ th, td {
 	}
 	.portofolio-list li{
 		width:100%;
+        line-height: 14px;
 	}
 	.portofolio-list li.active{
 		border-bottom:solid 0px transparent;
@@ -1340,6 +1347,9 @@ th, td {
 }
 
 @media (min-width: 768px) {
+    .scroll{
+        bottom: 25px
+    }
     body {
         font-size: 16px;
     }

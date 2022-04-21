@@ -25,8 +25,8 @@ class Header extends Component {
 							<Col id="header-title" sm={12}>
 								<a href="/">
 									<img className="logo" alt="logo_icon" src={logo_icon_white} />
-									<h1 className="text-uppercase blacktext">{this.state.title}</h1>
-									<h2 className="text-uppercase color_text_blue text-stroke-black">{this.state.subtitle}</h2>
+									<h1 className="text-uppercase">{this.state.title}</h1>
+									<h2 className="text-uppercase color_text_blue">{this.state.subtitle}</h2>
 								</a>
 							</Col>
 						</Row>

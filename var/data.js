@@ -14,7 +14,7 @@ module.exports = Object.freeze({
     ],
     HEADER_INFO: [
         "Oana Popescu", 
-        "Frontend / Javascript developer", 
+        "Frontend/Javascript developer", 
         "My passion is to create <b>websites</b>, <b>web applications</b>, and <b>games</b>.<br>I work with <b>Javascript</b>, <b>ReactJS</b> and <b>NodeJS</b>."
     ],
     SKILLS_TITLE: ['frontend', 'backend', 'other'],
@@ -39,7 +39,7 @@ module.exports = Object.freeze({
         {
             school_name: "Self-taught programming", 
             period: "2017 - present", 
-            description: "I learnt Javascript, NodeJs, React, HTML Canvas (now I'm learning SQL)"
+            description: "I learnt Javascript, NodeJS, ReactJS, HTML Canvas (now I'm learning MySQL)"
         },
         {
             school_name: "Academy of Economic Studies", 
