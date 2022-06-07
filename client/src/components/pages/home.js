@@ -1,35 +1,68 @@
 import React, { Component } from 'react';
-import Navbar from './navbar'
-import Cv from './partials/cv';
-import Footer from './partials/footer';
-import Top from './partials/top';
-import Tutorial from './partials/tutorial';
-import Section from './section';
+import HomePage from './HomePage';
+import Login from './Login';
+import { getCookie, setCookie } from './utils';
+import Splash from './partials/splash_screen';
 
 class Home extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			data: props.data,
-			socket: props.socket
+			socket: props.socket,
+			login_visitor:getCookie('login_visitor'),
 		};
+		this.handleChoice = this.handleChoice.bind(this);
+		this.getData = this.getData.bind(this);
+	}
+	handleChoice(x){
+		let self = this;
+		self.getData(x).then(function(res){
+			self.setState({ data: res });
+			self.setState({ login_visitor: res.login_visitor });
+			setCookie("login_visitor", res.login_visitor, 1);
+		})
+	}
+	getData(x){
+		let self = this;
+		return new Promise(function(resolve, reject){
+			self.state.socket.emit('info_send', x);
+			self.state.socket.on('info_read', function(data){				
+				resolve(data);	
+			});
+		});	
+	};
+	componentDidMount(){
+		let self = this;
+		let login_visitor = getCookie('login_visitor');
+		if(login_visitor === "true"||login_visitor === "false"){
+			self.getData({login_visitor: login_visitor, reason: "refresh"}).then(function(res){
+				self.setState({ data: res });
+			})
+		}
 	}
 	render() {
+		let self = this;
+		let login_visitor = this.state.login_visitor;
 		return (
-			<>	
-				<Navbar></Navbar>
-
-				<Section template="header" data={this.state.data.header} socket={this.state.socket}></Section>
-				<Section template="about" data={this.state.data.about} socket={this.state.socket}></Section>
-				<Section template="portofolio" data={this.state.data.portofolio} socket={this.state.socket}></Section>
-				<Section template="contact" data={this.state.data.contact} socket={this.state.socket}></Section>
-				
-				<Cv></Cv>
-				<Tutorial tutorials={this.state.data.portofolio.tutorials}></Tutorial>
-
-				<Top></Top>
-				
-				<Footer></Footer>
+			<>
+				{(() => {					
+					if(login_visitor !== ""){						
+						if(self.state.data && Object.keys(self.state.data).length !== 0){
+							return (
+								<HomePage socket={self.state.socket} data={self.state.data}></HomePage>
+							);
+						} else {
+							return (
+								<Splash></Splash>
+							);							
+						}
+					} else {
+						return (
+							<Login choice={(e)=>this.handleChoice(e)} socket={this.state.socket}></Login>
+						);
+					}	
+				})()}
 			</>
 		);
 	}

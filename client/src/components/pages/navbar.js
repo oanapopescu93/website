@@ -16,6 +16,7 @@ class Navbar extends Component {
     }
 
 	render() {
+		let login_visitor = this.props.login_visitor;
         return (
             <div id = "mynavbar" className="mynavbar">
                 <Container>		
@@ -38,7 +39,11 @@ class Navbar extends Component {
 								<li><a href="#contact" className="scroll-button" onClick={(e)=>{scroll_anywhere(e)}}>Contact</a></li>
 							</ul>
                             <ul className="nav-right hidden-xs" style={{"marginRight":"0px"}}>
-								<li><a href="tel:+40729699148" target="_top"><span>0729.699.148</span></a></li>
+								{!login_visitor ? <li>
+									<a href="tel:+40729699148" target="_top">
+										<span>0729.699.148</span>
+									</a>
+								</li> : null}								
 								<li>
 									<a href="https://www.linkedin.com/in/oanapopescu93/" rel="noopener noreferrer" target="_blank">
 										<span className="fa fa-linkedin"></span>
@@ -50,7 +55,9 @@ class Navbar extends Component {
 									</a>
 								</li>
 								<li>
-									<img id="ukraine_icon" alt="ukraine_icon" src={ukraine} style={{"width":"20px"}}/>
+									<a href="https://www.facebook.com/fundraisers/explore/search/charities/?query=ukraine" rel="noopener noreferrer" target="_blank">
+										<img id="ukraine_icon" alt="ukraine_icon" src={ukraine} style={{"width":"20px"}}/>
+									</a>									
 								</li>
 							</ul>
                         </div>

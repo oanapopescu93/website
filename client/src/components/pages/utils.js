@@ -21,20 +21,42 @@ export const scroll_anywhere = function(e){
 }
 
 export const showResults = function(title="", message="", w=200, h="auto") {
-    if($('.show_results_container').length>0){
-      $('.show_results_container').show();
-      $('.show_results').css('max-width', w);
-      $('.show_results').css('height', h);
-      if($('.show_results h1').length>0){
-        $('.show_results h1').empty();
-        $('.show_results h1').append(title);
-      }  
-      if($('.show_results p').length>0){
-        $('.show_results p').empty();
-        $('.show_results p').append(message);
-      }    
-      $( ".show_results_container" ).click(function() {
-        $('.show_results_container').hide();
-      });
-    }	
+  if($('.show_results_container').length>0){
+    $('.show_results_container').show();
+    $('.show_results').css('max-width', w);
+    $('.show_results').css('height', h);
+    if($('.show_results h1').length>0){
+      $('.show_results h1').empty();
+      $('.show_results h1').append(title);
+    }  
+    if($('.show_results p').length>0){
+      $('.show_results p').empty();
+      $('.show_results p').append(message);
+    }    
+    $( ".show_results_container" ).click(function() {
+      $('.show_results_container').hide();
+    });
   }
+}
+
+export const setCookie = function (cname,cvalue,exdays=30) {
+  let d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+export const getCookie = function (cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) === ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) === 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}

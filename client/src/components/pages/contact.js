@@ -10,6 +10,7 @@ import { showResults } from './utils';
 function Child(props){
 	let contact = [];
 	let social = [];
+	let login_visitor = props.login_visitor;
 	if(props.data[0]){
 		contact = props.data[0];
 	}
@@ -20,10 +21,18 @@ function Child(props){
 		<div className={props.div_class + " text-left"}>
 			<ul>
 				{
-					contact.map(function(item, i){						
-						return (
-							<li key={i}><i className={item.icon}></i><a href={item.link}>{item.text}</a></li>
-						)
+					contact.map(function(item, i){
+						if(!(login_visitor === "true" && item.icon === "fa fa-phone")){
+							if(item.link){
+								return (
+									<li key={i}><i className={item.icon}></i><a href={item.link}>{item.text}</a></li>
+								)
+							} else {
+								return (
+									<li key={i}><i className={item.icon}></i><span>{item.text}</span></li>
+								)
+							}
+						}
 					})
 				}
 			</ul>
@@ -108,11 +117,12 @@ class Contact extends Component {
 	}
 
 	render() {
+		let login_visitor = this.props.login_visitor;
 		return (
 			<Container>
 					<Row>
 						<Col sm={6} className="visible-xs-block">
-							<Child div_class="contact-page-mobile" data={this.state.data}></Child>
+							<Child div_class="contact-page-mobile" login_visitor={login_visitor} data={this.state.data}></Child>
 						</Col>
 						<Col sm={6} className="box-contact-form">
 							<Form>
@@ -167,7 +177,7 @@ class Contact extends Component {
 									</div>
 								</div>
 								<div className="contact_front">
-									<Child div_class="contact-info" data={this.state.data}></Child>
+									<Child div_class="contact-info" login_visitor={login_visitor} data={this.state.data}></Child>
 									<div className="corner corner-1"></div>
 									<div className="corner corner-2"></div>
 									<div className="corner corner-3"></div>

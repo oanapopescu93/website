@@ -15,6 +15,7 @@ class Section extends Component {
 		};
 	}
 	render() {
+        let login_visitor = this.props.login_visitor;
 		return (
 			<div id={this.props.template} className="full-height">
 				<div className="full-height-title">
@@ -25,19 +26,19 @@ class Section extends Component {
                         switch (this.props.template) {
                             case "about":
                                 return (
-                                    <About socket={this.state.socket} data={this.state.data}></About>
+                                    <About login_visitor={login_visitor} socket={this.state.socket} data={this.state.data}></About>
                                 );
                             case "portofolio":
                                 return (
-                                    <Portofolio socket={this.state.socket} data={this.state.data}></Portofolio>
+                                    <Portofolio login_visitor={login_visitor} socket={this.state.socket} data={this.state.data}></Portofolio>
                                 );
                             case "contact":
                                 return (
-                                    <Contact socket={this.state.socket} data={this.state.data}></Contact>
+                                    <Contact login_visitor={login_visitor} socket={this.state.socket} data={this.state.data}></Contact>
                                 );
                             default:
                                 return (
-                                    <Header socket={this.state.socket} data={this.state.data}></Header>
+                                    <Header login_visitor={login_visitor} socket={this.state.socket} data={this.state.data}></Header>
                                 );
                         }
                     })()}

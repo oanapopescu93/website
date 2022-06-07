@@ -2,10 +2,12 @@ module.exports = Object.freeze({
     AUTH_USER: "09f009efe7b9ae",
     AUTH_PASS: "cd1233a2d8d6a7",
     AUTH_FROM: "oanapopescu93@gmail.com",
+    LOGIN_PASSWORD: "Qazwsxedc123rfv123!",
     CONTACT: [
         [
             {link: "tel:+40729699148", icon: "fa fa-phone", text: "0729.699.148"},
             {link: "mailto:oanapopescu93@gmail.com", icon: "fa fa-envelope", text: "oanapopescu93@gmail.com"},
+            {icon: "fa fa-map-marker", text: "Romania, Bucharest"},
         ],
         [
             {link: "https://www.linkedin.com/in/oanapopescu93/", icon: "fa fa-linkedin"},
@@ -23,10 +25,10 @@ module.exports = Object.freeze({
         {name: "JavaScript / Jquery", value: "90", type: "frontend"},
         {name: "React / Redux", value: "80", type: "frontend"},
         {name: "NodeJs / Express", value: "50", type: "backend"},
-        {name: "SQL", value: "30", type: "backend"},
-        {name: "Version control", value: "50", type: "other"},	
+        {name: "MySQL", value: "30", type: "backend"},
+        {name: "Version control GIT", value: "50", type: "other"},	
         {name: "HTML Canvas", value: "80", type: "frontend"},	
-        {name: "Wordpress / Magento", value: "50", type: "frontend"},
+        {name: "Wordpress / Magento", value: "30", type: "frontend"},
         {name: "Photoshop", value: "30", type: "other"},
     ],
     LANGUAGES: [
@@ -123,6 +125,7 @@ module.exports = Object.freeze({
             job_description: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop", 
             platform_used: "Wordpress, Magento",
             projects: [
+                {project_name: "Clubul sportiv RealGym", project_link: "portofolio"},
                 {project_name: "Noblisime", project_link: "portofolio"},
                 {project_name: "Exclusive doors", project_link: "portofolio"},
                 {project_name: "Credimag", project_link: "portofolio"},
@@ -172,7 +175,7 @@ module.exports = Object.freeze({
             },			
             {
                 title: "Space Invaders", 
-                link: "personal/space_invaders/index.html", 							
+                link: "personal/space_invader/index.html", 							
                 src: "img/pics/game_icon.png", 
                 used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, Canvas", 
                 git: "https://github.com/oanapopescu93/space_invader",
@@ -181,7 +184,7 @@ module.exports = Object.freeze({
             },
             {
                 title: "Irregular verbs quiz game", 
-                link: "personal/verbs/index.html", 							
+                link: "personal/irregular_verbs/index.html", 							
                 src: "img/pics/game-quiz.png", 
                 used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery", 
                 git: "https://github.com/oanapopescu93/irregular_verbs",
@@ -244,6 +247,15 @@ module.exports = Object.freeze({
                 img_title: "salomon",
             },
             {
+                title: "Clubul sportiv RealGym",
+                link: "http://clubulsportivrealgym.ro",
+                src: "img/pics/realgym.png",
+                used: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop, PHP",
+                platform: "Wordpress",
+                img_alt: "clubul sportiv realgym karate kickbox",
+                img_title: "clubul sportiv realgym karate kickbox",
+            },
+            {
                 title: "Noblisime",
                 link: "https://noblisime.ro",
                 src: "img/pics/noblisime.jpg",
@@ -251,25 +263,7 @@ module.exports = Object.freeze({
                 platform: "Magento",
                 img_alt: "noblisime",
                 img_title: "noblisime",
-            },
-            {
-                title: "City Grill",
-                link: "https://citygrill.ro/ro",
-                src: "img/pics/citygrill.png",
-                used: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop",
-                platform: "October CMS",
-                img_alt: "city grill",
-                img_title: "city grill",
-            },
-            {
-                title: "Clubul sportiv RealGym",
-                link: "http://clubulsportivrealgym.ro",
-                src: "img/pics/realgym.png",
-                used: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop",
-                platform: "Wordpress",
-                img_alt: "clubul sportiv realgym karate kickbox",
-                img_title: "clubul sportiv realgym karate kickbox",
-            },
+            },                       
             {
                 title: "Konart",
                 link: "http://www.kon-art.ro",
@@ -292,13 +286,22 @@ module.exports = Object.freeze({
         ],
         [
             {
-                title: "Pizza Hut Delivery (De ce Pizza Hut)",
+                title: "Pizza Hut Delivery",
                 link: "https://www.pizzahutdelivery.ro/ro",
                 src: "img/pics/PHD01.jpg",
                 used: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop",
                 img_alt: "pizza hut delivery",
                 img_title: "pizza hut delivery",
             },
+            {
+                title: "City Grill",
+                link: "https://citygrill.ro/ro",
+                src: "img/pics/citygrill.png",
+                used: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop",
+                platform: "October CMS",
+                img_alt: "city grill",
+                img_title: "city grill",
+            }, 
             {
                 title: "Ape Rider",
                 link: "http://aperider.com/",
@@ -314,73 +317,85 @@ module.exports = Object.freeze({
             name: "Javascript promises",
             description: "Understand and use promises in javascript",
             used: ["javascript", "jquery"],
-            link: "https://github.com/oanapopescu93/tutorial_javascript_promises"
+            link: "https://github.com/oanapopescu93/tutorial_javascript_promises",
+            type: "javascript",
         },
         {
             name: "React crud",
             description: "react app for managing books",
             used: ["javascript", "jquery", "react", "redux"],
-            link: "https://github.com/oanapopescu93/tutorial_react_crud"
+            link: "https://github.com/oanapopescu93/tutorial_react_crud",
+            type: "react",
         },
         {
             name: "React print pdf",
             description: "React app to print a pdf",
             used: ["javascript", "react", "jquery"],
-            link: "https://github.com/oanapopescu93/tutorial_react_print_pdf"
+            link: "https://github.com/oanapopescu93/tutorial_react_print_pdf",
+            type: "react",
         },
         {
             name: "React export pdf",
             description: "React app that exports text, images and svg",
             used: ["javascript", "react", "jquery"],
-            link: "https://github.com/oanapopescu93/react_export_pdf"
+            link: "https://github.com/oanapopescu93/react_export_pdf",
+            type: "react",
         },
         {
             name: "React module",
             description: "Tutorial react module",
             used: ["javascript", "react", "jquery"],
-            link: "https://github.com/oanapopescu93/tutorial_react_module"
+            link: "https://github.com/oanapopescu93/tutorial_react_module",
+            type: "react",
         },
         {
             name: "NodeJs App",
             description: "chat with socket.io, weather app, and tic-toc game",
             used: ["javascript", "jquery", "nodejs", "socket.io", "express"],
-            link: "https://github.com/oanapopescu93/nodeapp"
+            link: "https://github.com/oanapopescu93/nodeapp",
+            type: "node",
         },
         {
             name: "HTML Canvas graphics",
             description: "Graphics, pie charts and doughnuts tutorial",
             used: ["javascript", "jquery", "HTML Canvas"],
-            link: "https://github.com/oanapopescu93/pie_doughnut_chart"
+            link: "https://github.com/oanapopescu93/pie_doughnut_chart",
+            type: "javascript",
         },
         {
             name: "Game of life",
             description: "A tutorial on how to generate lanscape",
             used: ["javascript", "jquery", "HTML Canvas"],
-            link: "https://github.com/oanapopescu93/game_of_live_rpg"
+            link: "https://github.com/oanapopescu93/game_of_live_rpg",
+            type: "javascript",
         },
         {
             name: "Python basics",
             description: "python fundamentals and idiot proofing an app",
             used: ["arduino", "embeded C"],
-            link: "https://github.com/oanapopescu93/tutorial_python_basics"
+            link: "https://github.com/oanapopescu93/tutorial_python_basics",
+            type: "python",
         },
         {
             name: "weather_arduino",
             description: "python fundamentals and idiot proofing an app",
             used: ["arduino", "embeded C"],
-            link: "https://github.com/oanapopescu93/weather_arduino"
+            link: "https://github.com/oanapopescu93/weather_arduino",
+            type: "embedded c",
         },
         {
             name: "weather_api_arduino",
             description: "python fundamentals and idiot proofing an app",
             used: ["arduino", "embeded C"],
-            link: "https://github.com/oanapopescu93/weather_api_arduino"
+            link: "https://github.com/oanapopescu93/weather_api_arduino",
+            type: "embedded c",
         },
         {
             name: "arduino_date_time",
             description: "python fundamentals and idiot proofing an app",
             used: ["arduino", "embeded C"],
-            link: "https://github.com/oanapopescu93/arduino_date_time"
+            link: "https://github.com/oanapopescu93/arduino_date_time",
+            type: "embedded c",
         },
     ]
 })

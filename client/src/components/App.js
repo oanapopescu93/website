@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './css/style.css';
 import Home from './pages/home';
-import Splash from './pages/partials/splash_screen';
 
 import socketIOClient from "socket.io-client/dist/socket.io";
 const socket = socketIOClient("/");
@@ -27,43 +26,13 @@ var my_console = function(){
     return me;
 }();
 
-var self;
-class App extends Component {	
-	constructor(props) {
-		super(props);
-		self = this;
-		self.state = {
-			data: null,
-		};
-		self.getData = self.getData.bind(self);
-	}
-
-	componentDidMount() {
-		self.getData()
-		.then(res => {
-			setTimeout(function(){
-				self.setState({ data: res });
-			}, 1000);	
-		});
-	}
-
-	getData(){
-		return new Promise(function(resolve, reject){
-			socket.emit('info_send', 'info');
-			socket.on('info_read', function(data){
-				resolve(data);	
-			});
-		});	
-	};
-
+class App extends Component {
 	render() {
 		my_console.disable();	
 		return (
-			<div className="App">	
-				{ 
-					!self.state.data ? <Splash></Splash> : <Home socket={socket} data={self.state.data}></Home> 
-				}    			
-		  	</div>
+			<>
+				<Home socket={socket}></Home> 
+			</>
 		);
 	}
 }

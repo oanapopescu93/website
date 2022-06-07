@@ -10,6 +10,7 @@ var nodemailer = require('nodemailer');
 var data = require('./var/data');
 var routes = require("./router");
 
+var login_password = data.LOGIN_PASSWORD;
 var header = data.HEADER_INFO;
 var skills_title = data.SKILLS_TITLE;
 var skills = data.SKILLS ;
@@ -41,7 +42,17 @@ app.use(routes);
 
 io.on('connection', function(socket) {
     socket.on('info_send', function(data) {
-		io.emit('info_read', {
+        let login_visitor;
+        if(data.reason === "refresh" || data.login_visitor === "true"){
+            login_visitor = data.login_visitor;
+        } else {
+            if(login_password === data.login_password){
+                login_visitor = false;
+            } else {
+                login_visitor = true;
+            }
+        }
+        let payload = {
             header: header,
             about: {
                 skills_title: skills_title, 
@@ -57,7 +68,13 @@ io.on('connection', function(socket) {
                 tutorials: tutorials, 
             },
             contact: contact,
-        });
+            login_visitor: login_visitor,
+        };
+        try{
+            io.to(socket.id).emit('info_read', payload);
+        }catch(e){
+            console.log('[error]','info_read :', e);
+        }
 	});
     socket.on('contact_send', function(data) {
         mailOptions.from = data.email;

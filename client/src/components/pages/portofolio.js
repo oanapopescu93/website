@@ -18,12 +18,15 @@ class Portofolio extends Component {
 		super(props);
 		this.state = {
 			portofolio: props.data,
+			tutorials: props.data.tutorials,
 			isOpen_portofolio: false,
 			isOpen_tutorials: false
 		};
+		this.tutorial_header = ["all"];
 		this.portofolio_click = this.portofolio_click.bind(this);
 		this.portofolio_image_click = this.portofolio_image_click.bind(this);
 		this.portofolio_tutorials_click = this.portofolio_tutorials_click.bind(this);
+		this.handleTutorialClick = this.handleTutorialClick.bind(this);
 	}
 
 	openModal_portofolio = () => this.setState({ isOpen_portofolio: true });
@@ -81,7 +84,27 @@ class Portofolio extends Component {
 	}
 
 	componentDidMount() {
+		for(let i in this.state.portofolio.tutorials){
+			if(!this.tutorial_header.includes(this.state.portofolio.tutorials[i].type)){
+				this.tutorial_header.push(this.state.portofolio.tutorials[i].type)
+			}									
+		}
 		this.portofolio_image_click();
+	}
+
+	handleTutorialClick(type){	
+		switch (type) {
+			case "javascript":
+			case "react":
+			case "node":
+			case "python":
+			case "embedded c":
+				const my_tutorials = this.props.data.tutorials.filter((x) => x.type === type);
+				this.setState({ tutorials: my_tutorials });
+				break;
+			default:
+				this.setState({ tutorials: this.props.data.tutorials });
+		}
 	}
 
 	render() {
@@ -147,9 +170,24 @@ class Portofolio extends Component {
 						<Modal.Title>Tutorials</Modal.Title>
 					</Modal.Header>
 					<Modal.Body>
+						<div id="tutorial_header_container">
+							{(() => {
+								return(
+									<>
+										{
+											this.tutorial_header.map(function(item, i){
+												return (
+													<div key={i} onClick={()=>{self.handleTutorialClick(item)}}>{item}</div>
+												)
+											})
+										}
+									</>
+								)							
+							})()}
+						</div>
 						<div id="tutorial_box_container">
 							{(() => {
-								let tutorials = this.state.portofolio.tutorials;
+								let tutorials = this.state.tutorials;
 								if(typeof tutorials !== "undefined" && tutorials !== null){
 									if(tutorials.length>0){
 										return(
