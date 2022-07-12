@@ -32,6 +32,8 @@ function Child(props){
 									<li key={i}><i className={item.icon}></i><span>{item.text}</span></li>
 								)
 							}
+						} else {
+							return null; 
 						}
 					})
 				}

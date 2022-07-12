@@ -231,7 +231,7 @@ textarea.shadow_concav, input.shadow_concav, .button_yellow.shadow_concav, .shad
    	-webkit-box-shadow: inset 1px 1px 2px rgba(0,0,0,0.5)!important;
    	box-shadow:         inset 1px 1px 2px rgba(0,0,0,0.5)!important;
 }
-textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .button_table.shadow_convex, .shadow_convex{
+textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .button_table.shadow_convex, #login_form.shadow_convex, .shadow_convex{
 	-moz-box-shadow:    2px 2px 5px rgba(0,0,0,0.5)!important;
    	-webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.5)!important;
    	box-shadow:         2px 2px 5px rgba(0,0,0,0.5)!important;
@@ -243,6 +243,7 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
     background-color: var(--blue);
     color:var(--white);
     text-align: center;
+    border-radius: 10px;
 }
 #login_form h2{
     margin-bottom: 10px;
@@ -256,8 +257,8 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
     padding-left: 5px;
 }
 #login_form .form-control {
-    border: solid 1px var(--grey888);
-    color: var(--grey666);
+    border: solid 1px var(--blue);
+    color: var(--blue);
     border-radius: 10px;
     height: 35px;
     margin: 5px 0px;;
@@ -284,6 +285,44 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
     margin-top:10px;
 }
 
+
+/*---------------------checkmark---------------------*/
+
+.checkmark_box{
+    overflow: hidden;
+    display: inline-block;
+    height: 22px;
+    vertical-align: middle;
+}
+.checkmark {
+    display:inline-block;
+    width: 22px;
+    height:22px;
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+}
+.checkmark_stem {
+    position: absolute;
+    width: 5px;
+    height: 12px;
+    background-color: var(--blue);
+    left: 8px;
+    top: 5px;
+}
+.checkmark_kick {
+    position: absolute;
+    width: 8px;
+    height: 5px;
+    background-color: var(--blue);
+    left: 5px;
+    top: 15px;
+}
+.checkmark_text{
+    display: inline-block;
+    line-height: 22px;
+    vertical-align: middle;
+}
 
 /*---------------------loader---------------------*/
 #loader_container{
@@ -692,13 +731,23 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
 	text-decoration: underline;
 }
 
+#tutorial_header_container{
+    border-bottom:solid 1px var(--black);
+}
 #tutorial_header_container div{
     display:inline-block;
+    width:16.66%;
     border:solid 1px var(--black);
     color:var(--black);
     padding: 5px 10px;
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
     cursor: pointer;
+    font-size: 12px;
+    margin-bottom:-1px;
+}
+#tutorial_header_container div.active{
+    border:solid 1px var(--blue);
+    color:var(--blue);
 }
 #tutorial_header_container div:hover, #tutorial_header_container div:active, #tutorial_header_container div:focus{
     border:solid 1px var(--blue);
@@ -709,9 +758,6 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
     overflow-x: hidden;
     overflow-y: auto;    
 }
-#tutorial_box_container .row > div{
-	padding: 10px;
-}
 .grid-info .used span.box, .used span.box, #tutorial_box_container span.box{
 	padding: 0px 15px;
     border: solid 1px var(--grey666);
@@ -721,13 +767,15 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
     display: inline-block;
 }
 #tutorial_box_container .tutorial_link{
-	padding: 0px 15px;
     border: solid 1px var(--blue);
     color: var(--white);
-    border-radius: 20px;
-    margin: 5px 5px 10px 5px;
+    border-radius: 100%;
     display: inline-block;
     background: var(--blue);
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 48px;
 }
 .modal_button:hover, .modal_button:focus{
 	color:var(--blue);
@@ -1317,7 +1365,7 @@ th, td {
 	}
 	.nav-left li a{
 		border-bottom: solid 1px white;
-		margin-top: 16%;
+		margin-top: 10%;
 		display: block;
 		padding:10px;
 		text-align:center;
@@ -1416,6 +1464,12 @@ th, td {
 }
 
 @media (min-width: 768px) {
+    #tutorial_box_container .row > div{
+        padding: 10px;
+    }
+    .modal-dialog {
+        width: 750px!important;
+    }
     .scroll{
         bottom: 25px
     }

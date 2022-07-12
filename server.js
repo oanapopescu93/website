@@ -3,7 +3,7 @@ const app = express();
 
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5000; // don't change the port
 app.set("port", port);
 
 var nodemailer = require('nodemailer');
@@ -93,6 +93,23 @@ io.on('connection', function(socket) {
               io.emit('contact_read', ["Success!", "Message has been sent!"]);
             }
         });		
+	});
+
+    socket.on("connect_error", function(err){
+		console.log('connect_error --> ', err);
+		socket.emit("server_error", "Connect error");
+	})
+	socket.on("connect_failed", function(err){
+		console.log('connect_failed --> ', err);
+		socket.emit("server_error", "Connect failed");
+	})
+	socket.on("error", function(err){
+		console.log('error --> ', err);
+		socket.emit("server_error", "Something bad happened");
+	})
+
+    socket.on('heartbeat', function(data) {
+		console.log('heartbeat', data)
 	});
 });
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import HomePage from './HomePage';
 import Login from './Login';
-import { getCookie, setCookie } from './utils';
+import { getCookie, setCookie, showResults } from './utils';
 import Splash from './partials/splash_screen';
 
 class Home extends Component {
@@ -27,8 +27,8 @@ class Home extends Component {
 		let self = this;
 		return new Promise(function(resolve, reject){
 			self.state.socket.emit('info_send', x);
-			self.state.socket.on('info_read', function(data){				
-				resolve(data);	
+			self.state.socket.on('info_read', function(data){
+				resolve(data);
 			});
 		});	
 	};
@@ -40,6 +40,15 @@ class Home extends Component {
 				self.setState({ data: res });
 			})
 		}
+
+		setInterval(function () {		  
+			self.state.socket.emit('heartbeat', { data: "ping" });
+		}, 15000)
+
+		self.state.socket.on('server_error', function (text) {
+			showResults("Error", text);
+			console.log('server_error ', text);
+		}); 
 	}
 	render() {
 		let self = this;

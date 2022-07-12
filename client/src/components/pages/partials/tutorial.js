@@ -11,6 +11,7 @@ class Tutorial extends Component {
 			isOpen_tutorials: false,
             tutorials: props.tutorials,
 			login_visitor: props.login_visitor,
+			active: "all", 
 		};
 		this.tutorial_header = ["all"];
 		this.handle_click = this.handle_click.bind(this);
@@ -50,12 +51,13 @@ class Tutorial extends Component {
 			default:
 				this.setState({ tutorials: this.props.tutorials });
 		}
+		this.setState({ active: type });
 	}
 
 	render() {
 		let self = this;
 		let pos = " down";
-		if(this.state.login_visitor === true || this.state.login_visitor === "true"){
+		if(self.state.login_visitor === true || self.state.login_visitor === "true"){
 			pos = " up"
 		}
         return (
@@ -79,9 +81,14 @@ class Tutorial extends Component {
 								return(
 									<>
 										{
-											this.tutorial_header.map(function(item, i){
+											self.tutorial_header.map(function(item, i){
+												let style = "";
+												console.log(i, item, self.state.active)
+												if(self.state.active === item){
+													style = "active";
+												}
 												return (
-													<div key={i} onClick={()=>{self.handleTutorialClick(item)}}>{item}</div>
+													<div key={i} id={item} className={style} onClick={()=>{self.handleTutorialClick(item)}}>{item}</div>
 												)
 											})
 										}

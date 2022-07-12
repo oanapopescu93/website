@@ -368,14 +368,7 @@ module.exports = Object.freeze({
             used: ["javascript", "jquery", "HTML Canvas"],
             link: "https://github.com/oanapopescu93/game_of_live_rpg",
             type: "javascript",
-        },
-        {
-            name: "Python basics",
-            description: "python fundamentals and idiot proofing an app",
-            used: ["arduino", "embeded C"],
-            link: "https://github.com/oanapopescu93/tutorial_python_basics",
-            type: "python",
-        },
+        },        
         {
             name: "weather_arduino",
             description: "python fundamentals and idiot proofing an app",
@@ -396,6 +389,13 @@ module.exports = Object.freeze({
             used: ["arduino", "embeded C"],
             link: "https://github.com/oanapopescu93/arduino_date_time",
             type: "embedded c",
+        },
+        {
+            name: "Python basics",
+            description: "python fundamentals and idiot proofing an app",
+            used: ["python"],
+            link: "https://github.com/oanapopescu93/tutorial_python_basics",
+            type: "python",
         },
     ]
 })
