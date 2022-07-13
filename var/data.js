@@ -230,8 +230,8 @@ module.exports = Object.freeze({
         ],
         [			
             {
-                title: "Global Drive",
-                link: "https://idriveglobal.com/platform/",
+                title: "Idrive Global",
+                link: "https://idriveglobal.com/fleet-management-platform/",
                 src: "img/pics/globalcenter.png",
                 used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, DevExtreme, HTML Canvas, React/Redux, NodeJs/Express",
                 img_alt: "idrive global",
