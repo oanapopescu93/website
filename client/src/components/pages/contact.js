@@ -38,7 +38,6 @@ function Child(props){
 					})
 				}
 			</ul>
-			<p className="text-center">Or get social with me:</p>
 			<ul className="text-center">
 				{
 					social.map(function(item, i){						

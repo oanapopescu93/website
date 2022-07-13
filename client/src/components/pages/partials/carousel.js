@@ -49,7 +49,7 @@ function Carousel(props){
 								<div key={i} className="item">
 									<div className="item-container">
 										<div className="item-info">
-											<img className="item-img" alt={item.alt} title={item.title} src={window.location.origin + '/' + item.src}></img>
+											<img className="item-img" alt={item.alt} title={item.title} src={'/' + item.src}></img>
 										</div>
 										<div className="item-more-info">
 											<p className="grid_title">{item.title}</p>

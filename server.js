@@ -52,6 +52,7 @@ io.on('connection', function(socket) {
                 login_visitor = true;
             }
         }
+        console.log('info_send--> ', data)
         let payload = {
             header: header,
             about: {

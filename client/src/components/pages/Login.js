@@ -52,10 +52,10 @@ function Login(props){
                                 </Col>
                                 <Col sm={4}>
                                     <Button id="login_visitor" onClick={()=>handleChange()} className={"button-white"+done} type="button">
-                                        {done ? <span class="checkmark_box">
-                                            <span class="checkmark">
-                                                <div class="checkmark_stem"></div>
-                                                <div class="checkmark_kick"></div>
+                                        {done ? <span className="checkmark_box">
+                                            <span className="checkmark">
+                                                <div className="checkmark_stem"></div>
+                                                <div className="checkmark_kick"></div>
                                             </span>
                                         </span> : null}
                                         <span className="checkmark_text">I am a Visitor</span>

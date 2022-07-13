@@ -409,6 +409,9 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
     background-color: var(--black);
     border-bottom: solid 1px var(--black);
 }
+.modal-open .mynavbar, .modal-open .mytutorials_container, .modal-open .mycv_container{
+    right: 10px;
+}
 .mynavbar::after { 
     content: "";
     background: var(--white);
@@ -1058,7 +1061,7 @@ footer {
 }
 
 .modal-open .modal, body {
-    padding: 0px !important;
+    /* padding: 0px !important; */
 	z-index: 99999;
     margin: 0px !important;
 }
@@ -1076,7 +1079,7 @@ footer {
     top: 60px;
     right: 0px;
     width: 83px;
-	transition: 0.4s;
+	/* transition: 0.4s; */
 }
 .mycv_container.closed{
 	right:-65px;
@@ -1137,7 +1140,7 @@ footer {
     z-index: 9999;
     right: 0px;
     width: 83px;
-	transition: 0.4s;
+	/* transition: 0.4s; */
     text-align: right;
 }
 .mytutorials_container.up{
