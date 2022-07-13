@@ -138,15 +138,6 @@ module.exports = Object.freeze({
     PORTOFOLIO_ITEMS: [
         [		
             {
-                title: "Snake game", 
-                link: "personal/snake/index.html", 							
-                src: "img/pics/snake.jpg", 
-                used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, Canvas", 
-                git: "https://github.com/oanapopescu93/snake_game",
-                img_alt: "snake game",
-                img_title: "snake game",
-            },	
-            {
                 title: "Halloween flip card game", 
                 link: "personal/flip_cards/game-flip-card.html", 							
                 src: "img/pics/game-flip-card.png", 
