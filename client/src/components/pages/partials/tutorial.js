@@ -83,7 +83,6 @@ class Tutorial extends Component {
 										{
 											self.tutorial_header.map(function(item, i){
 												let style = "";
-												console.log(i, item, self.state.active)
 												if(self.state.active === item){
 													style = "active";
 												}

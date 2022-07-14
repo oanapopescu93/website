@@ -23,6 +23,7 @@ var portofolio_items = data.PORTOFOLIO_ITEMS;
 var tutorials = data.TUTORIALS;
 var contact = data.CONTACT;
 
+var list = [];
 var jwt = require('jsonwebtoken');
 var secret = require('crypto').randomBytes(64).toString('hex')
 function generateAccessToken(payload) {
@@ -48,21 +49,9 @@ app.use(routes);
 
 io.on('connection', function(socket) {
     socket.on('info_send', function(data) {
-        let login_visitor;
-        if(data.reason === "refresh"){
-            login_visitor = data.login_visitor;
-        } else {
-            if(login_password === data.login_password){
-                login_visitor = false;
-            } else {
-                login_visitor = true;
-            }
-        }
-        let token = generateAccessToken(data);
-        // jwt.verify(token, secret, function(err, decoded) {
-        //     console.log(decoded)
-        // });
-
+        //console.log('info_send--> ', data)
+        let login_visitor = false;
+        let token
         let payload = {
             header: header,
             about: {
@@ -78,10 +67,33 @@ io.on('connection', function(socket) {
                 portofolio_items: portofolio_items,
                 tutorials: tutorials, 
             },
-            contact: contact,
-            login_visitor: login_visitor,
-            login_token: token,
+            contact: contact,            
         };
+
+        if(data.reason === "refresh"){
+            token = data.login_token;
+            if(list.length>0){
+                jwt.verify(token, secret, function(err, decoded) {
+                    if(decoded && decoded.login_visitor){
+                        login_visitor = decoded.login_visitor;
+                    }
+                }); 
+            }            
+        } else {
+            if(login_password === data.login_password){
+                login_visitor = false;
+            } else {
+                login_visitor = true;
+            }
+            token = generateAccessToken(data);
+            list.push({id: socket.id, token: token});
+            // jwt.verify(token, secret, function(err, decoded) {
+            //     console.log('bbb2--> ', decoded)
+            // });            
+        }
+        payload.login_visitor = login_visitor;
+        payload.login_token = token;
+        
         try{
             io.to(socket.id).emit('info_read', payload);
         }catch(e){

@@ -21,7 +21,8 @@ body, #root, .App  {
     font-family: arial;
     color: var(--grey333);
     position: relative;
-    font-size: 14px;    
+    font-size: 14px;  
+    background-color: var(--grey888);  
 }
 body{
     overflow-x: hidden;
@@ -1253,12 +1254,12 @@ th, td {
 	width: 10px;
 	border-radius: 10px;
 	background-color: var(--grey);
-	border: 1px solid darkgrey;
+	border: 1px solid var(--grey888);
 }
 
 ::-webkit-scrollbar-thumb{
 	border-radius: 10px;
-	background-color: darkgrey;
+	background-color: var(--grey888);
 	border: 3px solid transparent;
     border-radius: 10px;
     background-clip: content-box;
