@@ -4,10 +4,9 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 function Carousel(props){    
-    var id = props.id;
-    var item_list = props.item_list;
-	var template = props.template;
-
+    let id = props.id;
+    let item_list = props.item_list;
+	let template = props.template;
 	if(template === "portofolio"){
 		const options = {
 			items: 4,
