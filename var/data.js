@@ -17,7 +17,7 @@ module.exports = Object.freeze({
     HEADER_INFO: [
         "Oana Popescu", 
         "Frontend/Javascript developer", 
-        "My passion is to create <b>websites</b>, <b>web applications</b>, and <b>games</b>.<br>I work with <b>Javascript</b>, <b>ReactJS</b> and <b>NodeJS</b>."
+        "My passion is to create <b>websites</b>, <b>web applications</b>, and <b>games</b>.<br>I work with <b>Javascript</b>, <b>ReactJS</b>, <b>NodeJS</b> and <b>HTML Canvas</b>."
     ],
     SKILLS_TITLE: ['frontend', 'backend', 'other'],
     SKILLS: [
@@ -139,7 +139,7 @@ module.exports = Object.freeze({
         [		
             {
                 title: "Halloween flip card game", 
-                link: "personal/flip_cards/game-flip-card.html", 							
+                link: "/portofolio/flip_cards/game-flip-card.html", 							
                 src: "img/pics/game-flip-card.png", 
                 used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery", 
                 git: "https://github.com/oanapopescu93/flip_cards",
@@ -148,7 +148,7 @@ module.exports = Object.freeze({
             },
             {
                 title: "ChatBot", 
-                link: "personal/chatbot/index.html", 							
+                link: "/portofolio/chatbot/index.html", 							
                 src: "img/pics/chatbot.png", 
                 used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, Machine Learning", 
                 git: "https://github.com/oanapopescu93/chatbot",
@@ -157,7 +157,7 @@ module.exports = Object.freeze({
             },
             {
                 title: "Backtracking maze game", 
-                link: "personal/maze/index.html", 							
+                link: "/portofolio/maze/index.html", 							
                 src: "img/pics/maze.png", 
                 used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, Canvas", 
                 git: "https://github.com/oanapopescu93/backtrack_mouse_maze",
@@ -166,7 +166,7 @@ module.exports = Object.freeze({
             },	
             {
                 title: "Snake game", 
-                link: "personal/snake/index.html", 							
+                link: "/portofolio/snake/index.html", 							
                 src: "img/pics/snake.jpg", 
                 used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, Canvas", 
                 git: "https://github.com/oanapopescu93/snake_game",
@@ -175,7 +175,7 @@ module.exports = Object.freeze({
             },			
             {
                 title: "Space Invaders", 
-                link: "personal/space_invader/index.html", 							
+                link: "/portofolio/space_invader/index.html", 							
                 src: "img/pics/game_icon.png", 
                 used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, Canvas", 
                 git: "https://github.com/oanapopescu93/space_invader",
@@ -184,7 +184,7 @@ module.exports = Object.freeze({
             },
             {
                 title: "Irregular verbs quiz game", 
-                link: "personal/irregular_verbs/index.html", 							
+                link: "/portofolio/irregular_verbs/index.html", 							
                 src: "img/pics/game-quiz.png", 
                 used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery", 
                 git: "https://github.com/oanapopescu93/irregular_verbs",
@@ -193,7 +193,7 @@ module.exports = Object.freeze({
             },
             // {
             //     title: "Hexapawn", 
-            //     link: "personal/hexapawn/index.html", 							
+            //     link: "/portofolio/hexapawn/index.html", 							
             //     src: "img/pics/hexapawn_img.png", 
             //     used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, Canvas", 
             //     git: "https://github.com/oanapopescu93/hexapawn",
@@ -357,7 +357,7 @@ module.exports = Object.freeze({
         },
         {
             name: "HTML Canvas graphics",
-            description: "Graphics, pie charts and doughnuts tutorial",
+            description: "Pie and doughnuts chart tutorial",
             used: ["javascript", "jquery", "HTML Canvas"],
             link: "https://github.com/oanapopescu93/pie_doughnut_chart",
             type: "javascript",
@@ -372,21 +372,21 @@ module.exports = Object.freeze({
         {
             name: "weather_arduino",
             description: "weather app made with arduino and embeded C",
-            used: ["arduino", "embeded C"],
+            used: ["arduino", "embeded C", "LoRa microcontroller"],
             link: "https://github.com/oanapopescu93/weather_arduino",
             type: "embedded c",
         },
         {
             name: "weather_api_arduino",
             description: "weather app made with arduino and embeded C",
-            used: ["arduino", "embeded C"],
+            used: ["arduino", "embeded C", "LoRa microcontroller"],
             link: "https://github.com/oanapopescu93/weather_api_arduino",
             type: "embedded c",
         },
         {
             name: "arduino_date_time",
             description: "embeded C fundamentals and idiot proofing an app",
-            used: ["arduino", "embeded C"],
+            used: ["arduino", "embeded C", "LoRa microcontroller"],
             link: "https://github.com/oanapopescu93/arduino_date_time",
             type: "embedded c",
         },
