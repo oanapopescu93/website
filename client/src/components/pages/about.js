@@ -8,12 +8,10 @@ import Education from './partials/education';
 import { scroll_anywhere } from './utils';
 import $ from 'jquery'; 
 
-var self;
 class About extends Component {
 	constructor(props) {
 		super(props);
-		self = this;
-		self.state = {
+		this.state = {
 			visible: "skills",
 			language: props.data.language,
 			pie_colors: props.data.pie_colors,
@@ -24,8 +22,9 @@ class About extends Component {
 		};
 	}
 	componentDidMount() {
+		let self = this;
 		$('body').on('click', '#about-div .about_tabs_title', function (e) {	
-			var parent_id = $(this).parent().attr('id');
+			let parent_id = $(this).parent().attr('id');
 			
 			if(!$(this).parent().parent().hasClass('open')){
 				$('#about-div .about_tabs').removeClass('open');
@@ -67,22 +66,22 @@ class About extends Component {
 					<Col id="about_content_main" className="about_content_main" xs={12} sm={8} md={8} lg={10}>
 						<div id="about_content_box" className="about_content_box shadow_concav">									
 							{(() => {
-								switch (self.state.visible) {
+								switch (this.state.visible) {
 									case "skills":
 										return (
-											<Skills language={self.state.language} pie_colors={self.state.pie_colors} skills={self.state.skills} skills_title={self.state.skills_title}></Skills>
+											<Skills language={this.state.language} pie_colors={this.state.pie_colors} skills={this.state.skills} skills_title={this.state.skills_title}></Skills>
 										)
 									case "experience":
 										return (
-											<Experience experience={self.state.experience}></Experience>
+											<Experience experience={this.state.experience}></Experience>
 										)									
 									case "education":
 										return (
-											<Education education={self.state.education}></Education>
+											<Education education={this.state.education}></Education>
 										)
 									default:
 										return(
-											<Skills language={self.state.language} pie_colors={self.state.pie_colors} skills={self.state.skills} skills_title={self.state.skills_title}></Skills>
+											<Skills language={this.state.language} pie_colors={this.state.pie_colors} skills={this.state.skills} skills_title={this.state.skills_title}></Skills>
 										)						
 								}
 							})()}	

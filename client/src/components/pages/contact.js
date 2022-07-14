@@ -22,7 +22,7 @@ function Child(props){
 			<ul>
 				{
 					contact.map(function(item, i){
-						if(!(login_visitor === "true" && item.icon === "fa fa-phone")){
+						if(!(login_visitor && item.icon === "fa fa-phone")){
 							if(item.link){
 								return (
 									<li key={i}><i className={item.icon}></i><a href={item.link}>{item.text}</a></li>

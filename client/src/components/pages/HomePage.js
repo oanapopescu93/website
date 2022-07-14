@@ -10,7 +10,6 @@ function HomePage(props){
 	let socket = props.socket;
     let data = props.data;
     let login_visitor = props.data.login_visitor; // true = visitor; false = HR / future employer	
-    console.log(props)
     return (
         <>                	
             <Navbar login_visitor={login_visitor}></Navbar>

@@ -2,17 +2,16 @@ import React, { Component } from 'react';
 import Row from 'react-bootstrap/Row'
 import $ from 'jquery'; 
 
-var self;
 class Education extends Component {	
 	constructor(props) {
 		super(props);
-		self = this;
-        self.state = {
+        this.state = {
 			education: props.education,
 		};
 	}
 
 	componentDidMount() {
+		let self = this;
         if($('#about_content_box')){
             $('#about_content_box').scrollTop(0);
         }
