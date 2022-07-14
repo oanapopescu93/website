@@ -1,0 +1,27 @@
+body {
+    font-family: courier new;
+    color: white;
+    font-size: 14px;
+    background-color: black;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, address {
+    margin: 0px;
+}
+canvas{
+    background: black;
+    border:solid 1px white;
+    margin-top:20px;
+}
+
+/*---------------------footer---------------------*/
+footer { 	
+    padding: 10px 0px;
+    color: white;
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	right:0px;
+}
+footer ~ div {
+  visibility: hidden;
+}

@@ -1,0 +1,160 @@
+:focus {
+    outline: -webkit-focus-ring-color auto 0px !important;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100% !important;
+    font-family: arial;
+    position: relative;
+    font-size: 14px;
+	padding:40px 0px;
+	background:#7f8000;
+	color:#013300;
+	padding-bottom:40px;
+}
+
+/*---------------------input, select, text---------------------*/
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, address {
+    margin: 0px;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 32px;
+    font-family: impact;
+	color:#d7e120;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 28px;
+    font-family: impact;
+}
+
+a, a:hover, a:focus {
+    text-decoration: none;
+	color:#d7e120;
+}
+
+.container .row{
+	padding-bottom:20px;
+}
+
+#maze_logo{
+	width:80px;
+}
+
+/*---------------------canvas---------------------*/
+
+#myCanvas{
+	background:#fff;
+	border:solid 1px #7f8000;
+}
+.message_banner_main{
+	position:absolute;
+	top:0px;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	width:100%;
+	background:rgba(0,0,0,0.7);	
+	z-index:9999;
+	visibility: visible;
+}
+.message_banner{
+	color:#d7e120;
+	height: 100%;
+    display: table;
+    width: 100%;
+}
+.message_banner .message_banner_text{
+	display: table-cell;
+    vertical-align: middle;
+}
+.button_try_again{
+	border:solid 1px #d7e120;
+	padding:5px 10px;
+	margin:10px;
+	border-radius:5px;
+	text-align:center;
+	font-size:14px;
+	background:transparent;
+}
+.arrow_mobile{
+	display:none;
+}
+.button_icon{
+	border:solid 1px transparent;
+	padding:0px;	
+	text-align:center;
+	font-size:40px;
+	line-height:36px;
+	display:inline-block;
+	background:transparent;
+}
+
+.button_maze{
+	border:solid 1px #013300;
+	padding:5px 10px;
+	border-radius:5px;
+	text-align:center;
+	font-size:12px;
+	width:100%;
+	max-width:120px;
+	display:inline-block;
+	background:transparent;
+	line-height: inherit;
+}
+
+/*---------------------footer---------------------*/
+
+footer { 
+    padding: 10px 0px;
+    color: #013300;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+footer ~ div {
+  visibility: hidden;
+}
+
+/*---------------------media---------------------*/
+@media (max-width: 1023px) {
+	.arrow_mobile{
+		display:block;
+	}
+}
+@media (max-width: 480px) {
+	body{
+		padding:15px 0px 30px 0px;
+	}
+    #maze_container div{
+		overflow: scroll;
+		width: 320px;
+		margin: 0px auto;
+		padding: 0;
+	}
+	.container .row{
+		padding-bottom:10px;
+	}
+	
+	#maze_logo{
+		width: 40px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	h1 {
+		font-size: 24px;
+		line-height: 24px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+}
