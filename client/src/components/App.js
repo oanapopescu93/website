@@ -28,7 +28,7 @@ var my_console = function(){
 
 class App extends Component {
 	render() {
-		my_console.disable();	
+		// my_console.disable();	
 		return (
 			<>
 				<Home socket={socket}></Home> 

@@ -2,7 +2,6 @@ module.exports = Object.freeze({
     AUTH_USER: "09f009efe7b9ae",
     AUTH_PASS: "cd1233a2d8d6a7",
     AUTH_FROM: "oanapopescu93@gmail.com",
-    LOGIN_PASSWORD: "Qazwsxedc123rfv123!",
     CONTACT: [
         [
             {link: "tel:+40729699148", icon: "fa fa-phone", text: "0729.699.148"},
@@ -140,7 +139,7 @@ module.exports = Object.freeze({
             {
                 title: "Halloween flip card game", 
                 link: "/portofolio/flip_cards/game-flip-card.html", 							
-                src: "img/pics/game-flip-card.png", 
+                src: "/img/pics/game-flip-card.png", 
                 used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery", 
                 git: "https://github.com/oanapopescu93/flip_cards",
                 img_alt: "halloween flip card game",
@@ -149,7 +148,7 @@ module.exports = Object.freeze({
             {
                 title: "ChatBot", 
                 link: "/portofolio/chatbot/index.html", 							
-                src: "img/pics/chatbot.png", 
+                src: "/img/pics/chatbot.png", 
                 used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, Machine Learning", 
                 git: "https://github.com/oanapopescu93/chatbot",
                 img_alt: "chatbot",
@@ -158,7 +157,7 @@ module.exports = Object.freeze({
             {
                 title: "Backtracking maze game", 
                 link: "/portofolio/maze/index.html", 							
-                src: "img/pics/maze.png", 
+                src: "/img/pics/maze.png", 
                 used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, Canvas", 
                 git: "https://github.com/oanapopescu93/backtrack_mouse_maze",
                 img_alt: "backtracking maze game",
@@ -167,7 +166,7 @@ module.exports = Object.freeze({
             {
                 title: "Snake game", 
                 link: "/portofolio/snake/index.html", 							
-                src: "img/pics/snake.jpg", 
+                src: "/img/pics/snake.jpg", 
                 used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, Canvas", 
                 git: "https://github.com/oanapopescu93/snake_game",
                 img_alt: "snake game",
@@ -176,7 +175,7 @@ module.exports = Object.freeze({
             {
                 title: "Space Invaders", 
                 link: "/portofolio/space_invader/index.html", 							
-                src: "img/pics/game_icon.png", 
+                src: "/img/pics/game_icon.png", 
                 used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, Canvas", 
                 git: "https://github.com/oanapopescu93/space_invader",
                 img_alt: "space invaders",
@@ -185,7 +184,7 @@ module.exports = Object.freeze({
             {
                 title: "Irregular verbs quiz game", 
                 link: "/portofolio/irregular_verbs/index.html", 							
-                src: "img/pics/game-quiz.png", 
+                src: "/img/pics/game-quiz.png", 
                 used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery", 
                 git: "https://github.com/oanapopescu93/irregular_verbs",
                 img_alt: "irregular verbs quiz game",
@@ -194,7 +193,7 @@ module.exports = Object.freeze({
             // {
             //     title: "Hexapawn", 
             //     link: "/portofolio/hexapawn/index.html", 							
-            //     src: "img/pics/hexapawn_img.png", 
+            //     src: "/img/pics/hexapawn_img.png", 
             //     used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, Canvas", 
             //     git: "https://github.com/oanapopescu93/hexapawn",
             //     img_alt: "hexapawn",
@@ -205,7 +204,7 @@ module.exports = Object.freeze({
             {
                 title: "Nodejs & React Casino",
                 link: "https://bunnybet.herokuapp.com/",
-                src: "img/pics/casino_roulette.png",
+                src: "/img/pics/casino_roulette.png",
                 used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, React JS, Redux, Node JS, Express, HTML Canvas",
                 git: "https://github.com/oanapopescu93/casino",
                 img_alt: "nodejs react casino",
@@ -213,7 +212,7 @@ module.exports = Object.freeze({
             },
             {
                 title: "Chat, tic-toc and weather app",
-                src: "img/pics/nodejs-image.png",
+                src: "/img/pics/nodejs-image.png",
                 used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, Node JS, Express, Socket.io",
                 git: "https://github.com/oanapopescu93/nodeapp",
                 img_alt: "chat tic-toc and weather nodejs app",
@@ -221,7 +220,7 @@ module.exports = Object.freeze({
             },	
             {
                 title: "Calculator with React/Redux",
-                src: "img/pics/react_logo.png",
+                src: "/img/pics/react_logo.png",
                 used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, React JS, Redux",
                 git: "https://github.com/oanapopescu93/calculator-with-react",
                 img_alt: "calculator with react/redux",
@@ -232,7 +231,7 @@ module.exports = Object.freeze({
             {
                 title: "Idrive Global",
                 link: "https://idriveglobal.com/fleet-management-platform/",
-                src: "img/pics/globalcenter.png",
+                src: "/img/pics/globalcenter.png",
                 used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, DevExtreme, HTML Canvas, React/Redux, NodeJs/Express",
                 img_alt: "idrive global",
                 img_title: "idrive global",
@@ -240,7 +239,7 @@ module.exports = Object.freeze({
             {
                 title: "Salomon Romania",
                 link: "https://www.salomon.ro",
-                src: "img/pics/salomon.png",
+                src: "/img/pics/salomon.png",
                 used: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop",
                 platform: "Magento",
                 img_alt: "salomon",
@@ -249,7 +248,7 @@ module.exports = Object.freeze({
             {
                 title: "Clubul sportiv RealGym",
                 link: "http://clubulsportivrealgym.ro",
-                src: "img/pics/realgym.png",
+                src: "/img/pics/realgym.png",
                 used: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop, PHP",
                 platform: "Wordpress",
                 img_alt: "clubul sportiv realgym karate kickbox",
@@ -258,7 +257,7 @@ module.exports = Object.freeze({
             {
                 title: "Noblisime",
                 link: "https://noblisime.ro",
-                src: "img/pics/noblisime.jpg",
+                src: "/img/pics/noblisime.jpg",
                 used: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop",
                 platform: "Magento",
                 img_alt: "noblisime",
@@ -267,7 +266,7 @@ module.exports = Object.freeze({
             {
                 title: "Konart",
                 link: "http://www.kon-art.ro",
-                src: "img/pics/konart.png",
+                src: "/img/pics/konart.png",
                 used: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop",
                 platform: "Magento",
                 img_alt: "konart",
@@ -276,7 +275,7 @@ module.exports = Object.freeze({
             {
                 title: "Exclusive doors",
                 link: "https://exclusivedoors.ro",
-                src: "img/pics/exclusivedoor.png",
+                src: "/img/pics/exclusivedoor.png",
                 used: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop",
                 platform: "Magento",
                 img_alt: "exclusive doors",
@@ -288,7 +287,7 @@ module.exports = Object.freeze({
             {
                 title: "Pizza Hut Delivery",
                 link: "https://www.pizzahutdelivery.ro/ro",
-                src: "img/pics/PHD01.jpg",
+                src: "/img/pics/PHD01.jpg",
                 used: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop",
                 img_alt: "pizza hut delivery",
                 img_title: "pizza hut delivery",
@@ -296,7 +295,7 @@ module.exports = Object.freeze({
             {
                 title: "City Grill",
                 link: "https://citygrill.ro/ro",
-                src: "img/pics/citygrill.png",
+                src: "/img/pics/citygrill.png",
                 used: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop",
                 platform: "October CMS",
                 img_alt: "city grill",
@@ -305,7 +304,7 @@ module.exports = Object.freeze({
             {
                 title: "Ape Rider",
                 link: "http://aperider.com/",
-                src: "img/pics/aperider.png",
+                src: "/img/pics/aperider.png",
                 used: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop",
                 img_alt: "ape rider biciclete",
                 img_title: "ape rider biciclete",
@@ -397,5 +396,6 @@ module.exports = Object.freeze({
             link: "https://github.com/oanapopescu93/tutorial_python_basics",
             type: "python",
         },
-    ]
+    ],
+    LOGIN_PASSWORD: "Qazwsxedc123rfv123!",
 })

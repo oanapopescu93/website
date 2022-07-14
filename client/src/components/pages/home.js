@@ -10,7 +10,7 @@ class Home extends Component {
 		this.state = {
 			data: props.data,
 			socket: props.socket,
-			login_visitor:getCookie('login_visitor'),
+			token: getCookie('login_token') ? getCookie('login_token') : "",
 		};
 		this.handleChoice = this.handleChoice.bind(this);
 		this.getData = this.getData.bind(this);
@@ -19,8 +19,9 @@ class Home extends Component {
 		let self = this;
 		self.getData(x).then(function(res){
 			self.setState({ data: res });
-			self.setState({ login_visitor: res.login_visitor });
-			setCookie("login_visitor", res.login_visitor, 1);
+			self.setState({ login_token: res.login_token });
+			setCookie("login_token", res.login_token, 1);
+			console.log('xxx--> ', res.login_token)
 		})
 	}
 	getData(x){
@@ -34,9 +35,10 @@ class Home extends Component {
 	};
 	componentDidMount(){
 		let self = this;
-		let login_visitor = getCookie('login_visitor');
-		if(login_visitor === "true"||login_visitor === "false"){
-			self.getData({login_visitor: login_visitor, reason: "refresh"}).then(function(res){
+		let login_token = getCookie('login_token') ? getCookie('login_token') : ""
+		console.log('zzz01', login_token)
+		if(login_token !== ""){
+			self.getData({login_token: login_token, reason: "refresh"}).then(function(res){
 				self.setState({ data: res });
 			})
 		}
@@ -51,15 +53,15 @@ class Home extends Component {
 		}); 
 	}
 	render() {
-		let self = this;
-		let login_visitor = this.state.login_visitor;
+		let login_token = getCookie('login_token') ? getCookie('login_token') : ""		
 		return (
 			<>
 				{(() => {					
-					if(login_visitor !== ""){						
-						if(self.state.data && Object.keys(self.state.data).length !== 0){
+					if(login_token !== ""){	
+						console.log('zzz021 ', login_token, login_token !== "")					
+						if(this.state.data && Object.keys(this.state.data).length !== 0){
 							return (
-								<HomePage socket={self.state.socket} data={self.state.data}></HomePage>
+								<HomePage socket={this.state.socket} data={this.state.data}></HomePage>
 							);
 						} else {
 							return (
@@ -67,6 +69,7 @@ class Home extends Component {
 							);							
 						}
 					} else {
+						console.log('zzz022 ', login_token, login_token !== "")
 						return (
 							<Login choice={(e)=>this.handleChoice(e)} socket={this.state.socket}></Login>
 						);

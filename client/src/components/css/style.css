@@ -412,6 +412,9 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
 .modal-open .mynavbar, .modal-open .mytutorials_container, .modal-open .mycv_container{
     right: 10px;
 }
+.modal-open #top{
+    right: 20px;
+}
 .mynavbar::after { 
     content: "";
     background: var(--white);
