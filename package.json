@@ -7,10 +7,10 @@
   },
   "scripts": {
     "client": "cd client && npm start",
-    "server": "nodemon server.js --ignore client",
+    "server": "npm install && nodemon server.js --ignore client",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
-    "build": "cd client && npm run build && cls && cd .."
+    "build": "cd client && npm install && npm run build && cls && cd .."
   },
   "author": "oana popescu",
   "license": "ISC",
