@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -16,7 +16,7 @@ function Sapou(props) {
                         </Col>
                     </Row>
                 </Container>
-            );
+            )
         case "portofolio":
             return (
                 <Container>
@@ -28,7 +28,7 @@ function Sapou(props) {
                         </Col>
                     </Row>
                 </Container>
-            );
+            )
         case "contact":
             return (
                 <Container>
@@ -40,12 +40,12 @@ function Sapou(props) {
                         </Col>
                     </Row>
                 </Container>
-            );
+            )
         default:
             return (
                 <></>
-            );
+            )
     }	
 }
 
-export default Sapou;
+export default Sapou

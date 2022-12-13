@@ -1,86 +1,86 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
-import $ from 'jquery'; 
-import Carousel from './partials/carousel';
-import { Modal} from "react-bootstrap";
+import $ from 'jquery'
+import Carousel from './partials/carousel'
+import { Modal} from "react-bootstrap"
 
 function Child(props){     
 	return (
 		<Carousel template={props.template} id={props.id} item_list={props.item_list}></Carousel>
-	);
+	)
 }
 
 class Portofolio extends Component {
 	constructor(props) {
-		super(props);
+		super(props)
 		this.state = {
 			portofolio: props.data,
 			tutorials: props.data.tutorials,
 			isOpen_portofolio: false,
 			isOpen_tutorials: false
-		};
-		this.tutorial_header = ["all"];
-		this.portofolio_click = this.portofolio_click.bind(this);
-		this.portofolio_image_click = this.portofolio_image_click.bind(this);
-		this.portofolio_tutorials_click = this.portofolio_tutorials_click.bind(this);
-		this.handleTutorialClick = this.handleTutorialClick.bind(this);
+		}
+		this.tutorial_header = ["all"]
+		this.portofolio_click = this.portofolio_click.bind(this)
+		this.portofolio_image_click = this.portofolio_image_click.bind(this)
+		this.portofolio_tutorials_click = this.portofolio_tutorials_click.bind(this)
+		this.handleTutorialClick = this.handleTutorialClick.bind(this)
 	}
 
-	openModal_portofolio = () => this.setState({ isOpen_portofolio: true });
-  	closeModal_portofolio = () => this.setState({ isOpen_portofolio: false });
-	openModal_tutorials = () => this.setState({ isOpen_tutorials: true });
-  	closeModal_tutorials = () => this.setState({ isOpen_tutorials: false });
+	openModal_portofolio = () => this.setState({ isOpen_portofolio: true })
+  	closeModal_portofolio = () => this.setState({ isOpen_portofolio: false })
+	openModal_tutorials = () => this.setState({ isOpen_tutorials: true })
+  	closeModal_tutorials = () => this.setState({ isOpen_tutorials: false })
 
 	portofolio_image_click(){
-        let self = this;
+        let self = this
 		$('body').on('click', '.item-info img', function (e) {
-			self.openModal_portofolio();
-			$('#myModal_portofolio .modal-body .title').empty();
-			$('#myModal_portofolio .modal-body .platform').empty();
-			$('#myModal_portofolio .modal-body .used').empty();
-			$('#myModal_portofolio .modal-body .status').empty();
+			self.openModal_portofolio()
+			$('#myModal_portofolio .modal-body .title').empty()
+			$('#myModal_portofolio .modal-body .platform').empty()
+			$('#myModal_portofolio .modal-body .used').empty()
+			$('#myModal_portofolio .modal-body .status').empty()
 
 			if($(this).closest('.item-container').find('.item-more-info p.grid_link').text() !== "undefined"){
-				$('#myModal_portofolio .modal-body .title').append('<a class="modal_button" href="' + $(this).closest('.item-container').find('.item-more-info p.grid_link').text() + '" target="_blank">Take a look</a>');
+				$('#myModal_portofolio .modal-body .title').append('<a class="modal_button" href="' + $(this).closest('.item-container').find('.item-more-info p.grid_link').text() + '" target="_blank">Take a look</a>')
 			} 
 			
 			if($(this).closest('.item-container').find('.item-more-info p.grid_git').text() !== ""){
-				$('#myModal_portofolio .modal-body .platform').append('<a class="modal_button" href="' + $(this).closest('.item-container').find('.item-more-info p.grid_git').text() + '" target="_blank">See the code</a>');
+				$('#myModal_portofolio .modal-body .platform').append('<a class="modal_button" href="' + $(this).closest('.item-container').find('.item-more-info p.grid_git').text() + '" target="_blank">See the code</a>')
 			}
 			
 			if($(this).closest('.item-container').find('.item-more-info p.grid_platform').text() !== ""){
-				$('#myModal_portofolio .modal-body .platform').append('<b>Platform: </b>' + $(this).closest('.item-container').find('.item-more-info p.grid_platform').text());
+				$('#myModal_portofolio .modal-body .platform').append('<b>Platform: </b>' + $(this).closest('.item-container').find('.item-more-info p.grid_platform').text())
 			}
 			
-			var text = $(this).closest('.item-container').find('.item-more-info p.grid_used').text();
-			var res = text.split(", ");
-			$('#myModal_portofolio .modal-body .used').append('<b>What I used: </b><br>');
+			var text = $(this).closest('.item-container').find('.item-more-info p.grid_used').text()
+			var res = text.split(", ")
+			$('#myModal_portofolio .modal-body .used').append('<b>What I used: </b><br>')
 			for (var i in res){
-				$('#myModal_portofolio .modal-body .used').append('<span class="box">'+ res[i] +'</span>');
+				$('#myModal_portofolio .modal-body .used').append('<span class="box">'+ res[i] +'</span>')
 			}
 	
 			if($(this).closest('.item-container').find('.item-more-info p.grid_status').length > 0){
-				$('#myModal_portofolio .modal-body .status').append('<b>Status: </b>' + $(this).closest('.item-container').find('.item-more-info p.grid_status').text());
+				$('#myModal_portofolio .modal-body .status').append('<b>Status: </b>' + $(this).closest('.item-container').find('.item-more-info p.grid_status').text())
 			} 	
-		});
-	};
+		})
+	}
 
 	portofolio_click(e){
-		$('.portofolio-list li').removeClass('active');
-		$('.portofolio-container .owl_container').hide();
-		var element = $(e.target);
-		element.addClass('active');		
+		$('.portofolio-list li').removeClass('active')
+		$('.portofolio-container .owl_container').hide()
+		var element = $(e.target)
+		element.addClass('active')
 		let order = $(e.target).attr('order')
 		if($('#owl_carousel_'+order)){
-			$('#owl_carousel_'+order).show();
+			$('#owl_carousel_'+order).show()
 		}
 	}
 
 	portofolio_tutorials_click(){
-		this.openModal_tutorials();
+		this.openModal_tutorials()
 	}
 
 	componentDidMount() {
@@ -89,7 +89,7 @@ class Portofolio extends Component {
 				this.tutorial_header.push(this.state.portofolio.tutorials[i].type)
 			}									
 		}
-		this.portofolio_image_click();
+		this.portofolio_image_click()
 	}
 
 	handleTutorialClick(type){	
@@ -99,16 +99,16 @@ class Portofolio extends Component {
 			case "node":
 			case "python":
 			case "embedded c":
-				const my_tutorials = this.props.data.tutorials.filter((x) => x.type === type);
-				this.setState({ tutorials: my_tutorials });
-				break;
+				const my_tutorials = this.props.data.tutorials.filter((x) => x.type === type)
+				this.setState({ tutorials: my_tutorials })
+				break
 			default:
-				this.setState({ tutorials: this.props.data.tutorials });
+				this.setState({ tutorials: this.props.data.tutorials })
 		}
 	}
 
 	render() {
-		let self = this;
+		let self = this
 		return (
 			<>
 				<Container>
@@ -117,7 +117,7 @@ class Portofolio extends Component {
 							<ul className="portofolio-list text-center">
 								{
 									self.state.portofolio.portofolio_list.map(function(item, i){
-										let active = "";
+										let active = ""
 										if(i === 0){
 											active = "active"
 										}
@@ -187,7 +187,7 @@ class Portofolio extends Component {
 						</div>
 						<div id="tutorial_box_container">
 							{(() => {
-								let tutorials = this.state.tutorials;
+								let tutorials = this.state.tutorials
 								if(typeof tutorials !== "undefined" && tutorials !== null){
 									if(tutorials.length>0){
 										return(
@@ -230,8 +230,8 @@ class Portofolio extends Component {
 					</Modal.Body>
 				</Modal>
 			</>
-		);
+		)
 	}
 }
 
-export default Portofolio;
+export default Portofolio

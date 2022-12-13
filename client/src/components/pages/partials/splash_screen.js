@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from 'react'
 function Splash(props) {
 	return (
 		<div id="loader_container">
@@ -9,7 +8,6 @@ function Splash(props) {
             <div id="loader03" className="loader"></div> 
             <div id="loader04" className="loader"></div> 
         </div>		
-	);
+	)
 }
-
-export default Splash;
+export default Splash

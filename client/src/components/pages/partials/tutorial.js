@@ -1,26 +1,26 @@
-import React, { Component } from 'react';
-import { Modal} from "react-bootstrap";
+import React, { Component } from 'react'
+import { Modal} from "react-bootstrap"
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import $ from 'jquery'; 
+import $ from 'jquery'
 
 class Tutorial extends Component {
 	constructor(props) {
-		super(props);
+		super(props)
 		this.state = {
 			isOpen_tutorials: false,
             tutorials: props.tutorials,
 			login_visitor: props.login_visitor,
 			active: "all", 
-		};
-		this.tutorial_header = ["all"];
-		this.handle_click = this.handle_click.bind(this);
-		this.handle_slide = this.handle_slide.bind(this);
-		this.handleTutorialClick = this.handleTutorialClick.bind(this);
+		}
+		this.tutorial_header = ["all"]
+		this.handle_click = this.handle_click.bind(this)
+		this.handle_slide = this.handle_slide.bind(this)
+		this.handleTutorialClick = this.handleTutorialClick.bind(this)
 	}
 	
-	openModal_tutorials = () => this.setState({ isOpen_tutorials: true });
-  	closeModal_tutorials = () => this.setState({ isOpen_tutorials: false });
+	openModal_tutorials = () => this.setState({ isOpen_tutorials: true })
+  	closeModal_tutorials = () => this.setState({ isOpen_tutorials: false })
 
 	componentDidMount(){
 		for(let i in this.state.tutorials){
@@ -31,11 +31,11 @@ class Tutorial extends Component {
 	}
 
     handle_click(){
-        this.openModal_tutorials();
+        this.openModal_tutorials()
     }
 	handle_slide(){
         if($('.mytutorials_container')){
-            $('.mytutorials_container').toggleClass('closed');
+            $('.mytutorials_container').toggleClass('closed')
         }
     }
 	handleTutorialClick(type){
@@ -45,18 +45,18 @@ class Tutorial extends Component {
 			case "node":
 			case "python":
 			case "embedded c":
-				const my_tutorials = this.props.tutorials.filter((x) => x.type === type);
-				this.setState({ tutorials: my_tutorials });
-				break;
+				const my_tutorials = this.props.tutorials.filter((x) => x.type === type)
+				this.setState({ tutorials: my_tutorials })
+				break
 			default:
-				this.setState({ tutorials: this.props.tutorials });
+				this.setState({ tutorials: this.props.tutorials })
 		}
-		this.setState({ active: type });
+		this.setState({ active: type })
 	}
 
 	render() {
-		let self = this;
-		let pos = " down";
+		let self = this
+		let pos = " down"
 		if(self.state.login_visitor === true || self.state.login_visitor === "true"){
 			pos = " up"
 		}
@@ -82,13 +82,11 @@ class Tutorial extends Component {
 									<>
 										{
 											self.tutorial_header.map(function(item, i){
-												let style = "";
+												let style = ""
 												if(self.state.active === item){
-													style = "active";
+													style = "active"
 												}
-												return (
-													<div key={i} id={item} className={style} onClick={()=>{self.handleTutorialClick(item)}}>{item}</div>
-												)
+												return <div key={i} id={item} className={style} onClick={()=>{self.handleTutorialClick(item)}}>{item}</div>
 											})
 										}
 									</>
@@ -97,7 +95,7 @@ class Tutorial extends Component {
 						</div>
 						<div id="tutorial_box_container">
 							{(() => {
-								let tutorials = self.state.tutorials;
+								let tutorials = self.state.tutorials
 								if(typeof tutorials !== "undefined" && tutorials !== null){
 									if(tutorials.length>0){
 										return(
@@ -140,7 +138,7 @@ class Tutorial extends Component {
 					</Modal.Body>
 				</Modal>
             </>
-        );
+        )
     }
 }
-export default Tutorial;
+export default Tutorial

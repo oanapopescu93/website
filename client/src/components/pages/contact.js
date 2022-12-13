@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import $ from 'jquery'; 
-import { showResults } from './utils';
+import $ from 'jquery'
+import { showResults } from './utils'
 
 function Child(props){
-	let contact = [];
-	let social = [];
-	let login_visitor = props.login_visitor;
+	let contact = []
+	let social = []
+	let login_visitor = props.login_visitor
 	if(props.data[0]){
-		contact = props.data[0];
+		contact = props.data[0]
 	}
 	if(props.data[1]){
-		social = props.data[1];
+		social = props.data[1]
 	}
 	return (
 		<div className={props.div_class + " text-left"}>
@@ -24,16 +24,12 @@ function Child(props){
 					contact.map(function(item, i){
 						if(!(login_visitor && item.icon === "fa fa-phone")){
 							if(item.link){
-								return (
-									<li key={i}><i className={item.icon}></i><a href={item.link}>{item.text}</a></li>
-								)
+								return <li key={i}><i className={item.icon}></i><a href={item.link}>{item.text}</a></li>
 							} else {
-								return (
-									<li key={i}><i className={item.icon}></i><span>{item.text}</span></li>
-								)
+								return <li key={i}><i className={item.icon}></i><span>{item.text}</span></li>
 							}
 						} else {
-							return null; 
+							return null
 						}
 					})
 				}
@@ -48,7 +44,7 @@ function Child(props){
 				}
 			</ul>
 		</div>
-	);
+	)
 }
 
 class Contact extends Component {
@@ -118,7 +114,7 @@ class Contact extends Component {
 	}
 
 	render() {
-		let login_visitor = this.props.login_visitor;
+		let login_visitor = this.props.login_visitor
 		return (
 			<Container>
 					<Row>
@@ -194,8 +190,8 @@ class Contact extends Component {
 						</div>
 					</div>
 			</Container>
-		);
+		)
 	}
 }
 
-export default Contact;
+export default Contact

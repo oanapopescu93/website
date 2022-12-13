@@ -190,20 +190,11 @@ module.exports = Object.freeze({
                 img_alt: "irregular verbs quiz game",
                 img_title: "irregular verbs quiz game",
             },
-            // {
-            //     title: "Hexapawn", 
-            //     link: "/portofolio/hexapawn/index.html", 							
-            //     src: "/img/pics/hexapawn_img.png", 
-            //     used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, Canvas", 
-            //     git: "https://github.com/oanapopescu93/hexapawn",
-            //     img_alt: "hexapawn",
-            //     img_title: "hexapawn - the game that learns",
-            // },
         ],
         [	
             {
                 title: "Nodejs & React Casino",
-                link: "https://bunnybet.herokuapp.com/",
+                link: "https://oanapopescu.onrender.com/",
                 src: "/img/pics/casino_roulette.png",
                 used: "HTML, CSS, Bootstrap, Javascript, OOP, Jquery, React JS, Redux, Node JS, Express, HTML Canvas",
                 git: "https://github.com/oanapopescu93/casino",

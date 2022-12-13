@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Skills from './partials/skills';
-import Experience from './partials/experience';
-import Education from './partials/education';
-import { scroll_anywhere } from './utils';
-import $ from 'jquery'; 
+import Skills from './partials/skills'
+import Experience from './partials/experience'
+import Education from './partials/education'
+import { scroll_anywhere } from './utils'
+import $ from 'jquery' 
 
 class About extends Component {
 	constructor(props) {
-		super(props);
+		super(props)
 		this.state = {
 			visible: "skills",
 			language: props.data.language,
@@ -19,28 +19,28 @@ class About extends Component {
 			skills_title: props.data.skills_title,
 			education: props.data.education,
 			experience: props.data.experience,
-		};
+		}
 	}
 	componentDidMount() {
-		let self = this;
+		let self = this
 		$('body').on('click', '#about-div .about_tabs_title', function (e) {	
-			let parent_id = $(this).parent().attr('id');
+			let parent_id = $(this).parent().attr('id')
 			
 			if(!$(this).parent().parent().hasClass('open')){
-				$('#about-div .about_tabs').removeClass('open');
-				$(this).parent().parent().addClass('open');
+				$('#about-div .about_tabs').removeClass('open')
+				$(this).parent().parent().addClass('open')
 			} else {				
-				$(this).parent().parent().removeClass('open');
+				$(this).parent().parent().removeClass('open')
 			}	
 
 			if(parent_id === "skills"){
-				self.setState({ visible: "skills" });
+				self.setState({ visible: "skills" })
 			} else if(parent_id === "experience"){
-				self.setState({ visible: "experience" });
+				self.setState({ visible: "experience" })
 			} else if(parent_id === "education"){
-				self.setState({ visible: "education" });	
-			};
-		});
+				self.setState({ visible: "education" })
+			}
+		})
 	}
 	render() {
 		return (
@@ -68,17 +68,11 @@ class About extends Component {
 							{(() => {
 								switch (this.state.visible) {
 									case "skills":
-										return (
-											<Skills language={this.state.language} pie_colors={this.state.pie_colors} skills={this.state.skills} skills_title={this.state.skills_title}></Skills>
-										)
+										return <Skills language={this.state.language} pie_colors={this.state.pie_colors} skills={this.state.skills} skills_title={this.state.skills_title}></Skills>
 									case "experience":
-										return (
-											<Experience experience={this.state.experience}></Experience>
-										)									
+										return <Experience experience={this.state.experience}></Experience>
 									case "education":
-										return (
-											<Education education={this.state.education}></Education>
-										)
+										return <Education education={this.state.education}></Education>
 									default:
 										return(
 											<Skills language={this.state.language} pie_colors={this.state.pie_colors} skills={this.state.skills} skills_title={this.state.skills_title}></Skills>
@@ -95,8 +89,8 @@ class About extends Component {
 					</Col>
 				</Row>
 			</Container>
-		);
+		)
 	}
 }
 
-export default About;
+export default About

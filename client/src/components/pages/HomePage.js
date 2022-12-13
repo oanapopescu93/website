@@ -1,15 +1,15 @@
-import React from 'react';
+import React from 'react'
 import Navbar from './navbar'
-import Cv from './partials/cv';
-import Footer from './partials/footer';
-import Top from './partials/top';
-import Tutorial from './partials/tutorial';
-import Section from './section';
+import Cv from './partials/cv'
+import Footer from './partials/footer'
+import Top from './partials/top'
+import Tutorial from './partials/tutorial'
+import Section from './section'
 
 function HomePage(props){
-	let socket = props.socket;
-    let data = props.data;
-    let login_visitor = props.data.login_visitor; // true = visitor; false = HR / future employer	
+	let socket = props.socket
+    let data = props.data
+    let login_visitor = props.data.login_visitor // true = visitor; false = HR / future employer	
     return (
         <>                	
             <Navbar login_visitor={login_visitor}></Navbar>
@@ -22,7 +22,7 @@ function HomePage(props){
             <Top></Top>
             <Footer></Footer>
         </>
-    );
+    )
 }
 
-export default HomePage;
+export default HomePage

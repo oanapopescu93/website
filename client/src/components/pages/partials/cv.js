@@ -1,28 +1,28 @@
-import React, { Component } from 'react';
-import { Modal} from "react-bootstrap";
-import cv_pdf from '../../files/CV - Oana Popescu.pdf';
-import cv_doc from '../../files/CV - Oana Popescu.doc';
-import $ from 'jquery'; 
+import React, { Component } from 'react'
+import { Modal} from "react-bootstrap"
+import cv_pdf from '../../files/CV - Oana Popescu.pdf'
+import cv_doc from '../../files/CV - Oana Popescu.doc'
+import $ from 'jquery'
 
 class Cv extends Component {
 	constructor(props) {
-		super(props);
+		super(props)
 		this.state = {
 			isOpen_cv: false,
-		};
-		this.handle_click = this.handle_click.bind(this);
-        this.handle_slide = this.handle_slide.bind(this);
+		}
+		this.handle_click = this.handle_click.bind(this)
+        this.handle_slide = this.handle_slide.bind(this)
 	}
 	
-	openModal_cv = () => this.setState({ isOpen_cv: true });
-  	closeModal_cv = () => this.setState({ isOpen_cv: false });
+	openModal_cv = () => this.setState({ isOpen_cv: true })
+  	closeModal_cv = () => this.setState({ isOpen_cv: false })
 
     handle_click(){
-        this.openModal_cv();
+        this.openModal_cv()
     }
     handle_slide(){
         if($('.mycv_container')){
-            $('.mycv_container').toggleClass('closed');
+            $('.mycv_container').toggleClass('closed')
         }
     }
 
@@ -48,7 +48,7 @@ class Cv extends Component {
 					</Modal.Body>
 				</Modal>
             </>
-        );
+        )
     }
 }
-export default Cv;
+export default Cv

@@ -1,37 +1,37 @@
-import React, { useState} from 'react';
+import React, { useState} from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import $ from 'jquery'; 
+import $ from 'jquery'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 function Login(props){  
-    const [toggleVisitor, settoggleVisitor] = useState(false);
-    const [showError, setShowError] = useState(false);
+    const [toggleVisitor, settoggleVisitor] = useState(false)
+    const [showError, setShowError] = useState(false)
 
     function handleClick(){
         if(!toggleVisitor && (typeof $('#login_password').val() === "undefined" || $('#login_password').val() === "null" || $('#login_password').val() === null || $('#login_password').val() === "")){
-            setShowError(true);
-            return;
+            setShowError(true)
+            return
         }
         let payload = {
             login_password: $('#login_password').val(),
             login_visitor: toggleVisitor,
             reason: "load",
         }
-        props.choice(payload);
+        props.choice(payload)
     }
     function handleChange(){
         if(toggleVisitor){
-            settoggleVisitor(false);
+            settoggleVisitor(false)
         } else {
-            settoggleVisitor(true);
+            settoggleVisitor(true)
         }
     }
-    let done = "";
+    let done = ""
     if(toggleVisitor){
-        done = " done";
+        done = " done"
     }
     return (
         <div id={props.template} className="full-height">
@@ -75,7 +75,7 @@ function Login(props){
             </Container>
             </div>
         </div>
-    );
+    )
 }
 
-export default Login;
+export default Login

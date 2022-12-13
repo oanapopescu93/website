@@ -1,12 +1,12 @@
-import React from 'react';
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
+import React from 'react'
+import OwlCarousel from 'react-owl-carousel'
+import 'owl.carousel/dist/assets/owl.carousel.css'
+import 'owl.carousel/dist/assets/owl.theme.default.css'
 
 function Carousel(props){    
-    let id = props.id;
-    let item_list = props.item_list;
-	let template = props.template;
+    let id = props.id
+    let item_list = props.item_list
+	let template = props.template
 	if(template === "portofolio"){
 		const options = {
 			items: 4,
@@ -24,24 +24,24 @@ function Carousel(props){
 					items:3
 				},
 			}
-		};
+		}
         
 		return (
 			<div id={id} className="owl_container">
 				<OwlCarousel {...options}>
 					{
 						item_list.map(function(item, i){
-							let status = item.status;
-							let platform = item.platform;
-							let git = item.git;
+							let status = item.status
+							let platform = item.platform
+							let git = item.git
 							if(!status){
-								status = "";
+								status = ""
 							}
 							if(!platform){
-								platform = "";
+								platform = ""
 							}
 							if(!git){
-								git = "";
+								git = ""
 							}
 
 							return(
@@ -59,14 +59,13 @@ function Carousel(props){
 										</div>
 									</div>
 								</div>
-							);
-                            
+							)                            
 						})
 					} 
 				</OwlCarousel>
 			</div>
-		);
+		)
 	} 	
 }
 
-export default Carousel;
+export default Carousel

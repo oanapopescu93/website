@@ -1,20 +1,20 @@
-import $ from 'jquery'; 
+import $ from 'jquery'
 
 export const capitalizeFirstLetter = function(string){
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
 export const scroll_anywhere = function(e){
-    e.preventDefault();	
-    var link = $(e.target).attr('href');
+    e.preventDefault()
+    var link = $(e.target).attr('href')
     if(typeof link !== "undefined" && link !== "null" && link !== null && link !== ""){        
-        var position = $(link).offset().top;
+        var position = $(link).offset().top
         if(typeof position !== "undefined" && position !== "null" && position !== null && position !== ""){
             if ($(window).width() < 960) {	
-                $("html, body").animate({ scrollTop: position}, 800);	
+                $("html, body").animate({ scrollTop: position}, 800)
             }	
             else {	
-                $("html, body").animate({ scrollTop: position - 40}, 800);	
+                $("html, body").animate({ scrollTop: position - 40}, 800)
             }
         } 
     }
@@ -22,41 +22,41 @@ export const scroll_anywhere = function(e){
 
 export const showResults = function(title="", message="", w=200, h="auto") {
   if($('.show_results_container').length>0){
-    $('.show_results_container').show();
-    $('.show_results').css('max-width', w);
-    $('.show_results').css('height', h);
+    $('.show_results_container').show()
+    $('.show_results').css('max-width', w)
+    $('.show_results').css('height', h)
     if($('.show_results h1').length>0){
-      $('.show_results h1').empty();
-      $('.show_results h1').append(title);
+      $('.show_results h1').empty()
+      $('.show_results h1').append(title)
     }  
     if($('.show_results p').length>0){
-      $('.show_results p').empty();
-      $('.show_results p').append(message);
+      $('.show_results p').empty()
+      $('.show_results p').append(message)
     }    
     $( ".show_results_container" ).click(function() {
-      $('.show_results_container').hide();
-    });
+      $('.show_results_container').hide()
+    })
   }
 }
 
 export const setCookie = function (cname,cvalue,exdays=30) {
-  let d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
-  let expires = "expires=" + d.toGMTString();
+  let d = new Date()
+  d.setTime(d.getTime() + (exdays*24*60*60*1000))
+  let expires = "expires=" + d.toGMTString()
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 export const getCookie = function (cname) {
-  let name = cname + "=";
+  let name = cname + "="
   let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
+  let ca = decodedCookie.split(';')
   for(let i = 0; i < ca.length; i++) {
-    let c = ca[i];
+    let c = ca[i]
     while (c.charAt(0) === ' ') {
-      c = c.substring(1);
+      c = c.substring(1)
     }
     if (c.indexOf(name) === 0) {
       return c.substring(name.length, c.length);
     }
   }
-  return "";
+  return ""
 }

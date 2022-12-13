@@ -1,16 +1,16 @@
-import React from 'react';
+import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import '../css/style.css';
-import logo_icon_white from '../img/logo-bear-white.png';
-import Parser from 'react-html-parser';
-import { scroll_anywhere } from './utils';
+import '../css/style.css'
+import logo_icon_white from '../img/logo-bear-white.png'
+import Parser from 'react-html-parser'
+import { scroll_anywhere } from './utils'
 
 function Header(props){
-	let title = props.data[0];
-	let subtitle = props.data[1];
-	let description = props.data[2];
+	let title = props.data[0]
+	let subtitle = props.data[1]
+	let description = props.data[2]
 	return (
 		<Container>
 			<Row>
@@ -50,7 +50,7 @@ function Header(props){
 				<a href="#about" className="scroll-button fa fa-angle-down" onClick={(e)=>{scroll_anywhere(e)}}> </a>
 			</div>
 		</Container>
-	);
+	)
 }
 
-export default Header;
+export default Header

@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
-import $ from 'jquery'; 
+import React, { Component } from 'react'
+import $ from 'jquery'
 import Container from 'react-bootstrap/Container'
-import '../css/style.css';
-import { scroll_anywhere } from './utils';
+import '../css/style.css'
+import { scroll_anywhere } from './utils'
 import ukraine from '../img/ukraine.svg'
 
 class Navbar extends Component {
 	componentDidMount(){
 		$("#menu").click(function(){
-			$(".bar1").toggleClass("change");	
-			$(".bar2").toggleClass("change");	
-			$(".bar3").toggleClass("change");	
-			$(".navbar-box").toggleClass("move-away");	
-		}); 
+			$(".bar1").toggleClass("change")	
+			$(".bar2").toggleClass("change")	
+			$(".bar3").toggleClass("change")	
+			$(".navbar-box").toggleClass("move-away")
+		})
     }
 
 	render() {
-		let login_visitor = this.props.login_visitor;
+		let login_visitor = this.props.login_visitor
         return (
             <div id = "mynavbar" className="mynavbar">
                 <Container>		
@@ -63,8 +63,8 @@ class Navbar extends Component {
                         </div>
                 </Container>		
             </div>
-        );
+        )
     }
 }
 
-export default Navbar;
+export default Navbar
