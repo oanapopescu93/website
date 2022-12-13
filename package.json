@@ -7,7 +7,7 @@
   },
   "scripts": {
     "client": "npm start --prefix client",
-    "server": "npm install && nodemon server.js --ignore client",
+    "server": "nodemon server.js --ignore client",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "build": "npm install && cd client && npm install && npm run build"
   },

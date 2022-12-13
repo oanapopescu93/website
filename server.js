@@ -3,7 +3,7 @@ const app = express();
 
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
-const port = process.env.PORT || 5000; // don't change the port
+const port = process.env.PORT || 5111; // don't change the port
 app.set("port", port);
 
 var nodemailer = require('nodemailer');
@@ -48,8 +48,9 @@ var mailOptions = {
 app.use(routes);
 
 io.on('connection', function(socket) {
+    console.log('connection!!!')
     socket.on('info_send', function(data) {
-        //console.log('info_send--> ', data)
+        console.log('info_send--> ', data)
         let login_visitor = false;
         let token
         let payload = {
