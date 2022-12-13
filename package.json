@@ -7,9 +7,9 @@
   },
   "scripts": {
     "client": "npm start --prefix client",
-    "server": "nodemon",
+    "server": "npm install && nodemon server.js --ignore client",
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "npm run build --prefix client"
+    "build": "cd client && npm install && npm run build --prefix client"
   },
   "author": "oana popescu",
   "license": "ISC",
