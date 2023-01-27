@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -38,7 +38,7 @@ function Child(props){
 				{
 					social.map(function(item, i){						
 						return (
-							<li key={i}><a href={item.link} target="_blank"  rel="noopener noreferrer"><i className={item.icon}></i></a></li>
+							<li key={i}><a href={item.link} target="_blank" rel="noopener noreferrer"><i className={item.icon}></i></a></li>
 						)
 					})
 				}
@@ -47,31 +47,23 @@ function Child(props){
 	)
 }
 
-class Contact extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			data: props.data,
-			socket: props.socket,
-		};
-		this.send_form = this.send_form.bind(this);
-	}
-	componentDidMount() {
-		$('body').on('click', '.click_me', function () {
-			var contact_page_container = $(this).parent().parent();
-			if(!contact_page_container.hasClass('flip')){
-				contact_page_container.addClass('flip');
+function Contact(props){
+	let data = props.data
+	let socket = props.socket
+
+	function flip(){		
+		if(!$('.contact_page_container').hasClass('flip')){
+			$('.contact_page_container').addClass('flip')
+			setTimeout(function() {
+				$('.contact_page_container').addClass('open')
 				setTimeout(function() {
-					contact_page_container.addClass('open');
-					setTimeout(function() {
-						contact_page_container.addClass('turn');
-					}, 800);
-				}, 1000);			
-			}			
-		});
+					$('.contact_page_container').addClass('turn')
+				}, 800)
+			}, 1000)			
+		}	
 	}
 
-	send_form(){
+	function send_form(){
 		let send = true;
 		$('#contact_email_error').hide();
 		$('#contact_message_error').hide();
@@ -100,8 +92,8 @@ class Contact extends Component {
 				subject: $('#contact_title').val(),
 				html: contact_message,
 			}
-			this.state.socket.emit('contact_send', payload);
-			this.state.socket.on('contact_read', function(data){
+			socket.emit('contact_send', payload);
+			socket.on('contact_read', function(data){
 				$('.show_results_container').removeClass('success error')
 				if(data[0] === "Success!"){
 					$('.show_results_container').addClass('success')
@@ -112,86 +104,80 @@ class Contact extends Component {
 			});
 		}
 	}
-
-	render() {
-		let login_visitor = this.props.login_visitor
-		return (
-			<Container>
-					<Row>
-						<Col sm={6} className="visible-xs-block">
-							<Child div_class="contact-page-mobile" login_visitor={login_visitor} data={this.state.data}></Child>
-						</Col>
-						<Col sm={6} className="box-contact-form">
-							<Form>
-								<Row>
-									<Col sm={6}>
-										<label htmlFor="first_name">First Name</label>
-										<input id="contact_first_name" className="form-control shadow_concav" type="text" name="first_name"></input>
-									</Col>
-									<Col sm={6}>
-										<label htmlFor="last_name">Last Name</label>
-										<input id="contact_last_name" className="form-control shadow_concav" type="text" name="last_name"></input>
-									</Col>
-								</Row>
-								<Row>
-									<Col sm={12}>
-										<label htmlFor="email">Email Address *</label>
-										<input id="contact_email" className="form-control shadow_concav" type="text" name="email"></input>
-										<p className="contact_error text-red" id="contact_email_error">Please provide an email.</p>
-									</Col>
-								</Row>
-								<Row>
-									<Col sm={12}>
-										<label htmlFor="telephone">Telephone Number</label>
-										<input id="contact_telephone" className="form-control shadow_concav" type="text" name="telephone"></input>
-									</Col>
-								</Row>
-								<Row>
-									<Col sm={12}>
-										<label htmlFor="message">Title</label>
-										<input id="contact_title" className="form-control shadow_concav" type="text" name="title"></input>
-									</Col>
-								</Row>
-								<Row>
-									<Col sm={12}>
-										<label htmlFor="message">Message *</label>
-										<textarea id="contact_message" className="form-control shadow_concav" name="message" cols="25" rows="6"></textarea>
-										<p className="contact_error text-red" id="contact_message_error">Please provide a message.</p>
-									</Col>
-								</Row>
-								<Row>
-									<Col sm={12}>
-										<Button onClick={()=>{this.send_form()}} className="button-white shadow_convex" name="send" type="button">Send</Button>
-									</Col>
-								</Row>
-							</Form>
-						</Col>
-						<Col sm={6} className="box-container text-center hidden-xs">
-							<div className="contact_page_container">
-								<div className="contact_back">
-									<div className="click_me">
-										<span>Click me</span>
-									</div>
-								</div>
-								<div className="contact_front">
-									<Child div_class="contact-info" login_visitor={login_visitor} data={this.state.data}></Child>
-									<div className="corner corner-1"></div>
-									<div className="corner corner-2"></div>
-									<div className="corner corner-3"></div>
-									<div className="corner corner-4"></div>
+	
+	return (
+		<Container>
+				<Row>
+					<Col sm={6} className="visible-xs-block">
+						<Child div_class="contact-page-mobile" login_visitor={props.login_visitor} data={data}></Child>
+					</Col>
+					<Col sm={6} className="box-contact-form">
+						<Form>
+							<Row>
+								<Col sm={6}>
+									<label htmlFor="first_name">First Name</label>
+									<input id="contact_first_name" className="form-control shadow_concav" type="text" name="first_name"></input>
+								</Col>
+								<Col sm={6}>
+									<label htmlFor="last_name">Last Name</label>
+									<input id="contact_last_name" className="form-control shadow_concav" type="text" name="last_name"></input>
+								</Col>
+							</Row>
+							<Row>
+								<Col sm={12}>
+									<label htmlFor="email">Email Address *</label>
+									<input id="contact_email" className="form-control shadow_concav" type="text" name="email"></input>
+									<p className="contact_error text-red" id="contact_email_error">Please provide an email.</p>
+								</Col>
+							</Row>
+							<Row>
+								<Col sm={12}>
+									<label htmlFor="telephone">Telephone Number</label>
+									<input id="contact_telephone" className="form-control shadow_concav" type="text" name="telephone"></input>
+								</Col>
+							</Row>
+							<Row>
+								<Col sm={12}>
+									<label htmlFor="message">Title</label>
+									<input id="contact_title" className="form-control shadow_concav" type="text" name="title"></input>
+								</Col>
+							</Row>
+							<Row>
+								<Col sm={12}>
+									<label htmlFor="message">Message *</label>
+									<textarea id="contact_message" className="form-control shadow_concav" name="message" cols="25" rows="6"></textarea>
+									<p className="contact_error text-red" id="contact_message_error">Please provide a message.</p>
+								</Col>
+							</Row>
+							<Row>
+								<Col sm={12}>
+									<Button onClick={()=>{send_form()}} className="button-white shadow_convex" name="send" type="button">Send</Button>
+								</Col>
+							</Row>
+						</Form>
+					</Col>
+					<Col sm={6} className="box-container text-center hidden-xs">
+						<div className="contact_page_container">
+							<div className="contact_back">
+								<div className="click_me" onClick={flip}>
+									<span>Click me</span>
 								</div>
 							</div>
-						</Col>
-					</Row>
-					<div className="show_results_container">
-						<div className="show_results">
-							<h1> </h1>
-							<p> </p>
+							<div className="contact_front">
+								<Child div_class="contact-info" login_visitor={props.login_visitor} data={data}></Child>
+								<div className="corner corner-1"></div>
+								<div className="corner corner-2"></div>
+								<div className="corner corner-3"></div>
+								<div className="corner corner-4"></div>
+							</div>
 						</div>
-					</div>
-			</Container>
-		)
-	}
+					</Col>
+				</Row>
+				<div className="show_results_container">
+					<div className="show_results"><h1></h1><p></p></div>
+				</div>
+		</Container>
+	)
 }
 
 export default Contact

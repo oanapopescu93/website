@@ -9,6 +9,7 @@ import Col from 'react-bootstrap/Col'
 function Login(props){  
     const [toggleVisitor, settoggleVisitor] = useState(false)
     const [showError, setShowError] = useState(false)
+    console.log(props.darkMode)
 
     function handleClick(){
         if(!toggleVisitor && (typeof $('#login_password').val() === "undefined" || $('#login_password').val() === "null" || $('#login_password').val() === null || $('#login_password').val() === "")){
@@ -34,7 +35,7 @@ function Login(props){
         done = " done"
     }
     return (
-        <div id={props.template} className="full-height">
+        <div id='login' className={"full-height " + props.darkMode}>
             <div className="full-height-content">
             <Container>
                 <Row>

@@ -1,85 +1,101 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import Row from 'react-bootstrap/Row'
 import $ from 'jquery'
 import { scroll_anywhere } from '../utils'
 
-class Experience extends Component {	
-	constructor(props) {
-		super(props)
-        this.state = {
-			experience: props.experience,
-		}
-	}
+function Experience(props){	
+	let experience = props.experience
 
-	componentDidMount() {
+	useEffect(() => {
         if($('#about_content_box')){
             $('#about_content_box').scrollTop(0)
-        }
-        $('#about_content_box .row').append('<div class="col-sm-12"></div>')
-        for (var i in this.state.experience){
-			$('#about_content_box .row > div').append('<div class="job_header"></div>')
-			if(typeof this.state.experience[i].job_title != "undefined"){
-				$('#about_content_box .row > div .job_header').eq(i).append('<div class="job_title"><h4 class="text-uppercase">'+ this.state.experience[i].job_title +'</h4></div>')
-			}
-			if(typeof this.state.experience[i].period != "undefined"){
-				$('#about_content_box .row > div .job_header').eq(i).append('<div class="period">('+ this.state.experience[i].period +')</div>')
-			}
-			if(typeof this.state.experience[i].company_name != "undefined"){
-				if(typeof this.state.experience[i].link_company != "undefined"){
-					$('#about_content_box .row > div .job_header').eq(i).append('<div class="company_name"><a href="' + this.state.experience[i].link_company + '" target="_blank"><b>'+ this.state.experience[i].company_name +'</b></a></div>')
-				} else {
-					$('#about_content_box .row > div .job_header').eq(i).append('<div class="company_name"><b>'+ this.state.experience[i].company_name +'</b></div>')
-				}
-			}			
-			
-			$('#about_content_box .row > div').append('<div class="job_body"></div>')
-			
-			if(typeof this.state.experience[i].job_location != "undefined"){
-				$('#about_content_box .row > div .job_body').eq(i).append('<div class="job_location"><b>Location: </b>'+ this.state.experience[i].job_location +'</div>')
-			}
-			if(typeof this.state.experience[i].company_description != "undefined"){
-				$('#about_content_box .row > div .job_body').eq(i).append('<div class="company_description"><b>Company profile: </b>'+ this.state.experience[i].company_description +'</div>')
-			}
-			if(typeof this.state.experience[i].job_description != "undefined"){
-				$('#about_content_box .row > div .job_body').eq(i).append('<div class="job_description"><b>What I did: </b>'+ this.state.experience[i].job_description +'</div>')
-			}
-			if(typeof this.state.experience[i].job_description_list != "undefined"){
-				var job_description_list = this.state.experience[i].job_description_list
-				var job_description_list_element = ""
-				for(let j in job_description_list){					
-					job_description_list_element = job_description_list_element + '<li>' + job_description_list[j] + '</li>'					
-				}
-				$('#about_content_box .row > div .job_body').eq(i).append('<div class="projects"><b>My work: </b><ul>'+ job_description_list_element +'</ul></div>')
-			}
-			if(typeof this.state.experience[i].platform_used != "undefined"){
-				$('#about_content_box .row > div .job_body').eq(i).append('<div class="jplatform_used"><b>Platforms used: </b>'+ this.state.experience[i].platform_used +'</div>')
-			}
-			if(typeof this.state.experience[i].accomplishments != "undefined"){
-				$('#about_content_box .row > div .job_body').eq(i).append('<div class="accomplishments"><b>Accomplishments: </b>'+ this.state.experience[i].accomplishments +'</div>')
-			}
-			if(typeof this.state.experience[i].projects != "undefined"){
-				var projects = this.state.experience[i].projects
-				var project_element = ""
-				for(let j in projects){
-					if(projects[j].project_link === "portofolio"){
-						project_element = project_element + '<li><a href="#' + projects[j].project_link + '" class="scroll-button">' + projects[j].project_name + '</li>'
-					} else {
-						project_element = project_element + '<li><a target="_blank" href="' + projects[j].project_link + '">' + projects[j].project_name + '</li>'
-					}
-					
-				}
-				$('#about_content_box .row > div .job_body').eq(i).append('<div class="projects"><b>Projects: </b><ul>'+ project_element +'</ul></div>')
-			}
-		}
+        }       
+	}, [])
 
-		$('body').on('click', '.scroll-button', function (e){
-			scroll_anywhere(e)
-		})
-	}
-    
-	render() {
-		return <Row id="experience_row"></Row>
-    }
+	return(
+		<Row id="experience_row">
+			{(() => {
+				if(experience && experience.length>0){
+					return(
+						<div className="col-sm-12">
+							{
+								experience.map(function(item, t){
+									return(
+										<div key={t}>
+											<div className="job_header">
+												{item.job_title ? <div className="job_title"><h4 className="text-uppercase">{item.job_title}</h4></div> : null}
+												{item.period ? <div className="period">{'(' + item.period + ')'}</div> : null}
+												{(() => {
+													if(item.company_name){
+														if(item.link_company){
+															return <div className="company_name"><a href={item.link_company} target="_blank" rel="noopener noreferrer"><b>{item.company_name}</b></a></div>
+														} else {
+															return <div className="company_name"><b>{item.company_name}</b></div>
+														}
+													}
+												})()}
+											</div>
+											<div className="job_body">
+												{item.job_location ? <div className="job_location"><b>Location: </b>{item.school_location}</div> : null}
+												{item.company_description ? <div className="company_description"><b>Company profile: </b>{item.description}</div> : null}
+												{item.job_description ? <div className="job_description"><b>Tools used: </b>{item.job_description}</div> : null}
+												{(() => {
+													if(item.job_description_list && item.job_description_list.length>0){
+														return(
+															<div className="projects">
+																<b>My work: </b>
+																<ul>
+																	{
+																		item.job_description_list.map(function(x, i){
+																			return(
+																				<li key={i}>{x}</li>
+																			)
+																		})
+																	}
+																</ul>
+															</div>
+														)
+													} else {
+														return
+													}
+												})()}
+												{item.platform_used ? <div className="platform_used"><b>Platforms used: </b>{item.platform_used}</div> : null}
+												{item.accomplishments ? <div className="accomplishments"><b>Accomplishments: </b>{item.platform_used}</div> : null}
+												{(() => {
+													if(item.projects && item.projects.length>0){
+														return(
+															<div className="projects">
+																<b>Projects: </b>
+																<ul>
+																	{
+																		item.projects.map(function(y, j){
+																			if(y.project_link === "portofolio"){
+																				return <li key={j}><a href={'#' + y.project_link} className="scroll-button" onClick={(e)=>{scroll_anywhere(e)}}>{y.project_name}</a></li>
+																			} else {
+																				return <li key={j}><a target="_blank" rel="noopener noreferrer" href={y.project_link}>{y.project_name}</a></li>
+																			}
+																		})
+																	}
+																</ul>
+															</div>
+														)
+													} else {
+														return
+													}
+												})()}
+											</div>
+										</div>
+									)
+								})
+							}
+						</div>
+					)
+				} else {
+					return <p>Error loading work history</p>
+				}
+			})()}
+		</Row>
+	)
 }
 
 export default Experience

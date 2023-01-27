@@ -1,15 +1,15 @@
 :root {
-	--blue: #189cb0;
-	--grey: #f3f4f6;
-	--light_grey: #bebebe;
-	--grey333:#333;
-	--grey666:#666;
-	--grey888:#888;
-	--text-muted: #3272a0;
-	--white: #fff;
-	--black: #000;
+	--blue: red;
+	--grey: red;
+	--light_grey: red;
+	--grey333:red;
+	--grey666:red;
+	--grey888:red;
+	--text-muted: red;
+	--white: red;
+	--black: red;
     --red: red;
-    --green: green;
+    --green: red;
 }
 
 html {

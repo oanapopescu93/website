@@ -1,4 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/App'
-ReactDOM.render(<App></App>, document.getElementById('root'))
+import {Provider} from 'react-redux'
+import store from './components/store'
+ReactDOM.render(  
+	<Provider store={store}>
+		<App></App>
+	</Provider>,
+	document.getElementById('root')
+)

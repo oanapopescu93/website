@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import Row from 'react-bootstrap/Row'
 import $ from 'jquery' 
 import { capitalizeFirstLetter } from '../utils'
@@ -90,12 +90,14 @@ function Piechart(mycanvas, mylegend, dataSource, colors, doughnutHoleSize, w, h
         } 		
 		
 		if(mylegend){
-			$('#' + mycanvas).after('<div class="legend" id="' + mylegend + '"></div>')		
-            let legendHTML = ""
-            for (let i in dataSource){ 
-                legendHTML = legendHTML + "<div><span style='display:inline-block;width:20px;background-color:"+colors[i]+";'>&nbsp;</span> "+dataSource[i].name+"</div>"
-            }
-            $('#' + mylegend).html(legendHTML)
+			if($('#' + mycanvas)){
+				$('#' + mycanvas).after('<div class="legend" id="' + mylegend + '"></div>')		
+				let legendHTML = ""
+				for (let i in dataSource){ 
+					legendHTML = legendHTML + "<div><span style='display:inline-block;width:20px;background-color:"+colors[i]+";'>&nbsp;</span> "+dataSource[i].name+"</div>"
+				}
+				$('#' + mylegend).html(legendHTML)
+			}
 		}
 		
 	}
@@ -110,75 +112,102 @@ function Piechart(mycanvas, mylegend, dataSource, colors, doughnutHoleSize, w, h
     }
 }
 
-class Skills extends Component {	
-	constructor(props) {
-		super(props)
-        this.state = {
-			skills_title: props.skills_title,
-            skills: props.skills,
-            pie_colors: props.pie_colors,
-            language: props.language,
-		}
-	}
+function Skills(props){	
+	let skills_title = props.skills_title
+	let skills = props.skills
+	let pie_colors = props.pie_colors
+	let language = props.language
+	let pie_element = []
+	let myPiechart = []		
 
-	componentDidMount() {
+	useEffect(() => {
         if($('#about_content_box')){
             $('#about_content_box').scrollTop(0)
-        }
-
-        var pie_element = []
-		var myPiechart = []		
-		for(var k in this.state.skills_title){
-			$('#skills_row').append('<div class="col-xs-12"><h4 class="grey666">' + capitalizeFirstLetter(this.state.skills_title[k]) + '</h4></div>')
-			for(var i in this.state.skills){
-				if(this.state.skills[i].type === this.state.skills_title[k]){
-					pie_element = []					
-					$('#skills_row').append('<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center"><canvas id="myskill_'+ i +'"></canvas></div>')
-					pie_element.push(this.state.skills[i])
-					myPiechart[i] = new Piechart("myskill_"+ i, "pie_legend"+ i, pie_element, this.state.pie_colors, 0.8, 120, 120)
+        }   
+		for(let t in skills_title){
+			for(let i in skills){
+				if(skills_title[t] === skills[i].type){
+					pie_element = []	
+					pie_element.push(skills[i])
+					myPiechart[i] = new Piechart("myskill_"+ i, "pie_legend"+ i, pie_element, pie_colors, 0.8, 120, 120)
 					myPiechart[i].draw()
 				}
-			}	
+			}
 		}
-	}
-    
-	render() {
-		return (
-            <>
-                <Row id="skills_row"></Row>
-                <Row id="language_row">
-					<Col sm={12}>
-						<h4 className="grey666">Languages</h4>
-					</Col>
-					<Col id="language_bar_container" sm={6} md={4} lg={3}>
-						{(() => {
-							if(typeof this.state.language !== "undefined" && this.state.language !== "null" && this.state.language !== null && this.state.language !== ""){
-								if(this.state.language.length>0){
-									return(
-										<>
-											{
-												this.state.language.map(function(item, i){
-													let width = {'width': item.perc+"%"}
-													return (
-														<div key={i}>
-															<p className="language_bar_title">{capitalizeFirstLetter(item.name)}<span>({item.level})</span></p>
-															<div className="language_bar_box">
-																<div style={width} className={"language_bar " + item.name}>{item.perc}%</div>
-															</div>
-														</div>
-													)
-												})
-											}
-										</>
-									)
+	}, [])
+	
+	return (
+		<>
+			<Row id="skills_row">
+				{(() => {
+					if(skills_title && skills_title.length>0){
+						return(
+							<>
+								{
+									skills_title.map(function(item, t){
+										return(
+											<div key={t}>
+												<div className="col-xs-12"><h4 className="grey666">{capitalizeFirstLetter(item)}</h4></div>
+												<div className="col-xs-12">
+												{(() => {
+													if(skills && skills.length>0){
+														return(
+															<>
+																{
+																	skills.map(function(x, i){																		
+																		if(item === x.type){
+																			return(
+																				<div key={i}>
+																					<div className="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center"><canvas id={"myskill_"+ i}></canvas></div>
+																				</div>
+																			)
+																		}
+																	})
+																}
+															</>
+														)
+													}
+												})()}
+												</div>
+											</div>
+										)
+									})
 								}
-							}
-						})()}
-					</Col>
-				</Row>
-            </>
-	    )
-    }
+							</>
+						)
+					}
+				})()}
+			</Row>
+			<Row id="language_row">
+				<Col sm={12}>
+					<h4 className="grey666">Languages</h4>
+				</Col>
+				<Col id="language_bar_container" sm={6} md={4} lg={3}>
+					{(() => {
+						if(language && language.length>0){
+							return(
+								<>
+									{
+										language.map(function(item, i){
+											let width = {'width': item.perc+"%"}
+											return (
+												<div key={i}>
+													<p className="language_bar_title">{capitalizeFirstLetter(item.name)}<span>({item.level})</span></p>
+													<div className="language_bar_box">
+														<div style={width} className={"language_bar " + item.name}>{item.perc}%</div>
+													</div>
+												</div>
+											)
+										})
+									}
+								</>
+							)
+						}
+					})()}
+				</Col>
+			</Row>
+		</>
+	)
 }
 
 export default Skills

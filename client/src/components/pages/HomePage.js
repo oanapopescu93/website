@@ -9,7 +9,7 @@ import Section from './section'
 function HomePage(props){
 	let socket = props.socket
     let data = props.data
-    let login_visitor = props.data.login_visitor // true = visitor; false = HR / future employer	
+    let login_visitor = props.data.login_visitor // true = visitor; false = HR / future employer
     return (
         <>                	
             <Navbar login_visitor={login_visitor}></Navbar>
