@@ -10,8 +10,7 @@ function Header(props){
 	let title = props.data[0]
 	let subtitle = props.data[1]
 	let description = props.data[2]
-	return (
-		<Container>
+	return <Container>
 			<Row>
 				<Col sm={12} className="header-title-container text-center shadow_convex">
 					<Row>
@@ -48,8 +47,7 @@ function Header(props){
 			<div className="scroll">
 				<a href="#about" className="scroll-button fa fa-angle-down" onClick={(e)=>{scroll_anywhere(e)}}> </a>
 			</div>
-		</Container>
-	)
+	</Container>
 }
 
 export default Header

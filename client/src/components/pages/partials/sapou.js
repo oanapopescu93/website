@@ -6,8 +6,7 @@ import Col from 'react-bootstrap/Col'
 function Sapou(props) {
     switch (props.template) {
         case "about":
-            return (
-                <Container>
+            return <Container>
                     <Row>
                         <Col sm={12}>
                             <hr className="line"></hr>
@@ -16,10 +15,8 @@ function Sapou(props) {
                         </Col>
                     </Row>
                 </Container>
-            )
         case "portofolio":
-            return (
-                <Container>
+            return <Container>
                     <Row>
                         <Col sm={12}>
                             <hr className="line"></hr>
@@ -28,10 +25,8 @@ function Sapou(props) {
                         </Col>
                     </Row>
                 </Container>
-            )
         case "contact":
-            return (
-                <Container>
+            return <Container>
                     <Row>
                         <Col sm={12}>
                             <hr className="line"></hr>
@@ -40,11 +35,8 @@ function Sapou(props) {
                         </Col>
                     </Row>
                 </Container>
-            )
         default:
-            return (
-                <></>
-            )
+            return null
     }	
 }
 

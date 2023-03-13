@@ -18,8 +18,6 @@ function Top(props){
             $('#top').removeClass('show')
         }
 	}
-    return (
-        <a href="#header" id="top" title="Back to top" className="text-uppercase scroll-button fa fa-arrow-circle-up" onClick={(e)=>{scroll_anywhere(e)}}> </a>
-    )
+    return <a href="#header" id="top" title="Back to top" className="text-uppercase scroll-button fa fa-arrow-circle-up" onClick={(e)=>{scroll_anywhere(e)}}></a>
 }
 export default Top

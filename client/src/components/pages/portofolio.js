@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -7,71 +7,75 @@ import $ from 'jquery'
 import Carousel from './partials/carousel'
 import { Modal} from "react-bootstrap"
 
-function Child(props){     
-	return (
-		<Carousel template={props.template} id={props.id} item_list={props.item_list}></Carousel>
-	)
+function Child(props){ 
+	function handleClick(x){
+		props.getItem(x)
+	}   
+	return <Carousel template={props.template} id={props.id} itemList={props.itemList} getItem={handleClick}></Carousel>
 }
 
-class Portofolio extends Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			portofolio: props.data,
-			tutorials: props.data.tutorials,
-			isOpen_portofolio: false,
-			isOpen_tutorials: false
+function ModalPortofolio(props){	
+	return <>
+		<div className="title">
+			<p><b>{props.item.title}</b></p>
+			{props.item.git ? <a className="modal_button" href={props.item.git} target="_blank" rel="noopener noreferrer">Take a look</a> : null}
+			{props.item.link ? <a className="modal_button" href={props.item.link} target="_blank" rel="noopener noreferrer">See the code</a> : null}
+		</div>
+		{props.item.platform ? <div className="platform"><b>Platform: </b>{props.item.platform}</div> : null}		
+		<div className="used">
+			<b>What I used: </b><br></br>
+			{
+				props.item.used.map(function(x, i){
+					return <span key={i} className="box">{x}</span>
+				})
+			}
+		</div>
+	</>
+}
+
+function Portofolio(props){
+	const [portofolio, setPortofolio] = useState(props.data)
+	const [tutorials, setTutorials] = useState(props.data.tutorials)
+
+	const [tutorialHeader, setTutorialHeader] = useState(["all"])
+
+	const [isOpenPortofolio, setIsOpenPortofolio] = useState(false)
+	const [isOpenTutorials, setIsOpenTutorials] = useState(false)
+
+	const [item, setItem] = useState(null)
+
+	function openModalPortofolio(){
+		setIsOpenPortofolio(true)
+	}
+	function closeModalPortofolio(){
+		setIsOpenPortofolio(false)
+	}
+	function openModalTutorials(){
+		setIsOpenTutorials(true)
+	}
+	function closeModalTutorials(){
+		setIsOpenTutorials(false)
+	}
+
+	useEffect(() => {
+		let tutorial_header = ["all"]
+		for(let i in portofolio.tutorials){
+			if(!tutorial_header.includes(portofolio.tutorials[i].type)){
+				tutorial_header.push(portofolio.tutorials[i].type)
+			}	
 		}
-		this.tutorial_header = ["all"]
-		this.portofolio_click = this.portofolio_click.bind(this)
-		this.portofolio_image_click = this.portofolio_image_click.bind(this)
-		this.portofolio_tutorials_click = this.portofolio_tutorials_click.bind(this)
-		this.handleTutorialClick = this.handleTutorialClick.bind(this)
+		setTutorialHeader(tutorial_header)
+	}, [])
+
+	function handleClickItem(x){
+		setItem(x)
+		openModalPortofolio()
 	}
 
-	openModal_portofolio = () => this.setState({ isOpen_portofolio: true })
-  	closeModal_portofolio = () => this.setState({ isOpen_portofolio: false })
-	openModal_tutorials = () => this.setState({ isOpen_tutorials: true })
-  	closeModal_tutorials = () => this.setState({ isOpen_tutorials: false })
-
-	portofolio_image_click(){
-        let self = this
-		$('body').on('click', '.item-info img', function (e) {
-			self.openModal_portofolio()
-			$('#myModal_portofolio .modal-body .title').empty()
-			$('#myModal_portofolio .modal-body .platform').empty()
-			$('#myModal_portofolio .modal-body .used').empty()
-			$('#myModal_portofolio .modal-body .status').empty()
-
-			if($(this).closest('.item-container').find('.item-more-info p.grid_link').text() !== "undefined"){
-				$('#myModal_portofolio .modal-body .title').append('<a class="modal_button" href="' + $(this).closest('.item-container').find('.item-more-info p.grid_link').text() + '" target="_blank">Take a look</a>')
-			} 
-			
-			if($(this).closest('.item-container').find('.item-more-info p.grid_git').text() !== ""){
-				$('#myModal_portofolio .modal-body .platform').append('<a class="modal_button" href="' + $(this).closest('.item-container').find('.item-more-info p.grid_git').text() + '" target="_blank">See the code</a>')
-			}
-			
-			if($(this).closest('.item-container').find('.item-more-info p.grid_platform').text() !== ""){
-				$('#myModal_portofolio .modal-body .platform').append('<b>Platform: </b>' + $(this).closest('.item-container').find('.item-more-info p.grid_platform').text())
-			}
-			
-			var text = $(this).closest('.item-container').find('.item-more-info p.grid_used').text()
-			var res = text.split(", ")
-			$('#myModal_portofolio .modal-body .used').append('<b>What I used: </b><br>')
-			for (var i in res){
-				$('#myModal_portofolio .modal-body .used').append('<span class="box">'+ res[i] +'</span>')
-			}
-	
-			if($(this).closest('.item-container').find('.item-more-info p.grid_status').length > 0){
-				$('#myModal_portofolio .modal-body .status').append('<b>Status: </b>' + $(this).closest('.item-container').find('.item-more-info p.grid_status').text())
-			} 	
-		})
-	}
-
-	portofolio_click(e){
+	function portofolioClick(e){
 		$('.portofolio-list li').removeClass('active')
 		$('.portofolio-container .owl_container').hide()
-		var element = $(e.target)
+		let element = $(e.target)
 		element.addClass('active')
 		let order = $(e.target).attr('order')
 		if($('#owl_carousel_'+order)){
@@ -79,159 +83,134 @@ class Portofolio extends Component {
 		}
 	}
 
-	portofolio_tutorials_click(){
-		this.openModal_tutorials()
-	}
+	function portofolioTutorialsClick(){
+		openModalTutorials()
+	}	
 
-	componentDidMount() {
-		for(let i in this.state.portofolio.tutorials){
-			if(!this.tutorial_header.includes(this.state.portofolio.tutorials[i].type)){
-				this.tutorial_header.push(this.state.portofolio.tutorials[i].type)
-			}									
-		}
-		this.portofolio_image_click()
-	}
-
-	handleTutorialClick(type){	
+	function handleTutorialClick(type){	
 		switch (type) {
 			case "javascript":
 			case "react":
 			case "node":
 			case "python":
 			case "embedded c":
-				const my_tutorials = this.props.data.tutorials.filter((x) => x.type === type)
-				this.setState({ tutorials: my_tutorials })
+				const my_tutorials = props.data.tutorials.filter((x) => x.type === type)
+				setTutorials(my_tutorials)
 				break
 			default:
-				this.setState({ tutorials: this.props.data.tutorials })
+				setTutorials(props.data.tutorials)
 		}
 	}
-
-	render() {
-		let self = this
-		return (
-			<>
-				<Container>
-					<Row>
-						<Col sm={12}>
-							<ul className="portofolio-list text-center">
-								{
-									self.state.portofolio.portofolio_list.map(function(item, i){
-										let active = ""
-										if(i === 0){
-											active = "active"
-										}
-										return (
-											<li key={i} order={i} className={active} onClick={(e)=>{self.portofolio_click(e)}}>{item}</li>
-										)
-									})
-								} 
-							</ul>
-							<div className="portofolio-container text-left">
-								{
-									self.state.portofolio.portofolio_items.map(function(item, i){
-										return (
-											<Child key={i} id={"owl_carousel_"+i} template={"portofolio"} item_list={item}></Child>
-										)
-									})
-								} 
-							</div>
-						</Col>
-					</Row>
-					<Row>
-						<Col sm={12} className="text-center">
-							<div id="portofolio_links_other">
-								<a id="portofolio_git" href="https://github.com/oanapopescu93" rel="noopener noreferrer" target="_blank">
-									<Button>
-										<i className="fa fa-github"></i> <span>github.com/oanapopescu93</span>
-									</Button>
-								</a>
-								<Button id="portofolio_tutorials" data-toggle="modal" data-target="#myModal_tutorials" onClick={()=>{this.portofolio_tutorials_click()}}>
-									<i className="fa fa-book"></i> <span>Tutorials</span>
-								</Button>
-							</div>
-						</Col>
-					</Row>
-				</Container>
-
-				<Modal id="myModal_portofolio" className="mymodal text-center" show={self.state.isOpen_portofolio} onHide={self.closeModal_portofolio}>
-					<Modal.Header closeButton>
-						<Modal.Title>Details</Modal.Title>
-					</Modal.Header>
-					<Modal.Body>
-						<div className="title"></div>
-						<div className="platform"></div>
-						<div className="used"></div>
-						<div className="status"></div>
-					</Modal.Body>
-				</Modal>
-				<Modal id="myModal_tutorials" className="mymodal text-center" show={self.state.isOpen_tutorials} onHide={self.closeModal_tutorials}>
-					<Modal.Header closeButton>
-						<Modal.Title>Tutorials</Modal.Title>
-					</Modal.Header>
-					<Modal.Body>
-						<div id="tutorial_header_container">
-							{(() => {
-								return(
-									<>
-										{
-											this.tutorial_header.map(function(item, i){
-												return (
-													<div key={i} onClick={()=>{self.handleTutorialClick(item)}}>{item}</div>
-												)
-											})
-										}
-									</>
-								)							
-							})()}
-						</div>
-						<div id="tutorial_box_container">
-							{(() => {
-								let tutorials = this.state.tutorials
-								if(typeof tutorials !== "undefined" && tutorials !== null){
-									if(tutorials.length>0){
-										return(
-											<>
-												{
-													tutorials.map(function(item1, i){
-														return (
-															<Row key={i} id={"tutorial_box_"+i}>
-																<Col sm={8} className="box01">
-																	<h4 className="tutorial_name">{item1.name}</h4>
-																	<p>{item1.description}</p>
-																	<p>What I used:</p>
-																	<>
-																		{
-																			item1.used.map(function(item2, j){
-																				return (
-																					<span key={j} className="box">{item2}</span> 
-																				)
-																			})
-																		}
-																	</>
-																</Col>
-																<Col sm={4} className="box02">
-																	<a className="tutorial_link" href={tutorials[i].link} target="_blank" rel="noopener noreferrer">Link</a>
-																</Col>
-															</Row>
-														)
-													})
-												}
-											</>
-										)
-									} else {
-										return <div>No tutorials yet</div>
+	
+	return (
+		<>
+			<Container>
+				<Row>
+					<Col sm={12}>
+						<ul className="portofolio-list text-center">
+							{
+								portofolio.portofolio_list.map(function(item, i){
+									let active = ""
+									if(i === 0){
+										active = "active"
 									}
+									return <li key={i} order={i} className={active} onClick={(e)=>{portofolioClick(e)}}>{item}</li>
+								})
+							} 
+						</ul>
+						<div className="portofolio-container text-left">
+							{
+								portofolio.portofolio_items.map(function(item, i){
+									return <Child key={i} id={"owl_carousel_"+i} template={"portofolio"} itemList={item} getItem={handleClickItem}></Child>
+								})
+							} 
+						</div>
+					</Col>
+				</Row>
+				<Row>
+					<Col sm={12} className="text-center">
+						<div id="portofolio_links_other">
+							<a id="portofolio_git" href="https://github.com/oanapopescu93" rel="noopener noreferrer" target="_blank">
+								<Button>
+									<i className="fa fa-github"></i> <span>https://github.com/oanapopescu93</span>
+								</Button>
+							</a>
+							<Button id="portofolio_tutorials" data-toggle="modal" data-target="#myModal_tutorials" onClick={()=>{portofolioTutorialsClick()}}>
+								<i className="fa fa-book"></i> <span>Tutorials</span>
+							</Button>
+						</div>
+					</Col>
+				</Row>
+			</Container>
+
+			<Modal id="myModal_portofolio" className="mymodal text-center" show={isOpenPortofolio} onHide={closeModalPortofolio}>
+				<Modal.Header closeButton>
+					<Modal.Title>Details</Modal.Title>
+				</Modal.Header>
+				<Modal.Body>
+					{item ? <ModalPortofolio item={item}></ModalPortofolio> : null}
+				</Modal.Body>
+			</Modal>
+
+			<Modal id="myModal_tutorials" className="mymodal text-center" show={isOpenTutorials} onHide={closeModalTutorials}>
+				<Modal.Header closeButton>
+					<Modal.Title>Tutorials</Modal.Title>
+				</Modal.Header>
+				<Modal.Body>
+					<div id="tutorial_header_container">
+						{(() => {
+							return(
+								<>
+									{
+										tutorialHeader.map(function(item, i){
+											return <div key={i} onClick={()=>{handleTutorialClick(item)}}>{item}</div>
+										})
+									}
+								</>
+							)							
+						})()}
+					</div>
+					<div id="tutorial_box_container">
+						{(() => {
+							if(typeof tutorials !== "undefined" && tutorials !== null){
+								if(tutorials.length>0){
+									return(
+										<>
+											{
+												tutorials.map(function(item1, i){
+													return <Row key={i} id={"tutorial_box_"+i}>
+															<Col sm={8} className="box01">
+																<h4 className="tutorial_name">{item1.name}</h4>
+																<p>{item1.description}</p>
+																<p>What I used:</p>
+																<>
+																	{
+																		item1.used.map(function(item2, j){
+																			return <span key={j} className="box">{item2}</span> 
+																		})
+																	}
+																</>
+															</Col>
+															<Col sm={4} className="box02">
+																<a className="tutorial_link" href={tutorials[i].link} target="_blank" rel="noopener noreferrer">Link</a>
+															</Col>
+														</Row>
+												})
+											}
+										</>
+									)
 								} else {
 									return <div>No tutorials yet</div>
 								}
-							})()}
-						</div>
-					</Modal.Body>
-				</Modal>
-			</>
-		)
-	}
+							} else {
+								return <div>No tutorials yet</div>
+							}
+						})()}
+					</div>
+				</Modal.Body>
+			</Modal>
+		</>
+	)
 }
 
 export default Portofolio

@@ -17,8 +17,7 @@ function Child(props){
 	if(props.data[1]){
 		social = props.data[1]
 	}
-	return (
-		<div className={props.div_class + " text-left"}>
+	return <div className={props.div_class + " text-left"}>
 			<ul>
 				{
 					contact.map(function(item, i){
@@ -37,14 +36,11 @@ function Child(props){
 			<ul className="text-center">
 				{
 					social.map(function(item, i){						
-						return (
-							<li key={i}><a href={item.link} target="_blank" rel="noopener noreferrer"><i className={item.icon}></i></a></li>
-						)
+						return <li key={i}><a href={item.link} target="_blank" rel="noopener noreferrer"><i className={item.icon}></i></a></li>
 					})
 				}
 			</ul>
-		</div>
-	)
+	</div>
 }
 
 function Contact(props){
@@ -105,8 +101,7 @@ function Contact(props){
 		}
 	}
 	
-	return (
-		<Container>
+	return <Container>
 				<Row>
 					<Col sm={6} className="visible-xs-block">
 						<Child div_class="contact-page-mobile" login_visitor={props.login_visitor} data={data}></Child>
@@ -176,8 +171,7 @@ function Contact(props){
 				<div className="show_results_container">
 					<div className="show_results"><h1></h1><p></p></div>
 				</div>
-		</Container>
-	)
+	</Container>
 }
 
 export default Contact

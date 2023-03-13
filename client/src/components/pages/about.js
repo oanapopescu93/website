@@ -15,8 +15,7 @@ function About(props){
 		$('#about-div .about_tabs').removeClass('open')
 		$('#'+id).parent().parent().addClass('open')
 	}
-	return (
-		<Container>
+	return <Container>
 			<Row id="about-div">
 				<Col id="about_tabs_main" className="about_tabs_main" xs={12} sm={4} md={4} lg={2}>
 					<div id="skills" className="about_tabs open" onClick={()=>{handleChangeTab('skills')}}>
@@ -60,8 +59,7 @@ function About(props){
 					<a href="#portofolio" className="button-white text-black text-uppercase scroll-button shadow_convex" onClick={(e)=>{scroll_anywhere(e)}}>See my projects</a>
 				</Col>
 			</Row>
-		</Container>
-	)
+	</Container>
 }
 
 export default About

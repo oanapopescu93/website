@@ -12,8 +12,7 @@ function Navbar(props){
 		$(".navbar-box").toggleClass("move-away")
 	}
 	
-	return (
-		<div id = "mynavbar" className="mynavbar">
+	return <div id = "mynavbar" className="mynavbar">
 			<Container>		
 				<div className="contact-mobile visible-xs-block">
 					<ul></ul>
@@ -57,8 +56,7 @@ function Navbar(props){
 						</ul>
 					</div>
 			</Container>		
-		</div>
-	)
+	</div>
 }
 
 export default Navbar

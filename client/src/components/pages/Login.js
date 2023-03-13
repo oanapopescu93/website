@@ -34,8 +34,7 @@ function Login(props){
     if(toggleVisitor){
         done = " done"
     }
-    return (
-        <div id='login' className={"full-height " + props.darkMode}>
+    return <div id='login' className={"full-height " + props.darkMode}>
             <div className="full-height-content">
             <Container>
                 <Row>
@@ -75,8 +74,7 @@ function Login(props){
                 </Row>
             </Container>
             </div>
-        </div>
-    )
+    </div>
 }
 
 export default Login

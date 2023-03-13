@@ -10,8 +10,7 @@ function Section(props){
     let data = props.data
     let socket = props.socket
     let login_visitor = props.login_visitor	
-    return (
-        <div id={template} className="full-height">
+    return <div id={template} className="full-height">
             <div className="full-height-title">
                 <Sapou template={template}></Sapou>
             </div>
@@ -29,8 +28,7 @@ function Section(props){
                     }
                 })()}
             </div>
-        </div>
-    )
+    </div>
 }
 
 export default Section

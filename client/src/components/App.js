@@ -5,9 +5,9 @@ import socketIOClient from "socket.io-client/dist/socket.io"
 const socket = socketIOClient("/")
 
 function App(){
-	var my_console = function(){
-		var oldConsole = null
-		var me = {}
+	let my_console = function(){
+		let oldConsole = null
+		let me = {}
 	
 		me.enable =  function enable(){
 			if(oldConsole == null) return
@@ -27,12 +27,10 @@ function App(){
 	}()
 
 	useEffect(() => {
-		// my_console.disable()
+		my_console.disable()
 	}, [])
 
-	return (
-		<Home socket={socket}></Home> 
-	)
+	return <Home socket={socket}></Home> 
 }
 
 export default App
