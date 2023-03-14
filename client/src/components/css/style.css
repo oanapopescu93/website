@@ -160,7 +160,7 @@ hr {
     border: solid 1px var(--grey333);
     border-radius: 10px;
     color: var(--grey333);
-    padding: 10px 20px;
+    padding: 5px 10px;
     margin: 5px;
     font-weight: bold;
 }
@@ -236,6 +236,10 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
 	-moz-box-shadow:    2px 2px 5px rgba(0,0,0,0.5)!important;
    	-webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.5)!important;
    	box-shadow:         2px 2px 5px rgba(0,0,0,0.5)!important;
+}
+
+.border_white{
+    text-shadow: -1px 0 var(--white), 0 1px var(--white), 1px 0 var(--white), 0 -1px var(--white);
 }
 
 /*---------------------login---------------------*/
@@ -555,7 +559,7 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
 }
 
 #header-buttons .button-white{
-	width:140px;
+	width:200px;
 }
 
 /*---------------------about---------------------*/
@@ -1022,10 +1026,6 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
   resize: none;
 }
 
-.contact_error{
-    display:none;
-}
-
 /*---------------------footer---------------------*/
 footer { 
 	background-color:var(--black);   
@@ -1306,80 +1306,39 @@ th, td {
 	font-size: 14px;
 }
 
-/*---------------------dark light mode---------------------*/
-.darkLightMode{
-    position: absolute;
-    z-index: 99999;
-    top:0px;
-    left:0px;
-    padding: 10px;
-}
-.darkLightMode_label{
-    width: 40px;
-    height: 22px;
-    position: relative;
-    z-index: 1;
-    display: block;
-    background-color: black;
-    border:solid 1px white;
-    border-radius: 22px;
-    cursor: pointer;
-    transition: 0.3;
-}
-.darkLightMode_label:after{
-    content: "";
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    z-index: 1;
-    top:2px;
-    left:2px;
-    background: gold;
-    border:solid 1px orangered;
-    border-radius: 180px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-}
-.darkLightMode_label.move{
-    background-color: black;
-}
-.darkLightMode_label.move:after{
-    background: #0090d9;
-    border:solid 1px white;
-}
-.darkLightMode_label.move:after{
-    left:20px;
-}
-.darkLightMode input{
-    width: 0px;
-    height: 0px;
-    visibility: hidden;
-}
-.icon_light, .icon_dark{
+#languages{
     position: absolute;
     z-index: 2;
-    top: 4px;
+    top: 10px;
+    left: 10px;
+}
+#languages .dropdown .dropdown-toggle{
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 5px;
+    border: solid 1px var(--blue);
+    padding: 0px 10px;
+    height: 20px;
     font-size: 12px;
+    line-height: 12px;
+    width: 50px;
 }
-.icon_light{
-    left: 4px;
-    color: orangered;
-    
+#languages .dropdown-menu{
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 5px;
+    border: solid 1px var(--blue);
+    font-size: 12px;
+    line-height: 12px;
+    min-width: 50px;
+    text-align: center;
 }
-.icon_dark{
-    right: 4px;
-    color: white;
+#languages .dropdown-item{
+    display: block;
+    padding: 5px;
 }
-.darkLightMode_label .icon_light{
-    visibility: visible;
-}
-.darkLightMode_label .icon_dark{
-    visibility: hidden;
-}
-.darkLightMode_label.move .icon_light{
-    visibility: hidden;
-}
-.darkLightMode_label.move .icon_dark{
-    visibility: visible;
+#languages .dropdown-item:hover, #languages .dropdown-item:hover, #languages .dropdown-item:hover{
+    color: var(--white);
 }
 
 /*---------------------media---------------------*/

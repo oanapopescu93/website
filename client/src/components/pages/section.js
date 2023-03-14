@@ -6,25 +6,21 @@ import Portofolio from './portofolio'
 import Contact from './contact'
 
 function Section(props){
-	let template = props.template
-    let data = props.data
-    let socket = props.socket
-    let login_visitor = props.login_visitor	
-    return <div id={template} className="full-height">
+    return <div id={props.template} className="full-height">
             <div className="full-height-title">
-                <Sapou template={template}></Sapou>
+                <Sapou template={props.template} lang={props.lang}></Sapou>
             </div>
             <div className="full-height-content">
                 {(() => {
-                    switch (template) {
+                    switch (props.template) {
                         case "about":
-                            return <About login_visitor={login_visitor} socket={socket} data={data}></About>
+                            return <About login_visitor={props.login_visitor} socket={props.socket} data={props.data} lang={props.lang}></About>
                         case "portofolio":
-                            return <Portofolio login_visitor={login_visitor} socket={socket} data={data}></Portofolio>
+                            return <Portofolio login_visitor={props.login_visitor} socket={props.socket} data={props.data} lang={props.lang}></Portofolio>
                         case "contact":
-                            return <Contact login_visitor={login_visitor} socket={socket} data={data}></Contact>
+                            return <Contact login_visitor={props.login_visitor} socket={props.socket} data={props.data} lang={props.lang}></Contact>
                         default:
-                            return <Header login_visitor={login_visitor} socket={socket} data={data}></Header>
+                            return <Header login_visitor={props.login_visitor} socket={props.socket} data={props.data} lang={props.lang}></Header>
                     }
                 })()}
             </div>

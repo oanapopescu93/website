@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import Row from 'react-bootstrap/Row'
 import $ from 'jquery' 
-import { capitalizeFirstLetter } from '../utils'
 import { Col } from 'react-bootstrap'
+import { translate } from '../../translations/translate'
 
 function Piechart(mycanvas, mylegend, dataSource, colors, doughnutHoleSize, w, h){	
     var canvas = document.getElementById(mycanvas)
@@ -121,9 +121,9 @@ function Skills(props){
 	let myPiechart = []		
 
 	useEffect(() => {
-        if($('#about_content_box')){
-            $('#about_content_box').scrollTop(0)
-        }   
+		if(document.getElementById('about_content_box')){
+            document.getElementById('about_content_box').scrollTo(0, 0)
+        } 
 		for(let t in skills_title){
 			for(let i in skills){
 				if(skills_title[t] === skills[i].type){
@@ -138,16 +138,15 @@ function Skills(props){
 	
 	return (
 		<>
-			<Row id="skills_row">
-				{(() => {
-					if(skills_title && skills_title.length>0){
-						return(
-							<>
+			{(() => {
+				if(skills_title && skills_title.length>0 && skills && skills.length){
+					return <>
+							<Row id="skills_row">
 								{
 									skills_title.map(function(item, t){
 										return(
 											<div key={t}>
-												<div className="col-xs-12"><h4 className="grey666">{capitalizeFirstLetter(item)}</h4></div>
+												<div className="col-xs-12"><h4 className="grey666">{translate({lang: props.lang, info: item, capitalize_first_fetter:true})}</h4></div>
 												<div className="col-xs-12">
 												{(() => {
 													if(skills && skills.length>0){
@@ -173,39 +172,40 @@ function Skills(props){
 										)
 									})
 								}
-							</>
-						)
-					}
-				})()}
-			</Row>
-			<Row id="language_row">
-				<Col sm={12}>
-					<h4 className="grey666">Languages</h4>
-				</Col>
-				<Col id="language_bar_container" sm={6} md={4} lg={3}>
-					{(() => {
-						if(language && language.length>0){
-							return(
-								<>
-									{
-										language.map(function(item, i){
-											let width = {'width': item.perc+"%"}
-											return (
-												<div key={i}>
-													<p className="language_bar_title">{capitalizeFirstLetter(item.name)}<span>({item.level})</span></p>
-													<div className="language_bar_box">
-														<div style={width} className={"language_bar " + item.name}>{item.perc}%</div>
-													</div>
-												</div>
+							</Row>
+							<Row id="language_row">
+								<Col sm={12}>
+									<h4 className="grey666">{translate({lang: props.lang, info: "languages"})}</h4>
+								</Col>
+								<Col id="language_bar_container" sm={6} md={4} lg={3}>
+									{(() => {
+										if(language && language.length>0){
+											return(
+												<>
+													{
+														language.map(function(item, i){
+															let width = {'width': item.perc+"%"}
+															return (
+																<div key={i}>
+																	<p className="language_bar_title">{translate({lang: props.lang, info: item.name})}<span>({translate({lang: props.lang, info: item.level})})</span></p>
+																	<div className="language_bar_box">
+																		<div style={width} className={"language_bar " + item.name}>{item.perc}%</div>
+																	</div>
+																</div>
+															)
+														})
+													}
+												</>
 											)
-										})
-									}
-								</>
-							)
-						}
-					})()}
-				</Col>
-			</Row>
+										}
+									})()}
+								</Col>
+							</Row>
+					</>
+				} else {
+					return <p>{translate({lang: props.lang, info: "error_skills"})}</p>
+				}
+			})()}
 		</>
 	)
 }

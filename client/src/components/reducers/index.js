@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux'
-import languageReducer from './language'
+import settingsReducer from './settings'
+import popupsReducer from './popups'
 
 const allReducers = combineReducers({
-	language: languageReducer,
+	settings: settingsReducer,
+	popups: popupsReducer,
 })
 
 export default allReducers

@@ -27,7 +27,7 @@ function App(){
 	}()
 
 	useEffect(() => {
-		my_console.disable()
+		//my_console.disable()
 	}, [])
 
 	return <Home socket={socket}></Home> 

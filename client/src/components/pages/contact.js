@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -6,6 +6,8 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import $ from 'jquery'
 import { showResults } from './utils'
+import { checkSubmit } from '../validate'
+import { translate } from '../translations/translate'
 
 function Child(props){
 	let contact = []
@@ -25,7 +27,7 @@ function Child(props){
 							if(item.link){
 								return <li key={i}><i className={item.icon}></i><a href={item.link}>{item.text}</a></li>
 							} else {
-								return <li key={i}><i className={item.icon}></i><span>{item.text}</span></li>
+								return <li key={i}><i className={item.icon}></i><span>{translate({lang: props.lang, info: item.text})}</span></li>
 							}
 						} else {
 							return null
@@ -46,6 +48,10 @@ function Child(props){
 function Contact(props){
 	let data = props.data
 	let socket = props.socket
+	const [errorEmail, setErrorEmail] = useState(true)
+	const [errorTitle, setErrorTitle] = useState(true)
+	const [errorMessage, setErrorMessage] = useState(true)
+	const [resultsClass, setResultsClass] = useState("")
 
 	function flip(){		
 		if(!$('.contact_page_container').hasClass('flip')){
@@ -60,41 +66,40 @@ function Contact(props){
 	}
 
 	function send_form(){
-		let send = true;
-		$('#contact_email_error').hide();
-		$('#contact_message_error').hide();
-
-		let contact_email = $('#contact_email').val();	
-		let regex = '^[a-zA-Z0-9]+[@]+[a-zA-Z0-9]+[.]+[a-zA-Z]{2,4}$'
-		let regex_exp = new RegExp(regex);					
-		let pass_result = regex_exp.test(contact_email);
-		if(!pass_result){
-			send = false;
-			$('#contact_email_error').show();
+		let send = true
+		setErrorEmail(true)
+		setErrorTitle(true)
+		setErrorMessage(true)
+		
+		if(!checkSubmit($('#contact_email').val(), 'email')){
+			send = false
+			setErrorEmail(false)
 		}
-
-		let contact_message = $('#contact_message').val();
-		if(contact_message === ""){
-			send = false;
-			$('#contact_message_error').show();
+		if(!checkSubmit($('#contact_title').val(), 'title')){
+			send = false
+			setErrorTitle(false)
+		}
+		if(!checkSubmit($('#contact_message').val(), 'message')){
+			send = false
+			setErrorMessage(false)
 		}
 
 		if(send){
+			setResultsClass('')
 			let payload = {
 				first_name: $('#contact_first_name').val(),
 				last_name: $('#contact_last_name').val(),
-				email: contact_email,
+				email: $('#contact_email').val(),
 				phone: $('#contact_telephone').val(),
 				subject: $('#contact_title').val(),
-				html: contact_message,
+				html: $('#contact_message').val(),
 			}
 			socket.emit('contact_send', payload);
 			socket.on('contact_read', function(data){
-				$('.show_results_container').removeClass('success error')
 				if(data[0] === "Success!"){
-					$('.show_results_container').addClass('success')
+					setResultsClass('success')
 				} else if(data[0] === "Error!"){
-					$('.show_results_container').addClass('error')
+					setResultsClass('error')
 				}
 				showResults(data[0], data[1]);
 			});
@@ -104,49 +109,50 @@ function Contact(props){
 	return <Container>
 				<Row>
 					<Col sm={6} className="visible-xs-block">
-						<Child div_class="contact-page-mobile" login_visitor={props.login_visitor} data={data}></Child>
+						<Child div_class="contact-page-mobile" login_visitor={props.login_visitor} data={data} lang={props.lang}></Child>
 					</Col>
 					<Col sm={6} className="box-contact-form">
 						<Form>
 							<Row>
 								<Col sm={6}>
-									<label htmlFor="first_name">First Name</label>
+									<label htmlFor="first_name">{translate({lang: props.lang, info: "first_name"})}</label>
 									<input id="contact_first_name" className="form-control shadow_concav" type="text" name="first_name"></input>
 								</Col>
 								<Col sm={6}>
-									<label htmlFor="last_name">Last Name</label>
+									<label htmlFor="last_name">{translate({lang: props.lang, info: "last_name"})}</label>
 									<input id="contact_last_name" className="form-control shadow_concav" type="text" name="last_name"></input>
 								</Col>
 							</Row>
 							<Row>
 								<Col sm={12}>
-									<label htmlFor="email">Email Address *</label>
+									<label htmlFor="email">{translate({lang: props.lang, info: "email"})} *</label>
 									<input id="contact_email" className="form-control shadow_concav" type="text" name="email"></input>
-									<p className="contact_error text-red" id="contact_email_error">Please provide an email.</p>
+									{!errorEmail ? <p className="contact_error text-red">{translate({lang: props.lang, info: "error_email"})}</p> : null}									
 								</Col>
 							</Row>
 							<Row>
 								<Col sm={12}>
-									<label htmlFor="telephone">Telephone Number</label>
+									<label htmlFor="telephone">{translate({lang: props.lang, info: "phone"})}</label>
 									<input id="contact_telephone" className="form-control shadow_concav" type="text" name="telephone"></input>
 								</Col>
 							</Row>
 							<Row>
 								<Col sm={12}>
-									<label htmlFor="message">Title</label>
+									<label htmlFor="message">{translate({lang: props.lang, info: "title"})} *</label>
 									<input id="contact_title" className="form-control shadow_concav" type="text" name="title"></input>
+									{!errorTitle ? <p className="contact_error text-red">{translate({lang: props.lang, info: "error_title"})}</p> : null}
 								</Col>
 							</Row>
 							<Row>
 								<Col sm={12}>
-									<label htmlFor="message">Message *</label>
+									<label htmlFor="message">{translate({lang: props.lang, info: "message"})} *</label>
 									<textarea id="contact_message" className="form-control shadow_concav" name="message" cols="25" rows="6"></textarea>
-									<p className="contact_error text-red" id="contact_message_error">Please provide a message.</p>
+									{!errorMessage ? <p className="contact_error text-red">{translate({lang: props.lang, info: "error_message"})}</p> : null}
 								</Col>
 							</Row>
 							<Row>
 								<Col sm={12}>
-									<Button onClick={()=>{send_form()}} className="button-white shadow_convex" name="send" type="button">Send</Button>
+									<Button onClick={()=>{send_form()}} className="button-white shadow_convex" name="send" type="button">{translate({lang: props.lang, info: "send"})}</Button>
 								</Col>
 							</Row>
 						</Form>
@@ -155,11 +161,11 @@ function Contact(props){
 						<div className="contact_page_container">
 							<div className="contact_back">
 								<div className="click_me" onClick={flip}>
-									<span>Click me</span>
+									<span>Click</span>
 								</div>
 							</div>
 							<div className="contact_front">
-								<Child div_class="contact-info" login_visitor={props.login_visitor} data={data}></Child>
+								<Child div_class="contact-info" login_visitor={props.login_visitor} data={data} lang={props.lang}></Child>
 								<div className="corner corner-1"></div>
 								<div className="corner corner-2"></div>
 								<div className="corner corner-3"></div>
@@ -168,7 +174,7 @@ function Contact(props){
 						</div>
 					</Col>
 				</Row>
-				<div className="show_results_container">
+				<div className={"show_results_container " + resultsClass}>
 					<div className="show_results"><h1></h1><p></p></div>
 				</div>
 	</Container>

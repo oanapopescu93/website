@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react'
+import { useSelector} from 'react-redux'
+
 import HomePage from './HomePage'
 import Login from './Login'
-import { getCookie, setCookie, showResults } from './utils'
 import Splash from './partials/splash_screen'
+
+import { getCookie, setCookie, showResults } from './utils'
 import '../css/style.css'
 
 function Home(props){
 	let socket = props.socket
 	const [token, setToken] = useState('')
 	const [data, setData] = useState(null)
+	let lang = useSelector(state => state.settings.lang)
 
 	useEffect(() => {
 		let login_token = getCookie('login_token') ? getCookie('login_token') : ""
@@ -51,7 +55,7 @@ function Home(props){
 			{(() => {					
 				if(token !== ""){			
 					if(data && Object.keys(data).length !== 0){
-						return <HomePage socket={socket} data={data}></HomePage>
+						return <HomePage socket={socket} data={data} lang={lang}></HomePage>
 					} else {
 						return <Splash></Splash>	
 					}

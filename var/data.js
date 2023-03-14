@@ -13,11 +13,6 @@ module.exports = Object.freeze({
             {link: "https://github.com/oanapopescu93", icon: "fa fa-github"},
         ],
     ],
-    HEADER_INFO: [
-        "Oana Popescu", 
-        "Frontend/Javascript developer", 
-        "My passion is to create <b>websites</b>, <b>web applications</b>, and <b>games</b>.<br>I work with <b>Javascript</b>, <b>ReactJS</b>, <b>NodeJS</b> and <b>HTML Canvas</b>."
-    ],
     SKILLS_TITLE: ['frontend', 'backend', 'other'],
     SKILLS: [
         {name: "HTML / CSS / Bootstrap", value: "100", type: "frontend"},
@@ -36,104 +31,194 @@ module.exports = Object.freeze({
         // {name: "French", name: "french", level: "beginner", perc: 20},
         {name: "Romania", name: "romanian", level: "native", perc: 100},
     ],
-    EDUCATION: [
-        {
-            school_name: "Self-taught programming", 
-            period: "2017 - present", 
-            description: "I learnt Javascript, NodeJS, ReactJS, HTML Canvas (now I'm learning MySQL)"
-        },
-        {
-            school_name: "Academy of Economic Studies", 
-            title: "Agrifood economics",
-            period: "2011 - 2015", 
-            school_location: "Romania, Bucharest",
-            description: "I learnt SQL and Primary Accounting"
-        },
-        {
-            school_name: "Marin Preda Highschool", 
-            period: "2007 - 2011", 
-            school_location: "Romania, Bucharest",
-            description: "I learnt HTML, Turbo Pascal, Visual Basic and English"
-        },		
-    ],
-    EXPERIENCE: [
-        {
-            job_title: "Javascript developer", 
-            period: "October 2018 - Present", 
-            company_name: "Idrive Global", 
-            company_description: "Professional Dash Camera for Fleet Monitoring & GPS Tracking", 
-            job_location: "Romania, Bucharest", 
-            job_description: "HTML, CSS, Bootstrap, Javascript, Jquery, React js, Node js, HTML canvas, OOP", 
-            job_description_list: [
-                "Providing maintenance and new features",
-                "Creating architecture for new features that will be implemented",
-                "Build reusable and modular features",
-                "Collaborate with back-end developers and web designers to improve usability",
-                "Staying up to date with industry technologies",
-                "Writing clean, readable and well documented code and unit tests for it",
-                "Being involved in the entire life-cycle of a product from concept to delivery",
-            ],
-            link_company: "https://idriveglobal.com",
-            projects: [
-                {project_name: "Idrive Global platform", project_link: "https://idriveglobal.com/fleet-management-platform/"},
-            ],
-        },
-        {
-            job_title: "Frontend developer", 
-            period: "November 2017 - April 2018", 
-            company_name: "Salomon", 
-            company_description: "E-commerce sport equipment", 
-            job_location: "Romania, Bucharest", 
-            job_description: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop", 
-            job_description_list: [
-                "Create user-friendly web pages",
-                "Maintain and improve website",
-                "Collaborate with back-end developers and web designers to improve usability",
-                "Get feedback, and build solutions for, users and customers",
-            ],
-            platform_used: "Magento",
-            accomplishments: "Learnt Magento",
-            link_company: "https://www.salomon.ro/",
-            projects: [
-                {project_name: "Salomon site", project_link: "https://www.salomon.ro/"},
-            ],
-        },
-        {
-            job_title: "Frontend developer", 
-            period: "February 2017 - July 2017", 
-            company_name: "Expremio Technology", 
-            company_description: "IT Company for hotels, restaurants and bars", 
-            job_location: "Romania, Bucharest", 
-            job_description: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop",
-            job_description_list: [
-                "Create user-friendly web pages",
-                "Maintain and improve website",
-                "Collaborate with back-end developers and web designers to improve usability",
-                "Get feedback, and build solutions for, users and customers",
-            ],
-            projects: [
-                {project_name: "Pizza Hut Delivery", project_link: "portofolio"},
-                {project_name: "City Grill", project_link: "portofolio"},
-            ],
-        },
-        {
-            job_title: "Frontend / Javascript developer", 
-            period: "2017 - present", 
-            company_name: "Freelancer",
-            job_location: "Romania, Bucharest", 
-            job_description: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop", 
-            platform_used: "Wordpress, Magento",
-            projects: [
-                {project_name: "Clubul sportiv RealGym", project_link: "portofolio"},
-                {project_name: "Noblisime", project_link: "portofolio"},
-                {project_name: "Exclusive doors", project_link: "portofolio"},
-                {project_name: "Credimag", project_link: "portofolio"},
-                {project_name: "Konart", project_link: "portofolio"},
-            ],
-        },
-    ],
+    EDUCATION: {
+        RO: [
+            {
+                school_name: "Programare autodidactă", 
+                period: "2017 - prezent", 
+                description: "Am invatat Javascript, Jquery, React/Redux, NodeJS, Sockets, HTML Canvas (now I'm learning MySQL)"
+            },
+            {
+                school_name: "Academia de Studii Economice", 
+                title: "Economie Agroalimentara",
+                period: "2011 - 2015", 
+                school_location: "Romania, Bucuresti",
+                description: "Am invatat SQL si Contabilitate Primara"
+            },
+            {
+                school_name: "Liceul Marin Preda", 
+                period: "2007 - 2011", 
+                school_location: "Romania, Bucuresti",
+                description: "Am invatat HTML, Turbo Pascal, Visual Basic si Engleza"
+            },		
+        ],
+        ENG: [
+            {
+                school_name: "Self-taught programming", 
+                period: "2017 - present", 
+                description: "I learnt Javascript, Jquery, React/Redux, NodeJS, Sockets, HTML Canvas (now I'm learning MySQL)"
+            },
+            {
+                school_name: "Academy of Economic Studies", 
+                title: "Agrifood economics",
+                period: "2011 - 2015", 
+                school_location: "Romania, Bucharest",
+                description: "I learnt SQL and Primary Accounting"
+            },
+            {
+                school_name: "Marin Preda Highschool", 
+                period: "2007 - 2011", 
+                school_location: "Romania, Bucharest",
+                description: "I learnt HTML, Turbo Pascal, Visual Basic and English"
+            },		
+        ]
+    },
+    EXPERIENCE: {
+        RO: [
+            {
+                job_title: "Javascript/React developer", 
+                period: "Octombrie 2018 - prezent", 
+                company_name: "Idrive Global", 
+                company_description: "Management flotelor de masini", 
+                job_location: "Romania, Bucuresti", 
+                job_description: "HTML, CSS, Bootstrap, Javascript, Jquery, React/Redux, NodeJs, HTML canvas", 
+                link_company: "https://idriveglobal.com",
+                projects: [
+                    {project_name: "Idrive Global platform", project_link: "https://idriveglobal.com/fleet-management-platform/"},
+                ],
+            },
+            {
+                job_title: "Frontend/Javascript/React developer", 
+                period: "2017 - prezent", 
+                company_name: "Freelancer",
+                ob_location: "Romania, Bucuresti", 
+                job_description: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop, React/Redux, NodeJs", 
+                platform_used: "Wordpress, Magento",
+                projects: [
+                    {project_name: "Clubul sportiv RealGym", project_link: "portofolio"},
+                    {project_name: "Noblisime", project_link: "portofolio"},
+                    {project_name: "Exclusive doors", project_link: "portofolio"},
+                    {project_name: "Credimag", project_link: "portofolio"},
+                    {project_name: "Konart", project_link: "portofolio"},
+                ],
+                personal_projects: [
+                    {project_name: "Casino", project_link: "portofolio"},
+                    {project_name: "E-commerce Shop", project_link: "portofolio"},
+                ]
+            },
+            {
+                job_title: "Frontend developer", 
+                period: "Noiembrie 2017 - Aprilie 2018", 
+                company_name: "Salomon", 
+                company_description: "E-commerce echipamente sportive", 
+                ob_location: "Romania, Bucuresti", 
+                job_description: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop", 
+                platform_used: "Magento",
+                accomplishments: "Learnt Magento",
+                link_company: "https://www.salomon.ro/",
+                projects: [
+                    {project_name: "Salomon site", project_link: "https://www.salomon.ro/"},
+                ],
+            },
+            {
+                job_title: "Frontend developer", 
+                period: "Februarie 2017 - Iulie 2017", 
+                company_name: "Expremio Technology", 
+                company_description: "solutii software pentru companiile din domeniul horeca", 
+                ob_location: "Romania, Bucuresti", 
+                job_description: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop",
+                projects: [
+                    {project_name: "Pizza Hut Delivery", project_link: "portofolio"},
+                    {project_name: "City Grill", project_link: "portofolio"},
+                ],
+            },            
+        ],
+        ENG: [
+            {
+                job_title: "Javascript/React developer", 
+                period: "October 2018 - Present", 
+                company_name: "Idrive Global", 
+                company_description: "Professional Dash Camera for Fleet Monitoring & GPS Tracking", 
+                job_location: "Romania, Bucharest", 
+                job_description: "HTML, CSS, Bootstrap, Javascript, Jquery, React/Redux, NodeJs, HTML canvas", 
+                job_description_list: [
+                    "Providing maintenance and new features",
+                    "Creating architecture for new features that will be implemented",
+                    "Build reusable and modular features",
+                    "Collaborate with back-end developers and web designers to improve usability",
+                    "Staying up to date with industry technologies",
+                    "Writing clean, readable and well documented code and unit tests for it",
+                    "Being involved in the entire life-cycle of a product from concept to delivery",
+                ],
+                link_company: "https://idriveglobal.com",
+                projects: [
+                    {project_name: "Idrive Global platform", project_link: "https://idriveglobal.com/fleet-management-platform/"},
+                ],
+            },
+            {
+                job_title: "Frontend/Javascript/React developer", 
+                period: "2017 - present", 
+                company_name: "Freelancer",
+                job_location: "Romania, Bucharest", 
+                job_description: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop, React/Redux, NodeJs", 
+                platform_used: "Wordpress, Magento",
+                projects: [
+                    {project_name: "Clubul sportiv RealGym", project_link: "portofolio"},
+                    {project_name: "Noblisime", project_link: "portofolio"},
+                    {project_name: "Exclusive doors", project_link: "portofolio"},
+                    {project_name: "Credimag", project_link: "portofolio"},
+                    {project_name: "Konart", project_link: "portofolio"},
+                ],
+                personal_projects: [
+                    {project_name: "Casino", project_link: "portofolio"},
+                    {project_name: "E-commerce Shop", project_link: "portofolio"},
+                ]
+            },
+            {
+                job_title: "Frontend developer", 
+                period: "November 2017 - April 2018", 
+                company_name: "Salomon", 
+                company_description: "E-commerce sport equipment", 
+                job_location: "Romania, Bucharest", 
+                job_description: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop", 
+                job_description_list: [
+                    "Create user-friendly web pages",
+                    "Maintain and improve website",
+                    "Collaborate with back-end developers and web designers to improve usability",
+                    "Get feedback, and build solutions for, users and customers",
+                ],
+                platform_used: "Magento",
+                accomplishments: "Learnt Magento",
+                link_company: "https://www.salomon.ro/",
+                projects: [
+                    {project_name: "Salomon site", project_link: "https://www.salomon.ro/"},
+                ],
+            },
+            {
+                job_title: "Frontend developer", 
+                period: "February 2017 - July 2017", 
+                company_name: "Expremio Technology", 
+                company_description: "IT Company for hotels, restaurants and bars", 
+                job_location: "Romania, Bucharest", 
+                job_description: "HTML, CSS, Bootstrap, Javascript, Jquery, Photoshop",
+                job_description_list: [
+                    "Create user-friendly web pages",
+                    "Maintain and improve website",
+                    "Collaborate with back-end developers and web designers to improve usability",
+                    "Get feedback, and build solutions for, users and customers",
+                ],
+                projects: [
+                    {project_name: "Pizza Hut Delivery", project_link: "portofolio"},
+                    {project_name: "City Grill", project_link: "portofolio"},
+                ],
+            },            
+        ]
+    },
     PIE_COLORS: ["#189cb0","#bebebe"],
-    PORTOFOLIO_LIST: ["games", "react/node", "websites/webapps", "other"],
+    PORTOFOLIO_LIST: {
+        RO: ["jocuri", "react/node", "websites/webapps", "alte"],
+        ENG: ["games", "react/node", "websites/webapps", "other"]
+    },
     PORTOFOLIO_ITEMS: [
         [		
             {

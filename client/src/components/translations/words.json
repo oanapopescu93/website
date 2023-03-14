@@ -1,0 +1,102 @@
+{
+    "RO":{
+        "about": "Despre",
+        "portofolio": "Portofoliu",
+        "contact": "Contact",
+
+        "header_description": "Pasiunea mea este de a crea <b>site-uri web</b>, <b>aplicatii web</b>, si <b>jocuri</b>.<br>Lucrez cu <b>Javascript</b>, <b>ReactJS</b>, <b>NodeJS</b> si <b>HTML Canvas</b>.",
+        "read_more": "Citeste mai mult",
+        "contact_me": "Contacteaza-ma",
+
+        "skills": "Aptitudini",
+        "experience": "Experienta",
+        "education": "Educatie",
+
+        "other": "Alte",
+        "languages": "Limbi",
+        "english": "Engleza",
+        "romanian": "Romana",
+        "native": "Nativ",
+        "location": "Locatie",
+        "company_profile": "Profil companie",
+        "tools_used": "Ce am folosit",
+        "my_work": "Ce am facut",
+        "projects": "Proiecte",
+        "personal_projects": "Proiecte personale",
+        "platforms_used": "Platforme folosite",
+        "accomplishments": "Realizari",        
+        "see_my_projects": "Vezi mai multe proiecte",
+        "what_i_learnt": "Ce am invatat",
+        "error_skills": "Eroare",
+        "error_experience": "Eroare",
+        "error_education": "Eroare",
+
+        "tutorials": "Tutoriale",
+
+        "first_name": "Prenume",
+        "last_name": "Nume",
+        "email": "Email",
+        "phone": "Telefon",
+        "title": "Titlu",
+        "message": "Mesaj",
+        "send": "Trimite",
+        "error_email": "Emailul nu este valid",
+        "error_title": "Titlul nu este valid",
+        "error_message": "Mesajul nu este valid",
+        "Romania, Bucharest": "Romania, Bucuresti",
+
+        "choose": "Alege",
+
+        "all_rights_reserved": "Toate drepturile rezervate"
+    },
+    "ENG":{
+        "about": "About",
+        "portofolio": "Portofolio",
+        "contact": "Contact",
+
+        "header_description": "My passion is to create <b>websites</b>, <b>web applications</b>, and <b>games</b>.<br>I work with <b>Javascript</b>, <b>ReactJS</b>, <b>NodeJS</b> and <b>HTML Canvas</b>.",
+        "read_more": "Read more",
+        "contact_me": "Contact me",
+
+        "skills": "Skills",
+        "experience": "Experience",
+        "education": "Education",
+
+        "other": "Other",
+        "languages": "Languages",
+        "english": "English",
+        "romanian": "Romanian",
+        "native": "Native",
+        "location": "Location",
+        "company_profile": "Company profile",
+        "tools_used": "Tools used",
+        "my_work": "My work",
+        "projects": "Projects",
+        "personal_projects": "Personal projects",
+        "platforms_used": "Platforms used",
+        "accomplishments": "Accomplishments",
+        "see_my_projects": "See my projects",
+        "what_i_learnt": "What I learnt",
+        "error_skills": "Error",
+        "error_experience": "Error",
+        "error_education": "Error",
+
+        "tutorials": "Tutorials",
+
+        "first_name": "First name",
+        "last_name": "Last name",
+        "email": "Email",
+        "phone": "Phone",
+        "title": "Title",
+        "message": "Message",
+        "send": "Send",
+        "error_email": "Email is not valid",
+        "error_title": "Title is not valid",
+        "error_message": "Messaj is not valid",
+        "Romania, Bucharest": "Romania, Bucharest",
+
+        "choose": "Choose",
+
+        "all_rights_reserved": "All rights reserved"
+    }
+}

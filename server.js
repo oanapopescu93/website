@@ -11,7 +11,6 @@ var data = require('./var/data')
 var routes = require("./router")
 
 var login_password = data.LOGIN_PASSWORD
-var header = data.HEADER_INFO
 var skills_title = data.SKILLS_TITLE
 var skills = data.SKILLS 
 var language = data.LANGUAGES 
@@ -52,7 +51,6 @@ io.on('connection', function(socket) {
         let login_visitor = false
         let token
         let payload = {
-            header: header,
             about: {
                 skills_title: skills_title, 
                 skills: skills, 

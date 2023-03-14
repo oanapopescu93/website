@@ -3,6 +3,7 @@ import { Modal} from "react-bootstrap"
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import $ from 'jquery'
+import Popup from '../popups/popup'
 
 function Tutorial(props){
 	const [tutorials, setTutorials] = useState(props.tutorials)
@@ -65,6 +66,8 @@ function Tutorial(props){
 					<i className="fa fa-book" data-toggle="tooltip" data-placement="left" title="" data-original-title="My tutorials"></i>
 				</div>
 			</div>
+
+			{/* <Popup template="tutorials" title="Tutorials"></Popup> */}
 
 			<Modal id="myModal_tutorials" className="mymodal text-center" show={isOpenTutorials} onHide={closeModalTutorials}>
 				<Modal.Header closeButton>

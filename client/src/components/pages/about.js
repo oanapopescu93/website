@@ -7,6 +7,7 @@ import Experience from './partials/experience'
 import Education from './partials/education'
 import { scroll_anywhere } from './utils'
 import $ from 'jquery' 
+import {translate} from '../translations/translate'
 
 function About(props){
 	const [visible, setVisible] = useState( "skills")
@@ -20,17 +21,17 @@ function About(props){
 				<Col id="about_tabs_main" className="about_tabs_main" xs={12} sm={4} md={4} lg={2}>
 					<div id="skills" className="about_tabs open" onClick={()=>{handleChangeTab('skills')}}>
 						<div className="about_tabs_header">
-							<h3 className="about_tabs_title text-uppercase grey666 shadow_convex">skills</h3>
+							<h3 className="about_tabs_title text-uppercase grey666 shadow_convex">{translate({lang: props.lang, info: "skills"})}</h3>
 						</div>
 					</div>
 					<div id="experience" className="about_tabs" onClick={()=>{handleChangeTab('experience')}}>
 						<div className="about_tabs_header">
-							<h3 className="about_tabs_title text-uppercase grey666 shadow_convex">experience</h3>
+							<h3 className="about_tabs_title text-uppercase grey666 shadow_convex">{translate({lang: props.lang, info: "experience"})}</h3>
 						</div>
 					</div>
 					<div id="education" className="about_tabs" onClick={()=>{handleChangeTab('education')}}>
 						<div className="about_tabs_header">
-							<h3 className="about_tabs_title text-uppercase grey666 shadow_convex">education</h3>
+							<h3 className="about_tabs_title text-uppercase grey666 shadow_convex">{translate({lang: props.lang, info: "education"})}</h3>
 						</div>
 					</div>
 				</Col>
@@ -39,14 +40,14 @@ function About(props){
 						{(() => {
 							switch (visible) {
 								case "skills":
-									return <Skills language={props.data.language} pie_colors={props.data.pie_colors} skills={props.data.skills} skills_title={props.data.skills_title}></Skills>
+									return <Skills lang={props.lang} language={props.data.language} pie_colors={props.data.pie_colors} skills={props.data.skills} skills_title={props.data.skills_title}></Skills>
 								case "experience":
-									return <Experience experience={props.data.experience}></Experience>
+									return <Experience lang={props.lang} experience={props.data.experience}></Experience>
 								case "education":
-									return <Education education={props.data.education}></Education>
+									return <Education lang={props.lang} education={props.data.education}></Education>
 								default:
 									return(
-										<Skills language={props.data.language} pie_colors={props.data.pie_colors} skills={props.data.skills} skills_title={props.data.skills_title}></Skills>
+										<Skills lang={props.lang} language={props.data.language} pie_colors={props.data.pie_colors} skills={props.data.skills} skills_title={props.data.skills_title}></Skills>
 									)						
 							}
 						})()}	
@@ -56,7 +57,9 @@ function About(props){
 			<Row>
 				<Col xs={12} sm={4} md={4} lg={2}></Col>
 				<Col id="go_portofolio" className="about_content_main" xs={12} sm={8} md={8} lg={10}>
-					<a href="#portofolio" className="button-white text-black text-uppercase scroll-button shadow_convex" onClick={(e)=>{scroll_anywhere(e)}}>See my projects</a>
+					<a href="#portofolio" className="button-white text-black text-uppercase scroll-button shadow_convex" onClick={(e)=>{scroll_anywhere(e)}}>
+						{translate({lang: props.lang, info: "see_my_projects"})}
+					</a>
 				</Col>
 			</Row>
 	</Container>

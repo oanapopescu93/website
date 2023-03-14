@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button'
 import $ from 'jquery'
 import Carousel from './partials/carousel'
 import { Modal} from "react-bootstrap"
+import { translate } from '../translations/translate'
 
 function Child(props){ 
 	function handleClick(x){
@@ -34,7 +35,8 @@ function ModalPortofolio(props){
 }
 
 function Portofolio(props){
-	const [portofolio, setPortofolio] = useState(props.data)
+	let portofolio = props.data
+	let portofolio_list = portofolio.portofolio_list[props.lang]
 	const [tutorials, setTutorials] = useState(props.data.tutorials)
 
 	const [tutorialHeader, setTutorialHeader] = useState(["all"])
@@ -109,7 +111,7 @@ function Portofolio(props){
 					<Col sm={12}>
 						<ul className="portofolio-list text-center">
 							{
-								portofolio.portofolio_list.map(function(item, i){
+								portofolio_list.map(function(item, i){
 									let active = ""
 									if(i === 0){
 										active = "active"
@@ -136,7 +138,7 @@ function Portofolio(props){
 								</Button>
 							</a>
 							<Button id="portofolio_tutorials" data-toggle="modal" data-target="#myModal_tutorials" onClick={()=>{portofolioTutorialsClick()}}>
-								<i className="fa fa-book"></i> <span>Tutorials</span>
+								<i className="fa fa-book"></i> <span>{translate({lang: props.lang, info: "tutorials"})}</span>
 							</Button>
 						</div>
 					</Col>
