@@ -9,6 +9,7 @@ function Popup(props){
     let open = useSelector(state => state.popups.open)
     let title = useSelector(state => state.popups.title)
     let template = useSelector(state => state.popups.template)
+    let data = useSelector(state => state.popups.data)
     let dispatch = useDispatch()
 
   	function closeModal(){
@@ -23,7 +24,7 @@ function Popup(props){
                 {(() => {					
                     switch (template) {
                         case "tutorials":
-                            return <Tutorials lang={props.lang}></Tutorials>
+                            return <Tutorials lang={props.lang} tutorials={data}></Tutorials>
                         case "cv":
                             return <Cv lang={props.lang}></Cv>
                         default:

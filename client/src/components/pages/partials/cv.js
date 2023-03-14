@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Modal} from "react-bootstrap"
-import cv_pdf from '../../files/CV - Oana Popescu.pdf'
-import cv_doc from '../../files/CV - Oana Popescu.doc'
 import { changePopup } from '../../reducers/popups'
 
 function Cv(){

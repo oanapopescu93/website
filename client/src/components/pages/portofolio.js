@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, {useState} from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -6,7 +6,9 @@ import Button from 'react-bootstrap/Button'
 import $ from 'jquery'
 import Carousel from './partials/carousel'
 import { Modal} from "react-bootstrap"
-import { translate } from '../translations/translate'
+import { useDispatch } from 'react-redux'
+import { changePopup } from '../reducers/popups'
+import {translate} from '../translations/translate'
 
 function Child(props){ 
 	function handleClick(x){
@@ -37,14 +39,9 @@ function ModalPortofolio(props){
 function Portofolio(props){
 	let portofolio = props.data
 	let portofolio_list = portofolio.portofolio_list[props.lang]
-	const [tutorials, setTutorials] = useState(props.data.tutorials)
-
-	const [tutorialHeader, setTutorialHeader] = useState(["all"])
-
 	const [isOpenPortofolio, setIsOpenPortofolio] = useState(false)
-	const [isOpenTutorials, setIsOpenTutorials] = useState(false)
-
 	const [item, setItem] = useState(null)
+	let dispatch = useDispatch()
 
 	function openModalPortofolio(){
 		setIsOpenPortofolio(true)
@@ -52,22 +49,6 @@ function Portofolio(props){
 	function closeModalPortofolio(){
 		setIsOpenPortofolio(false)
 	}
-	function openModalTutorials(){
-		setIsOpenTutorials(true)
-	}
-	function closeModalTutorials(){
-		setIsOpenTutorials(false)
-	}
-
-	useEffect(() => {
-		let tutorial_header = ["all"]
-		for(let i in portofolio.tutorials){
-			if(!tutorial_header.includes(portofolio.tutorials[i].type)){
-				tutorial_header.push(portofolio.tutorials[i].type)
-			}	
-		}
-		setTutorialHeader(tutorial_header)
-	}, [])
 
 	function handleClickItem(x){
 		setItem(x)
@@ -86,23 +67,8 @@ function Portofolio(props){
 	}
 
 	function portofolioTutorialsClick(){
-		openModalTutorials()
+		dispatch(changePopup({open: true, title: translate({lang: props.lang, info: "tutorials"}), template: "tutorials", data: props.data.tutorials}))
 	}	
-
-	function handleTutorialClick(type){	
-		switch (type) {
-			case "javascript":
-			case "react":
-			case "node":
-			case "python":
-			case "embedded c":
-				const my_tutorials = props.data.tutorials.filter((x) => x.type === type)
-				setTutorials(my_tutorials)
-				break
-			default:
-				setTutorials(props.data.tutorials)
-		}
-	}
 	
 	return (
 		<>
@@ -151,64 +117,6 @@ function Portofolio(props){
 				</Modal.Header>
 				<Modal.Body>
 					{item ? <ModalPortofolio item={item}></ModalPortofolio> : null}
-				</Modal.Body>
-			</Modal>
-
-			<Modal id="myModal_tutorials" className="mymodal text-center" show={isOpenTutorials} onHide={closeModalTutorials}>
-				<Modal.Header closeButton>
-					<Modal.Title>Tutorials</Modal.Title>
-				</Modal.Header>
-				<Modal.Body>
-					<div id="tutorial_header_container">
-						{(() => {
-							return(
-								<>
-									{
-										tutorialHeader.map(function(item, i){
-											return <div key={i} onClick={()=>{handleTutorialClick(item)}}>{item}</div>
-										})
-									}
-								</>
-							)							
-						})()}
-					</div>
-					<div id="tutorial_box_container">
-						{(() => {
-							if(typeof tutorials !== "undefined" && tutorials !== null){
-								if(tutorials.length>0){
-									return(
-										<>
-											{
-												tutorials.map(function(item1, i){
-													return <Row key={i} id={"tutorial_box_"+i}>
-															<Col sm={8} className="box01">
-																<h4 className="tutorial_name">{item1.name}</h4>
-																<p>{item1.description}</p>
-																<p>What I used:</p>
-																<>
-																	{
-																		item1.used.map(function(item2, j){
-																			return <span key={j} className="box">{item2}</span> 
-																		})
-																	}
-																</>
-															</Col>
-															<Col sm={4} className="box02">
-																<a className="tutorial_link" href={tutorials[i].link} target="_blank" rel="noopener noreferrer">Link</a>
-															</Col>
-														</Row>
-												})
-											}
-										</>
-									)
-								} else {
-									return <div>No tutorials yet</div>
-								}
-							} else {
-								return <div>No tutorials yet</div>
-							}
-						})()}
-					</div>
 				</Modal.Body>
 			</Modal>
 		</>

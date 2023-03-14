@@ -31,8 +31,6 @@
         "error_experience": "Eroare",
         "error_education": "Eroare",
 
-        "tutorials": "Tutoriale",
-
         "first_name": "Prenume",
         "last_name": "Nume",
         "email": "Email",
@@ -46,6 +44,7 @@
         "Romania, Bucharest": "Romania, Bucuresti",
 
         "choose": "Alege",
+        "tutorials": "Tutoriale",
 
         "all_rights_reserved": "Toate drepturile rezervate"
     },
@@ -79,9 +78,7 @@
         "what_i_learnt": "What I learnt",
         "error_skills": "Error",
         "error_experience": "Error",
-        "error_education": "Error",
-
-        "tutorials": "Tutorials",
+        "error_education": "Error",        
 
         "first_name": "First name",
         "last_name": "Last name",
@@ -96,6 +93,7 @@
         "Romania, Bucharest": "Romania, Bucharest",
 
         "choose": "Choose",
+        "tutorials": "Tutorials",
 
         "all_rights_reserved": "All rights reserved"
     }
