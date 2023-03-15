@@ -45,6 +45,11 @@
 
         "choose": "Alege",
         "tutorials": "Tutoriale",
+        "take_a_look": "Arunca o privire",
+        "see_the_code": "Vezi cod",
+        "platform": "Platforma",
+        "what_I_used": "Ce am folosit",
+        "error": "Eroare",
 
         "all_rights_reserved": "Toate drepturile rezervate"
     },
@@ -94,6 +99,11 @@
 
         "choose": "Choose",
         "tutorials": "Tutorials",
+        "take_a_look": "Take a look",
+        "see_the_code": "See the code",
+        "platform": "Platform",
+        "what_I_used": "What I used",
+        "error": "Error",
 
         "all_rights_reserved": "All rights reserved"
     }

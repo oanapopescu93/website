@@ -704,7 +704,7 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
 .portofolio-container .owl_container{
 	display:none;
 }
-.portofolio-container #owl_carousel_0{
+.portofolio-container .owl_container.show {
 	display:block;
 }
 .portofolio-container .owl-nav{
@@ -771,12 +771,14 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
     overflow-y: auto;    
 }
 .grid-info .used span.box, .used span.box, #tutorial_box_container span.box{
-	padding: 0px 15px;
     border: solid 1px var(--grey666);
     color: var(--grey666);
     border-radius: 20px;
     margin: 5px 5px 5px 0px;
     display: inline-block;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 5px 10px;
 }
 #tutorial_box_container .tutorial_link{
     border: solid 1px var(--blue);
@@ -802,7 +804,9 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
     display: inline-block;
 	background:var(--blue);	
 	text-transform:uppercase;
-	width:160px;
+	width:170px;
+    font-size: 12px;
+    line-height: 12px;
 }
 .modal_button:hover, .modal_button:focus{
 	color:var(--blue);

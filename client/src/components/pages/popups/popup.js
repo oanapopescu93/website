@@ -4,6 +4,8 @@ import Tutorials from './tutorials'
 import { Modal} from "react-bootstrap"
 import { changePopup } from '../../reducers/popups'
 import Cv from './cv'
+import { translate } from '../../translations/translate'
+import PortofolioDetails from './portofolioDetails'
 
 function Popup(props){
     let open = useSelector(state => state.popups.open)
@@ -23,12 +25,14 @@ function Popup(props){
             <Modal.Body>
                 {(() => {					
                     switch (template) {
+                        case "portofolio_details":
+                            return <PortofolioDetails lang={props.lang} item={data}></PortofolioDetails>
                         case "tutorials":
                             return <Tutorials lang={props.lang} tutorials={data}></Tutorials>
                         case "cv":
                             return <Cv lang={props.lang}></Cv>
                         default:
-                            return null
+                            return <p>{translate({lang: props.lang, info: "error"})}</p>
                     }
                 })()}
             </Modal.Body>

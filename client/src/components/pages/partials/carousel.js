@@ -7,6 +7,7 @@ function Carousel(props){
     let id = props.id
     let itemList = props.itemList
 	let template = props.template
+	let show = props.active === props.index ? 'show' : ''
 
 	function handleClick(x){
 		props.getItem(x)
@@ -30,7 +31,7 @@ function Carousel(props){
 			}
 		}
         
-		return <div id={id} className="owl_container">
+		return <div id={id} className={"owl_container " + show}>
 				<OwlCarousel {...options}>
 					{
 						itemList.map(function(item, i){

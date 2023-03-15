@@ -174,6 +174,7 @@ function Contact(props){
 						</div>
 					</Col>
 				</Row>
+				
 				<div className={"show_results_container " + resultsClass}>
 					<div className="show_results"><h1></h1><p></p></div>
 				</div>

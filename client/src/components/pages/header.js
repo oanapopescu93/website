@@ -6,7 +6,6 @@ import logo_icon_white from '../img/logo-bear-white.png'
 import Parser from 'react-html-parser'
 import { scroll_anywhere } from './utils'
 import { translate } from '../translations/translate'
-import { changePopup } from '../reducers/popups'
 
 function Header(props){
 	let description = translate({lang: props.lang, info: "header_description"})
