@@ -12,13 +12,17 @@ function Popup(props){
     let title = useSelector(state => state.popups.title)
     let template = useSelector(state => state.popups.template)
     let data = useSelector(state => state.popups.data)
+    let size = useSelector(state => state.popups.size)
+    if(!size){
+        size = "sm"
+    }
     let dispatch = useDispatch()
 
   	function closeModal(){
 		dispatch(changePopup(false))
 	}
 
-    return <Modal id="myModal" className="mymodal text-center" show={open} onHide={closeModal}>
+    return <Modal id="myModal" className="mymodal text-center" show={open} onHide={closeModal} size={size}>
             <Modal.Header closeButton>
                 <Modal.Title>{title}</Modal.Title>
             </Modal.Header>

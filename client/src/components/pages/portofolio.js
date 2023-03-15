@@ -22,7 +22,7 @@ function Portofolio(props){
 	let dispatch = useDispatch()	
 
 	function handleClickItem(x){
-		dispatch(changePopup({open: true, title: translate({lang: props.lang, info: "details"}), template: "portofolio_details", data: x}))
+		dispatch(changePopup({open: true, title: translate({lang: props.lang, info: "details"}), template: "portofolio_details", data: x, size: "lg"}))
 	}
 
 	function portofolioClick(e, index){
@@ -30,7 +30,7 @@ function Portofolio(props){
 	}
 
 	function portofolioTutorialsClick(){
-		dispatch(changePopup({open: true, title: translate({lang: props.lang, info: "tutorials"}), template: "tutorials", data: props.data.tutorials}))
+		dispatch(changePopup({open: true, title: translate({lang: props.lang, info: "tutorials"}), template: "tutorials", data: props.data.tutorials, size: "lg"}))
 	}	
 	
 	return <Container>
@@ -58,11 +58,11 @@ function Portofolio(props){
 				<div id="portofolio_links_other">
 					<a id="portofolio_git" href="https://github.com/oanapopescu93" rel="noopener noreferrer" target="_blank">
 						<Button>
-							<i className="fa fa-github"></i> <span>https://github.com/oanapopescu93</span>
+							<h6><i className="fa fa-github"></i> <span>https://github.com/oanapopescu93</span></h6>
 						</Button>
 					</a>
 					<Button id="portofolio_tutorials" data-toggle="modal" data-target="#myModal_tutorials" onClick={()=>{portofolioTutorialsClick()}}>
-						<i className="fa fa-book"></i> <span>{translate({lang: props.lang, info: "tutorials"})}</span>
+						<h6><i className="fa fa-book"></i> <span>{translate({lang: props.lang, info: "tutorials"})}</span></h6>
 					</Button>
 				</div>
 			</Col>

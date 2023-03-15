@@ -4,7 +4,8 @@ const initialState = {
     open: false,
     title: "",
     template: "",
-    data: null
+    data: null,
+    size: "sm",
 }
 
 const popupsSlice = createSlice({
@@ -17,6 +18,9 @@ const popupsSlice = createSlice({
             state.template = payload.template
             if(payload.data){
                 state.data = payload.data
+            }
+            if(payload.size){
+                state.size = payload.size
             }
         },
     }

@@ -10,6 +10,8 @@
 	--black: #000;
     --red: red;
     --green: green;
+    --transparent: rgba(0,0,0,0.5);
+    --transparent_white: rgba(255, 255, 255, 0.3);
 }
 
 html {
@@ -32,39 +34,39 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, address {
     margin: 0px;
 }
 h1 {
-    font-size: 32px;
-    line-height: 32px;
+    font-size: 32px!important;
+    line-height: 32px!important;
     /* font-family: impact; */
     font-family: courier new;
-    font-weight: bold;
+    font-weight: bold!important;
     letter-spacing: -2px;
 }
 h2 {
-    font-size: 28px;
-    line-height: 28px;
+    font-size: 28px!important;
+    line-height: 28px!important;
     /* font-family: impact; */
     font-family: courier new;
     font-weight: bold;
     letter-spacing: -2px;
 }
 h3 {
-    font-size: 20px;
-    line-height: 20px;
+    font-size: 22px!important;
+    line-height: 22px!important;
     font-family: impact;
 }
 h4 {
-    font-size: 22px;
-    line-height: 22px;
+    font-size: 20px!important;
+    line-height: 20px!important;
     font-family: impact;
 }
 h5 {
-    font-size: 18px;
-    line-height: 18px;
+    font-size: 18px!important;
+    line-height: 18px!important;
     font-family: arial;
 }
 h6 {
-    font-size: 12px;
-    line-height: 12px;
+    font-size: 12px!important;
+    line-height: 12px!important;
 	font-family: arial;
 }
 
@@ -77,10 +79,35 @@ li {
 }
 
 a, a:hover, a:focus {
-    text-decoration: none;
+    text-decoration: none!important;
 }
 a:focus {
     outline: 0px auto -webkit-focus-ring-color;
+}
+
+#contactMap{
+    height: 250px;
+    border: solid 1px var(--grey333);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 10px 10px 10px 10px!important;
+    -moz-box-shadow:    2px 2px 5px var(--transparent)!important;
+   	-webkit-box-shadow: 2px 2px 5px var(--transparent)!important;
+   	box-shadow:         2px 2px 5px var(--transparent)!important;
+}
+#contactMap .leaflet-fade-anim .leaflet-map-pane .leaflet-popup{
+    left: -68px!important;
+}
+#contactMap .leaflet-popup-content p{
+    font-size: 12px;
+    line-height: 12px;
+}
+.markerTooltipContainer .leaflet-popup-content-wrapper, .markerTooltipContainer .leaflet-popup-tip{
+    background-color: var(--blue);
+    color: var(--white);
+}
+#contactMap .leaflet-container a.leaflet-popup-close-button{
+    color: var(--white);
 }
 
 :focus {
@@ -188,10 +215,11 @@ hr {
 .full-height hr {
     margin: 5px 0px;
     border: 0;
-    border-top: 1px solid var(--grey333);
+    border-top: 1px solid var(--grey333)!important;
     -mox-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
+    opacity: 1;
 }
 .full-height #header-sapou hr:first-child{
 	margin: 5px 0px 15px 0px;
@@ -228,14 +256,14 @@ hr {
 }
 
 textarea.shadow_concav, input.shadow_concav, .button_yellow.shadow_concav, .shadow_concav{
-	-moz-box-shadow:    inset 1px 1px 2px rgba(0,0,0,0.5)!important;
-   	-webkit-box-shadow: inset 1px 1px 2px rgba(0,0,0,0.5)!important;
-   	box-shadow:         inset 1px 1px 2px rgba(0,0,0,0.5)!important;
+	-moz-box-shadow:    inset 1px 1px 2px var(--transparent)!important;
+   	-webkit-box-shadow: inset 1px 1px 2px var(--transparent)!important;
+   	box-shadow:         inset 1px 1px 2px var(--transparent)!important;
 }
 textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .button_table.shadow_convex, #login_form.shadow_convex, .shadow_convex{
-	-moz-box-shadow:    2px 2px 5px rgba(0,0,0,0.5)!important;
-   	-webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.5)!important;
-   	box-shadow:         2px 2px 5px rgba(0,0,0,0.5)!important;
+	-moz-box-shadow:    2px 2px 5px var(--transparent)!important;
+   	-webkit-box-shadow: 2px 2px 5px var(--transparent)!important;
+   	box-shadow:         2px 2px 5px var(--transparent)!important;
 }
 
 .border_white{
@@ -413,6 +441,7 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
     text-align: right;
     background-color: var(--black);
     border-bottom: solid 1px var(--black);
+    height: 44px;
 }
 .modal-open .mynavbar, .modal-open .mytutorials_container, .modal-open .mycv_container{
     right: 10px;
@@ -523,7 +552,7 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
 /*---------------------home---------------------*/
 
 .header-title-container{
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--transparent_white);
     border-radius: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -658,7 +687,9 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
 }
 .item-container{
 	padding: 10px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    -moz-box-shadow:    2px 2px 5px var(--transparent);
+   	-webkit-box-shadow: 2px 2px 5px var(--transparent);
+   	box-shadow:         2px 2px 5px var(--transparent);
 	background-color:var(--white);
 }
 .items.active .item-container{
@@ -902,7 +933,7 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
 	-moz-box-shadow: 0px 5px 25px rgba(0, 0, 0, 1), inset 0 0px 50px rgba(0, 0, 0, 1);
     -webkit-box-shadow: 0px 5px 25px rgba(0, 0, 0, 1), inset 0 0px 50px rgba(0, 0, 0, 1);
     box-shadow: 0px 5px 25px rgba(0, 0, 0, 1), inset 0 0px 50px rgba(0, 0, 0, 1);
-	padding:75px 30px;
+	padding:100px 30px;
 }
 .contact_page_container.flip .contact_back{
 	-ms-transform: perspective(600px) rotateY(180deg);
@@ -1020,6 +1051,9 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
 .box-contact-form .button-white{
     border: solid 1px var(--grey888);
 	color:var(--grey666);
+    font-size: 12px;
+    line-height: 12px;
+    padding: 7px 14px;
 }
 .box-contact-form .button-white:hover, .box-contact-form .button-white:focus{
     border: solid 1px var(--blue);
@@ -1272,7 +1306,7 @@ th, td {
 
 /*---------------------show_results---------------------*/
 .show_results_container{
-	background:rgba(0,0,0,0.5);
+	background:var(--transparent);
 	position: fixed;
 	z-index: 1;
 	top:0px;
@@ -1304,7 +1338,7 @@ th, td {
     background-color: var(--red);
 }
 .show_results h1{
-	font-size: 24px;
+	font-size: 24px!important;
 }
 .show_results p{
 	font-size: 14px;
@@ -1326,6 +1360,7 @@ th, td {
     font-size: 12px;
     line-height: 12px;
     width: 50px;
+    display: block;
 }
 #languages .dropdown-menu{
     background-color: var(--blue);
@@ -1343,6 +1378,7 @@ th, td {
 }
 #languages .dropdown-item:hover, #languages .dropdown-item:hover, #languages .dropdown-item:hover{
     color: var(--white);
+    background-color: var(--blue);
 }
 
 /*---------------------media---------------------*/
@@ -1384,12 +1420,12 @@ th, td {
         box-shadow: none!important;
     }
     .header-title-container h1{
-        font-size: 28px;
-        line-height: 28px;
+        font-size: 28px!important;
+        line-height: 28px!important;
     }
     .header-title-container h2{
-        font-size: 20px;
-        line-height: 20px;
+        font-size: 20px!important;
+        line-height: 20px!important;
     }
 
     #header {
@@ -1525,18 +1561,20 @@ th, td {
     }
 
     h1 {
-        font-size: 55px;
-        line-height: 55px;
+        font-size: 55px!important;
+        line-height: 55px!important;
     }
-
     h2 {
-        font-size: 38px;
-        line-height: 30px;
+        font-size: 38px!important;
+        line-height: 30px!important;
     }
-
     h3 {
-        font-size: 28px;
-        line-height: 28px;
+        font-size: 28px!important;
+        line-height: 28px!important;
+    }
+    h4 {
+        font-size: 20px!important;
+        line-height: 20px!important;
     }
 
     #menu {

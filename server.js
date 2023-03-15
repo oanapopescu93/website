@@ -89,6 +89,7 @@ io.on('connection', function(socket) {
         payload.login_token = token
         
         try{
+            console.log('info_read')
             io.to(socket.id).emit('info_read', payload)
         }catch(e){
             console.log('[error]','info_read :', e)

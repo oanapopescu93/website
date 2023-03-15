@@ -21,17 +21,17 @@ function About(props){
 				<Col id="about_tabs_main" className="about_tabs_main" xs={12} sm={4} md={4} lg={2}>
 					<div id="skills" className="about_tabs open" onClick={()=>{handleChangeTab('skills')}}>
 						<div className="about_tabs_header">
-							<h3 className="about_tabs_title text-uppercase grey666 shadow_convex">{translate({lang: props.lang, info: "skills"})}</h3>
+							<h4 className="about_tabs_title text-uppercase grey666 shadow_convex">{translate({lang: props.lang, info: "skills"})}</h4>
 						</div>
 					</div>
 					<div id="experience" className="about_tabs" onClick={()=>{handleChangeTab('experience')}}>
 						<div className="about_tabs_header">
-							<h3 className="about_tabs_title text-uppercase grey666 shadow_convex">{translate({lang: props.lang, info: "experience"})}</h3>
+							<h4 className="about_tabs_title text-uppercase grey666 shadow_convex">{translate({lang: props.lang, info: "experience"})}</h4>
 						</div>
 					</div>
 					<div id="education" className="about_tabs" onClick={()=>{handleChangeTab('education')}}>
 						<div className="about_tabs_header">
-							<h3 className="about_tabs_title text-uppercase grey666 shadow_convex">{translate({lang: props.lang, info: "education"})}</h3>
+							<h4 className="about_tabs_title text-uppercase grey666 shadow_convex">{translate({lang: props.lang, info: "education"})}</h4>
 						</div>
 					</div>
 				</Col>

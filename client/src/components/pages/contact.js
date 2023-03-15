@@ -8,6 +8,7 @@ import $ from 'jquery'
 import { showResults } from './utils'
 import { checkSubmit } from '../validate'
 import { translate } from '../translations/translate'
+import MapSection from './mapSection'
 
 function Child(props){
 	let contact = []
@@ -172,6 +173,11 @@ function Contact(props){
 								<div className="corner corner-4"></div>
 							</div>
 						</div>
+					</Col>
+				</Row>
+				<Row>
+					<Col sm={12}>
+						<MapSection lang={props.lang}></MapSection>
 					</Col>
 				</Row>
 				

@@ -13,7 +13,7 @@ function Tutorial(props){
 	}
 
     function handleClick(){
-        dispatch(changePopup({open: true, title: translate({lang: props.lang, info: "tutorials"}), template: "tutorials", data: props.tutorials}))
+        dispatch(changePopup({open: true, title: translate({lang: props.lang, info: "tutorials"}), template: "tutorials", data: props.tutorials, size: "lg"}))
     }
 	function handleSlide(){
         if(closed === ''){

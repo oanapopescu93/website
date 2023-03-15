@@ -6,6 +6,7 @@ import Login from './Login'
 import Splash from './partials/splash_screen'
 
 import { getCookie, setCookie, showResults } from './utils'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/style.css'
 
 function Home(props){

@@ -19,6 +19,7 @@ module.exports = Object.freeze({
         {name: "JavaScript / Jquery", value: "90", type: "frontend"},
         {name: "React / Redux", value: "80", type: "frontend"},
         {name: "NodeJs / Express", value: "50", type: "backend"},
+        {name: "Socket.IO", value: "30", type: "backend"},
         {name: "MySQL", value: "30", type: "backend"},
         {name: "Version control GIT", value: "50", type: "other"},	
         {name: "HTML Canvas", value: "80", type: "frontend"},	
