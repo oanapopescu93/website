@@ -9,8 +9,6 @@ import { Provider } from 'react-redux'
 import allReducers from './components/reducers'
 import allSagas from './components/sagas'
 
-// import store from './components/store'
-
 const sagaMiddleware = createSagaMiddleware()
 const store = configureStore({
 	reducer: allReducers,
