@@ -1,0 +1,222 @@
+:focus {
+    outline: -webkit-focus-ring-color auto 0px !important;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100% !important;
+    font-family: arial;
+	background-color:black;
+    color: green;
+    position: relative;
+    font-size: 14px;
+	padding-bottom:40px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, address {
+    margin: 0px;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 32px;
+    font-family: impact;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 28px;
+    font-family: impact;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 20px;
+    font-family: impact;
+}
+
+h4 {
+    font-size: 22px;
+    line-height: 22px;
+    font-family: impact;
+}
+
+h5 {
+    font-size: 18px;
+    line-height: 18px;
+    font-family: arial;
+}
+
+h6 {
+    font-size: 12px;
+    line-height: 12px;
+	font-family: arial;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+a, a:hover, a:focus {
+    text-decoration: none;
+	color:green;
+}
+
+hr{
+	background:green;
+	color:green;
+	border:solid 0.5px green;
+}
+
+/*---------------------front---------------------*/
+
+.title_box{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+.quiz_verb_box{
+	margin:0px auto 5px auto;
+	width:100%;
+	max-width:300px;
+	text-align:center;
+	padding:10px;	
+	max-height:380px;
+	overflow-y: auto;	
+}
+.quiz_verb_group li{
+	border:solid 1px green;
+	padding:5px 10px;	
+	margin-bottom:5px;
+	cursor: pointer;
+	width:100%;
+}
+.quiz_verb_group li:hover, .quiz_verb_group li:active, .quiz_verb_group li:focus{
+	background-color:rgba(0, 128, 0, 0.3);
+	color:green;
+}
+.quiz_verb_group a{
+	display: block;
+}
+
+.box_answer{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#irregular_verbs_game_german .box_answer{
+	display: inline-block;
+    padding: 10px;
+	width:20%;
+	vertical-align: top;
+}
+.box_answer input, .box_answer select{
+	background:transparent;
+	border:solid 0px transparent;
+	border-bottom:solid 1px green;
+	width:100%;
+	max-width:280px;
+	margin:0px auto;
+	display:block;
+	height:25px;
+}
+.button_green{
+	background:transparent;
+	border:solid 1px green;
+	margin:20px auto 10px auto;
+	padding:5px 20px;
+	display:block;
+}
+.button_green:hover, .button_green:active, .button_green:hover{
+	background-color:rgba(0, 128, 0, 0.3);
+	color:green;
+}
+
+#back{
+	height:60px;
+	width:60px;
+	padding:10px;
+	margin:10px auto;
+	background:transparent;
+	border:solid 1px green;
+	display: block;
+}
+#back:hover, #back:active, #back:focus{
+	background-color:rgba(0, 128, 0, 0.3);
+	color:green;
+}
+
+/*---------------------footer---------------------*/
+footer { 	
+    padding: 10px 0px;
+    color: green;
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	right:0px;
+}
+footer ~ div {
+    visibility: hidden;
+}
+
+/*---------------------scroll---------------------*/
+::-webkit-scrollbar{
+	width: 10px;
+	border-radius: 10px;
+	background-color: green;
+	border: 1px solid black;
+}
+
+::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	background-color: black;
+	border: 3px solid transparent;
+    border-radius: 10px;
+    background-clip: content-box;
+}
+
+/*---------------------media---------------------*/
+
+@media (max-width: 768px){
+	.title_box{
+		margin-top: 10px;
+    	margin-bottom: 10px;
+	}
+	#back{
+		height:50px;
+		width:50px;
+		padding:5px;
+		margin:5px auto;
+	}
+	.box_answer{
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	#irregular_verbs_game_german .box_answer{
+		padding: 5px;
+		width:100%;
+	}
+	.box_answer input, .box_answer select{
+		display: inline-block;
+		vertical-align: middle;
+		width:75%;
+		max-width: 100%;
+	}
+	.box_answer p{
+		display: inline-block;
+		vertical-align: middle;
+		width:25%;
+	}
+}
+@media (max-width: 768px) and (orientation: landscape) {
+	.quiz_verb_box{
+		max-height: 195px;
+	}
+}

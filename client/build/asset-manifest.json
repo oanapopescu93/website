@@ -1,30 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.c1c7450f.chunk.css",
-    "main.js": "/static/js/main.b67edbca.chunk.js",
-    "main.js.map": "/static/js/main.b67edbca.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.83c3e0c4.js",
-    "runtime-main.js.map": "/static/js/runtime-main.83c3e0c4.js.map",
-    "static/css/2.e47182b0.chunk.css": "/static/css/2.e47182b0.chunk.css",
-    "static/js/2.0270cac9.chunk.js": "/static/js/2.0270cac9.chunk.js",
-    "static/js/2.0270cac9.chunk.js.map": "/static/js/2.0270cac9.chunk.js.map",
+    "main.css": "/static/css/main.5598498b.css",
+    "main.js": "/static/js/main.dcc9b06c.js",
+    "static/media/CV - Oana Popescu.pdf": "/static/media/CV - Oana Popescu.b1913d1c75cd284c39c0.pdf",
+    "static/media/bg-desk.jpg": "/static/media/bg-desk.da55e93ff8178f4b0a25.jpg",
+    "static/media/logo-bear-white.png": "/static/media/logo-bear-white.4f1c2224ce678e27ce51.png",
+    "static/media/CV - Oana Popescu.doc": "/static/media/CV - Oana Popescu.72239c96b0d4f6670043.doc",
     "index.html": "/index.html",
-    "precache-manifest.e9f7623f6ed4308fd3dc759a65b40de1.js": "/precache-manifest.e9f7623f6ed4308fd3dc759a65b40de1.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.e47182b0.chunk.css.map": "/static/css/2.e47182b0.chunk.css.map",
-    "static/css/main.c1c7450f.chunk.css.map": "/static/css/main.c1c7450f.chunk.css.map",
-    "static/js/2.0270cac9.chunk.js.LICENSE.txt": "/static/js/2.0270cac9.chunk.js.LICENSE.txt",
-    "static/media/CV - Oana Popescu.pdf": "/static/media/CV - Oana Popescu.251eb545.pdf",
-    "static/media/CV - Oana Popescu.doc": "/static/media/CV - Oana Popescu.eb1e2e9f.doc",
-    "static/media/style.css": "/static/media/bg-desk.768ded36.jpg",
-    "static/media/logo-bear-white.png": "/static/media/logo-bear-white.480e867a.png",
-    "static/media/ukraine.svg": "/static/media/ukraine.4b7a1deb.svg"
+    "static/media/ukraine.svg": "/static/media/ukraine.b125c99076ce8b10a03105d4cd949cc5.svg",
+    "main.5598498b.css.map": "/static/css/main.5598498b.css.map",
+    "main.dcc9b06c.js.map": "/static/js/main.dcc9b06c.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.83c3e0c4.js",
-    "static/css/2.e47182b0.chunk.css",
-    "static/js/2.0270cac9.chunk.js",
-    "static/css/main.c1c7450f.chunk.css",
-    "static/js/main.b67edbca.chunk.js"
+    "static/css/main.5598498b.css",
+    "static/js/main.dcc9b06c.js"
   ]
 }
