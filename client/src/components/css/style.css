@@ -1071,7 +1071,6 @@ footer {
     padding: 10px 0px;
     color: var(--white);
 	position:relative;
-	margin-top:-32px;
 }
 
 /*---------------------modale---------------------*/
@@ -1401,6 +1400,9 @@ th, td {
 	}
 }
 @media (max-width: 767px) {
+    #contactMap{
+        display: none;
+    }
     #tutorial_header_container{
         display: none;
     }

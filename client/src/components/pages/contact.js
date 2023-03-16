@@ -115,11 +115,11 @@ function Contact(props){
 					<Col sm={6} className="box-contact-form">
 						<Form>
 							<Row>
-								<Col sm={6}>
+								<Col className="col-xs-6">
 									<label htmlFor="first_name">{translate({lang: props.lang, info: "first_name"})}</label>
 									<input id="contact_first_name" className="form-control shadow_concav" type="text" name="first_name"></input>
 								</Col>
-								<Col sm={6}>
+								<Col className="col-xs-6">
 									<label htmlFor="last_name">{translate({lang: props.lang, info: "last_name"})}</label>
 									<input id="contact_last_name" className="form-control shadow_concav" type="text" name="last_name"></input>
 								</Col>

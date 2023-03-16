@@ -50,22 +50,23 @@ io.on('connection', function(socket) {
     socket.on('info_send', function(data) {
         let login_visitor = false
         let token
-        let payload = {
-            about: {
-                skills_title: skills_title, 
-                skills: skills, 
-                language: language, 
-                education: education, 
-                experience: experience, 
-                pie_colors: pie_colors 
-            },
-            portofolio: {
-                portofolio_list: portofolio_list,
-                portofolio_items: portofolio_items,
-                tutorials: tutorials, 
-            },
-            contact: contact,            
-        }
+        // let payload = {
+        //     about: {
+        //         skills_title: skills_title, 
+        //         skills: skills, 
+        //         language: language, 
+        //         education: education, 
+        //         experience: experience, 
+        //         pie_colors: pie_colors 
+        //     },
+        //     portofolio: {
+        //         portofolio_list: portofolio_list,
+        //         portofolio_items: portofolio_items,
+        //         tutorials: tutorials, 
+        //     },
+        //     contact: contact,            
+        // }
+        let payload = {}
 
         if(data.reason === "refresh"){
             token = data.login_token

@@ -1,28 +1,30 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 
 import HomePage from './HomePage'
 import Login from './Login'
 import Splash from './partials/splash_screen'
 
 import { getCookie, setCookie, showResults } from './utils'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { bringPayload } from '../reducers/home'
+
 import '../css/style.css'
 
 function Home(props){
 	let socket = props.socket
 	const [token, setToken] = useState('')
-	const [data, setData] = useState(null)
 	let lang = useSelector(state => state.settings.lang)
+	let home = useSelector(state => state.home)
+	let dispatch = useDispatch()
 
 	useEffect(() => {
+		dispatch(bringPayload())
+
 		let login_token = getCookie('login_token') ? getCookie('login_token') : ""
 		setToken(login_token)
 
 		if(login_token !== ""){
-			getData({login_token: login_token, reason: "refresh"}).then(function(res){
-				setData(res)
-			})
+			getLogin({login_token: login_token, reason: "refresh"})
 		}
 
 		setInterval(function () {		  
@@ -36,36 +38,35 @@ function Home(props){
 	}, [])
 
 	function handleChoice(x){
-		getData(x).then(function(res){
-			setData(res)
-			setToken(res.login_token)
-			setCookie("login_token", res.login_token, 1)
+		getLogin(x).then(function(res){
+			if(res){
+				setToken(res.login_token)
+				setCookie("login_token", res.login_token, 1)
+			}
 		})
 	}
-	function getData(x){
+	function getLogin(x){
 		return new Promise(function(resolve, reject){
 			socket.emit('info_send', x)
-			socket.on('info_read', function(data){
-				resolve(data)
+			socket.on('info_read', function(res){
+				resolve(res)
 			})
 		})
 	}
 	
-	return (
-		<>
-			{(() => {					
-				if(token !== ""){			
-					if(data && Object.keys(data).length !== 0){
-						return <HomePage socket={socket} data={data} lang={lang}></HomePage>
-					} else {
-						return <Splash></Splash>	
-					}
+	return <>
+		{(() => {
+			if(token !== ""){
+				if(home && home.about && home.portofolio && home.contact){
+					return <HomePage socket={socket} data={home} lang={lang}></HomePage>
 				} else {
-					return <Login choice={(e)=>handleChoice(e)} socket={socket}></Login>
-				}	
-			})()}
-		</>
-	)
+					return <Splash></Splash>	
+				}
+			} else {
+				return <Login choice={(e)=>handleChoice(e)} socket={socket}></Login>
+			}
+		})()}
+	</>
 }
 
 export default Home
