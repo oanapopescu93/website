@@ -86,6 +86,7 @@ a:focus {
 }
 
 #contactMap{
+    display:none;
     height: 250px;
     border: solid 1px var(--grey333);
     border-radius: 10px;
@@ -1361,6 +1362,7 @@ th, td {
     line-height: 12px;
     width: 50px;
     display: block;
+    box-shadow: none;
 }
 #languages .dropdown-menu{
     background-color: var(--blue);
