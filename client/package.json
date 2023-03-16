@@ -10,7 +10,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
-    "babel-loader": "8.1.0",
+    "babel-loader": "^8.1.0",
     "bootstrap": "^5.2.3",
     "jquery": "^3.6.4",
     "leaflet": "^1.9.3",
@@ -28,7 +28,7 @@
     "react-scripts": "^5.0.1",
     "redux": "^4.2.1",
     "socket.io-client": "^2.5.0",
-    "webpack": "4.42.0"
+    "webpack": "^4.42.0"
   },
   "scripts": {
     "start-client": "react-scripts start",
