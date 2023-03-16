@@ -86,7 +86,7 @@ a:focus {
 }
 
 #contactMap{
-    display:none;
+    /* display:none; */
     height: 250px;
     border: solid 1px var(--grey333);
     border-radius: 10px;
