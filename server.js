@@ -44,7 +44,6 @@ io.on('connection', function(socket) {
         if(data.reason === "refresh"){
             token = data.login_token
             jwt.verify(token, secret, function(err, decoded) {
-                console.log(decoded, secret)
                 if(decoded && decoded.login_visitor){
                     login_visitor = decoded.login_visitor
                 }
