@@ -11,17 +11,6 @@ var data = require('./var/data')
 var routes = require("./router")
 
 var login_password = data.LOGIN_PASSWORD
-var skills_title = data.SKILLS_TITLE
-var skills = data.SKILLS 
-var language = data.LANGUAGES 
-var education = data.EDUCATION
-var experience = data.EXPERIENCE
-var pie_colors = data.PIE_COLORS
-var portofolio_list = data.PORTOFOLIO_LIST
-var portofolio_items = data.PORTOFOLIO_ITEMS
-var tutorials = data.TUTORIALS
-var contact = data.CONTACT
-
 var list = []
 var jwt = require('jsonwebtoken')
 var secret = require('crypto').randomBytes(64).toString('hex')
@@ -48,49 +37,31 @@ app.use(routes)
 
 io.on('connection', function(socket) {
     socket.on('info_send', function(data) {
-        let login_visitor = false
+        let login_visitor = true
         let token
-        // let payload = {
-        //     about: {
-        //         skills_title: skills_title, 
-        //         skills: skills, 
-        //         language: language, 
-        //         education: education, 
-        //         experience: experience, 
-        //         pie_colors: pie_colors 
-        //     },
-        //     portofolio: {
-        //         portofolio_list: portofolio_list,
-        //         portofolio_items: portofolio_items,
-        //         tutorials: tutorials, 
-        //     },
-        //     contact: contact,            
-        // }
         let payload = {}
 
         if(data.reason === "refresh"){
             token = data.login_token
-            if(list.length>0){
-                jwt.verify(token, secret, function(err, decoded) {
-                    if(decoded && decoded.login_visitor){
-                        login_visitor = decoded.login_visitor
-                    }
-                }) 
-            }            
+            jwt.verify(token, secret, function(err, decoded) {
+                console.log(decoded, secret)
+                if(decoded && decoded.login_visitor){
+                    login_visitor = decoded.login_visitor
+                }
+            }) 
         } else {
             if(login_password === data.login_password){
                 login_visitor = false
             } else {
                 login_visitor = true
             }
+            
             token = generateAccessToken(data)
-            list.push({id: socket.id, token: token})
         }
         payload.login_visitor = login_visitor
         payload.login_token = token
         
         try{
-            console.log('info_read')
             io.to(socket.id).emit('info_read', payload)
         }catch(e){
             console.log('[error]','info_read :', e)

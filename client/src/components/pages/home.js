@@ -12,7 +12,8 @@ import '../css/style.css'
 
 function Home(props){
 	let socket = props.socket
-	const [token, setToken] = useState('')
+	const [token, setToken] = useState(getCookie('login_token') ? getCookie('login_token') : "")
+	const [visitor, setVisitor] = useState(getCookie('login_visitor') ? getCookie('login_visitor') : false)
 	let lang = useSelector(state => state.settings.lang)
 	let home = useSelector(state => state.home)
 	let dispatch = useDispatch()
@@ -20,11 +21,10 @@ function Home(props){
 	useEffect(() => {
 		dispatch(bringPayload())
 
-		let login_token = getCookie('login_token') ? getCookie('login_token') : ""
-		setToken(login_token)
+		console.log('token ', token)
 
-		if(login_token !== ""){
-			getLogin({login_token: login_token, reason: "refresh"})
+		if(token !== ""){
+			getLogin({login_token: token, reason: "refresh"})
 		}
 
 		setInterval(function () {		  
@@ -41,7 +41,9 @@ function Home(props){
 		getLogin(x).then(function(res){
 			if(res){
 				setToken(res.login_token)
+				setVisitor(res.login_visitor)
 				setCookie("login_token", res.login_token, 1)
+				setCookie("login_visitor", res.login_visitor, 1)
 			}
 		})
 	}
@@ -58,7 +60,7 @@ function Home(props){
 		{(() => {
 			if(token !== ""){
 				if(home && home.about && home.portofolio && home.contact){
-					return <HomePage socket={socket} data={home} lang={lang}></HomePage>
+					return <HomePage socket={socket} data={home} lang={lang} visitor={visitor}></HomePage>
 				} else {
 					return <Splash></Splash>	
 				}
