@@ -9,11 +9,11 @@ import { getCookie, setCookie, showResults } from './utils'
 import { bringPayload } from '../reducers/home'
 
 import '../css/style.css'
+import { changeVisitor } from '../reducers/settings'
 
 function Home(props){
-	let socket = props.socket
 	const [token, setToken] = useState(getCookie('login_token') ? getCookie('login_token') : "")
-	const [visitor, setVisitor] = useState(getCookie('login_visitor') ? getCookie('login_visitor') : false)
+	let visitor = useSelector(state => state.settings.visitor)
 	let lang = useSelector(state => state.settings.lang)
 	let home = useSelector(state => state.home)
 	let dispatch = useDispatch()
@@ -21,17 +21,15 @@ function Home(props){
 	useEffect(() => {
 		dispatch(bringPayload())
 
-		console.log('token ', token)
-
 		if(token !== ""){
 			getLogin({login_token: token, reason: "refresh"})
 		}
 
 		setInterval(function () {		  
-			socket.emit('heartbeat', { data: "ping" })
+			props.socket.emit('heartbeat', { data: "ping" })
 		}, 15000)
 
-		socket.on('server_error', function (text) {
+		props.socket.on('server_error', function (text) {
 			showResults("Error", text)
 			console.log('server_error ', text)
 		}) 
@@ -39,18 +37,18 @@ function Home(props){
 
 	function handleChoice(x){
 		getLogin(x).then(function(res){
+			console.log(res)
 			if(res){
 				setToken(res.login_token)
-				setVisitor(res.login_visitor)
 				setCookie("login_token", res.login_token, 1)
-				setCookie("login_visitor", res.login_visitor, 1)
+				dispatch(changeVisitor(res.login_visitor))
 			}
 		})
 	}
 	function getLogin(x){
 		return new Promise(function(resolve, reject){
-			socket.emit('info_send', x)
-			socket.on('info_read', function(res){
+			props.socket.emit('info_send', x)
+			props.socket.on('info_read', function(res){
 				resolve(res)
 			})
 		})
@@ -60,12 +58,12 @@ function Home(props){
 		{(() => {
 			if(token !== ""){
 				if(home && home.about && home.portofolio && home.contact){
-					return <HomePage socket={socket} data={home} lang={lang} visitor={visitor}></HomePage>
+					return <HomePage socket={props.socket} data={home} lang={lang} visitor={visitor}></HomePage>
 				} else {
 					return <Splash></Splash>	
 				}
 			} else {
-				return <Login choice={(e)=>handleChoice(e)} socket={socket}></Login>
+				return <Login choice={(e)=>handleChoice(e)} socket={props.socket} lang={lang}></Login>
 			}
 		})()}
 	</>

@@ -51,7 +51,12 @@
         "what_I_used": "Ce am folosit",
         "error": "Eroare",
 
-        "all_rights_reserved": "Toate drepturile rezervate"
+        "all_rights_reserved": "Toate drepturile rezervate",
+
+        "login_title": "Logare",
+        "login_button": "Intra",
+        "visitor_button": "Sunt vizitator",
+        "login_error": "Daca nu ai o parola, te rog sa bifezi Sunt vizitator"
     },
     "ENG":{
         "about": "About",
@@ -105,6 +110,11 @@
         "what_I_used": "What I used",
         "error": "Error",
 
-        "all_rights_reserved": "All rights reserved"
+        "all_rights_reserved": "All rights reserved",
+
+        "login_title": "Login",
+        "login_button": "Enter",
+        "visitor_button": "I am a visitor",
+        "login_error": "If you don't have a password, please check I am a Visitor"
     }
 }

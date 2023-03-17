@@ -50,10 +50,12 @@ io.on('connection', function(socket) {
                 }
             }) 
         } else {
-            if(login_password === data.login_password){
-                login_visitor = false
-            } else {
-                login_visitor = true
+            if(!data.login_visitor){ //verify the password only if the client didn't check "I am a visitor"
+                if(login_password === data.login_password){
+                    login_visitor = false
+                } else {
+                    login_visitor = true
+                }
             }
             
             token = generateAccessToken(data)
