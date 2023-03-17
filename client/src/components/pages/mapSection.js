@@ -23,14 +23,17 @@ function MapSection(props){
     }
     let DefaultIcon = L.icon({
         iconUrl: icon,
-        shadowUrl: iconShadow
+        shadowUrl: iconShadow,
+        iconSize: [25,40],
+        iconAnchor: [25,40],
+        popupAnchor: [-22, -40]
     });
     let markerOptions={
         position: [44.4806, 26.1165],
         icon: DefaultIcon,
     }
     let popupOptions={
-        className: 'markerTooltipContainer'
+        className: 'markerTooltipContainer',
     }
 
 	return <div id="contactMap">

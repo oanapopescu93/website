@@ -703,7 +703,7 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
 .item-info img{
     width: 100%;
     object-fit: cover;
-    height: 140px;
+    height: 150px;
     object-position: top;
 	cursor: pointer;
 }
@@ -1376,6 +1376,7 @@ th, td {
 #languages .dropdown-item{
     display: block;
     padding: 5px;
+    color: var(--white);
 }
 #languages .dropdown-item:hover, #languages .dropdown-item:hover, #languages .dropdown-item:hover{
     color: var(--white);

@@ -279,11 +279,20 @@ module.exports = Object.freeze({
         ],
         [	
             {
-                title: "Nodejs & React Casino",
+                title: "Online Casino",
                 link: "https://bunny-bet-casino.onrender.com/",
                 src: "/img/pics/casino_roulette.png",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "React", "Redux", "NodeJS", "Express", "Socket.IO", "HTML Canvas", "MySQL"],
                 git: "https://github.com/oanapopescu93/casino",
+                img_alt: "nodejs react casino",
+                img_title: "nodejs react casino",
+            },
+            {
+                title: "Online Shop",
+                // link: "https://bunny-bet-casino.onrender.com/",
+                src: "/img/pics/online_store.jpg",
+                used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "React", "Redux", "NodeJS", "Express", "Socket.IO", "HTML Canvas", "MySQL"],
+                git: "https://github.com/oanapopescu93/shop",
                 img_alt: "nodejs react casino",
                 img_title: "nodejs react casino",
             },
