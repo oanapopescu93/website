@@ -6,34 +6,32 @@ import Skills from './partials/skills'
 import Experience from './partials/experience'
 import Education from './partials/education'
 import { scroll_anywhere } from './utils'
-import $ from 'jquery' 
 import {translate} from '../translations/translate'
 
 function About(props){
-	const [visible, setVisible] = useState( "skills")
-	function handleChangeTab(id){
+	const [visible, setVisible] = useState("skills")
+	const [index, setIndex] = useState(0)
+	let about_tabs_header = ["skills", "experience", "education"]
+	function handleChangeTab(id, i){
 		setVisible(id)
-		$('#about-div .about_tabs').removeClass('open')
-		$('#'+id).parent().parent().addClass('open')
+		setIndex(i)
 	}
 	return <Container>
 			<Row id="about-div">
 				<Col id="about_tabs_main" className="about_tabs_main" xs={12} sm={4} md={4} lg={2}>
-					<div id="skills" className="about_tabs open" onClick={()=>{handleChangeTab('skills')}}>
-						<div className="about_tabs_header">
-							<h4 className="about_tabs_title text-uppercase grey666 shadow_convex">{translate({lang: props.lang, info: "skills"})}</h4>
-						</div>
-					</div>
-					<div id="experience" className="about_tabs" onClick={()=>{handleChangeTab('experience')}}>
-						<div className="about_tabs_header">
-							<h4 className="about_tabs_title text-uppercase grey666 shadow_convex">{translate({lang: props.lang, info: "experience"})}</h4>
-						</div>
-					</div>
-					<div id="education" className="about_tabs" onClick={()=>{handleChangeTab('education')}}>
-						<div className="about_tabs_header">
-							<h4 className="about_tabs_title text-uppercase grey666 shadow_convex">{translate({lang: props.lang, info: "education"})}</h4>
-						</div>
-					</div>
+					{
+						about_tabs_header.map(function(x, i){
+							let style = ""
+							if(i === index){
+								style = "open"
+							}
+							return <div key={i} id={x} className={"about_tabs " + style} onClick={()=>{handleChangeTab(x, i)}}>
+								<div className="about_tabs_header">
+									<h4 className="about_tabs_title text-uppercase grey666 shadow_convex">{translate({lang: props.lang, info: x})}</h4>
+								</div>
+							</div>
+						})
+					}
 				</Col>
 				<Col id="about_content_main" className="about_content_main" xs={12} sm={8} md={8} lg={10}>
 					<div id="about_content_box" className="about_content_box shadow_concav">									
