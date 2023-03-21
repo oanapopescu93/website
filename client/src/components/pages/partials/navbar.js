@@ -2,8 +2,8 @@ import React, {useState} from 'react'
 import Container from 'react-bootstrap/Container'
 import { scroll_anywhere } from '../utils'
 import ukraine from '../../img/ukraine.svg'
-import Language from './language'
 import { translate } from '../../translations/translate'
+import Settings from '../settings/settings'
 
 function Navbar(props){
 	const [moveAway, setMoveAway] = useState("")
@@ -22,8 +22,7 @@ function Navbar(props){
 		}
 	}
 	
-	return <div id = "mynavbar" className="mynavbar">
-			<Language></Language>
+	return <div id = "mynavbar" className="mynavbar">			
 			<Container>	
 				<div id="menu" onClick={()=>handleMenu()}>
 					<span className="sr-only">Toggle navigation</span>
@@ -39,6 +38,7 @@ function Navbar(props){
 						<li><a href="#about" className="scroll-button" onClick={(e)=>{scroll_anywhere(e)}}>{translate({lang: props.lang, info: "about"})}</a></li>
 						<li><a href="#portofolio" className="scroll-button" onClick={(e)=>{scroll_anywhere(e)}}>{translate({lang: props.lang, info: "portofolio"})}</a></li>
 						<li><a href="#contact" className="scroll-button" onClick={(e)=>{scroll_anywhere(e)}}>{translate({lang: props.lang, info: "contact"})}</a></li>
+						<li></li>
 					</ul>
 					<ul className="nav-right hidden-xs" style={{"marginRight":"0px"}}>
 						{!props.login_visitor ? <li>
@@ -61,6 +61,7 @@ function Navbar(props){
 								<img id="ukraine_icon" alt="ukraine_icon" src={ukraine} style={{"width":"20px"}}/>
 							</a>									
 						</li>
+						<li><Settings></Settings></li>
 					</ul>
 				</div>
 			</Container>		

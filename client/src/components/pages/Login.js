@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { translate } from '../translations/translate'
-import Language from './partials/language'
+import Language from './settings/language'
 
 function Login(props){
     const [toggleVisitor, settoggleVisitor] = useState(false)
@@ -37,7 +37,9 @@ function Login(props){
     }
     return <div id='login' className={"full-height " + props.darkMode}>
             <div className="full-height-content">
-                <Language></Language>
+                <div id="language_container">
+                    <Language></Language>
+                </div>
                 <Container>
                     <Row>
                         <Col sm={1} md={2} lg={3}></Col>

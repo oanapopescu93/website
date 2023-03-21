@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
+import $ from 'jquery'
 
 import HomePage from './HomePage'
 import Login from './Login'
-import Splash from './partials/splash_screen'
+import Splash from './partials/splashScreen'
 
-import { getCookie, setCookie, showResults } from './utils'
+import { getCookie, setCookie } from './utils'
 import { bringPayload } from '../reducers/home'
 
 import '../css/style.css'
+import '../css/styleDark.css'
 import { changeVisitor } from '../reducers/settings'
 
 function Home(props){
@@ -16,28 +18,39 @@ function Home(props){
 	let visitor = useSelector(state => state.settings.visitor)
 	let lang = useSelector(state => state.settings.lang)
 	let home = useSelector(state => state.home)
+	let mode = useSelector(state => state.settings.mode)
 	let dispatch = useDispatch()
 
 	useEffect(() => {
 		dispatch(bringPayload())
 
 		if(token !== ""){
-			getLogin({login_token: token, reason: "refresh"})
+			setUp({login_token: token, reason: "refresh"})
 		}
 
 		setInterval(function () {		  
 			props.socket.emit('heartbeat', { data: "ping" })
 		}, 15000)
 
-		props.socket.on('server_error', function (text) {
-			showResults("Error", text)
-			console.log('server_error ', text)
-		}) 
+		if(props.socket){
+			setInterval(function () {		  
+				props.socket.emit('heartbeat', { data: "ping" })
+			}, 15000)
+			props.socket.on('server_error', function (text) {
+				console.log('server_error ', text)
+			}) 
+		}
 	}, [])
 
-	function handleChoice(x){
+	useEffect(() => {
+		if('body'){
+			$('body').removeClass('light dark')
+			$('body').addClass(mode)
+		}
+	}, [mode])
+
+	function setUp(x){
 		getLogin(x).then(function(res){
-			console.log(res)
 			if(res){
 				setToken(res.login_token)
 				setCookie("login_token", res.login_token, 1)
@@ -45,6 +58,11 @@ function Home(props){
 			}
 		})
 	}
+
+	function handleChoice(x){
+		setUp(x)
+	}
+	
 	function getLogin(x){
 		return new Promise(function(resolve, reject){
 			props.socket.emit('info_send', x)
@@ -52,7 +70,7 @@ function Home(props){
 				resolve(res)
 			})
 		})
-	}
+	}	
 	
 	return <>
 		{(() => {

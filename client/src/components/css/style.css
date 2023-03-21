@@ -19,15 +19,17 @@ html {
 }
 body, #root, .App  {
     min-height: 100% !important;
-    height: 100%;
-    font-family: arial;
-    color: var(--grey333);
+    height: 100%;    
     position: relative;
-    font-size: 14px;  
-    background-color: var(--grey888);  
 }
 body{
     overflow-x: hidden;
+}
+#root{
+    font-size: 14px; 
+    color: var(--grey333);
+    background-color: var(--grey888);  
+    font-family: arial;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, address {
@@ -206,7 +208,7 @@ hr {
     display: table;
     height: 100%;
     width: 100%;
-    padding: 60px 0px; 
+    padding: 50px 0px; 
 	background-color: var(--grey);
 	-webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.7);
     -o-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.7);
@@ -442,7 +444,10 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
     text-align: right;
     background-color: var(--black);
     border-bottom: solid 1px var(--black);
-    height: 44px;
+    height: 52px;
+}
+.nav-left{
+    margin-top: 5px;
 }
 .modal-open .mynavbar, .modal-open .mytutorials_container, .modal-open .mycv_container{
     right: 10px;
@@ -508,6 +513,7 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
     display: inline-block;
     background-color: transparent;
     margin-top: 5px;
+    cursor: pointer;
 }
 
 #menu .bar1, #menu .bar2, #menu .bar3 {
@@ -1042,6 +1048,7 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
 	border: solid 1px var(--grey888);
     color: var(--grey666);
     border-radius: 10px;
+    margin-bottom: 5px;
 }
 .box-contact-form .form-control:focus {
   border-color: var(--blue);
@@ -1344,11 +1351,40 @@ th, td {
 	font-size: 14px;
 }
 
-#languages{
+/* SETTINGS */
+
+#settings_button{
+    background-color: transparent;
+    border: solid 1px var(--white);
+    color: var(--white);
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+#settings_button:hover, #settings_button:focus{
+    border: solid 1px var(--blue);
+	color:var(--blue);
+    background-color: transparent;
+}
+#settings .dropdown-menu{
+    background-color: var(--black);
+    border: solid 1px var(--white);
+    border-radius: 10px;
+    color: var(--white);
+    margin: 0px;
+    min-width: 100px;
+    padding: 5px;
+    text-align: center;
+}
+
+#language_container{
     position: absolute;
     z-index: 2;
     top: 10px;
     left: 10px;
+}
+#languages{
+    display: inline-block;
 }
 #languages .dropdown .dropdown-toggle{
     background-color: var(--blue);
@@ -1383,6 +1419,42 @@ th, td {
     background-color: var(--blue);
 }
 
+#lightDarkMode .checkbox {
+    background-color: var(--grey333);
+    border: solid 1px var(--grey666);
+    width: 55px;
+    height: 25px;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    margin: 5px 0px 0px 0px;
+    font-size: 14px;
+    line-height: 25px;
+}  
+#lightDarkMode .fa-moon-o {
+    color: #f1c40f;
+    padding: 5px;
+}  
+#lightDarkMode .fa-sun-o {
+    color: #f39c12;
+    padding: 5px;
+}  
+#lightDarkMode .checkbox .ball {
+    background-color: var(--grey888);
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-radius: 100%;
+    transition: 0.4s;
+    cursor: pointer;
+}  
+#lightDarkMode .ball.right {
+    left: 30px;
+}
+
 /*---------------------media---------------------*/
 
 @media (max-height: 800px) {
@@ -1401,6 +1473,16 @@ th, td {
 	}
 }
 @media (max-width: 767px) {
+    .box-contact-form .form-control{
+        height: 20px;
+    }
+    .box-contact-form label{
+        font-size: 12px;
+        line-height: 12px;
+    }
+    .box-contact-form textarea.form-control{
+        height: 50px;
+    }
     #contactMap{
         display: none;
     }
@@ -1448,7 +1530,7 @@ th, td {
 		height:100%;
 	}
 	.nav-left li{
-		height:25%;
+		height:20%;
 		border-top:solid 1px transparent;
 	}
 	.nav-left li a{
@@ -1483,9 +1565,6 @@ th, td {
 	#header-buttons .button-white{
 		width: 100%;
         margin: 5px 0px;        
-	}
-	.full-height{
-		padding:50px 0px;
 	}
     .full-height-content {
         padding: 10px 0px;
