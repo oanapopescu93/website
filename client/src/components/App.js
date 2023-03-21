@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import Home from './pages/home'
+import Home from './pages/Home'
 
 import socketIOClient from "socket.io-client/dist/socket.io"
 const socket = socketIOClient("/")
@@ -27,10 +27,10 @@ function App(){
 	}()
 
 	useEffect(() => {
-		my_console.disable()
+		//my_console.disable()
 	}, [])
 
-	return <Home socket={socket}></Home> 
+	return <Home socket={socket}></Home>
 }
 
 export default App

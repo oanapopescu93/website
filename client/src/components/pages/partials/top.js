@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import $ from 'jquery'
-import { scroll_anywhere } from '../utils'
+import { scroll_anywhere } from '../../utils'
 
 function Top(props){
     const [show, setShow] = useState('')

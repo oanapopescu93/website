@@ -46,7 +46,7 @@ h2 {
     line-height: 28px!important;
     /* font-family: impact; */
     font-family: courier new;
-    font-weight: bold;
+    font-weight: bold!important;
     letter-spacing: -2px;
 }
 h3 {
@@ -249,6 +249,7 @@ hr {
 .title-icon {
     float: right;
     font-size: 20px;
+    line-height: 30px;
 }
 
 .line {
@@ -498,6 +499,12 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
 .mynavbar a {
     color: var(--white);
 	text-transform: capitalize;
+    display: inline-block;
+    vertical-align: middle;
+}
+.mynavbar a i {
+    font-size: 20px;
+    line-height: 20px;
 }
 
 .mynavbar a:hover, .mynavbar a:focus {
@@ -508,6 +515,7 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
     display: inline-block;
     background-color: transparent;
     margin-top: 5px;
+    cursor: pointer;
 }
 
 #menu .bar1, #menu .bar2, #menu .bar3 {
@@ -703,7 +711,7 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
 .item-info img{
     width: 100%;
     object-fit: cover;
-    height: 150px;
+    height: 180px;
     object-position: top;
 	cursor: pointer;
 }
@@ -1109,7 +1117,9 @@ footer {
     margin: 0px !important;
 }
 .modal-title{
-	display:inline-block;
+	display: inline-block;
+    font-size: 20px;
+    line-height: 20px;
 }
 .modal-open .modal.show{
     opacity: 1!important;
@@ -1305,37 +1315,18 @@ th, td {
 }
 
 /*---------------------show_results---------------------*/
-.show_results_container{
-	background:var(--transparent);
-	position: fixed;
-	z-index: 1;
-	top:0px;
-	bottom:0px;
-	left:0px;
-	right:0px;
-	width:100%;
-	text-align: center;
-	padding:10px;
-	display:none;
-}
-.show_results{
-	position: absolute;
-	z-index: 1;
-	top:50%;
-	left: 50%;
-    transform: translate(-50%, -50%);
-	width:100%;
-	max-width: 200px;
-	padding:10px;
-	background: var(--blue);
-	border-radius: 10px;
-	color: white;
-}
-.show_results_container.success .show_results{
+.success .modal-content{
     background-color: var(--green);
 }
-.show_results_container.error .show_results{
+.error .modal-content{
     background-color: var(--red);
+}
+.mymodal.success .modal-header, .mymodal.error .modal-header{
+    border-bottom: 0px solid transparent;
+    padding: 0px;
+}
+.mymodal.success .modal-body, .mymodal.error .modal-body{
+    padding: 0px;
 }
 .show_results h1{
 	font-size: 24px!important;

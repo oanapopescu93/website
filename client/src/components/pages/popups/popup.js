@@ -4,6 +4,7 @@ import Tutorials from './tutorials'
 import { Modal} from "react-bootstrap"
 import { changePopup } from '../../reducers/popups'
 import Cv from './cv'
+import ContactResults from './contactResults'
 import { translate } from '../../translations/translate'
 import PortofolioDetails from './portofolioDetails'
 
@@ -13,6 +14,7 @@ function Popup(props){
     let template = useSelector(state => state.popups.template)
     let data = useSelector(state => state.popups.data)
     let size = useSelector(state => state.popups.size)
+    let style = useSelector(state => state.popups.style)
     if(!size){
         size = "sm"
     }
@@ -22,13 +24,15 @@ function Popup(props){
 		dispatch(changePopup(false))
 	}
 
-    return <Modal id="myModal" className="mymodal text-center" show={open} onHide={closeModal} size={size}>
+    return <Modal id="myModal" className={"mymodal text-center " + style} show={open} onHide={closeModal} size={size}>
             <Modal.Header closeButton>
                 <Modal.Title>{title}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 {(() => {					
                     switch (template) {
+                        case "contact_results":                            
+                            return <ContactResults lang={props.lang} message={data}></ContactResults>
                         case "portofolio_details":
                             return <PortofolioDetails lang={props.lang} item={data}></PortofolioDetails>
                         case "tutorials":

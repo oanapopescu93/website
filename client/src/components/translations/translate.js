@@ -1,5 +1,5 @@
 import words from './words.json'
-import { capitalizeFirstLetter } from '../pages/utils'
+import { capitalizeFirstLetter } from '../utils'
 
 export const translate = function (data){
     if(!data) return
