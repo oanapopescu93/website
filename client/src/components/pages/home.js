@@ -4,9 +4,9 @@ import { bringPayload } from '../reducers/home'
 import { changeVisitor } from '../reducers/settings'
 import { getCookie, setCookie } from '../utils'
 
-import HomePage from './HomePage'
-import Splash from './partials/SplashScreen'
-import Login from './LoginPage'
+import HomePage from './homePage'
+import Splash from './partials/splashScreen'
+import Login from './loginPage'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import '../css/style.css'
@@ -23,7 +23,7 @@ function Home(props){
 		if(token !== ""){
 			handleChoice({login_token: token, reason: "refresh"})
 		}
-	}, [])
+	}, [dispatch, handleChoice, token])
 
 	function handleChoice(x){
 		getLogin(x).then(function(res){
