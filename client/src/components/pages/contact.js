@@ -9,6 +9,7 @@ import $ from 'jquery'
 import { checkSubmit } from '../validate'
 import { translate } from '../translations/translate'
 import MapSection from './mapSection'
+import {changePopup} from '../reducers/popups'
 
 function Child(props){
 	let contact = []
@@ -53,6 +54,7 @@ function Contact(props){
 	const [errorTitle, setErrorTitle] = useState(true)
 	const [errorMessage, setErrorMessage] = useState(true)
 	const [resultsClass, setResultsClass] = useState("")
+	let dispatch = useDispatch()
 
 	function flip(){		
 		if(!$('.contact_page_container').hasClass('flip')){
@@ -70,8 +72,7 @@ function Contact(props){
 		let send = true
 		setErrorEmail(true)
 		setErrorTitle(true)
-		setErrorMessage(true)
-		let dispatch = useDispatch()
+		setErrorMessage(true)		
 		
 		if(!checkSubmit($('#contact_email').val(), 'email')){
 			send = false
@@ -100,7 +101,7 @@ function Contact(props){
 		}
 	}
 
-	socket.on('contact_read', function(data){
+	socket.on('contact_read', function(res){
 		if(res && res[props.lang]){
 			let title = res[props.lang][0]
 			let style = 'success'

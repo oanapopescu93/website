@@ -6,6 +6,7 @@ import { changePopup } from '../../reducers/popups'
 import Cv from './cv'
 import { translate } from '../../translations/translate'
 import PortofolioDetails from './portofolioDetails'
+import ContactResults from './contactResults'
 
 function Popup(props){
     let open = useSelector(state => state.popups.open)
@@ -29,6 +30,8 @@ function Popup(props){
             <Modal.Body>
                 {(() => {					
                     switch (template) {
+                        case "contact_results": 
+                            return <ContactResults message={data}></ContactResults>
                         case "portofolio_details":
                             return <PortofolioDetails lang={props.lang} item={data}></PortofolioDetails>
                         case "tutorials":
