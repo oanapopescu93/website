@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import Container from 'react-bootstrap/Container'
-import { scroll_anywhere } from './utils'
-import ukraine from '../img/ukraine.svg'
-import Language from './partials/language'
-import { translate } from '../translations/translate'
+import { scroll_anywhere } from '../utils'
+import ukraine from '../../img/ukraine.svg'
+import Language from './language'
+import { translate } from '../../translations/translate'
 
 function Navbar(props){
 	const [moveAway, setMoveAway] = useState("")

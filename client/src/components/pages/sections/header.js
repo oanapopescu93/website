@@ -2,10 +2,10 @@ import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import logo_icon_white from '../img/logo-bear-white.png'
+import logo_icon_white from '../../img/logo-bear-white.png'
 import Parser from 'react-html-parser'
-import { scroll_anywhere } from './utils'
-import { translate } from '../translations/translate'
+import { scroll_anywhere } from '../utils'
+import { translate } from '../../translations/translate'
 
 function Header(props){
 	let description = translate({lang: props.lang, info: "header_description"})

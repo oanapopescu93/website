@@ -6,10 +6,10 @@ import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import $ from 'jquery'
-import { checkSubmit } from '../validate'
-import { translate } from '../translations/translate'
+import { checkSubmit } from '../../validate'
+import { translate } from '../../translations/translate'
 import MapSection from './mapSection'
-import {changePopup} from '../reducers/popups'
+import {changePopup} from '../../reducers/popups'
 
 function Child(props){
 	let contact = []

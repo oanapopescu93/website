@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from './header'
-import Sapou from './partials/sapou'
+import Sapou from '../partials/sapou'
 import About from './about'
 import Portofolio from './portofolio'
 import Contact from './contact'

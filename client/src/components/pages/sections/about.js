@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Skills from './partials/skills'
-import Experience from './partials/experience'
-import Education from './partials/education'
-import { scroll_anywhere } from './utils'
-import {translate} from '../translations/translate'
+import Skills from '../partials/skills'
+import Experience from '../partials/experience'
+import Education from '../partials/education'
+import { scroll_anywhere } from '../utils'
+import {translate} from '../../translations/translate'
 
 function About(props){
 	const [visible, setVisible] = useState("skills")

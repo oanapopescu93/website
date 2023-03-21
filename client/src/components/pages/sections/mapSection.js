@@ -2,9 +2,9 @@ import React from 'react'
 
 import Leaflet from 'leaflet'
 import { Map, TileLayer, Marker, Popup, LayersControl}  from 'react-leaflet'
-import icon from '../img/marker-icon.png';
+import icon from '../../img/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
-import {translate} from '../translations/translate'
+import {translate} from '../../translations/translate'
 
 import 'leaflet/dist/leaflet.css';
 import 'leaflet/dist/leaflet.css'

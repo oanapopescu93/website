@@ -3,10 +3,10 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
-import Carousel from './partials/carousel'
+import Carousel from '../partials/carousel'
 import { useDispatch } from 'react-redux'
-import { changePopup } from '../reducers/popups'
-import {translate} from '../translations/translate'
+import { changePopup } from '../../reducers/popups'
+import {translate} from '../../translations/translate'
 
 function Child(props){ 
 	function handleClick(x){

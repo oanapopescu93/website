@@ -1,12 +1,12 @@
 import React from 'react'
 import { translate } from '../translations/translate'
-import Navbar from './navbar'
+import Navbar from './partials/navbar'
 import Cv from './partials/cv'
 import Footer from './partials/footer'
 import Top from './partials/top'
 import Tutorial from './partials/tutorial'
 import Popup from './popups/popup'
-import Section from './section'
+import Section from './sections/section'
 
 function HomePage(props){
     let login_visitor = props.visitor ? props.visitor : false //true = visitor; false = HR / future employer
