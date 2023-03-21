@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.047f6209.js",
-    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "main.css": "/static/css/main.ff7c3e8b.css",
+    "main.js": "/static/js/main.f94c0e7a.js",
+    "static/media/CV - Oana Popescu.pdf": "/static/media/CV - Oana Popescu.b1913d1c75cd284c39c0.pdf",
+    "static/media/bg-desk.jpg": "/static/media/bg-desk.da55e93ff8178f4b0a25.jpg",
+    "static/media/logo-bear-white.png": "/static/media/logo-bear-white.4f1c2224ce678e27ce51.png",
+    "static/media/CV - Oana Popescu.doc": "/static/media/CV - Oana Popescu.72239c96b0d4f6670043.doc",
     "index.html": "/index.html",
-    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.047f6209.js.map": "/static/js/main.047f6209.js.map",
-    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
+    "static/media/ukraine.svg": "/static/media/ukraine.b125c99076ce8b10a03105d4cd949cc5.svg",
+    "main.ff7c3e8b.css.map": "/static/css/main.ff7c3e8b.css.map",
+    "main.f94c0e7a.js.map": "/static/js/main.f94c0e7a.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.047f6209.js"
+    "static/css/main.ff7c3e8b.css",
+    "static/js/main.f94c0e7a.js"
   ]
 }
