@@ -1,32 +1,43 @@
 import React, { useState, useEffect } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
+
+import HomePage from './HomePage'
+import Login from './Login'
+import Splash from './partials/splash_screen'
+
+import { getCookie, setCookie, showResults } from './utils'
 import { bringPayload } from '../reducers/home'
-import { changeVisitor } from '../reducers/settings'
-import { getCookie, setCookie } from '../utils'
 
-import HomePage from './homePage'
-import Splash from './partials/splashScreen'
-import Login from './loginPage'
-
-import 'bootstrap/dist/css/bootstrap.css'
 import '../css/style.css'
+import { changeVisitor } from '../reducers/settings'
 
 function Home(props){
 	const [token, setToken] = useState(getCookie('login_token') ? getCookie('login_token') : "")
-	let dispatch = useDispatch()
-	let home = useSelector(state => state.home)
-	let lang = useSelector(state => state.settings.lang)
 	let visitor = useSelector(state => state.settings.visitor)
+	let lang = useSelector(state => state.settings.lang)
+	let home = useSelector(state => state.home)
+	let dispatch = useDispatch()
 
 	useEffect(() => {
 		dispatch(bringPayload())
+
 		if(token !== ""){
-			handleChoice({login_token: token, reason: "refresh"})
+			getLogin({login_token: token, reason: "refresh"})
 		}
-	}, [dispatch, handleChoice, token])
+
+		setInterval(function () {		  
+			props.socket.emit('heartbeat', { data: "ping" })
+		}, 15000)
+
+		props.socket.on('server_error', function (text) {
+			showResults("Error", text)
+			console.log('server_error ', text)
+		}) 
+	}, [])
 
 	function handleChoice(x){
 		getLogin(x).then(function(res){
+			console.log(res)
 			if(res){
 				setToken(res.login_token)
 				setCookie("login_token", res.login_token, 1)

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Row from 'react-bootstrap/Row'
-import { scroll_anywhere } from '../../utils'
+import { scroll_anywhere } from '../utils'
 import { translate } from '../../translations/translate'
 
 function Experience(props){	

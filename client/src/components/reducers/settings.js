@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { getCookie, setCookie } from '../utils'
+import { getCookie, setCookie } from '../pages/utils'
 
 const initialState = {
     lang: getCookie("website_language") !== "" ? getCookie("website_language") : "ENG",
@@ -15,6 +15,7 @@ const settingsSlice = createSlice({
             setCookie("website_language", payload)
         },
         changeVisitor: (state, { payload }) => {
+            console.log('changeVisitor ', payload)
             state.visitor = payload
             setCookie("login_visitor", payload, 1)
         },

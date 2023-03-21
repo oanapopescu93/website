@@ -11,7 +11,7 @@ function Sapou(props) {
                     <Row>
                         <Col sm={12}>
                             <hr className="line"></hr>
-                            <h3 className="text-uppercase">{translate({lang: props.lang, info: "about"})}<span className="fa fa-user title-icon"></span></h3>
+                            <h3 className="text-uppercase">{translate({lang: props.lang, info: "about"})}<span className="glyphicon glyphicon-user title-icon"></span></h3>
                             <hr className="line"></hr>
                         </Col>
                     </Row>
@@ -21,7 +21,7 @@ function Sapou(props) {
                     <Row>
                         <Col sm={12}>
                             <hr className="line"></hr>
-                            <h3 className="text-uppercase">{translate({lang: props.lang, info: "portofolio"})}<span className="fa fa-folder-open title-icon"></span></h3>
+                            <h3 className="text-uppercase">{translate({lang: props.lang, info: "portofolio"})}<span className="glyphicon glyphicon-folder-open title-icon"></span></h3>
                             <hr className="line"></hr>
                         </Col>
                     </Row>
@@ -31,7 +31,7 @@ function Sapou(props) {
                     <Row>
                         <Col sm={12}>
                             <hr className="line"></hr>
-                            <h3 className="text-uppercase">{translate({lang: props.lang, info: "contact"})}<span className="fa fa-paper-plane title-icon"></span></h3>
+                            <h3 className="text-uppercase">{translate({lang: props.lang, info: "contact"})}<span className="glyphicon glyphicon-send title-icon"></span></h3>
                             <hr className="line"></hr>
                         </Col>
                     </Row>

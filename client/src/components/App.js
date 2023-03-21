@@ -30,7 +30,7 @@ function App(){
 		my_console.disable()
 	}, [])
 
-	return <Home socket={socket}></Home>
+	return <Home socket={socket}></Home> 
 }
 
 export default App

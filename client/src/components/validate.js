@@ -15,8 +15,6 @@ export const checkSubmit = function(input="", type){
                 pass_result = false
             }
             return pass_result
-        default:
-            return pass_result
     }		
     
 }

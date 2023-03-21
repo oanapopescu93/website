@@ -6,7 +6,6 @@ const initialState = {
     template: "",
     data: null,
     size: "sm",
-    style: "",
 }
 
 const popupsSlice = createSlice({
@@ -22,9 +21,6 @@ const popupsSlice = createSlice({
             }
             if(payload.size){
                 state.size = payload.size
-            }
-            if(payload.style){
-                state.style = payload.style
             }
         },
     }
