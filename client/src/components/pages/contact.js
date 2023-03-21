@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
+import {useDispatch} from 'react-redux'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import $ from 'jquery'
-import { showResults } from './utils'
 import { checkSubmit } from '../validate'
 import { translate } from '../translations/translate'
 import MapSection from './mapSection'
@@ -71,6 +71,7 @@ function Contact(props){
 		setErrorEmail(true)
 		setErrorTitle(true)
 		setErrorMessage(true)
+		let dispatch = useDispatch()
 		
 		if(!checkSubmit($('#contact_email').val(), 'email')){
 			send = false
@@ -95,17 +96,22 @@ function Contact(props){
 				subject: $('#contact_title').val(),
 				html: $('#contact_message').val(),
 			}
-			socket.emit('contact_send', payload);
-			socket.on('contact_read', function(data){
-				if(data[0] === "Success!"){
-					setResultsClass('success')
-				} else if(data[0] === "Error!"){
-					setResultsClass('error')
-				}
-				showResults(data[0], data[1]);
-			});
+			socket.emit('contact_send', payload)			
 		}
 	}
+
+	socket.on('contact_read', function(data){
+		if(res && res[props.lang]){
+			let title = res[props.lang][0]
+			let style = 'success'
+			if(!res.send){
+				style = 'error'
+			}
+			dispatch(changePopup({open: true, title: title, template: "contact_results", data: res[props.lang][1], style}))
+		} else {
+			console.warn('error sending message')
+		}
+	})
 	
 	return <Container>
 				<Row>

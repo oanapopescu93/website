@@ -11,29 +11,19 @@
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "build": "npm install && cd client && npm install && npm run build"
   },
-  "keywords": [
-    "react",
-    "app",
-    "nodejs",
-    "reducer",
-    "redux",
-    "saga",
-    "middleware"
-  ],
   "author": "oana popescu",
   "license": "ISC",
-  "repository": { 
-    "type": "git", 
-    "url": "https://github.com/oanapopescu93/website" 
-  },
   "dependencies": {
-    "concurrently": "^7.6.0",
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "jsonwebtoken": "^9.0.0",
-    "nodemailer": "^6.9.1",
-    "nodemon": "^2.0.21",
-    "path": "^0.12.7",
+    "body-parser": "1.19.1",
+    "concurrently": "5.3.0",
+    "express": "4.17.1",
+    "express-handlebars": "4.0.6",
+    "express-session": "1.17.1",
+    "jsonwebtoken": "8.5.1",
+    "nodemailer": "6.7.3",
+    "nodemon": "2.0.7",
+    "path": "0.12.7",
+    "request": "2.88.2",
     "socket.io": "2.4.1"
   }
 }

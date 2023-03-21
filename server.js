@@ -30,7 +30,7 @@ var mailOptions = {
 	from: '',
 	to: data.AUTH_FROM,
 	subject: 'WEBSITE!!!',
-	html: ''
+	html: '<div>'
 }
 
 app.use(routes)
@@ -71,18 +71,33 @@ io.on('connection', function(socket) {
     socket.on('contact_send', function(data) {
         mailOptions.from = data.email
         mailOptions.subject = data.subject
-        mailOptions.html = mailOptions.html + ' First name--> ' + data.first_name
-        mailOptions.html = mailOptions.html + ' Last_name--> ' + data.last_name 
-        mailOptions.html = mailOptions.html + ' Phone--> ' + data.phone
-        mailOptions.html = mailOptions.html + ' Title--> ' + data.subject
-        mailOptions.html = mailOptions.html + ' Message--> ' + data.html
+        if(typeof data.first_name !== "undefined" && data.first_name !== 'null' && data.first_name !== null && data.first_name !== ""){
+            mailOptions.html = mailOptions.html + '<p>First name--> ' + data.first_name + '</p>'
+        }
+        if(typeof data.last_name !== "undefined" && data.last_name !== 'null' && data.last_name !== null && data.last_name !== ""){
+            mailOptions.html = mailOptions.html + '<p>Last name--> ' + data.last_name + '</p>'
+        }
+        if(typeof data.phone !== "undefined" && data.phone !== 'null' && data.phone !== null && data.phone !== ""){
+            mailOptions.html = mailOptions.html + '<p>Phone--> ' + data.phone + '</p>'
+        }        
+        mailOptions.html = mailOptions.html + '<p>Message--> ' + data.html + '</p>'
+        mailOptions.html = mailOptions.html + '</div>'
         transport.sendMail(mailOptions, function(error, info){
             if (error) {
               console.log('error--> ', error)
-              io.emit('contact_read', ["Error!", "we couldn't send the mail!"])
+              let payload = {
+                sent: false,
+                RO: ["Eroare!", "Mesajul nu a fost transmis!"],
+                ENG: ["Error!", "The message has not been sent!"]
+              }
+              io.emit('contact_read', payload)
             } else {
-              console.log('info--> ', info.response)
-              io.emit('contact_read', ["Success!", "Message has been sent!"])
+                let payload = {
+                    send: true,
+                    RO: ["Succes!", "Mesajul a fost transmis!"],
+                    ENG: ["Success!", "Message has been sent!"]
+                  }
+              io.emit('contact_read', payload)
             }
         })	
 	})
