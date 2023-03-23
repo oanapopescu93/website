@@ -24,8 +24,6 @@ body, #root, .App  {
 }
 body{
     overflow-x: hidden;
-}
-#root{
     font-size: 14px; 
     color: var(--grey333);
     background-color: var(--grey888);  
@@ -85,6 +83,10 @@ a, a:hover, a:focus {
 }
 a:focus {
     outline: 0px auto -webkit-focus-ring-color;
+}
+#under_construction{
+    width:100%;
+    max-width: 200px;
 }
 
 #contactMap{
@@ -468,7 +470,7 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
 
 .navbar-box {
     position: fixed;
-    top: 44px;
+    top: 50px;
     left: -100%;
 	bottom:0px;
     transition: 0.4s;
@@ -512,7 +514,7 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
 #menu {
     display: inline-block;
     background-color: transparent;
-    margin-top: 5px;
+    margin-top: 10px;
     cursor: pointer;
 }
 
@@ -572,7 +574,7 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
     background-color: white;
 }
 .logo {
-    width: 100px;
+    width: 50px;
 }
 .sapou{
 	font-family:arial black;
@@ -1377,6 +1379,21 @@ th, td {
     text-align: center;
 }
 
+.settings_small{
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    text-align: left;
+}
+.settings_small .dropdown, .settings_small a{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+
 #language_container{
     position: absolute;
     z-index: 2;
@@ -1455,6 +1472,20 @@ th, td {
     left: 30px;
 }
 
+canvas {
+    image-rendering: optimizeSpeed;             /* Older versions of FF          */
+    image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
+    image-rendering: -webkit-optimize-contrast; /* Safari                        */
+    image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
+    image-rendering: pixelated;                 /* Awesome future-browsers       */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE                            */
+}
+
+/* CHATBOT */
+.chatbot_container{
+    text-align: center;
+}
+
 /*---------------------media---------------------*/
 
 @media (max-height: 800px) {
@@ -1464,15 +1495,19 @@ th, td {
 }
 @media (max-height: 700px) {
 	.about_content_box{
-		height:360px;
+		height:380px;
 	}
 }
 @media (max-height: 600px) {
 	.about_content_box{
-		height:220px;
+		height:200px;
 	}
 }
 @media (max-width: 767px) {
+    body, #root, .App{
+        height: auto;
+        min-height: auto;
+    }
     .box-contact-form .form-control{
         height: 20px;
     }
@@ -1492,7 +1527,17 @@ th, td {
     .full-height,
     .full-height-title,
     .full-height-content{
-        display: block!important;
+        display: block;
+    }
+    #header.full-height{
+        display: table;
+        width: 100%;
+    }
+    #header .full-height-title{
+        display: table-header-group;
+    }
+    #header .full-height-content{
+        display: table-cell;
     }
 	.portofolio-container{
 		width:300px;
@@ -1580,9 +1625,14 @@ th, td {
     }
 }
 @media (max-width: 480px) {
-    .logo {
-        width: 70px;
-    }
+    .portofolio-list li{
+		width:100%; 
+        line-height: 12px;
+	}
+	.portofolio-list li.active{
+		border-bottom:solid 0px transparent;
+		margin-bottom:0px;
+	}    
     .mycv_container{
         width: 58px;
         top: 50px;
@@ -1619,14 +1669,6 @@ th, td {
 	.about_tabs_title{
 		font-size: 18px;
 		line-height: 18px;
-	}
-	.portofolio-list li{
-		width:100%; 
-        line-height: 14px;
-	}
-	.portofolio-list li.active{
-		border-bottom:solid 0px transparent;
-		margin-bottom:0px;
 	}
 }
 

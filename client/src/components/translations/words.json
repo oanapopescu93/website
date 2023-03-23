@@ -57,7 +57,10 @@
         "login_title": "Logare",
         "login_button": "Intra",
         "visitor_button": "Sunt vizitator",
-        "login_error": "Daca nu ai o parola, te rog sa bifezi Sunt vizitator"
+        "login_error": "Daca nu ai o parola, te rog sa bifezi Sunt vizitator",
+
+        "see_old_chatbot": "Vezi Chatbot-ul vechi",
+        "back": "Inapoi"
     },
     "ENG":{
         "about": "About",
@@ -117,6 +120,9 @@
         "login_title": "Login",
         "login_button": "Enter",
         "visitor_button": "I am a visitor",
-        "login_error": "If you don't have a password, please check I am a Visitor"
+        "login_error": "If you don't have a password, please check I am a Visitor",
+
+        "see_old_chatbot": "See the old Chatbot",
+        "back": "Back"
     }
 }

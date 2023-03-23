@@ -3,6 +3,7 @@ import $ from 'jquery'
 export const Piechart = function(mycanvas, mylegend, dataSource, colors, doughnutHoleSize, w, h, mode="light"){	
     var canvas = document.getElementById(mycanvas)
     var ctx = canvas.getContext("2d")
+	ctx.imageSmoothingEnabled = false
 	canvas.height = h
 	canvas.width = w
     

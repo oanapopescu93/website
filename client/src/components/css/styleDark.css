@@ -11,26 +11,41 @@
     --dark: #18181b;
 }
 
-.dark #root{
+.dark{
     color: var(--color);
     background-color: var(--bg);  
 }
 .dark .mynavbar{
     background-color: var(--dark);
-    border-bottom: solid 0px transparent;
+    border-bottom: solid 1px var(--dark);
 }
 .dark .mynavbar::after{
-    background: transparent;
+    background: var(--color);
 }
 .dark .mynavbar a{
     color: var(--color);
 }
+.dark .mynavbar a:hover, .dark .mynavbar .dark a:focus {
+    color: var(--blue);
+}
+.dark .navbar-box {
+    background-color: var(--dark);
+}
+.dark #menu .bar1, .dark #menu .bar2, .dark #menu .bar3{
+    background-color: var(--color);
+}
+.dark #settings .dropdown-menu{
+    border: solid 1px var(--color);
+    background-color: var(--dark);
+}
 .dark #settings_button{
-    color: var(--color);
     border: solid 1px var(--color);
 }
+.dark #settings_button:hover, .dark #settings_button:focus{
+    border: solid 1px var(--blue);
+}
 .dark #header{
-    background-image: none;
+    background-image: url(../img/bg-desk-dark.jpg);
     background-color: var(--bg);
     color: var(--color);
 }
@@ -88,13 +103,13 @@
     color: var(--color);
 }
 .dark .item-more-info{
-    color: var(--bg);
+    color: var(--grey);
 }
 .dark textarea.shadow_convex, .dark input.shadow_convex, .dark .button_yellow.shadow_convex, .dark .button_table.shadow_convex, .dark #login_form.shadow_convex, .dark .shadow_convex{
     box-shadow: 2px 2px 5px var(--transparent)!important;
 }
 .dark .item-container{
-    background-color: var(--grey);
+    background-color: var(--grey666);
 }
 .dark .modal-content{
     background-color: var(--grey);
@@ -123,5 +138,15 @@
 @media (min-width: 768px){
     .nav-left li, .nav-right li {
         border-right: solid 1px var(--color);
+    }
+}
+
+@media (max-width: 767px){
+    .dark #header {
+        background-image: none;
+    }
+    .dark .header-title-container{
+        background: none;
+        box-shadow: none!important;
     }
 }

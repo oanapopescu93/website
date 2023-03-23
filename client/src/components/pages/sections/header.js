@@ -1,21 +1,38 @@
 import React from 'react'
+import {useDispatch} from 'react-redux'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import logo_icon_white from '../../img/logo-bear-white.png'
+// import logo_icon_white from '../../img/logo-bear-white.png'
+import logo_icon_light from '../../img/logo-rat-white.png'
+import logo_icon_dark from '../../img/logo-rat-blue.png'
 import Parser from 'react-html-parser'
 import { scroll_anywhere } from '../utils'
 import { translate } from '../../translations/translate'
+import { changePage } from '../../reducers/page'
 
 function Header(props){
-	let description = translate({lang: props.lang, info: "header_description"})
+	const {mode} = props 
+	let description = translate({lang: props.lang, info: "header_description"})	
+	let dispatch = useDispatch()
+
+	function handleClick(){
+		dispatch(changePage('chatbot'))
+	}
+
 	return <Container>
 			<Row>
 				<Col sm={12} className="header-title-container text-center shadow_convex">
 					<Row>
 						<Col id="header-title" sm={12}>
 							<a href="/">
-								<img className="logo" alt="logo_icon" src={logo_icon_white} />
+								{(() => {
+									if(mode && (mode === '' || mode === 'light')){
+										return <img className="logo" alt="logo_icon" src={logo_icon_light} />
+									} else {
+										return <img className="logo" alt="logo_icon" src={logo_icon_dark} />
+									}
+								})()}
 								<h1 className="border_white text-uppercase">Oana Popescu</h1>
 								<h2 className="border_white text-uppercase color_text_blue">Frontend/Javascript/React developer</h2>
 							</a>
@@ -42,7 +59,7 @@ function Header(props){
 							<a href="#contact" className="text-black button-white text-uppercase scroll-button shadow_convex" onClick={(e)=>{scroll_anywhere(e)}}>
 								{translate({lang: props.lang, info: "contact_me"})}
 							</a>
-							<a href="/portofolio/chatbot/index.html" target="_blank" className="text-black button-white text-uppercase shadow_convex">Chatbot</a>
+							<div className="text-black button-white text-uppercase shadow_convex" style={{'cursor': 'pointer'}} onClick={()=>{handleClick()}}>Chatbot</div>
 						</Col>
 					</Row>
 				</Col>

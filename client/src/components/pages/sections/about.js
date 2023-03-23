@@ -8,7 +8,7 @@ import Education from '../partials/education'
 import { scroll_anywhere } from '../utils'
 import {translate} from '../../translations/translate'
 
-function About(props){
+function About(props){	
 	const [visible, setVisible] = useState("skills")
 	const [index, setIndex] = useState(0)
 	let about_tabs_header = ["skills", "experience", "education"]

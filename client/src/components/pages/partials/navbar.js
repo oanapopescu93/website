@@ -30,6 +30,12 @@ function Navbar(props){
 					<span className={"bar2 " + change}></span>
 					<span className={"bar3 " + change}></span>
 				</div>
+				<div className="settings_small visible-xs-block">
+					<Settings></Settings>
+					<a href="https://www.facebook.com/fundraisers/explore/search/charities/?query=ukraine" rel="noopener noreferrer" target="_blank">
+						<img id="ukraine_icon" alt="ukraine_icon" src={ukraine} style={{"width":"20px"}}/>
+					</a>	
+				</div>
 				<div className={"navbar-box " + moveAway}>
 					<ul className="nav-left">
 						<li className="active">
@@ -38,7 +44,6 @@ function Navbar(props){
 						<li><a href="#about" className="scroll-button" onClick={(e)=>{scroll_anywhere(e)}}>{translate({lang: props.lang, info: "about"})}</a></li>
 						<li><a href="#portofolio" className="scroll-button" onClick={(e)=>{scroll_anywhere(e)}}>{translate({lang: props.lang, info: "portofolio"})}</a></li>
 						<li><a href="#contact" className="scroll-button" onClick={(e)=>{scroll_anywhere(e)}}>{translate({lang: props.lang, info: "contact"})}</a></li>
-						<li></li>
 					</ul>
 					<ul className="nav-right hidden-xs" style={{"marginRight":"0px"}}>
 						{!props.login_visitor ? <li>

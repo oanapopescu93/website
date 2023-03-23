@@ -41,3 +41,8 @@ export const getCookie = function (cname) {
   }
   return ""
 }
+
+export const screenInfo = function(string){
+  let screen = {width: window.innerWidth, height: window.innerHeight}
+  return screen
+}

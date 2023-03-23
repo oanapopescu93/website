@@ -12,6 +12,7 @@ import { bringPayload } from '../reducers/home'
 import '../css/style.css'
 import '../css/styleDark.css'
 import { changeVisitor } from '../reducers/settings'
+import Chatbot from './chatbot'
 
 function Home(props){
 	const [token, setToken] = useState(getCookie('login_token') ? getCookie('login_token') : "")
@@ -19,6 +20,7 @@ function Home(props){
 	let lang = useSelector(state => state.settings.lang)
 	let home = useSelector(state => state.home)
 	let mode = useSelector(state => state.settings.mode)
+	let page = useSelector(state => state.page.page)
 	let dispatch = useDispatch()
 
 	useEffect(() => {
@@ -76,7 +78,11 @@ function Home(props){
 		{(() => {
 			if(token !== ""){
 				if(home && home.about && home.portofolio && home.contact){
-					return <HomePage socket={props.socket} data={home} lang={lang} visitor={visitor}></HomePage>
+					if(page === "chatbot"){
+						return <Chatbot lang={lang} mode={mode}></Chatbot>
+					} else {
+						return <HomePage socket={props.socket} data={home} lang={lang} visitor={visitor} mode={mode}></HomePage>
+					}
 				} else {
 					return <Splash></Splash>	
 				}
