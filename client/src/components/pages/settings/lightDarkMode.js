@@ -4,7 +4,6 @@ import { changeMode } from '../../reducers/settings'
 import { getCookie } from '../utils'
 
 function LightDarkModeMode(){
-    console.log('xxx ', getCookie("website_mode"))
     const [move, setMove] = useState(getCookie("website_mode") === '' || getCookie("website_mode") === 'light' ? 'left' : 'right')  
     let dispatch = useDispatch()
     

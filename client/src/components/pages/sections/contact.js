@@ -119,7 +119,7 @@ function Contact(props){
 					<Col sm={6} className="visible-xs-block">
 						<Child div_class="contact-page-mobile" login_visitor={props.login_visitor} data={data} lang={props.lang}></Child>
 					</Col>
-					<Col sm={6} className="box-contact-form">
+					<Col sm={6} className="box-form">
 						<Form>
 							<Row>
 								<Col className="col-xs-6">

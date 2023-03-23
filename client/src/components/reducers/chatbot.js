@@ -8,14 +8,18 @@ const chatbotSlice = createSlice({
     name: 'chatbot',
     initialState,
     reducers: {
-        message: (state, { payload }) => {
-            state.messages.push({message: payload, type: 'user'})
+        changeMessage: (state, { payload }) => {
+            if(payload.choice){
+                state.messages.push({choice: payload.choice, type: 'bot'})
+            } else {
+                state.messages.push({message: payload.message, type: 'bot'})
+            }         
         },
     }
 })
 
 export const {
-    message,
+    changeMessage,
 } = chatbotSlice.actions
 
 export default chatbotSlice.reducer

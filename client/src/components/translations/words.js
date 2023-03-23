@@ -1,5 +1,10 @@
-{
+var current_company = "Idrive Global";
+var today = new Date();
+var experience = today.getFullYear() - 2017 + 1
+var word_bank = {
     "RO":{
+        "yes": "Da",
+        "no": "Nu",
         "about": "Despre",
         "portofolio": "Portofoliu",
         "contact": "Contact",
@@ -60,9 +65,26 @@
         "login_error": "Daca nu ai o parola, te rog sa bifezi Sunt vizitator",
 
         "see_old_chatbot": "Vezi Chatbot-ul vechi",
-        "back": "Inapoi"
+        "back": "Inapoi",
+        "under_construction": "In constructie",
+        "hello": "Buna",
+        "goodbye": "La revedere",
+
+        "bot_welcome": "Buna. Eu sunt Cahtbot-ul Oanei. Incantat de cunostinta.",
+        "bot_question_01": "Ce pot sa fac pentru tine?",
+        "would_you_like_to": "Vrei sa...",
+        "know_more_about_me": "sti mai multe despre mine",
+        "bot_contact_me": "ma contactezi",
+        "would_you_like_to_contact_me": "Vrei sa ma contactezi?",
+
+        "about_me_01": "Sunt un Frontend/Javascript/React developer cu aprox. "+experience+" ani de experienta.",
+        "about_me_02": "Stiu Javascript, React/Redux, NodeJS si HTML Canvas.",
+        "about_me_03": "Now, she's working as a Javascript dev at "+current_company+".",
+        "please_contact_me": "Te rog suna-ma, raspund destul de greu pe email sau pe Linkedin"
     },
     "ENG":{
+        "yes": "Yes",
+        "no": "No",
         "about": "About",
         "portofolio": "Portofolio",
         "contact": "Contact",
@@ -123,6 +145,25 @@
         "login_error": "If you don't have a password, please check I am a Visitor",
 
         "see_old_chatbot": "See the old Chatbot",
-        "back": "Back"
+        "back": "Back",
+        "under_construction": "Under construction",
+        "hello": "Hello",
+        "goodbye": "Goodbye",
+
+        "bot_welcome": "Hello. I am Oana's Chatbot. Nice to meet you.",
+        "bot_question_01": "What can I do for you?",
+        "would_you_like_to": "Would you like to...",
+        "know_more_about_me": "Know more about me",
+        "bot_contact_me": "contact me",
+        "would_you_like_to_contact_me": "Would you like to contact me?",
+
+        "about_me_01": "I am a Frontend/Javascript/React developer with aprox. "+experience+" years experience",
+        "about_me_02": "I know Javascript, React/Redux, NodeJS and HTML Canvas.",
+        "about_me_03": "Now, she's working as a Javascript dev at "+current_company+".",
+        "please_contact_me": "Please contact me via phone, I responde very slowly on mail or Linkedin"
     }
+}
+
+export const words = function(lang, info){
+    return word_bank[lang][info]
 }

@@ -68,6 +68,10 @@
     color: var(--color);
     border: solid 1px var(--color);
 }
+.dark .button-white:hover, .dark .button-white:active, .dark .button-white:focus{
+    color: var(--blue);
+    border: solid 1px var(--blue);
+}
 .dark #header-buttons .button-white:hover{
     color: var(--blue);
     border: solid 1px var(--blue);
@@ -117,7 +121,7 @@
 .dark .form-control{
     background-color: var(--grey);
 }
-.dark .box-contact-form label{
+.dark .box-form label{
     color: var(--color);
 }
 .dark .contact_page_container .contact_front{
@@ -135,6 +139,10 @@
 .dark footer{
     background-color: var(--dark);
 }
+.dark .chatbot_display_container{
+    background-color: var(--grey666);
+}
+
 @media (min-width: 768px){
     .nav-left li, .nav-right li {
         border-right: solid 1px var(--color);

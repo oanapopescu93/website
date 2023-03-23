@@ -7,7 +7,7 @@
 	--grey888:#888;
 	--text-muted: #3272a0;
 	--white: #fff;
-	--black: #000;
+	--black: #18181b;
     --red: red;
     --green: green;
     --transparent: rgba(0,0,0,0.5);
@@ -195,6 +195,7 @@ hr {
     padding: 5px 10px;
     margin: 5px;
     font-weight: bold;
+    cursor: pointer;
 }
 .button-white:hover, .button-white:focus {
     border: solid 1px var(--blue);
@@ -574,7 +575,7 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
     background-color: white;
 }
 .logo {
-    width: 50px;
+    width: 75px;
 }
 .sapou{
 	font-family:arial black;
@@ -1038,39 +1039,40 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
     width: 210px;
 }
 
-.box-contact-form .message{
+.box-form .message{
     opacity: 1;
 }
 
-.box-contact-form label{
+.box-form label{
 	color:var(--grey666);
     display: block;
 }
-.box-contact-form .form-control{
+.box-form .form-control{
 	border: solid 1px var(--grey888);
     color: var(--grey666);
     border-radius: 10px;
     margin-bottom: 5px;
+    background-color: var(--white);
 }
-.box-contact-form .form-control:focus {
+.box-form .form-control:focus {
   border-color: var(--blue);
   outline: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.box-contact-form .button-white{
+.box-form .button-white{
     border: solid 1px var(--grey888);
 	color:var(--grey666);
     font-size: 12px;
     line-height: 12px;
     padding: 7px 14px;
 }
-.box-contact-form .button-white:hover, .box-contact-form .button-white:focus{
+.box-form .button-white:hover, .box-form .button-white:focus{
     border: solid 1px var(--blue);
 	color:var(--blue);
     background-color: transparent;
 }
-.box-contact-form textarea {
+.box-form textarea {
   resize: none;
 }
 
@@ -1392,7 +1394,15 @@ th, td {
     vertical-align: middle;
     margin-right: 10px;
 }
-
+.settings_container_chatbot{
+    position: fixed;
+    z-index: 1;
+    top: 10px;
+    right: 10px;
+}
+.settings_container_chatbot #settings_button{
+    background-color: var(--black);
+}
 
 #language_container{
     position: absolute;
@@ -1485,6 +1495,45 @@ canvas {
 .chatbot_container{
     text-align: center;
 }
+.chatbot{
+    width: 100%;
+    max-width: 600px;
+    display: inline-block;
+}
+.chatbot_display_container{
+    height: 600px;
+    padding: 10px;
+    overflow: auto;    
+}
+#chatbot_send{
+    margin: 0px;
+    width: 100%;
+    height: 34px;
+}
+#chatbot_display .chatbot_bubble{
+    display: inline-block;
+    vertical-align: middle;
+    color: var(--white);
+    border: solid 1px var(--blue);
+    padding: 5px 10px;
+    margin-bottom:5px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--blue);
+    text-align: left;
+}
+#chatbot_display .chatbot_bubble a, #chatbot_display .chatbot_bubble a:hover, #chatbot_display .chatbot_bubble a:focus, #chatbot_display .chatbot_bubble a:active{
+    color: var(--white);
+}
+#chatbot_display .button-white{
+    color: var(--white);
+    border: solid 1px var(--white);
+}
+#chatbot_display .button-white:hover, #chatbot_display .button-white:focus, #chatbot_display .button-white:active{
+    color: var(--blue);
+    border: solid 1px var(--white);
+    background-color: var(--white);
+}
 
 /*---------------------media---------------------*/
 
@@ -1504,18 +1553,24 @@ canvas {
 	}
 }
 @media (max-width: 767px) {
+    .logo {
+        width: 50px;
+    }
+    .chatbot_display_container{
+        height: 200px!important;
+    }
     body, #root, .App{
         height: auto;
         min-height: auto;
     }
-    .box-contact-form .form-control{
+    .box-form .form-control{
         height: 20px;
     }
-    .box-contact-form label{
+    .box-form label{
         font-size: 12px;
         line-height: 12px;
     }
-    .box-contact-form textarea.form-control{
+    .box-form textarea.form-control{
         height: 50px;
     }
     #contactMap{
