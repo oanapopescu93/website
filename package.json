@@ -4,11 +4,12 @@
   "description": "react project",
   "engines": {
     "node": "16.15.0"
-  },
+  },  
   "scripts": {
+    "start": "nodemon server.js",
+    "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "server": "nodemon server.js --ignore client",
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "dev": "cls && concurrently \"npm run server\" \"npm run client",
     "build": "npm install && cd client && npm install && npm run build"
   },
   "keywords": [
