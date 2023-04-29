@@ -30,12 +30,12 @@ function ChatBox(props){
                     return <div className="chatbot_choices">
                         {!visitor ? <p>{translate({lang: props.lang, info: "phone"})} <a target='_top' href='tel:+40729699148'>0729.699.148</a></p> : null}
                         <p>{translate({lang: props.lang, info: "email"})} <a target='_top' href='mailto:oanapopescu93@gmail.com'>oanapopescu93@gmail.com</a></p>
-                        <p>Linkedin <a target='_blank' href='https://www.linkedin.com/in/oanapopescu93'>https://www.linkedin.com/in/oanapopescu93</a></p>
+                        <p>Linkedin <a target='_blank' rel="noopener noreferrer" href='https://www.linkedin.com/in/oanapopescu93'>https://www.linkedin.com/in/oanapopescu93</a></p>
                         {!visitor ? <p>{translate({lang: props.lang, info: "please_contact_me"})}</p> : null}  
                     </div>
                 case "show_git_account":
                     return <div className="chatbot_choices">
-                        <p>My git is <a target='_blank' href="https://github.com/oanapopescu93">https://github.com/oanapopescu93</a></p>
+                        <p>My git is <a target='_blank'rel="noopener noreferrer" href="https://github.com/oanapopescu93">https://github.com/oanapopescu93</a></p>
                     </div>
                 case "show_contact_me":
                     return <div className="chatbot_choices">
@@ -178,7 +178,7 @@ function Chatbot(props){
                             <div className="text-black button-white shadow_convex" style={{'cursor': 'pointer'}} onClick={()=>{handleBack()}}>
                                 {translate({lang: props.lang, info: "back"})}
                             </div>
-                            <a href="/portofolio/chatbot/index.html" target="_blank" className="text-black button-white shadow_convex">
+                            <a href="/portofolio/chatbot/index.html" rel="noopener noreferrer" target="_blank" className="text-black button-white shadow_convex">
                                 {translate({lang: props.lang, info: "see_old_chatbot"})}
                             </a>
                         </Col>

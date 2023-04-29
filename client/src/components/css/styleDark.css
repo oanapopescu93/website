@@ -40,9 +40,11 @@
 }
 .dark #settings_button{
     border: solid 1px var(--color);
+    color: var(--color);
 }
 .dark #settings_button:hover, .dark #settings_button:focus{
     border: solid 1px var(--blue);
+    color: var(--blue);
 }
 .dark #header{
     background-image: url(../img/bg-desk-dark.jpg);
@@ -119,7 +121,8 @@
     background-color: var(--grey);
 }
 .dark .form-control{
-    background-color: var(--grey);
+    background-color: var(--grey666);
+    color: var(--dark);
 }
 .dark .box-form label{
     color: var(--color);
@@ -147,6 +150,13 @@
     .nav-left li, .nav-right li {
         border-right: solid 1px var(--color);
     }
+}
+
+.dark .mycv, .dark .mytutorials{
+    color: var(--dark);
+}
+.dark .mytutorials_close{
+    color: var(--dark);
 }
 
 @media (max-width: 767px){
