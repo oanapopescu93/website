@@ -150,7 +150,7 @@ function Chat(props){
     </div>
 }
 
-function Chatbot(props){    
+function Chatbot(props){
     let dispatch = useDispatch()
     function handleBack(){
         dispatch(changePage("default"))
@@ -158,7 +158,7 @@ function Chatbot(props){
 
     return <>
         <div className="settings_container_chatbot">
-            <Settings></Settings>
+            <Settings lang={props.lang}></Settings>
         </div>
         <div id="chatbot" className="full-height">
             <div className="full-height-content">

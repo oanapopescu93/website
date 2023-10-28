@@ -1,13 +1,13 @@
 import React, {useState} from 'react'
 import Container from 'react-bootstrap/Container'
-import { scroll_anywhere } from '../utils'
+import { getCookie, scroll_anywhere } from '../utils'
 import ukraine from '../../img/ukraine.svg'
 import { translate } from '../../translations/translate'
 import Settings from '../settings/settings'
 
 function Navbar(props){
 	const [moveAway, setMoveAway] = useState("")
-	const [change, setChange] = useState("")
+	const [change, setChange] = useState("")	
 
 	function handleMenu(){
 		if(moveAway === ""){
@@ -31,7 +31,7 @@ function Navbar(props){
 					<span className={"bar3 " + change}></span>
 				</div>
 				<div className="settings_small visible-xs-block">
-					<Settings></Settings>
+					<Settings lang={props.lang}></Settings>
 					<a href="https://www.facebook.com/fundraisers/explore/search/charities/?query=ukraine" rel="noopener noreferrer" target="_blank">
 						<img id="ukraine_icon" alt="ukraine_icon" src={ukraine} style={{"width":"20px"}}/>
 					</a>	
@@ -66,7 +66,7 @@ function Navbar(props){
 								<img id="ukraine_icon" alt="ukraine_icon" src={ukraine} style={{"width":"20px"}}/>
 							</a>									
 						</li>
-						<li><Settings></Settings></li>
+						<li><Settings lang={props.lang}></Settings></li>
 					</ul>
 				</div>
 			</Container>		

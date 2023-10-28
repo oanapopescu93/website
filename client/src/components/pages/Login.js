@@ -7,10 +7,11 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { translate } from '../translations/translate'
 import Language from './settings/language'
+import { getCookie } from './utils'
 
 function Login(props){
     const [toggleVisitor, settoggleVisitor] = useState(false)
-    const [showError, setShowError] = useState(false)
+    const [showError, setShowError] = useState(false)    
 
     function handleClick(){
         if(!toggleVisitor && (typeof $('#login_password').val() === "undefined" || $('#login_password').val() === "null" || $('#login_password').val() === null || $('#login_password').val() === "")){
@@ -38,7 +39,7 @@ function Login(props){
     return <div id='login' className={"full-height " + props.darkMode}>
             <div className="full-height-content">
                 <div id="language_container">
-                    <Language></Language>
+                    <Language title={props.lang}></Language>
                 </div>
                 <Container>
                     <Row>

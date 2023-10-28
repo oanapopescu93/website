@@ -7,7 +7,7 @@ import { Piechart } from '../graphics/pie'
 
 function Skills(props){	
 	let mode = useSelector(state => state.settings.mode)
-	let skills_title = props.skills_title
+	let skills_title = props.skills_title[props.lang]
 	let skills = props.skills
 	let pie_colors = props.pie_colors
 	let language = props.language

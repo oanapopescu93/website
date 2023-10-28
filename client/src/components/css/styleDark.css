@@ -117,8 +117,30 @@
 .dark .item-container{
     background-color: var(--grey666);
 }
+.dark .modal-dialog{
+    color: var(--grey);
+}
 .dark .modal-content{
-    background-color: var(--grey);
+    background-color: var(--grey666);
+}
+.dark .grid-info .used span.box, .dark .used span.box, .dark #tutorial_box_container span.box{
+    color: var(--grey);
+    border: solid 1px var(--grey);
+}
+.dark .mymodal .modal-header {
+    border-bottom: 1px solid var(--grey);
+}
+.dark .close, .dark .close:hover, .dark .close:focus{
+    color: var(--grey);
+}
+.dark #tutorial_header_container div {
+    border: solid 1px var(--grey);
+    color: var(--grey);
+}
+.dark #tutorial_header_container div.active{
+    border: solid 1px var(--blue);
+    color: var(--grey);
+    background-color: var(--blue);
 }
 .dark .form-control{
     background-color: var(--grey666);

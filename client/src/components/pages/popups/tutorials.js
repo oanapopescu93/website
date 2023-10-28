@@ -1,14 +1,15 @@
 import React, {useState, useEffect} from 'react'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import { translate } from '../../translations/translate'
 
 function Tutorials(props){
     const [tutorials, setTutorials] = useState(props.tutorials)
-	const [tutorialHeader, setTutorialHeader] = useState(["all"])	
+	const [tutorialHeader, setTutorialHeader] = useState([translate({lang: props.lang, info: "all"})])	
     const [active, setActive] = useState(0)	
 
     useEffect(() => {
-		let tutorial_header = ["all"]
+		let tutorial_header = [translate({lang: props.lang, info: "all"})]
 		for(let i in tutorials){
 			if(!tutorial_header.includes(tutorials[i].type)){
 				tutorial_header.push(tutorials[i].type)

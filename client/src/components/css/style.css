@@ -30,6 +30,17 @@ body{
     font-family: arial;
 }
 
+* {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+    box-sizing: border-box;
+}
+
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, address {
     margin: 0px;
 }
@@ -68,6 +79,10 @@ h6 {
     font-size: 12px!important;
     line-height: 12px!important;
 	font-family: arial;
+}
+
+canvas{
+    image-rendering: auto!important;
 }
 
 ul {
@@ -631,7 +646,7 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
 	border:solid 1px var(--grey666);
     border-radius: 0px 5px 5px 5px;
 	padding:10px 20px;
-	height:630px;
+	height:600px;
 	overflow-y: auto;
 	overflow-x: hidden;
 }
@@ -807,7 +822,7 @@ textarea.shadow_convex, input.shadow_convex, .button_yellow.shadow_convex, .butt
     color:var(--blue);
 }
 #tutorial_box_container{
-	height: 200px;
+	height: 230px;
     overflow-x: hidden;
     overflow-y: auto;    
 }
@@ -1087,6 +1102,7 @@ footer {
 /*---------------------modale---------------------*/
 .modal-dialog{
     margin-top: 80px;
+    color: var(--grey333);
 }
 .mymodal {
     margin-top: 50px;
@@ -1539,12 +1555,12 @@ canvas {
 
 @media (max-height: 800px) {
 	.about_content_box{
-		height:480px;
+		height:450px;
 	}
 }
 @media (max-height: 700px) {
 	.about_content_box{
-		height:380px;
+		height:350px;
 	}
 }
 @media (max-height: 600px) {
