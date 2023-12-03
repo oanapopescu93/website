@@ -1101,7 +1101,7 @@ footer {
 
 /*---------------------modale---------------------*/
 .modal-dialog{
-    margin-top: 80px;
+    margin-top: 100px;
     color: var(--grey333);
 }
 .mymodal {
@@ -1428,6 +1428,9 @@ th, td {
 }
 #languages{
     display: inline-block;
+}
+#languages .dropdown{
+    border-radius: 5px;
 }
 #languages .dropdown .dropdown-toggle{
     background-color: var(--blue);

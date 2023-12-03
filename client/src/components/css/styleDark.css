@@ -181,6 +181,10 @@
     color: var(--dark);
 }
 
+.dark .job_header, .dark .edu_header{
+    border-bottom: solid 1px var(--grey);
+}
+
 @media (max-width: 767px){
     .dark #header {
         background-image: none;

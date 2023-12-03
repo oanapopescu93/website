@@ -14,7 +14,7 @@ function Language(props) {
   }
 
   return <div id="languages">
-    <DropdownButton title={title} id="language_button"  className="shadow_convex" onSelect={handleSelect}>
+    <DropdownButton title={title} id="language_button" className="shadow_convex" onSelect={handleSelect}>
       {language_array.map(function(item, i){
           return <Dropdown.Item key={i} eventKey={item}><span>{item}</span></Dropdown.Item>
       })}

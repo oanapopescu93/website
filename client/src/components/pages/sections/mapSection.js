@@ -2,11 +2,11 @@ import React from 'react'
 
 import Leaflet from 'leaflet'
 import { Map, TileLayer, Marker, Popup, LayersControl}  from 'react-leaflet'
-import icon from '../../img/marker-icon.png';
-import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+import icon from '../../img/marker-icon.png'
+import iconShadow from 'leaflet/dist/images/marker-shadow.png'
 import {translate} from '../../translations/translate'
 
-import 'leaflet/dist/leaflet.css';
+import 'leaflet/dist/leaflet.css'
 import 'leaflet/dist/leaflet.css'
 
 const { BaseLayer } = LayersControl
@@ -27,13 +27,17 @@ function MapSection(props){
         iconSize: [25,40],
         iconAnchor: [25,40],
         popupAnchor: [-22, -40]
-    });
+    })
     let markerOptions={
         position: [44.4806, 26.1165],
         icon: DefaultIcon,
     }
     let popupOptions={
         className: 'markerTooltipContainer',
+    }
+
+    const initMarker = ref => {
+        if (ref) ref.leafletElement.openPopup()
     }
 
 	return <div id="contactMap">
@@ -52,8 +56,10 @@ function MapSection(props){
                     />
                 </BaseLayer>
             </LayersControl>
-            <Marker {...markerOptions}>
-                <Popup {...popupOptions}><p>{translate({lang: props.lang, info: "Romania, Bucharest"})}</p></Popup>
+            <Marker ref={initMarker} {...markerOptions}>
+                <Popup  {...popupOptions}>
+                    <p>{translate({lang: props.lang, info: "Romania, Bucharest"})}</p>
+                </Popup>
             </Marker>
         </Map>
     </div>
