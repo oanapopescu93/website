@@ -41,13 +41,21 @@ io.on('connection', function(socket) {
         let token
         let payload = {}
 
+        console.log('info_send1 ', data)
+
         if(data.reason === "refresh"){
             token = data.login_token
-            jwt.verify(token, secret, function(err, decoded) {
-                if(decoded && decoded.login_visitor){
-                    login_visitor = decoded.login_visitor
-                }
-            }) 
+            try {
+                jwt.verify(token, secret, function(err, decoded) {
+                    console.log('info_send2 ', token, decoded)
+                    if(decoded && typeof decoded.login_visitor == "boolean"){
+                        login_visitor = decoded.login_visitor
+                    }
+                }) 
+            } catch (error) {
+                console.log('info_send_error ', error)
+            }
+            
         } else {
             if(!data.login_visitor){ //verify the password only if the client didn't check "I am a visitor"
                 if(login_password === data.login_password){
@@ -55,8 +63,7 @@ io.on('connection', function(socket) {
                 } else {
                     login_visitor = true
                 }
-            }
-            
+            }            
             token = generateAccessToken(data)
         }
         payload.login_visitor = login_visitor

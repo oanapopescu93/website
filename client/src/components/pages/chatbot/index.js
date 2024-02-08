@@ -118,7 +118,7 @@ function Chat(props){
                 dispatch(changeMessage({choice: choice}))
                 break
             case "contact_me_no":
-                dispatch(changeMessage({message: translate({lang: props.lang, info: "contact_me_no"})}))                
+                dispatch(changeMessage({message: translate({lang: props.lang, info: "goodbye"})}))                
                 break
         }
     }
