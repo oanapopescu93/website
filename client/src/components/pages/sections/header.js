@@ -1,73 +1,80 @@
 import React from 'react'
-import {useDispatch} from 'react-redux'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-// import logo_icon_white from '../../img/logo-bear-white.png'
-import logo_icon_light from '../../img/logo-rat-white.png'
-import logo_icon_dark from '../../img/logo-rat-blue.png'
-import Parser from 'react-html-parser'
-import { scroll_anywhere } from '../utils'
-import { translate } from '../../translations/translate'
-import { changePage } from '../../reducers/page'
+import { useDispatch } from 'react-redux'
+import { Container, Row, Col, Button } from 'react-bootstrap'
+import { translate } from '../../../translations/translate'
+import { scroll_anywhere } from '../../../utils/utils'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import logo_icon_light from '../../../img/logo-rat-white.png'
+import logo_icon_dark from '../../../img/logo-rat-blue.png'
+import { changePopup } from '../../../reducers/popup'
 
-function Header(props){
-	const {mode} = props 
-	let description = translate({lang: props.lang, info: "header_description"})	
+function Header(props) {
+    const {settings} = props
+    const {lang, mode} = settings
+	
 	let dispatch = useDispatch()
 
-	function handleClick(){
-		dispatch(changePage('chatbot'))
+	function handleChatBot(){
+		let payload = {
+			open: true,
+			template: "chatbot",
+			title: translate({lang: lang, info: "chatbot"}),
+			size: "lg",
+		}
+		dispatch(changePopup(payload))
 	}
 
-	return <Container>
-			<Row>
-				<Col sm={12} className="header-title-container text-center shadow_convex">
-					<Row>
-						<Col id="header-title" sm={12}>
-							<a href="/">
-								{(() => {
-									if(mode && (mode === '' || mode === 'light')){
-										return <img className="logo" alt="logo_icon" src={logo_icon_light} />
-									} else {
-										return <img className="logo" alt="logo_icon" src={logo_icon_dark} />
-									}
-								})()}
-								<h1 className="border_white text-uppercase">Oana Popescu</h1>
-								<h2 className="border_white text-uppercase color_text_blue">Frontend/Javascript/React developer</h2>
-							</a>
-						</Col>
-					</Row>
-					<Row>
-						<Col sm={12}>
-							<Row>
-								<Col sm={2}></Col>
-								<Col sm={8} id="header-sapou">
-									<hr className="line"></hr>
-									<p className="border_white">{Parser(description)}</p>
-									<hr className="line"></hr>
-								</Col>
-								<Col sm={2}></Col>
-							</Row>
-						</Col>
-					</Row>
-					<Row>
-						<Col id="header-buttons" sm={12}>
-							<a href="#about" className="text-black button-white text-uppercase scroll-button shadow_convex" onClick={(e)=>{scroll_anywhere(e)}}>
-								{translate({lang: props.lang, info: "read_more"})}
-							</a>
-							<a href="#contact" className="text-black button-white text-uppercase scroll-button shadow_convex" onClick={(e)=>{scroll_anywhere(e)}}>
-								{translate({lang: props.lang, info: "contact_me"})}
-							</a>
-							<div className="text-black button-white text-uppercase shadow_convex" style={{'cursor': 'pointer'}} onClick={()=>{handleClick()}}>Chatbot</div>
-						</Col>
-					</Row>
-				</Col>
-			</Row>				
-			<div className="scroll">
-				<a href="#about" className="scroll-button fa fa-angle-down" onClick={(e)=>{scroll_anywhere(e)}}> </a>
-			</div>
-	</Container>
+    return <Container>
+        <Row>
+            <Col sm={12}>
+                <div className="header_title_container">
+                    <div className="header_title text-center shadow_convex">
+                        <Row>
+                            <Col sm={12}>
+                                {(() => {
+                                    if(mode && (mode === '' || mode === 'light')){
+                                        return <img className="logo" alt="logo_icon" src={logo_icon_dark} />
+                                    } else {                                
+                                        return <img className="logo" alt="logo_icon" src={logo_icon_dark} />
+                                    }
+                                })()}
+                                <h1 className="text-uppercase">Oana Popescu</h1>
+                                <h2 className="text-uppercase color_text_blue">Frontend/Javascript/React developer</h2>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col sm={2}></Col>
+                            <Col sm={8} id="header-sapou">
+                                <hr className="line"></hr>
+                                <p dangerouslySetInnerHTML={{ __html: translate({lang: lang, info: "header_description"}) }}></p>
+                                <hr className="line"></hr>
+                            </Col>
+                            <Col sm={2}></Col>
+                        </Row>
+                        <Row>
+                            <Col sm={12}>
+                                <div className="button_action_group">
+                                    <Button type="button" className="mybutton button_accent shadow_convex" onClick={()=>scroll_anywhere("about")}>
+                                        {translate({lang: lang, info: "read_more"})}
+                                    </Button>
+                                    <Button type="button" className="mybutton button_accent shadow_convex" onClick={()=>scroll_anywhere("contact")}>
+                                        {translate({lang: lang, info: "contact_me"})}
+                                    </Button>
+                                    {/* <Button type="button" className="mybutton button_accent shadow_convex" onClick={()=>handleChatBot()}>
+                                        {translate({lang: lang, info: "chatbot"})}
+                                    </Button> */}
+                                </div>                        
+                            </Col>
+                        </Row>
+                    </div>
+                </div>
+            </Col>
+        </Row>
+        <ul className="scroll">
+            <li onClick={()=>scroll_anywhere("about")}><FontAwesomeIcon icon={faAngleDown} /></li>
+		</ul>
+    </Container>
 }
 
 export default Header

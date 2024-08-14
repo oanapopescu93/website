@@ -1,73 +1,119 @@
-import React, {useState} from 'react'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Button from 'react-bootstrap/Button'
-import Carousel from '../partials/carousel'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { changePopup } from '../../reducers/popups'
-import {translate} from '../../translations/translate'
+import { Container,Row, Col, Button } from 'react-bootstrap'
+import Carousel from '../../carousel/carousel'
+import { translate } from '../../../translations/translate'
+import { changePopup } from '../../../reducers/popup'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBook } from '@fortawesome/free-solid-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
-function Child(props){ 
-	function handleClick(x){
-		props.getItem(x)
-	}   
-	return <Carousel template={props.template} active={props.active} index={props.index} id={props.id} itemList={props.itemList} getItem={handleClick}></Carousel>
-}
+function Portofolio(props) {
+    const { home, settings } = props
+    const { portofolio_list, portofolio_items, contact } = home
+    const { lang } = settings
+    
+    let myContact = contact[lang] ? contact[lang] : contact['ENG']
+    const portofolio_carousel_options = {
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        swipeToSlide: true,
+        draggable: true,
+        dots: false,
+        arrows: false,
+        initialSlide: 0,
+        swipeThreshold: 20,
+        centerMode: true,
+        centerPadding: '0px',
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                }
+            }, 
+            {
+                breakpoint: 960,
+                settings: {
+                    slidesToShow: 2,
+                }
+            }, 
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },           
+        ]
+    }
 
-function Portofolio(props){
-	let portofolio = props.data
-	let portofolio_list = portofolio.portofolio_list[props.lang]
-	const [active, setActive] = useState(0)	
-	let dispatch = useDispatch()	
+    const [active, setActive] = useState(0)	
 
-	function handleClickItem(x){
-		dispatch(changePopup({open: true, title: translate({lang: props.lang, info: "details"}), template: "portofolio_details", data: x, size: "lg"}))
-	}
+    let dispatch = useDispatch()	
 
-	function portofolioClick(e, index){
-		setActive(index)
-	}
+    function portofolioClick(index){
+        setActive(index)
+    }
 
-	function portofolioTutorialsClick(){
-		dispatch(changePopup({open: true, title: translate({lang: props.lang, info: "tutorials"}), template: "tutorials", data: props.data.tutorials, size: "lg"}))
-	}	
-	
-	return <Container>
-		<Row>
-			<Col sm={12}>
-				<ul className="portofolio-list text-center">
-					{
-						portofolio_list.map(function(item, i){
-							const style = active === i ? 'active' : ''; 
-							return <li key={i} order={i} className={style} onClick={(e)=>{portofolioClick(e, i)}}>{item}</li>
-						})
-					} 
+    function handleClickItem(e){
+        let payload = {
+            open: true,
+            template: "portofolio",
+            title: e.title,
+            data: e,
+            size: "md",
+        }
+        dispatch(changePopup(payload))        
+    }
+
+    function portofolioTutorialsClick(){
+        let payload = {
+            open: true,
+            template: "tutorials",
+            title: translate({lang: lang, info: "tutorials"}),
+            size: "lg",
+        }
+       dispatch(changePopup(payload))
+    }
+
+    return <Container>
+        <Row>
+            <Col sm={12}>
+                <ul className="portofolio-list">
+					{portofolio_list.map(function(item, i){
+                        const style = active === i ? 'active' : ''; 
+                        return <li key={i} order={i} className={style} onClick={()=>{portofolioClick(i)}}>{translate({lang: lang, info: item})}</li>
+					})} 
 				</ul>
-				<div className="portofolio-container text-left">
-					{
-						portofolio.portofolio_items.map(function(item, i){
-							return <Child key={i} active={active} index={i} id={"owl_carousel_"+i} template={"portofolio"} itemList={item} getItem={handleClickItem}></Child>
-						})
-					} 
+				<div className="portofolio-container">
+                    <Carousel 
+                        {...props}
+                        id="carousel_portofolio"
+                        template="portofolio" 
+                        options={portofolio_carousel_options}
+                        itemList={portofolio_items[portofolio_list[active]]} 
+                        getItem={(e)=>handleClickItem(e)}
+                    />
 				</div>
-			</Col>
-		</Row>
-		<Row>
+            </Col>
+        </Row>
+        <Row>
 			<Col sm={12} className="text-center">
-				<div id="portofolio_links_other">
-					<a id="portofolio_git" href="https://github.com/oanapopescu93" rel="noopener noreferrer" target="_blank">
-						<Button>
-							<h6><i className="fa fa-github"></i> <span>https://github.com/oanapopescu93</span></h6>
-						</Button>
-					</a>
-					<Button id="portofolio_tutorials" data-toggle="modal" data-target="#myModal_tutorials" onClick={()=>{portofolioTutorialsClick()}}>
-						<h6><i className="fa fa-book"></i> <span>{translate({lang: props.lang, info: "tutorials"})}</span></h6>
-					</Button>
-				</div>
+				<ul className="portofolio_links_other">
+					<li>
+                        <a id="portofolio_git" href={myContact.github} rel="noopener noreferrer" target="_blank">
+                            <h6><FontAwesomeIcon icon={faGithub} /> <span>{myContact.github}</span></h6>
+                        </a>
+                    </li>
+					<li onClick={()=>{portofolioTutorialsClick()}}>
+						<h6><FontAwesomeIcon icon={faBook} /> <span>{translate({lang: lang, info: "tutorials"})}</span></h6>
+					</li>
+				</ul>
 			</Col>
 		</Row>
-	</Container>
+    </Container>
 }
 
 export default Portofolio

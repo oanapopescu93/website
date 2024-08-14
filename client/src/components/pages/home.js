@@ -1,96 +1,37 @@
-import React, { useState, useEffect } from 'react'
-import {useDispatch, useSelector} from 'react-redux'
-import $ from 'jquery'
+import React, {useEffect} from 'react'
+import Section from './sections/section'
+import Navbar from '../partial/navbar'
+import Top from '../partial/top'
+import Footer from '../partial/footer'
+import Cv from './subsections/cv'
+import Tutorial from './subsections/tutorial'
 
-import HomePage from './HomePage'
-import Login from './Login'
-import Splash from './partials/splashScreen'
+function Home(props) {
+    const { user } = props
+    const { guest } = user
 
-import { getCookie, setCookie } from './utils'
-import { bringPayload } from '../reducers/home'
+    useEffect(() => {
+        const watermark = document.querySelector('dx-license')
+        if (watermark) {
+            const boxDiv = document.createElement('div')
+            boxDiv.className = 'watermark_box'
+            watermark.parentNode.insertBefore(boxDiv, watermark)
+            boxDiv.appendChild(watermark)
+            watermark.style.display = 'none'
+        }
+    }, [])
 
-import '../css/style.css'
-import '../css/styleDark.css'
-import { changeVisitor } from '../reducers/settings'
-import Chatbot from './chatbot'
-
-function Home(props){
-	const [token, setToken] = useState(getCookie('login_token') ? getCookie('login_token') : "")
-	let visitor = useSelector(state => state.settings.visitor)
-	let lang = useSelector(state => state.settings.lang)
-	let home = useSelector(state => state.home)
-	let mode = useSelector(state => state.settings.mode)
-	let page = useSelector(state => state.page.page)
-	let dispatch = useDispatch()
-
-	useEffect(() => {
-		dispatch(bringPayload())
-
-		if(token !== ""){
-			setUp({login_token: token, reason: "refresh"})
-		}
-
-		setInterval(function () {		  
-			props.socket.emit('heartbeat', { data: "ping" })
-		}, 15000)
-
-		if(props.socket){
-			setInterval(function () {		  
-				props.socket.emit('heartbeat', { data: "ping" })
-			}, 15000)
-			props.socket.on('server_error', function (text) {
-				console.log('server_error ', text)
-			}) 
-		}
-	}, [])
-
-	useEffect(() => {
-		if('body'){
-			$('body').removeClass('light dark')
-			$('body').addClass(mode)
-		}
-	}, [mode])
-
-	function setUp(x){
-		getLogin(x).then(function(res){
-			if(res){
-				setToken(res.login_token)
-				setCookie("login_token", res.login_token, 1)
-				dispatch(changeVisitor(res.login_visitor))
-			}
-		})
-	}
-
-	function handleChoice(x){
-		setUp(x)
-	}
-	
-	function getLogin(x){
-		return new Promise(function(resolve, reject){
-			props.socket.emit('info_send', x)
-			props.socket.on('info_read', function(res){
-				resolve(res)
-			})
-		})
-	}	
-	
-	return <>
-		{(() => {
-			if(token !== ""){
-				if(home && home.about && home.portofolio && home.contact){
-					if(page === "chatbot"){
-						return <Chatbot lang={lang} mode={mode}></Chatbot>
-					} else {
-						return <HomePage socket={props.socket} data={home} lang={lang} visitor={visitor} mode={mode}></HomePage>
-					}
-				} else {
-					return <Splash></Splash>	
-				}
-			} else {
-				return <Login choice={(e)=>handleChoice(e)} socket={props.socket} lang={lang}></Login>
-			}
-		})()}
-	</>
+    return <>
+        <Navbar {...props} />     
+        <Section template="header" {...props} />
+        <Section template="about" {...props} />
+        <Section template="portofolio" {...props} />
+        <Section template="contact" {...props} />
+        <Top />
+        {parseInt(guest) === 0 ? <Cv {...props} /> : null}
+        <Tutorial {...props} />
+        <Footer {...props} />
+    </>
 }
 
 export default Home
