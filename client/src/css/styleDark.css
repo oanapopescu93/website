@@ -131,6 +131,13 @@
 .dark .leaflet-container a.leaflet-popup-close-button:hover, .dark .leaflet-container a.leaflet-popup-close-button:focus {
     color: var(--dark_accent);
 }
+.dark .mycv,
+.dark .cv_close,
+.dark .mycv a,
+.dark .mytutorials,
+.dark .mytutorials_close {
+    color: var(--dark);
+}
 
 /* MEDIA */
 @media (max-width: 768px) {
