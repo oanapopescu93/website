@@ -61,12 +61,12 @@ function Navbar(props){
 				</div>
 				<ul className="nav-right">					
 					<li>
-						<a href={myContact.linkedin} rel="noopener noreferrer" target="_blank">
+						<a href={myContact.linkedin ? myContact.linkedin : "https://www.linkedin.com/in/oanapopescu93"} rel="noopener noreferrer" target="_blank">
 							<FontAwesomeIcon icon={faLinkedinIn} />
 						</a>
 					</li>
 					<li>
-						<a href={myContact.github} rel="noopener noreferrer" target="_blank">
+						<a href={myContact.github ? myContact.github : "https://github.com/oanapopescu93"} rel="noopener noreferrer" target="_blank">
 							<FontAwesomeIcon icon={faGithub} />
 						</a>
 					</li>

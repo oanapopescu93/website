@@ -5,32 +5,31 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 function ContactInfo(props){
     const {guest, contact, lang} = props
-    let myContact = contact[lang] ? contact[lang] : contact['ENG']
 
     return <ul className="contact_info">
         <li>
             <FontAwesomeIcon icon={faEnvelope} />
-            <a href={`mailto:${myContact.email}`}>{myContact.email}</a>
+            <a href={`mailto:${contact[lang].email}`}>{contact[lang].email}</a>
         </li>
         {parseInt(guest) === 0 ? <li>
             <FontAwesomeIcon icon={faPhone} />
-            <a href={`tel:${myContact.phone}`}>{myContact.phone_text}</a>
+            <a href={`tel:${contact[lang].phone}`}>{contact[lang].phone_text}</a>
         </li> : null}
         <li>
             <FontAwesomeIcon icon={faGithub} /> 
-            <a href={myContact.github} target="_blank" rel="noopener noreferrer">
-                {myContact.github}
+            <a href={contact[lang].github ? contact[lang].github: "https://github.com/oanapopescu93"} target="_blank" rel="noopener noreferrer">
+                {contact[lang].github ? contact[lang].github: "https://github.com/oanapopescu93"}
             </a>
         </li>
         <li>
             <FontAwesomeIcon icon={faLinkedin} /> 
-            <a href={myContact.linkedin} target="_blank" rel="noopener noreferrer">
-                {myContact.linkedin}
+            <a href={contact[lang].linkedin ? contact[lang].linkedin : "https://www.linkedin.com/in/oanapopescu93"} target="_blank" rel="noopener noreferrer">
+                {contact[lang].linkedin ? contact[lang].linkedin : "https://www.linkedin.com/in/oanapopescu93"}
             </a>
         </li>
         <li>
             <FontAwesomeIcon icon={faLocationDot} /> 
-            {myContact.country}, {myContact.city}
+            {contact[lang].country}, {contact[lang].city}
         </li>
     </ul>
 }
