@@ -16,7 +16,7 @@
     color: var(--dark_color);
 }
 .dark .mynavbar::after { 
-    background: var(--dark_color);
+    background: var(--dark_bg);
 }
 .dark .nav-right a {
     color: var(--dark_color);
