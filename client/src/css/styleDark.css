@@ -148,6 +148,18 @@
 .dark #loader04{
 	border-bottom: 5px solid var(--dark_color);
 }
+.dark .tag_close{
+    color: var(--dark);
+}
+.dark .tag{
+    color: var(--dark);
+}
+.dark .tag a{
+    color: var(--dark);
+}
+#tutorial_box_container .tutorial_link{
+    color: var(--dark);
+}
 
 /* MEDIA */
 @media (max-width: 768px) {
