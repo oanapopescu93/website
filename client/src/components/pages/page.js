@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Home from './home'
-import Login from './login'
+import LoginPage from './loginPage'
 import Popup from '../popup/popup'
 import { changeUser } from '../../reducers/auth'
 import { changePopup } from '../../reducers/popup'
@@ -62,7 +62,7 @@ function Page(props) {
                     return <Loader />
                 }
 			} else {
-				return <Login {...props} settings={settings} />
+				return <LoginPage {...props} settings={settings} />
 			}
 		})()}
         <Popup {...props} home={home} settings={settings} page={page} />

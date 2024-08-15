@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
 import { translate } from '../../translations/translate'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 import Language from '../settings/language'
 import { isEmpty } from '../../utils/utils'
 
-function Login(props) {
+function LoginPage(props) {
     const {socket, settings} = props
     const {lang} = settings
 
@@ -79,4 +77,4 @@ function Login(props) {
     </div>
 }
 
-export default Login
+export default LoginPage
