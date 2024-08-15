@@ -657,13 +657,13 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
 }
 .mynavbar::after { 
     content: "";
-    background: var(--bg);
+    background: var(--color);
     height: 1px;
     width: 100%;
     position: absolute;
     z-index: 1;
     left: 0;
-    bottom: 0;
+    bottom: -3px;
 }
 .nav-left, .nav-right {
     width: 50%;

@@ -11,15 +11,15 @@
     background-color: var(--dark_bg);  
 }
 .dark .mynavbar {
-    background-color: var(--dark);
-    border-bottom: solid 1px var(--dark);
-    color: var(--dark_color);
+    background-color: var(--dark_color);
+    border-bottom: solid 1px var(--dark_color);
+    color: var(--dark);
 }
 .dark .mynavbar::after { 
-    background: var(--dark_bg);
+    background: var(--dark_color);
 }
 .dark .nav-right a {
-    color: var(--dark_color);
+    color: var(--dark);
 }
 .dark .nav-left li:hover, .dark .nav-left li:focus, .dark .nav-left li:active, 
 .dark .nav-right li:hover, .dark .nav-right li:focus, .dark .nav-right li:active,
@@ -118,7 +118,8 @@
 .dark .button_accent:hover, .button_accent:active, .button_accent:focus{
     color: var(--accent)!important;
 }
-.dark #contact_map .leaflet-popup-content-wrapper, #contact_map .leaflet-popup-tip,
+.dark #contact_map .leaflet-popup-content-wrapper, 
+.dark #contact_map .leaflet-popup-tip,
 .dark #contact_map .leaflet-touch .leaflet-bar a, 
 .dark #contact_map .leaflet-touch .leaflet-control-layers-toggle{
     background-color: var(--dark_color);
@@ -157,7 +158,7 @@
 .dark .tag a{
     color: var(--dark);
 }
-#tutorial_box_container .tutorial_link{
+.dark #tutorial_box_container .tutorial_link{
     color: var(--dark);
 }
 
