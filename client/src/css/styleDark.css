@@ -60,9 +60,6 @@
 .dark .header_title{
     background: var(--dark_transparent_white);
 }
-.dark .header_title_container h1, .dark .header_title_container h2 {
-    color: var(--dark);
-}
 .dark .scroll li {
     color: var(--dark_color);
 }

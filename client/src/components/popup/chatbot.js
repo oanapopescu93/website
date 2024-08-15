@@ -2,13 +2,11 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Row, Col, Button } from 'react-bootstrap'
 import { translate } from '../../translations/translate'
 import { knowledgeBankTranslations } from '../../utils/knowledgeBankTranslations/knowledgeBankTranslations'
-import { decryptData } from '../../utils/crypto'
 import $ from "jquery"
 
 function ChatBot(props) {
-    const {user, settings} = props
-    const {lang} = settings
-    let name = user.user ? decryptData(user.user) : translate({lang: lang, info: "anonymous"})
+    const {settings} = props
+    const {lang} = settings    
     let error_chatbot = "error_chatbot"
     let knowledgeBank = knowledgeBankTranslations()
 
@@ -30,13 +28,13 @@ function ChatBot(props) {
     }, [])
 
     function addInitialMessages(){
-        post("...", "Bot", "bot", true)
+        post("...", "bot", true)
         setTimeout(() => {
-            post(translate({lang: lang, info: "greetings01"}) + " " + name, "Bot", "bot", false)
+            post(translate({lang: lang, info: "greetings01"}), "bot", false)
             setTimeout(() => {
-                post("...", "Bot", "bot", true)
+                post("...", "bot", true)
                 setTimeout(() => {
-                    post(translate({lang: lang, info: "greetings02"}), "Bot", "bot", false)
+                    post(translate({lang: lang, info: "greetings02"}), "bot", false)
                 }, 500)
             }, 500)
         }, 500)
@@ -49,7 +47,7 @@ function ChatBot(props) {
     function handleSend(){
         if (inputText.trim()){
             setIsSending(true)
-            post(inputText, name, "human", true)        
+            post(inputText, "user", true)        
             setInputText('')            
             setTimeout(() => {
                 handleBotResponse(inputText)
@@ -70,7 +68,7 @@ function ChatBot(props) {
     }, [inputText, messages])
 
     function handleBotResponse(input){
-        post("...", "Bot", "bot", true)
+        post("...", "bot", true)
         setTimeout(() => {
             search(input)
         }, 500)
@@ -90,19 +88,19 @@ function ChatBot(props) {
         }
 
         if(results.length > 0){
-            //we have some revevant responses
+            //we have some relevant responses
             results = results.sort((a, b) => b.relevance - a.relevance)
 
             let index_best_responses = results[0].index
             let best_responses = knowledgeBank[index_best_responses].responses
-            let best_responses_details = knowledgeBank[index_best_responses].details
+            // let best_responses_details = knowledgeBank[index_best_responses].details
 
             const randomIndex = Math.floor(Math.random() * best_responses.length)
             let best_response = best_responses[randomIndex]
 
-            post(best_response, "Bot", "bot", false)
+            post(best_response, "bot", false)
         } else {            
-            post(translate({info: error_chatbot, lang: lang}), "Bot", "bot", false) //no relevant response has been found --> we give a standard response
+            post(translate({info: error_chatbot, lang: lang}), "bot", false) //no relevant response has been found --> we give a standard response
         }
 
         setIsSending(false)
@@ -145,16 +143,16 @@ function ChatBot(props) {
 		return 0
 	}
 
-    function post(text, user, type, typing = false){
+    function post(text, type, typing = false){
         if(typing){
             setMessages(prevMessages => [
                 ...prevMessages,
-                { user: user, type: type, message: text }
+                { type: type, message: text }
             ]) 
         } else {
             setMessages(prevMessages => [
                 ...prevMessages.slice(0, -1),
-                { user: user, type: type, message: text }
+                { type: type, message: text }
             ])
         }
         scrollToBottom()
@@ -174,10 +172,9 @@ function ChatBot(props) {
                 <div className="chatbot_textarea_container shadow_concav">
                     <div className="chatbot_textarea" ref={chatbot_textarea}>
                         {messages.map((msg, index) => (
-                            <div key={index} className={`message ${msg.user === name ? 'user_message' : 'bot_message'}`}>
+                            <div key={index} className={`message ${msg.type === "user" ? 'user_message' : 'bot_message'}`}>
                                 <div key={index} className="message_box">
-                                    <p><strong>{msg.user}:</strong></p>
-                                    {/* <p>{msg.message}</p> */}
+                                    <p><strong>{translate({lang: lang, info: msg.type})}:</strong></p>
                                     <p dangerouslySetInnerHTML={{ __html: msg.message }}></p>
                                 </div>
                             </div>
@@ -189,16 +186,17 @@ function ChatBot(props) {
         <Row>
             <Col xs={8} sm={8} md={8} lg={10}>
                 <input 
+                    type="text"
                     id="chatbot_input" 
                     className="chatbot_input" 
                     name="chatbot_input" 
-                    placeholder="Type your message..."
+                    placeholder={translate({lang: lang, info: "type_your_message"})}
                     value={inputText}
                     onChange={(e)=>handleInputChange(e)} 
                 />
             </Col>
             <Col xs={4} sm={4} md={4} lg={2}>
-                <Button disabled={isSending} type="button" className="mybutton button_fullcolor_dark shadow_convex" onClick={()=>handleSend()}>
+                <Button disabled={isSending} type="button" className="mybutton button_accent shadow_convex" onClick={()=>handleSend()}>
                     {translate({lang: lang, info: "send"})}
                 </Button>
             </Col>

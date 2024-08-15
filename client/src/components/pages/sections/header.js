@@ -44,13 +44,13 @@ function Header(props) {
                             </Col>
                         </Row>
                         <Row>
-                            <Col sm={2}></Col>
+                            <Col sm={2} />
                             <Col sm={8} id="header-sapou">
                                 <hr className="line"></hr>
                                 <p dangerouslySetInnerHTML={{ __html: translate({lang: lang, info: "header_description"}) }}></p>
                                 <hr className="line"></hr>
                             </Col>
-                            <Col sm={2}></Col>
+                            <Col sm={2} />
                         </Row>
                         <Row>
                             <Col sm={12}>

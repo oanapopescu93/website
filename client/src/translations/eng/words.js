@@ -111,7 +111,14 @@ var word_bank = {
 
     cv: "CV",
     tutorials: "Tutorials",
-    all: "All"
+    all: "All",
+
+    type_your_message: "Type your message here...",
+    greetings01: "Hello",
+    greetings02: "I am here to respond to all your questions regarding Oana's work experience, education, skills and contact info.",
+    error_chatbot: "I don't understand your question.",
+    user: "User",
+    bot: "Bot",
 }
 
 export const wordsEng = (info)=>{
