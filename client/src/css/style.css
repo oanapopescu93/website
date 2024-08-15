@@ -238,6 +238,73 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
     margin: 0px var(--padding_small);
 }
 
+/* checkbox and radio buttons */
+.checkbox_radio_container input[type="radio"], .checkbox_radio_container input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;	/* For iOS < 15 to remove gradient background */
+    background-color: transparent;
+    appearance: none;
+    padding: 0px !important;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%!important;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    margin: 0px !important;
+    border: solid 1px var(--color);
+}
+.checkbox_radio_container input[type="radio"]{
+	border-radius: 100%!important;
+}
+.checkbox_radio_container input[type="checkbox"] {
+	border-radius: var(--radius_small)!important;
+}
+
+.checkbox_radio_container input[type="radio"]::before{
+	content: "";
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	transform: scale(0);
+	transition: 120ms transform ease-in-out;
+	box-shadow: inset 1em 1em var(--color);
+	background-color: CanvasText;
+}
+.checkbox_radio_container input[type="checkbox"]::before {
+	content: "";
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	transform: scale(0);
+	transition: 120ms transform ease-in-out;
+	box-shadow: inset 1em 1em var(--color);
+	background-color: CanvasText;
+	transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+.checkbox_radio_container input[type="radio"]:checked::before, .checkbox_radio_container input[type="checkbox"]:checked::before {
+	transform: scale(1);
+}
+.checkbox_radio_container input[type="radio"]:focus, .checkbox_radio_container input[type="checkbox"]:focus {
+	outline: max(2px, 0.15em) solid var(--color);
+}
+.checkbox_radio_container label{
+	display: inline-flex;
+    grid-template-columns: 20px auto;
+    gap: 10px;
+	margin:0px var(--padding_small)!important;
+}
+.checkbox_radio_container label h6{
+    text-align: left;
+}
+
+.checkbox_radio_container h6{
+    margin-top: var(--padding_small);
+}
+
+/* PAGE */
+
 .full-height {
     position: relative;
     display: table;
@@ -374,12 +441,15 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
     margin-bottom: var(--padding);
     font-family: inherit;
 }
-.settings_language{
-    text-align: center;
-    margin-bottom: var(--padding);
+.settings hr{
+    border-top: 1px solid var(--color) !important;
+    opacity: 1;
 }
-.settings_mode{
+.settings_box{
     text-align: center;
+}
+.settings_language{
+    margin-bottom: var(--padding);
 }
 .language_container{
     position: absolute;
@@ -483,14 +553,15 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
     text-align: center;
 }
 #login_form h2{
-    margin-bottom: var(--padding_big);
+    margin-bottom: var(--padding);
+    color: var(--accent_color);
 }
 #login_form input{
     color: var(--accent);
     border: solid 1px var(--accent_color);
     margin-bottom: var(--padding);
 }
-#login_visitor{
+#login_guest{
     width: 100%;
     margin-bottom: var(--padding);
 }
@@ -936,9 +1007,8 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
     border: none;
 }
 
-/* CV */
-/*---------------------cv---------------------*/
-.mycv_container{
+/* CV and TUTORIALS TAG*/
+.tag_container{
 	position: fixed;
     z-index: 9999;
     top: 60px;
@@ -946,26 +1016,10 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
     width: 138px;
 	transition: 0.4s;
 }
-.mycv_container.closed{
+.tag_container.closed{
 	right:-120px;
 }
-.mycv{
-    position: relative;
-    z-index: 1;
-	background: var(--accent);
-    color: var(--accent_color);
-    border-radius: 0px 0px 0px 10px;
-    width: 120px;
-    height: 40px;
-    font-size: 16px;
-    line-height: 18px;
-    text-align: center;
-    display: inline-block;
-    vertical-align: top;
-    padding: 10px;
-	cursor:pointer;
-}
-.cv_close{
+.tag_close{
     position: relative;
     z-index: 1;
 	background: var(--accent);
@@ -981,69 +1035,36 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
     padding: 0px 7px;
 	cursor:pointer;
 }
-.mycv a{
+.tag{
+    position: relative;
+    z-index: 1;
+	background: var(--accent);
+    color: var(--accent_color);
+    border-radius: 0px 0px 0px 10px;
+    width: 120px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+	cursor:pointer;
+}
+.tag a{
     color: var(--accent_color);
 }
-.mycv svg{
+.tag svg{
 	font-size: 20px;
     line-height: 24px;
     margin-right: var(--padding_small);
 }
 
-/* TUTORIALS */
-.mytutorials_container{
-	position: fixed;
-    z-index: 9999;
-    right: 0px;
-    width: 138px;
-	transition: 0.4s;
-    text-align: right;
-}
-.mytutorials_container.up{
+#tutorials_tag.up{
     top: 60px;
 }
-.mytutorials_container.down{
+#tutorials_tag.down{
     top: 110px;
-}
-.mytutorials_container.closed{
-	right:-120px;
-}
-.mytutorials{
-    position: relative;
-    z-index: 1;
-	background: var(--accent);
-    color: var(--accent_color);
-    border-radius: 0px 0px 0px 10px;
-    width: 120px;
-    height: 40px;
-    font-size: 16px;
-    line-height: 18px;
-    text-align: center;
-    display: inline-block;
-    vertical-align: top;
-    padding: 10px;
-	cursor:pointer;
-}
-.mytutorials_close{
-    position: relative;
-    z-index: 1;
-	background: var(--accent);
-    color: var(--accent_color);
-    border-radius: 50px 0px 0px 50px;
-    width: 18px;
-    height: 24px;
-    font-size: 12px;
-    line-height: 24px;
-    text-align: center;
-    display: inline-block;
-    vertical-align: top;
-    padding: 0px 7px;
-	cursor:pointer;
-}
-.mytutorials svg{
-	font-size: 20px;
-    line-height: 24px;
-    margin-right: var(--padding_small);
 }
 
 /* TUTORIAL POPUP */
@@ -1174,7 +1195,28 @@ footer {
     }
     .cell_info img{
         height: 250px;
-    }  
+    }
+    .tag_container {
+        width: 54px;
+    }
+    .tag_container.closed {
+        right: -36px;
+    }
+    .tag{
+        width: 36px;
+        height: 36px;
+    }
+    .tag svg {
+        font-size: 18px;
+        line-height: 20px;
+        margin-right: 0px;
+    }
+    .tag span{
+        display: none;
+    }
+    #tutorials_tag.down{
+        top: 103px;
+    }
 }
 @media (max-width: 599px) {
     .portofolio-container{

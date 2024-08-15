@@ -12,7 +12,6 @@ function Login(props) {
 
     const [guest, setGuest] = useState(false)
     const [showError, setShowError] = useState(false)
-    const [done, setDone] = useState("")
     const [input, setInput] = useState('')
 
     function handleClick(){
@@ -26,13 +25,7 @@ function Login(props) {
     }
 
     function handleChange(){
-        if(guest){
-            setGuest(false)
-            setDone("")
-        } else {
-            setGuest(true)
-            setDone(" done")
-        }
+        setGuest(!guest)
     }
 
     function handleInput(e){
@@ -51,29 +44,33 @@ function Login(props) {
                         <div className="header_title_container">
                             <div id="login_form" className="header_title shadow_convex">
                                 <Row>
-                                    <Col sm={12}><h2>{translate({lang: props.lang, info: "login_title"})}</h2></Col>
+                                    <Col sm={12}><h2>{translate({lang: lang, info: "login"})}</h2></Col>
                                 </Row>
                                 <Form className="row">
                                     <Col sm={8}>
                                         <input type="password" autoComplete="off" value={input} onChange={(e)=>{handleInput(e)}}/>
                                     </Col>
                                     <Col sm={4}>
-                                        <Button id="login_visitor" onClick={()=>handleChange()} className="mybutton button_transparent02" type="button">
-                                            {done ? <FontAwesomeIcon icon={faCircleCheck} /> : null}
-                                            <span className="checkmark_text">{translate({lang: props.lang, info: "visitor_button"})}</span>
-                                        </Button>
+                                        <div id="login_guest" className="checkbox_radio_container">
+                                            <label>
+                                                <input className="input_light" type="checkbox" name="checkbox1" checked={guest} onChange={()=>{handleChange()}}/>
+                                                <h6>
+                                                    <span className="checkmark_text">{translate({lang: lang, info: "guest_button"})}</span>
+                                                </h6>
+                                            </label>
+                                        </div>
                                     </Col>
                                 </Form>
                                 <Row>
                                     <Col sm={12}>
                                         <Button id="login_enter" onClick={()=>handleClick()} className="mybutton button_transparent02" type="button">
-                                            {translate({lang: props.lang, info: "login_button"})}
+                                            {translate({lang: lang, info: "enter"})}
                                         </Button>
                                     </Col>
                                 </Row>
                             </div>
                         </div>
-                        { showError ? <div className="alert alert-danger">{translate({lang: props.lang, info: "login_error"})}</div> : null } 
+                        { showError ? <div className="alert alert-danger">{translate({lang: lang, info: "login_error"})}</div> : null } 
                     </Col>
                     <Col sm={1} md={2} lg={3}></Col>
                 </Row>

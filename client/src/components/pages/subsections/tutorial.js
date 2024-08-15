@@ -6,15 +6,15 @@ import { faBook } from '@fortawesome/free-solid-svg-icons'
 import { translate } from '../../../translations/translate'
 
 function Tutorial(props){
-    const { settings } = props
+    const { user, settings } = props
     const { lang } = settings
+    const { guest } = user
 
 	const [closed, setClosed] = useState('')
     let dispatch = useDispatch()
-	let login_visitor = props.login_visitor
-	let pos = " down"
-	if(login_visitor === true || login_visitor === "true"){
-		pos = " up"
+	let pos = " up"
+	if(parseInt(guest) === 0){
+		pos = " down"
 	}
 
     function handleClick(){
@@ -34,9 +34,9 @@ function Tutorial(props){
         }
     }	
 	
-	return <div className={"mytutorials_container " + closed +pos}>
-		<div className="mytutorials_close shadow_convex" onClick={()=>{handleSlide()}}>x</div>
-		<div id="mytutorials" className="mytutorials shadow_convex" onClick={()=>{handleClick()}}>
+	return <div id="tutorials_tag" className={"tag_container " + closed + pos}>
+		<div className="tag_close shadow_convex" onClick={()=>{handleSlide()}}>x</div>
+		<div className="tag shadow_convex" onClick={()=>{handleClick()}}>
             <FontAwesomeIcon icon={faBook} /><span>{translate({lang: lang, info: "tutorials"})}</span>
 		</div>
 	</div>

@@ -139,6 +139,16 @@
     color: var(--dark);
 }
 
+.dark #loader_container span{
+	color: var(--dark_color);
+}
+.dark #loader01,
+.dark #loader02,
+.dark #loader03,
+.dark #loader04{
+	border-bottom: 5px solid var(--dark_color);
+}
+
 /* MEDIA */
 @media (max-width: 768px) {
     .dark .nav-left li {

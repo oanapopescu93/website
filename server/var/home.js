@@ -16,7 +16,7 @@ module.exports = Object.freeze({
             city: "Bucharest", 
             map: {lat: 44.469663, lng: 26.096306}, 
             marker: [44.439663, 26.096306], 
-            email: "aaa", 
+            email: "oanapopescu93@gmail.com", 
             phone: "+40729699148", 
             phone_text: "(+40) 729.699.148",
             linkedin: "https://www.linkedin.com/in/oanapopescu93",

@@ -103,8 +103,8 @@ function Portofolio(props) {
 			<Col sm={12} className="text-center">
 				<ul className="portofolio_links_other">
 					<li>
-                        <a id="portofolio_git" href={myContact.github ? myContact.github : "https://github.com/oanapopescu93"} rel="noopener noreferrer" target="_blank">
-                            <h6><FontAwesomeIcon icon={faGithub} /> <span>{myContact.github ? myContact.github : "https://github.com/oanapopescu93"}</span></h6>
+                        <a id="portofolio_git" href={myContact.github} rel="noopener noreferrer" target="_blank">
+                            <h6><FontAwesomeIcon icon={faGithub} /> <span>{myContact.github}</span></h6>
                         </a>
                     </li>
 					<li onClick={()=>{portofolioTutorialsClick()}}>

@@ -18,9 +18,9 @@ function Cv(props){
         }
     }
 	
-    return <div className={"mycv_container " + closed}>
-        <div className="cv_close shadow_convex" onClick={()=>{handleSlide()}}>x</div>
-        <div id="mycv" className="mycv shadow_convex">            
+    return <div id="cv_tag" className={"tag_container " + closed}>
+        <div className="tag_close shadow_convex" onClick={()=>{handleSlide()}}>x</div>
+        <div className="tag shadow_convex">            
             <a href={cv_pdf} target = "_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faFile} /><span>{translate({lang: lang, info: "cv"})}</span>
             </a>

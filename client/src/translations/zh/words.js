@@ -1,4 +1,9 @@
 var word_bank = {
+    login: "登录",
+    guest_button: "我是游客",
+    enter: "进入",
+    logout: "登出",
+    
     about: "关于我",
     portofolio: "作品集",
     contact: "联系",

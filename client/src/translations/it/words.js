@@ -1,4 +1,9 @@
 var word_bank = {
+    login: "Accedi",
+    guest_button: "Sono un ospite",
+    enter: "Entra",
+    logout: "Disconnetti",
+    
     about: "Chi sono",
     portofolio: "Portfolio",
     contact: "Contatto",
