@@ -955,16 +955,27 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
 }
 .portofolio_image img{
     width: 100%;
-    border-radius: var(--radius);
 }
 .portofolio_image_box{
     max-height: 380px;
     overflow: auto;
+    border-radius: var(--radius);
 }
 .portofolio_description{
     padding: var(--padding) 0px;
     text-align: center;
 }
+.img-magnifier-container {
+    position:relative;
+  }
+.img-magnifier-glass {
+    position: absolute;
+    border: 3px solid #000;
+    border-radius: 50%;
+    cursor: none;
+    width: 150px;
+    height: 150px;
+  }
 
 /* CONTACT */
 .contact_info{
@@ -1234,6 +1245,9 @@ footer {
 
 /* MEDIA */
 @media (max-width: 768px) {
+    .img-magnifier-glass{
+        display: none;
+    }
     #menu {
         display: block;
     }

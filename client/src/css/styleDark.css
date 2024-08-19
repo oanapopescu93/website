@@ -154,6 +154,21 @@
 	border-bottom: 5px solid var(--dark_color);
 }
 
+.dark .dropdown .dropdown-toggle{
+    color: var(--dark);
+}
+.dark .dropdown-item{
+    color: var(--dark);
+}
+.dark .dropdown-item:hover, .dark .dropdown-item:hover, .dark .dropdown-item:hover{
+    background-color: var(--dark);
+    color: var(--dark_accent);
+}
+
+.dark .tag, .dark .tag a, .dark .tag_close{
+    color: var(--dark);
+}
+
 /* MEDIA */
 @media (max-width: 768px) {
     .dark .nav-left li {
