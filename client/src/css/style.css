@@ -958,7 +958,7 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
     border-radius: var(--radius);
 }
 .portofolio_image_box{
-    max-height: 400px;
+    max-height: 380px;
     overflow: auto;
 }
 .portofolio_description{
