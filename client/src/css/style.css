@@ -918,7 +918,7 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
 .cell_info img{
     width: 100%;
     object-fit: cover;
-    height: 150px;
+    height: 200px;
     object-position: top;
 	cursor: pointer;
     border-radius: var(--radius);
