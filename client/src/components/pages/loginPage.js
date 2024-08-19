@@ -3,6 +3,8 @@ import { translate } from '../../translations/translate'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import Language from '../settings/language'
 import { isEmpty } from '../../utils/utils'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRightToBracket } from '@fortawesome/free-solid-svg-icons'
 
 function LoginPage(props) {
     const {socket, settings} = props
@@ -62,7 +64,7 @@ function LoginPage(props) {
                                 <Row>
                                     <Col sm={12}>
                                         <Button id="login_enter" onClick={()=>handleClick()} className="mybutton button_transparent02" type="button">
-                                            {translate({lang: lang, info: "enter"})}
+                                            <FontAwesomeIcon icon={faRightToBracket} /> {translate({lang: lang, info: "enter"})}
                                         </Button>
                                     </Col>
                                 </Row>

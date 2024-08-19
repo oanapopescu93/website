@@ -303,6 +303,16 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
     margin-top: var(--padding_small);
 }
 
+#login_form .checkbox_radio_container input[type="radio"], .checkbox_radio_container input[type="checkbox"] {
+    border: solid 1px var(--accent_color);
+}
+#login_form .checkbox_radio_container input[type="checkbox"]::before {
+	box-shadow: inset 1em 1em var(--accent_color);
+}
+#login_form .checkbox_radio_container input[type="radio"]:focus, .checkbox_radio_container input[type="checkbox"]:focus {
+	outline: max(2px, 0.15em) solid var(--accent_color);
+}
+
 /* PAGE */
 
 .full-height {

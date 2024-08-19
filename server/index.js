@@ -17,7 +17,7 @@ dotenv.config({
   path: path.resolve(__dirname, `.env.${NODE_ENV}`)
 })
 
-const PORT = process.env.PORT || 1111
+const PORT = process.env.PORT || 2222
 
 var routes = require("./routes")
 app.use(routes) 

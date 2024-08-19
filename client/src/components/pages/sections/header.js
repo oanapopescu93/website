@@ -5,7 +5,7 @@ import { translate } from '../../../translations/translate'
 import { scroll_anywhere } from '../../../utils/utils'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
-import logo_icon_light from '../../../img/logo-rat-white.png'
+// import logo_icon_light from '../../../img/logo-rat-white.png'
 import logo_icon_dark from '../../../img/logo-rat-blue.png'
 import { changePopup } from '../../../reducers/popup'
 
