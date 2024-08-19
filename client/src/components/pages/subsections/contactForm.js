@@ -5,7 +5,7 @@ import { isEmpty } from '../../../utils/utils'
 import { validateInput } from '../../../utils/validate'
 
 function ContactForm(props){
-    const {sending, sendResults, lang} = props
+    const {sending, lang} = props
 
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
@@ -26,7 +26,7 @@ function ContactForm(props){
 		validateSubmit()
     }
 
-    function validateSubmit(data){
+    function validateSubmit(){
         let myErrors = {...defaultErrors}
         setErrors(myErrors)
 

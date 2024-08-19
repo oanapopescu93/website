@@ -4,6 +4,8 @@ import { Button } from 'react-bootstrap'
 import Language from '../settings/language'
 import Mode from '../settings/mode'
 import { setCookie } from '../../utils/utils'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 
 function Settings(props) {
     const {settings} = props
@@ -26,7 +28,7 @@ function Settings(props) {
         <hr className="line" />
         <div className="settings_box settings_logout">
             <Button type="button" className="mybutton button_accent shadow_convex" onClick={()=>handleLogout()}>
-                {translate({lang: lang, info: "logout"})}
+                <FontAwesomeIcon icon={faRightFromBracket} /> {translate({lang: lang, info: "logout"})}
             </Button>
         </div>
     </div>

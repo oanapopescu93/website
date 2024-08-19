@@ -3,6 +3,7 @@ var word_bank = {
     guest_button: "I am a guest", 
     enter: "Enter",
     logout: "Logout",
+    login_error: "You must either write the password or check that you are a guest.",
 
     about: "About",
     portofolio: "Portofolio",

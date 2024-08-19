@@ -3,6 +3,7 @@ var word_bank = {
     guest_button: "我是游客",
     enter: "进入",
     logout: "登出",
+    login_error: "您必须输入密码或检查您是否是宾客。",
     
     about: "关于我",
     portofolio: "作品集",

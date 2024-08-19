@@ -25,7 +25,7 @@ app.use(routes)
 var password = require('./var/constants').PASSWORD
 
 io.on('connection', function(socket) {
-  socket.on('login', function(data) {
+  socket.on('login', function(data) {    
     const {guest, input} = data
     let payload = null
     if(guest){

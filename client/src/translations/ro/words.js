@@ -3,6 +3,7 @@ var word_bank = {
     guest_button: "Sunt un oaspete",
     enter: "Intră",
     logout: "Deconectare",
+    login_error: "Trebuie fie să scrii parola, fie să verifici că ești un oaspete.",
     
     about: "Despre mine",
     portofolio: "Portofoliu",

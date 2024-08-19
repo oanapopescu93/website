@@ -1,5 +1,5 @@
 import React from 'react'
-function Loader(props) {
+function Loader() {
 	return <div id="loader_container">
             <span>Loading</span>
             <div id="loader01" className="loader"></div> 

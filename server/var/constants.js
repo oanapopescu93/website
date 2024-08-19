@@ -3,5 +3,5 @@ module.exports = Object.freeze({
     AUTH_PASS: "cd1233a2d8d6a7",
     AUTH_FROM: "oanapopescu93@gmail.com",
     
-    PASSWORD: "aaa"
+    PASSWORD: "Password001"
 })

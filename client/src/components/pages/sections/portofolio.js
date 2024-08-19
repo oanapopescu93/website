@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Container,Row, Col, Button } from 'react-bootstrap'
+import { Container,Row, Col } from 'react-bootstrap'
 import Carousel from '../../carousel/carousel'
 import { translate } from '../../../translations/translate'
 import { changePopup } from '../../../reducers/popup'
