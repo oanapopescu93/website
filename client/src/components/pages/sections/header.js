@@ -5,8 +5,7 @@ import { translate } from '../../../translations/translate'
 import { scroll_anywhere } from '../../../utils/utils'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
-// import logo_icon_light from '../../../img/logo-rat-white.png'
-import logo_icon_dark from '../../../img/logo-rat-blue.png'
+import logo_icon_blue from '../../../img/logo-rat-blue.png'
 // import { changePopup } from '../../../reducers/popup'
 
 function Header(props) {
@@ -32,13 +31,7 @@ function Header(props) {
                     <div className="header_title text-center shadow_convex">
                         <Row>
                             <Col sm={12}>
-                                {(() => {
-                                    if(mode && (mode === '' || mode === 'light')){
-                                        return <img className="logo" alt="logo_icon" src={logo_icon_dark} />
-                                    } else {                                
-                                        return <img className="logo" alt="logo_icon" src={logo_icon_dark} />
-                                    }
-                                })()}
+                                <img className="logo" alt="logo_icon" src={logo_icon_blue} />
                                 <h1 className="text-uppercase">Oana Popescu</h1>
                                 <h2 className="text-uppercase color_text_blue">Frontend/Javascript/React developer</h2>
                             </Col>

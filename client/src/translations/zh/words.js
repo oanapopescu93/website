@@ -87,7 +87,8 @@ var word_bank = {
 
     games: "游戏",
     react_node: "React/NodeJS",
-    websites_webapps: "网站",
+    websites: "网站",
+    webapps: "网页应用",
     see_the_code: "查看代码",
     take_a_look: "看看",
     platform: "平台",

@@ -87,7 +87,8 @@ var word_bank = {
 
     games: "Jogos",
     react_node: "React/NodeJS",
-    websites_webapps: "Sites",
+    websites: "Sites Web",
+    webapps: "Aplicativos Web",
     see_the_code: "Veja o código",
     take_a_look: "Dê uma olhada",
     platform: "Plataforma",

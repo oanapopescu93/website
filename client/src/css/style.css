@@ -921,6 +921,7 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
     height: 150px;
     object-position: top;
 	cursor: pointer;
+    border-radius: var(--radius);
 }
 .portofolio_buttons{
     text-align: center;
@@ -951,6 +952,18 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
     color: var(--accent);
     margin: var(--padding) 0px;
     cursor: pointer;
+}
+.portofolio_image img{
+    width: 100%;
+    border-radius: var(--radius);
+}
+.portofolio_image_box{
+    max-height: 400px;
+    overflow: auto;
+}
+.portofolio_description{
+    padding: var(--padding) 0px;
+    text-align: center;
 }
 
 /* CONTACT */

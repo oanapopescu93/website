@@ -4,8 +4,17 @@ import { translate } from '../../translations/translate'
 function PortofolioDetails(props){ 
     const {data, settings} = props
     const {lang} = settings
+    console.log(data)
 
     return <>
+        <div className="portofolio_image">
+            <div className="portofolio_image_box">
+                <img src={data.src} alt={data.alt} title={data.title} />
+            </div>
+        </div>
+        {data.description ? <div className="portofolio_description">
+            <p>{data.description}</p>
+        </div> : null}        
         <div className="portofolio_buttons">
             {data.git ? <a className="mybutton button_accent shadow_convex" href={data.git} target="_blank" rel="noopener noreferrer">                
                 {translate({lang: lang, info: "see_the_code"})}

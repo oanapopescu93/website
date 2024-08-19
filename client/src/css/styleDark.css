@@ -11,15 +11,15 @@
     background-color: var(--dark_bg);  
 }
 .dark .mynavbar {
-    background-color: var(--dark_color);
-    border-bottom: solid 1px var(--dark_color);
-    color: var(--dark);
+    background-color: var(--dark);
+    border-bottom: solid 1px var(--dark);
+    color: var(--dark_color);
 }
 .dark .mynavbar::after { 
-    background: var(--dark_color);
+    background: var(--dark_bg);
 }
 .dark .nav-right a {
-    color: var(--dark);
+    color: var(--dark_color);
 }
 .dark .nav-left li:hover, .dark .nav-left li:focus, .dark .nav-left li:active, 
 .dark .nav-right li:hover, .dark .nav-right li:focus, .dark .nav-right li:active,
@@ -60,6 +60,9 @@
 .dark .header_title{
     background: var(--dark_transparent_white);
 }
+/* .dark .header_title_container h1, .dark .header_title_container h2 {
+    color: var(--dark);
+} */
 .dark .scroll li {
     color: var(--dark_color);
 }
@@ -115,8 +118,7 @@
 .dark .button_accent:hover, .button_accent:active, .button_accent:focus{
     color: var(--accent)!important;
 }
-.dark #contact_map .leaflet-popup-content-wrapper, 
-.dark #contact_map .leaflet-popup-tip,
+.dark #contact_map .leaflet-popup-content-wrapper, #contact_map .leaflet-popup-tip,
 .dark #contact_map .leaflet-touch .leaflet-bar a, 
 .dark #contact_map .leaflet-touch .leaflet-control-layers-toggle{
     background-color: var(--dark_color);
@@ -136,27 +138,20 @@
 .dark .mytutorials_close {
     color: var(--dark);
 }
-
 .dark #loader_container span{
-	color: var(--dark_color);
+    color: var(--dark_color);
 }
-.dark #loader01,
-.dark #loader02,
-.dark #loader03,
+.dark #loader01 {
+    border-top: 5px solid var(--dark_color);
+}
+.dark #loader02{
+	border-left: 5px solid var(--coldark_coloror);
+}
+.dark #loader03{
+	border-right: 5px solid var(--dark_color);
+}
 .dark #loader04{
 	border-bottom: 5px solid var(--dark_color);
-}
-.dark .tag_close{
-    color: var(--dark);
-}
-.dark .tag{
-    color: var(--dark);
-}
-.dark .tag a{
-    color: var(--dark);
-}
-.dark #tutorial_box_container .tutorial_link{
-    color: var(--dark);
 }
 
 /* MEDIA */

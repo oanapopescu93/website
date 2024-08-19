@@ -17,7 +17,7 @@ function Portofolio(props) {
     const portofolio_carousel_options = {
         infinite: true,
         speed: 500,
-        slidesToShow: 4,
+        slidesToShow: 3,
         slidesToScroll: 1,
         swipeToSlide: true,
         draggable: true,
@@ -25,19 +25,11 @@ function Portofolio(props) {
         arrows: false,
         initialSlide: 0,
         swipeThreshold: 20,
-        centerMode: true,
-        centerPadding: '0px',
-        responsive: [
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 3,
-                }
-            }, 
+        responsive: [            
             {
                 breakpoint: 960,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 3,
                 }
             }, 
             {
@@ -45,7 +37,7 @@ function Portofolio(props) {
                 settings: {
                     slidesToShow: 1,
                 }
-            },           
+            }
         ]
     }
 
@@ -63,7 +55,7 @@ function Portofolio(props) {
             template: "portofolio",
             title: e.title,
             data: e,
-            size: "md",
+            size: "lg",
         }
         dispatch(changePopup(payload))        
     }
