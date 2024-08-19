@@ -238,6 +238,7 @@ module.exports = Object.freeze({
             },
             {
                 title: "The Book Mouse",
+                link: "https://the-book-mouse.onrender.com",
                 src: "/img/pics/the_book_mouse.png",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "React", "Redux", "NodeJS", "Express", "Socket.IO", "HTML Canvas", "MySQL"],
                 git: "https://github.com/oanapopescu93/bookstore",
