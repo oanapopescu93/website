@@ -169,6 +169,7 @@ function ChatBot(props) {
     return <div className="chatbot_container">        
         <Row>
             <Col sm={12}>
+                <p>The chatbot is under contruction</p>
                 <div className="chatbot_textarea_container shadow_concav">
                     <div className="chatbot_textarea" ref={chatbot_textarea}>
                         {messages.map((msg, index) => (

@@ -118,7 +118,8 @@
 .dark .button_accent:hover, .button_accent:active, .button_accent:focus{
     color: var(--accent)!important;
 }
-.dark #contact_map .leaflet-popup-content-wrapper, #contact_map .leaflet-popup-tip,
+.dark #contact_map .leaflet-popup-content-wrapper, 
+.dark #contact_map .leaflet-popup-tip,
 .dark #contact_map .leaflet-touch .leaflet-bar a, 
 .dark #contact_map .leaflet-touch .leaflet-control-layers-toggle{
     background-color: var(--dark_color);

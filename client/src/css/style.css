@@ -753,11 +753,16 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
 /* HEADER */
 .header_title_container{
     padding: var(--padding);
+    text-align: center;
 }
 .header_title{
+    display: inline-block;
+    vertical-align: top;
     background: var(--transparent_white);
     border-radius: 10px;
     padding: var(--padding_big) var(--padding);
+    width: 100%;
+    max-width: 800px;
 }
 .header_title h1{
     color: var(--accent);
@@ -1230,6 +1235,7 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
     vertical-align: top;
     font-size: 14px;
     line-height: 16px;
+    max-width: 300px;
 }
 .chatbot_textarea .message_box a{
     color: var(--color);
@@ -1291,7 +1297,7 @@ footer {
         line-height: 20px;
     }
     .header_title_container .mybutton{
-        margin: var(--padding_small) auto;
+        margin: var(--padding) auto;
         display: block;
     }
     #about_tabs_main{
@@ -1348,6 +1354,7 @@ footer {
 		background-color:var(--bg);
     }
     .header_title{
+        background-color: transparent;
         box-shadow: none!important;
     }
     #carousel_portofolio{

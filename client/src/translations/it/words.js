@@ -4,6 +4,7 @@ var word_bank = {
     enter: "Entra",
     logout: "Disconnetti",
     login_error: "Devi inserire la password o verificare che sei un ospite.",
+    error_login_password: "La password è errata",
     
     about: "Chi sono",
     portofolio: "Portfolio",

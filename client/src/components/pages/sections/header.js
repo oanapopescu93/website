@@ -1,28 +1,28 @@
 import React from 'react'
-// import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import { translate } from '../../../translations/translate'
 import { scroll_anywhere } from '../../../utils/utils'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import logo_icon_blue from '../../../img/logo-rat-blue.png'
-// import { changePopup } from '../../../reducers/popup'
+import { changePopup } from '../../../reducers/popup'
 
 function Header(props) {
-    const {settings} = props
-    const {lang, mode} = settings
+    const { settings } = props
+    const { lang } = settings
 	
-	// let dispatch = useDispatch()
+	let dispatch = useDispatch()
 
-	// function handleChatBot(){
-	// 	let payload = {
-	// 		open: true,
-	// 		template: "chatbot",
-	// 		title: translate({lang: lang, info: "chatbot"}),
-	// 		size: "lg",
-	// 	}
-	// 	dispatch(changePopup(payload))
-	// }
+	function handleChatBot(){
+		let payload = {
+			open: true,
+			template: "chatbot",
+			title: translate({lang: lang, info: "chatbot"}),
+			size: "lg",
+		}
+		dispatch(changePopup(payload))
+	}
 
     return <Container>
         <Row>
@@ -54,9 +54,9 @@ function Header(props) {
                                     <Button type="button" className="mybutton button_accent shadow_convex" onClick={()=>scroll_anywhere("contact")}>
                                         {translate({lang: lang, info: "contact_me"})}
                                     </Button>
-                                    {/* <Button type="button" className="mybutton button_accent shadow_convex" onClick={()=>handleChatBot()}>
+                                    <Button type="button" className="mybutton button_accent shadow_convex" onClick={()=>handleChatBot()}>
                                         {translate({lang: lang, info: "chatbot"})}
-                                    </Button> */}
+                                    </Button>
                                 </div>                        
                             </Col>
                         </Row>

@@ -206,7 +206,6 @@ function website(){
 		var trigger = "";
 		for(var i in trigger_data){
 			trigger_found = question.toLowerCase().includes(trigger_data[i].toLowerCase());
-			console.log(question);
 			if(trigger_found){
 				trigger = trigger_data[i];
 				break;

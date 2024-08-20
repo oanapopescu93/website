@@ -48,7 +48,7 @@ function LoginPage(props) {
                                 </Row>
                                 <Form className="row">
                                     <Col sm={8}>
-                                        <input type="password" autoComplete="off" value={input} onChange={(e)=>{handleInput(e)}}/>
+                                        <input type="password" autoComplete="off" value={input} defaultValue="" onChange={(e)=>{handleInput(e)}}/>
                                     </Col>
                                     <Col sm={4}>
                                         <div id="login_guest" className="checkbox_radio_container">

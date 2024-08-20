@@ -4,6 +4,7 @@ var word_bank = {
     enter: "Intră",
     logout: "Deconectare",
     login_error: "Trebuie fie să scrii parola, fie să verifici că ești un oaspete.",
+    error_login_password: "Parola este incorectă",
     
     about: "Despre mine",
     portofolio: "Portofoliu",

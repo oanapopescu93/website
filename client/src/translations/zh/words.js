@@ -4,6 +4,7 @@ var word_bank = {
     enter: "进入",
     logout: "登出",
     login_error: "您必须输入密码或检查您是否是宾客。",
+    error_login_password: "密码错误",
     
     about: "关于我",
     portofolio: "作品集",
