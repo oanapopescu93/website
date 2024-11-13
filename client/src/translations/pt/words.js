@@ -152,9 +152,9 @@ var word_bank = {
     all: "Todos",
 
     type_your_message: "Digite sua mensagem aqui...",
-    greetings01: "Olá",
-    greetings02: "Estou aqui para responder a todas as suas perguntas sobre a experiência de trabalho, educação, habilidades e informações de contato de Oana. As perguntas devem ser feitas em inglês.",
-    error_chatbot: "Não entendo a sua pergunta.",
+    greetings01: "Hello",
+    greetings02: "I am here to respond to all your questions regarding Oana's work experience, education, skills and contact info.",
+    error_chatbot: "I don't understand your question.",
     user: "Usuário",
     bot: "Bot",
     chatbot_under_construction: "O chatbot está em construção",

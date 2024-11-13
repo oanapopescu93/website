@@ -152,9 +152,9 @@ var word_bank = {
     all: "全部",
 
     type_your_message: "在这里输入您的消息...",
-    greetings01: "你好",
-    greetings02: "我在这里回答您关于Oana的工作经验、教育、技能和联系信息的所有问题。问题必须用英语提出。",
-    error_chatbot: "我不理解你的问题。",
+    greetings01: "Hello",
+    greetings02: "I am here to respond to all your questions regarding Oana's work experience, education, skills and contact info.",
+    error_chatbot: "I don't understand your question.",
     user: "用户",
     bot: "机器人",
     chatbot_under_construction: "聊天机器人正在建设中",

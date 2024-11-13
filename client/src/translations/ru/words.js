@@ -152,9 +152,9 @@ var word_bank = {
     all: "Все",
 
     type_your_message: "Введите ваше сообщение здесь...",
-    greetings01: "Здравствуйте",
-    greetings02: "Я здесь, чтобы ответить на все ваши вопросы касательно профессионального опыта, образования, навыков и контактной информации Оаны. Вопросы должны быть на английском языке.",
-    error_chatbot: "Я не понимаю ваш вопрос.",
+    greetings01: "Hello",
+    greetings02: "I am here to respond to all your questions regarding Oana's work experience, education, skills and contact info.",
+    error_chatbot: "I don't understand your question.",
     user: "Пользователь",
     bot: "Бот",
     chatbot_under_construction: "Чат-бот находится в стадии разработки",

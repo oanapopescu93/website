@@ -152,9 +152,9 @@ var word_bank = {
     all: "Toate",
 
     type_your_message: "Scrieți mesajul aici...",
-    greetings01: "Bună",
-    greetings02: "Sunt aici pentru a răspunde la toate întrebările tale despre experiența profesională, educația, abilitățile și informațiile de contact ale Oanei. Întrebările trebuie să fie în engleză.",
-    error_chatbot: "Nu înțeleg întrebarea ta.",
+    greetings01: "Hello",
+    greetings02: "I am here to respond to all your questions regarding Oana's work experience, education, skills and contact info.",
+    error_chatbot: "I don't understand your question.",
     user: "Utilizator",
     bot: "Bot",
     chatbot_under_construction: "Chatbot-ul este în construcție",

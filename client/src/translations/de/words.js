@@ -153,8 +153,8 @@ var word_bank = {
 
     type_your_message: "Geben Sie hier Ihre Nachricht ein...",
     greetings01: "Hello",
-    greetings02: "Ich bin hier, um alle Ihre Fragen zu Oanas Berufserfahrung, Ausbildung, Fähigkeiten und Kontaktinformationen zu beantworten. Die Fragen müssen auf Englisch gestellt werden.",
-    error_chatbot: "Ich verstehe Ihre Frage nicht.",
+    greetings02: "I am here to respond to all your questions regarding Oana's work experience, education, skills and contact info.",
+    error_chatbot: "I don't understand your question.",
     user: "Benutzer",
     bot: "Bot",
     chatbot_under_construction: "Der Chatbot ist im Aufbau",

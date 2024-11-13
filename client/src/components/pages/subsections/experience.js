@@ -96,7 +96,7 @@ function Experience(props) {
                                                     <ul>
                                                         {item.personal_projects.map(function(y, j){
                                                             if(y.project_link === "portofolio"){
-                                                                return <li key={j}><a href={'#' + y.project_link} className="scroll-button" onClick={(e)=>{scroll_anywhere(e)}}>{y.project_name}</a></li>
+                                                                return <li key={j}><a href={'#' + y.project_link} className="scroll-button" onClick={()=>{scroll_anywhere("portofolio")}}>{y.project_name}</a></li>
                                                             } else {
                                                                 return <li key={j}><a target="_blank" rel="noopener noreferrer" href={y.project_link}>{y.project_name}</a></li>
                                                             }

@@ -201,7 +201,6 @@ export const scroll_anywhere = function(link){
 }
 
 export const handleChangeMode = (choice) => {
-	console.log('handleChangeMode ', choice)
 	switch (choice) {
     case 'light':
       document.documentElement.style.setProperty('--bg', '#dedede')
