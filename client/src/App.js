@@ -5,7 +5,6 @@ import { io } from 'socket.io-client'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "./css/fonts.css"
 import "./css/style.css"
-import "./css/styleDark.css"
 
 import Page from "./components/pages/page"
 
@@ -30,7 +29,7 @@ function App(){
 	}()
 
   	useEffect(() => {
-		my_console.disable()
+		//my_console.disable()
 		socket.connect()		
 		return () => {
 			socket.disconnect()

@@ -4,6 +4,9 @@
 	--accent: #189cb0;
     --accent_color: white;
 
+    --navbar_bg: #333;
+    --navbar_color: white;
+
     --red: red;
     --darkred: darkred;
     --green: green;
@@ -660,14 +663,14 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
     left: 0;
     right: 0px;
     padding: 0px;
-    background-color: var(--color);
-    border-bottom: solid 1px var(--color);
-    color: var(--bg);
+    background-color: var(--navbar_bg);
+    border-bottom: solid 1px var(--navbar_bg);
+    color: var(--navbar_color);
     height: 32px;
 }
 .mynavbar::after { 
     content: "";
-    background: var(--color);
+    background: var(--navbar_bg);
     height: 1px;
     width: 100%;
     position: absolute;
@@ -693,7 +696,7 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
     cursor: pointer;
 }
 .nav-right a{
-    color: var(--bg);
+    color: var(--navbar_color);
 }
 .nav-left li:hover, .nav-left li:focus, .nav-left li:active, 
 .nav-right li:hover, .nav-right li:focus, .nav-right li:active,
@@ -912,7 +915,7 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
     padding: var(--padding);
 }
 .cell{
-    background-color: white;
+    background-color: var(--accent_color);
     border-radius: var(--radius);
     padding: var(--padding);
 }
@@ -940,7 +943,7 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
     font-size: 14px;
     line-height: 28px;
 }
-.portofolio_used{
+.portofolio_platform, .portofolio_used{
     text-align: center;
 }
 .portofolio_used .box{
@@ -963,7 +966,7 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
 }
 .portofolio_image_box{
     max-height: 380px;
-    overflow: auto;
+    overflow: hidden auto;
     border-radius: var(--radius);
 }
 .portofolio_description{
@@ -1162,6 +1165,10 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
     height: 50px;
     text-align: center;
     line-height: 48px;
+}
+#tutorial_box_container .tutorial_link svg{
+    font-size: 36px;
+    padding-top: var(--padding_small);    
 }
 
 /* CHATBOT */

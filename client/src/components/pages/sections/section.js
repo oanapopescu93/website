@@ -6,9 +6,16 @@ import Portofolio from './portofolio'
 import Contact from './contact'
 
 function Section(props) {
-    const {template} = props
+    const { template, settings } = props
+    const { mode } = settings
 
-    return <div id={template} className="full-height">
+    const backgroundStyle = template === "header" 
+        ? mode === "light"
+            ? { backgroundImage: 'url(/img/bg-desk.jpg)', backgroundSize: 'cover' }
+            : { backgroundImage: 'url(/img/bg-desk-dark.jpg)', backgroundSize: 'cover' }
+        : {}
+
+    return <div id={template} className="full-height" style={backgroundStyle}>
         {template !== "header" ? <div className="full-height-title">
             <TitleSection {...props} />
         </div> : null}

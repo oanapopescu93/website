@@ -47,7 +47,7 @@ function Cell(props) {
                                 <img className="cell_img" alt={data.alt} title={data.title} src={window.location.origin + data.src}></img>                          
                             </div>
                             <div className="cell_more_info">
-                                <p className="grid_title">{data.title}</p>
+                                <p className="grid_title">{translate({lang: lang, info: data.title})}</p>
 							</div>
                         </div>
                     </div>                

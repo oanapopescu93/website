@@ -199,3 +199,33 @@ export const scroll_anywhere = function(link){
     }
   }
 }
+
+export const handleChangeMode = (choice) => {
+	console.log('handleChangeMode ', choice)
+	switch (choice) {
+    case 'light':
+      document.documentElement.style.setProperty('--bg', '#dedede')
+      document.documentElement.style.setProperty('--color', '#333')
+      document.documentElement.style.setProperty('--accent', '#189cb0')
+      document.documentElement.style.setProperty('--accent_color', 'white')
+
+      document.documentElement.style.setProperty('--navbar_bg', '#333')
+      document.documentElement.style.setProperty('--navbar_color', '#ccc')
+
+      document.documentElement.style.setProperty('--transparent_white', 'rgba(255, 255, 255, 0.5)')
+      break
+    case 'dark':
+      document.documentElement.style.setProperty('--bg', '#2A2A30')
+      document.documentElement.style.setProperty('--color', '#9b9b9b')
+      document.documentElement.style.setProperty('--accent', '#189cb0')
+      document.documentElement.style.setProperty('--accent_color', '#18181b')
+
+      document.documentElement.style.setProperty('--navbar_bg', '#18181b')
+      document.documentElement.style.setProperty('--navbar_color', '#9b9b9b')
+
+      document.documentElement.style.setProperty('--transparent_white', 'rgba(255, 255, 255, 0.1)')
+      break
+    default:
+      break
+  }
+}

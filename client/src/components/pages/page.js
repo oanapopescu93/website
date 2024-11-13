@@ -7,7 +7,7 @@ import { changeUser } from '../../reducers/auth'
 import { changePopup } from '../../reducers/popup'
 import { bringPayload } from '../../reducers/home'
 import { translate } from '../../translations/translate'
-import { isEmpty } from '../../utils/utils'
+import { handleChangeMode, isEmpty } from '../../utils/utils'
 import Loader from '../partial/loader'
 
 function Page(props) {
@@ -46,12 +46,10 @@ function Page(props) {
         }
     }, [socket])
 
-    useEffect(() => {
-		if (document.body) {
-            document.body.classList.remove('light', 'dark')
-            document.body.classList.add(settings.mode)
-        }
-	}, [settings.mode])
+    useEffect(() => {  
+        let mode = settings.mode
+        handleChangeMode(mode)
+    }, [settings.mode])
 
     return <>    
         {(() => {

@@ -218,93 +218,96 @@ module.exports = Object.freeze({
     PORTOFOLIO_ITEMS: {
         webapps: [	
             {
-                title: "Nexus",
+                title: "portofolio_title01",
                 link: "https://idriveglobal.com/fleet-management-platform/",
                 src: "/img/pics/nexus.png",
                 used: ["HTML", "CSS", "Javascript", "React", "Redux", "DevExtreme", "Leaflet", "NodeJS"],
                 img_alt: "nexus",
                 img_title: "nexus",
-                description: "web platform for car fleet management"
+                description: "portofolio_description01"
             },
             {
-                title: "BunnyBet Casino",
+                title: "portofolio_title02",
                 link: "https://bunny-bet-casino.onrender.com/",
                 src: "/img/pics/bunnybet.png",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "React", "Redux", "NodeJS", "Express", "Socket.IO", "HTML Canvas", "MySQL"],
                 git: "https://github.com/oanapopescu93/casino",
                 img_alt: "nodejs react casino",
                 img_title: "nodejs react casino",
-                description: "Online casino. You can play roulette, blackjack, slots, craps, poker (5 card draw and Texas Hold'em), keno and bet on races"
+                description: "portofolio_description02"
             },
             {
-                title: "The Book Mouse",
+                title: "portofolio_title03",
                 link: "https://the-book-mouse.onrender.com",
                 src: "/img/pics/the_book_mouse.png",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "React", "Redux", "NodeJS", "Express", "Socket.IO", "HTML Canvas", "MySQL"],
                 git: "https://github.com/oanapopescu93/bookstore",
                 img_alt: "nodejs react casino",
                 img_title: "nodejs react casino",
-                description: "E-commerce bookstore"
+                description: "portofolio_description03"
             },
             {
-                title: "Chat, tic-toc and weather app",
+                title: "portofolio_title04",
                 src: "/img/pics/nodejs-image.png",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "NodeJS", "Express", "Socket.IO"],
                 git: "https://github.com/oanapopescu93/nodeapp",
                 img_alt: "chat tic-toc and weather nodejs app",
                 img_title: "chat tic-toc and weather nodejs app",
+                description: "portofolio_description04"
             },	
         ],
         websites: [            
             {
-                title: "Salomon Romania",
+                title: "portofolio_title05",
                 link: "https://www.salomon.ro",
                 src: "/img/pics/salomon.png",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "Photoshop"],
                 platform: "Magento",
                 img_alt: "salomon",
                 img_title: "salomon",
-                description: "E-commerce shop for sport equipment"
+                description: "portofolio_description05"
             },
             {
-                title: "Idrive Global",
+                title: "portofolio_title06",
                 link: "https://idriveglobal.com/fleet-management-platform/",
                 src: "/img/pics/globalcenter.png",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "React", "Redux", "HTML Canvas", "DevExtreme", "Leaflet"],
                 img_alt: "idrive global",
                 img_title: "idrive global",
-                description: "web platform for car fleet management"
+                description: "portofolio_description06"
             },
             {
-                title: "Clubul sportiv RealGym",
+                title: "portofolio_title07",
                 link: "http://clubulsportivrealgym.ro",
                 src: "/img/pics/realgym.png",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "Photoshop", "PHP"],
                 platform: "Wordpress",
                 img_alt: "clubul sportiv realgym karate kickbox",
                 img_title: "clubul sportiv realgym karate kickbox",
-                description: "E-commerce shop for sport equipment"
+                description: "portofolio_description07"
             },
             {
-                title: "Noblisime",
+                title: "portofolio_title08",
                 link: "https://noblisime.ro",
                 src: "/img/pics/noblisime.jpg",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "Photoshop"],
                 platform: "Magento",
                 img_alt: "noblisime",
                 img_title: "noblisime",
-            },                       
+                description: "portofolio_description08"
+            },
             {
-                title: "Konart",
+                title: "portofolio_title09",
                 link: "http://www.kon-art.ro",
                 src: "/img/pics/konart.png",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "Photoshop"],
                 platform: "Magento",
                 img_alt: "konart",
                 img_title: "konart",
+                description: "portofolio_description09"
             },
             {
-                title: "Exclusive doors",
+                title: "portofolio_title10",
                 link: "https://exclusivedoors.ro",
                 src: "/img/pics/exclusivedoor.png",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "Photoshop"],
@@ -312,91 +315,95 @@ module.exports = Object.freeze({
                 img_alt: "exclusive doors",
                 img_title: "exclusive doors",
                 status: "still in localhost",
+                description: "portofolio_description010"
             },	
             {
-                title: "Pizza Hut Delivery",
+                title: "portofolio_title11",
                 link: "https://www.pizzahutdelivery.ro/ro",
                 src: "/img/pics/PHD01.jpg",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "Photoshop"],
                 img_alt: "pizza hut delivery",
                 img_title: "pizza hut delivery",
+                description: "portofolio_description011"
             },
             {
-                title: "City Grill",
+                title: "portofolio_title12",
                 link: "https://citygrill.ro/ro",
                 src: "/img/pics/citygrill.png",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "Photoshop"],
                 platform: "October CMS",
                 img_alt: "city grill",
                 img_title: "city grill",
+                description: "portofolio_description012"
             }, 
             {
-                title: "Ape Rider",
+                title: "portofolio_title13",
                 link: "http://aperider.com/",
                 src: "/img/pics/aperider.png",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "Photoshop"],
                 img_alt: "ape rider biciclete",
                 img_title: "ape rider biciclete",
+                description: "portofolio_description013"
             },	
         ],        
         games: [		
             {
-                title: "Halloween flip card game", 
-                link: "/portofolio/flip_cards/game-flip-card.html", 							
-                src: "/img/pics/game-flip-card.png", 
+                title: "portofolio_title14",
+                link: "/portofolio/flip_cards/game-flip-card.html",
+                src: "/img/pics/game-flip-card.png",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery"],
                 git: "https://github.com/oanapopescu93/flip_cards",
                 img_alt: "halloween flip card game",
                 img_title: "halloween flip card game",
             },
             {
-                title: "ChatBot", 
-                link: "/portofolio/chatbot/index.html", 							
-                src: "/img/pics/chatbot.png", 
+                title: "portofolio_title15",
+                link: "/portofolio/chatbot/index.html",
+                src: "/img/pics/chatbot.png",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "Machine Learning"],
                 git: "https://github.com/oanapopescu93/chatbot",
                 img_alt: "chatbot",
                 img_title: "speak with oana chatbot",
             },
             {
-                title: "Backtracking maze game", 
-                link: "/portofolio/maze/index.html", 							
-                src: "/img/pics/maze.png", 
+                title: "portofolio_title16",
+                link: "/portofolio/maze/index.html",
+                src: "/img/pics/maze.png",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "HTML Canvas"],
                 git: "https://github.com/oanapopescu93/backtrack_mouse_maze",
                 img_alt: "backtracking maze game",
                 img_title: "backtracking maze game",
             },	
             {
-                title: "Snake game", 
-                link: "/portofolio/snake/index.html", 							
-                src: "/img/pics/snake.jpg", 
+                title: "portofolio_title17",
+                link: "/portofolio/snake/index.html",
+                src: "/img/pics/snake.jpg",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "HTML Canvas"],
                 git: "https://github.com/oanapopescu93/snake_game",
                 img_alt: "snake game",
                 img_title: "snake game",
             },			
             {
-                title: "Space Invaders", 
-                link: "/portofolio/space_invader/index.html", 							
-                src: "/img/pics/game_icon.png", 
+                title: "portofolio_title18",
+                link: "/portofolio/space_invader/index.html",
+                src: "/img/pics/game_icon.png",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "HTML Canvas"],
                 git: "https://github.com/oanapopescu93/space_invader",
                 img_alt: "space invaders",
                 img_title: "space invaders - game to cure office boredom",
-                description: "A HTML Canvas and Javascript game to cure office boredom"
+                description: "portofolio_description018"
             },
             {
-                title: "Irregular verbs quiz game", 
-                link: "/portofolio/irregular_verbs/index.html", 							
-                src: "/img/pics/game-quiz.png", 
+                title: "portofolio_title19",
+                link: "/portofolio/irregular_verbs/index.html",
+                src: "/img/pics/game-quiz.png",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery"],
                 git: "https://github.com/oanapopescu93/irregular_verbs",
                 img_alt: "irregular verbs quiz game",
                 img_title: "irregular verbs quiz game",
             },
         ],
-    },
+    },    
     TUTORIALS: [
         {
             name: "Javascript promises",

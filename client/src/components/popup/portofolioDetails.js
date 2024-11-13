@@ -62,7 +62,7 @@ function PortofolioDetails(props){
         </div>
         {data.description ? (
             <div className="portofolio_description">
-                <p>{data.description}</p>
+                <p>{translate({ lang: lang, info: data.description })}</p>
             </div>
         ) : null}
         <div className="portofolio_buttons">

@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import { translate } from '../../translations/translate'
 import { Row, Col } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 function Tutorials(props){
     const {home, settings} = props
@@ -66,7 +68,9 @@ function Tutorials(props){
                                             </>
                                         </Col>
                                         <Col sm={4} md={2}>
-                                            <a className="tutorial_link" href={tutorials[i].link} target="_blank" rel="noopener noreferrer">Link</a>
+                                            <a className="tutorial_link" href={tutorials[i].link} target="_blank" rel="noopener noreferrer">
+                                                <FontAwesomeIcon icon={faGithub} />
+                                            </a>
                                         </Col>
                                     </Row>
                                 </div>
