@@ -1,3 +1,23 @@
+:root {    
+    --bg:#7f8000;
+    --color:#013300;
+	--accent: #d7e120;
+
+    --red: red;
+    --darkred: darkred;
+    --green: green;
+    --darkgreen: darkgreen;
+
+    --padding: 10px;
+    --padding_small: 5px;
+    --padding_big: 20px;
+    --radius:10px;
+    --radius_small:5px;
+    --radius_big:25px;
+
+	--transparent_7: rgba(0, 0, 0, 0.7);
+}
+
 :focus {
     outline: -webkit-focus-ring-color auto 0px !important;
 }
@@ -5,16 +25,44 @@
 html {
     height: 100%;
 }
-
 body {
     min-height: 100% !important;
-    font-family: arial;
+    height: 100%;    
     position: relative;
-    font-size: 14px;
-	padding:40px 0px;
-	background:#7f8000;
-	color:#013300;
-	padding-bottom:40px;
+	overflow-x: hidden;
+    font-size: 14px; 
+    color: var(--color);
+    background-color: var(--bg);  
+    font-family: arial;
+}
+
+/* PAGE */
+.full-height {
+    position: relative;
+    display: table;
+    height: 100%;
+    width: 100%;
+    padding: var(--padding_big) 0px;
+}
+.full-height hr {
+    margin: var(--padding_small) 0px;
+    border: 0;
+    border-top: 1px solid var(--color)!important;
+    -mox-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: 1;
+}
+.full-height-title{
+    display: table-header-group;
+}
+.full-height-title h3 svg{
+    margin-right: var(--padding_small);
+}
+.full-height-content {
+    display: table-cell;
+    vertical-align: middle;
+    padding: var(--padding_big) 0px;
 }
 
 /*---------------------input, select, text---------------------*/
@@ -27,7 +75,7 @@ h1 {
     font-size: 32px;
     line-height: 32px;
     font-family: impact;
-	color:#d7e120;
+	color: var(--accent);
 }
 
 h2 {
@@ -38,22 +86,61 @@ h2 {
 
 a, a:hover, a:focus {
     text-decoration: none;
-	color:#d7e120;
+	color:var(--accent);
 }
 
-.container .row{
-	padding-bottom:20px;
+.game_container{
+	position: relative;
+	z-index: 1;
+}
+.game_box{
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	transform: translate(0px, -50%);
+}
+
+html {
+    height: 100%;
+    min-height: 100% !important;
+    height: 100%;    
+    position: relative;
+}
+body{
+    overflow-x: hidden;
+    font-size: 14px; 
+    color: var(--color);
+    background-color: var(--bg);  
+    font-family: arial;
+}
+
+.full-height {
+    display: table;
+    height: 100%;
+    padding: var(--padding_big) 0;
+    position: relative;
+    width: 100%;
+}
+
+.full-height-content {
+    display: table-cell;
+    vertical-align: middle;
+    padding: var(--padding_big) 0px;
 }
 
 #maze_logo{
 	width:80px;
 }
 
+.button_maze_group{
+	margin: var(--padding) 0px;
+}
+
 /*---------------------canvas---------------------*/
 
 #myCanvas{
 	background:#fff;
-	border:solid 1px #7f8000;
+	border:solid 1px var(--bg);
 }
 .message_banner_main{
 	position:absolute;
@@ -62,12 +149,12 @@ a, a:hover, a:focus {
 	left:0px;
 	right:0px;
 	width:100%;
-	background:rgba(0,0,0,0.7);	
+	background:var(--transparent_7);	
 	z-index:9999;
 	visibility: visible;
 }
 .message_banner{
-	color:#d7e120;
+	color:var(--accent);
 	height: 100%;
     display: table;
     width: 100%;
@@ -77,10 +164,10 @@ a, a:hover, a:focus {
     vertical-align: middle;
 }
 .button_try_again{
-	border:solid 1px #d7e120;
-	padding:5px 10px;
-	margin:10px;
-	border-radius:5px;
+	border:solid 1px var(--accent);
+	padding:var(--padding_small) var(--padding);
+	margin:var(--padding);
+	border-radius:var(--radius_small);
 	text-align:center;
 	font-size:14px;
 	background:transparent;
@@ -99,9 +186,9 @@ a, a:hover, a:focus {
 }
 
 .button_maze{
-	border:solid 1px #013300;
-	padding:5px 10px;
-	border-radius:5px;
+	border:solid 1px var(--color);
+	padding:var(--padding_small) var(--padding);
+	border-radius:var(--radius);
 	text-align:center;
 	font-size:12px;
 	width:100%;
@@ -114,8 +201,8 @@ a, a:hover, a:focus {
 /*---------------------footer---------------------*/
 
 footer { 
-    padding: 10px 0px;
-    color: #013300;
+    padding: var(--padding) 0px;
+    color: var(--color);
     position: absolute;
     width: 100%;
     bottom: 0;
@@ -130,18 +217,24 @@ footer ~ div {
 		display:block;
 	}
 }
+@media (max-width: 960px) {
+	footer { 
+		position: static;
+	}
+}
 @media (max-width: 480px) {
 	body{
-		padding:15px 0px 30px 0px;
+		padding:var(--padding) 0px var(--padding_big) 0px;
 	}
     #maze_container div{
-		overflow: scroll;
+		overflow-y: hidden;
+		overflow-x: auto;
 		width: 320px;
 		margin: 0px auto;
 		padding: 0;
 	}
 	.container .row{
-		padding-bottom:10px;
+		padding-bottom:var(--padding);
 	}
 	
 	#maze_logo{
@@ -157,4 +250,20 @@ footer ~ div {
 		vertical-align: middle;
 	}
 }
+
+::-webkit-scrollbar{
+	width: 10px;
+	height:5px;
+	border-radius: var(--radius);
+}
+::-webkit-scrollbar-track {
+	border-radius: var(--radius);
+	background:var(--accent);
+	border:solid 4px var(--color)
+}
+::-webkit-scrollbar-thumb{
+	border-radius: var(--radius);
+	background-color: var(--bg);
+	border:solid 1px var(--accent);
+    cursor: pointer;
 }

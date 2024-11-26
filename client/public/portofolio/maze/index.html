@@ -19,57 +19,76 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12 text-center">
-				<img src="img/maze-icon.png" id="maze_logo">
-				<h1 class="text-uppercase">Backtrack mouse maze</h1>
+	<div class="full-height">
+		<div class="full-height-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<div id="title_box">
+							<div class="row">
+								<div class="col-sm-12 text-center">
+									<img src="img/maze-icon.png" id="maze_logo">
+									<h1 class="text-uppercase">Backtrack mouse maze</h1>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12 text-center">
+									<div class="button_maze_group">
+										<select id="button_maze_select" class="button_maze button_maze_select">
+											<option value="" selected>Select level</option>
+											<option value="8">Easy</option>
+											<option value="10">Medium</option>
+											<option value="16">Hard</option>
+											<option value="20">Extreme</option>
+										</select>
+										<input id="button_maze_start" type="button" class="button_maze button_maze_start" value="Start">
+										<br>
+										<p>This game uses <a href="https://en.wikipedia.org/wiki/Maze_generation_algorithm#Recursive_backtracker">recursive backtracking algorithm</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div id="maze_container" class="row">
+							<div class="col-sm-12 text-center"></div>
+						</div>
+						<div id="hidden_box">
+							<div class="row arrow_mobile">
+								<div class="col-sm-12 text-center">
+									<button id="button_maze_up" type="button" class="button_icon"><i class="fa fa-arrow-circle-up"></i></button><br>
+									<button id="button_maze_left" type="button" class="button_icon"><i class="fa fa-arrow-circle-left"></i></button>
+									<button id="button_maze_down" type="button" class="button_icon"><i class="fa fa-arrow-circle-down"></i></button>
+									<button id="button_maze_right" type="button" class="button_icon"><i class="fa fa-arrow-circle-right"></i></button>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12 text-center">
+									<div class="button_maze_group">
+										<p>You can give up to find the correct path, but you will lose the game.</p>
+										<button id="button_give_up" type="button" class="button_icon button_maze">Give up</button>
+									</div>									
+								</div>
+							</div>
+						</div>						
+					</div>
+				</div>				
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-sm-12 text-center">
-				<select id="button_maze_select" class="button_maze button_maze_select">
-					<option value="" selected>select level</option>
-					<option value="8">Easy</option>
-					<option value="10">Medium</option>
-					<option value="16">Hard</option>
-					<option value="20">Extreme</option>
-				</select>
-				<input id="button_maze_start" type="button" class="button_maze button_maze_start" value="Start">
-			</div>
-		</div>
-		<div id="maze_container" class="row"><div class="col-sm-12 text-center"></div></div>
-		<div class="row arrow_mobile">
-			<div class="col-sm-12 text-center">
-				<button id="button_maze_up" type="button" class="button_icon"><i class="fa fa-arrow-circle-up"></i></button><br>
-				<button id="button_maze_left" type="button" class="button_icon"><i class="fa fa-arrow-circle-left"></i></button>
-				<button id="button_maze_down" type="button" class="button_icon"><i class="fa fa-arrow-circle-down"></i></button>
-				<button id="button_maze_right" type="button" class="button_icon"><i class="fa fa-arrow-circle-right"></i></button>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-12 text-center hidden">
-				<p>You can give up to find the correct path, but you will lose the game.</p>
-				<button id="button_give_up" type="button" class="button_icon button_maze">Give up</button><br>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-12 text-center">
-				<p>This game uses <a href="https://en.wikipedia.org/wiki/Maze_generation_algorithm#Recursive_backtracker">recursive backtracking algorithm</a></p>
-			</div>
-		</div>
-	</div>	
+	</div>
 	
 	<footer class="text-center">
 		<h6>Copyright &copy; <span id="copyright_year"></span> Oana Popescu. All rights reserved.</h6>
 	</footer>	
 	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="js/script.js"></script>
 
 <script>
-	var date = new Date();
-	date = date.getFullYear();
-	$('#copyright_year').text(date);
+	var date = new Date()
+	date = date.getFullYear()
+	$('#copyright_year').text(date)
 </script>
