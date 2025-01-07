@@ -59,9 +59,9 @@ function Tutorials(props){
                             {tutorials.map(function(item1, i){
                                 return <div key={i} className="tutorial_box">
                                     <Row>
-                                        <Col sm={8} md={10}>
+                                        <Col xs={9} sm={8} md={10}>
                                             <h4 className="tutorial_name">{item1.name}</h4>
-                                            <p>{item1.description}</p>
+                                            <p>{translate({lang: lang, info: "description"})}: {item1.description}</p>
                                             <p>{translate({lang: lang, info: "what_I_used"})}</p>
                                             <>
                                                 {item1.used.map(function(item2, j){
@@ -69,7 +69,7 @@ function Tutorials(props){
                                                 })}
                                             </>
                                         </Col>
-                                        <Col sm={4} md={2}>
+                                        <Col xs={3} sm={4} md={2}>
                                             <a className="tutorial_link" href={tutorials[i].link} target="_blank" rel="noopener noreferrer">
                                                 <FontAwesomeIcon icon={faGithub} />
                                             </a>

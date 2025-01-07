@@ -48,7 +48,7 @@ function Skills(props) {
                                     return <Col key={i} xs={6} sm={3}>
                                         <div className="skill_pie">
                                             <PieChart
-                                                id="pie"
+                                                id={"pie_" + i}
                                                 dataSource={dataSource}
                                                 palette={["#189cb0", "#dededede"]}
                                                 innerRadius={0.85}

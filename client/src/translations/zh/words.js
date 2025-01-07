@@ -94,6 +94,7 @@ var word_bank = {
     take_a_look: "看看",
     platform: "平台",
     what_I_used: "我使用了什么",
+    description: "描述 ",
 
     portofolio_title01: "Nexus",
     portofolio_title02: "BunnyBet Casino",

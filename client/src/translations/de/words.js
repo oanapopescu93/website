@@ -94,6 +94,7 @@ var word_bank = {
     take_a_look: "Schau mal",
     platform: "Plattform",
     what_I_used: "Was ich verwendet habe",
+    description: "Beschreibung",
 
     portofolio_title01: "Nexus",
     portofolio_title02: "BunnyBet Casino",

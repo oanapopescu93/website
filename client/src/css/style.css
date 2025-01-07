@@ -7,6 +7,8 @@
     --navbar_bg: #333;
     --navbar_color: white;
 
+    --header: white;
+
     --red: red;
     --darkred: darkred;
     --green: green;
@@ -715,7 +717,7 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
     height: 3px;
     margin: var(--padding_small) 0px;
     transition: 0.4s;
-    background-color: var(--bg);
+    background-color: var(--navbar_color);
 }
 .bar1.change {
     -webkit-transform: rotate(-45deg) translate(-6px, 6px);
@@ -1053,13 +1055,13 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
 .tag_container{
 	position: fixed;
     z-index: 9999;
-    top: 60px;
+    top: 50px;
     right: 0px;
-    width: 138px;
+    width: 158px;
 	transition: 0.4s;
 }
 .tag_container.closed{
-	right:-120px;
+	right:-140px;
 }
 .tag_close{
     position: relative;
@@ -1083,7 +1085,7 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
 	background: var(--accent);
     color: var(--accent_color);
     border-radius: 0px 0px 0px 10px;
-    width: 120px;
+    width: 140px;
     height: 40px;
     font-size: 16px;
     line-height: 18px;
@@ -1103,10 +1105,10 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
 }
 
 #tutorials_tag.up{
-    top: 60px;
+    top: 50px;
 }
 #tutorials_tag.down{
-    top: 110px;
+    top: 100px;
 }
 
 /* TUTORIAL POPUP */
@@ -1270,7 +1272,8 @@ footer {
         bottom:0px;
         transition: 0.4s;
         padding: var(--padding_big);
-        background-color: var(--color);    
+        background-color: var(--color);
+        color: var(--bg);
         width:100%;
     }
     .navbar-box.show{
@@ -1340,8 +1343,10 @@ footer {
     .tag span{
         display: none;
     }
-    #tutorials_tag.down{
-        top: 103px;
+    .about_content_box{
+        height: 360px;
+        padding: var(--padding);
+        border-radius: var(--radius);
     }
 }
 @media (max-width: 599px) {
@@ -1356,11 +1361,11 @@ footer {
 }
 @media (max-width: 480px) {
     #header {
-        background-image:none;
-		background-color:var(--bg);
+        background-image:none!important;
+		background-color:var(--header)!important;
     }
     .header_title{
-        background-color: transparent;
+        background-color: transparent!important;
         box-shadow: none!important;
     }
     #carousel_portofolio{

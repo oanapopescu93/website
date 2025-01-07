@@ -42,6 +42,12 @@ function Navbar(props){
 		}
 		dispatch(changePopup(payload))
 	}
+
+	function handleScroll(place){
+		scroll_anywhere(place)
+		setMoveAway("")
+		setChange("")
+	}
 	
 	return <div id = "mynavbar" className="mynavbar">
 			<Container>
@@ -53,10 +59,10 @@ function Navbar(props){
 				</div>
 				<div className={"navbar-box 1 " + moveAway}>
 					<ul className="nav-left">
-						<li onClick={()=>scroll_anywhere("header")}><span><FontAwesomeIcon icon={faHouse} /></span></li>
-						<li onClick={()=>scroll_anywhere("about")}><span>{translate({lang: lang, info: "about"})}</span></li>
-						<li onClick={()=>scroll_anywhere("portofolio")}><span>{translate({lang: lang, info: "portofolio"})}</span></li>
-						<li onClick={()=>scroll_anywhere("contact")}><span>{translate({lang: lang, info: "contact"})}</span></li>						
+						<li onClick={()=>handleScroll("header")}><span><FontAwesomeIcon icon={faHouse} /></span></li>
+						<li onClick={()=>handleScroll("about")}><span>{translate({lang: lang, info: "about"})}</span></li>
+						<li onClick={()=>handleScroll("portofolio")}><span>{translate({lang: lang, info: "portofolio"})}</span></li>
+						<li onClick={()=>handleScroll("contact")}><span>{translate({lang: lang, info: "contact"})}</span></li>						
 					</ul>
 				</div>
 				<ul className="nav-right">
