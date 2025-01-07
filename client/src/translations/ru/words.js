@@ -149,7 +149,7 @@ var word_bank = {
     error: "Ошибка",
 
     cv: "CV",
-    tutorials: "Учебники",
+    tutorials: "Туториалы",
     all: "Все",
 
     type_your_message: "Введите ваше сообщение здесь...",

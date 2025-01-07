@@ -149,7 +149,7 @@ var word_bank = {
     error: "Fehler",
 
     cv: "Lebenslauf",
-    tutorials: "Tutorials",
+    tutorials: "Anleitungen",
     all: "Alle",
 
     type_your_message: "Geben Sie hier Ihre Nachricht ein...",

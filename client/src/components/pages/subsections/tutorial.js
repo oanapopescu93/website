@@ -32,7 +32,7 @@ function Tutorial(props){
         } else {
             setClosed('')
         }
-    }	
+    }
 	
 	return <div id="tutorials_tag" className={"tag_container " + closed + pos}>
 		<div className="tag_close shadow_convex" onClick={()=>{handleSlide()}}>x</div>
