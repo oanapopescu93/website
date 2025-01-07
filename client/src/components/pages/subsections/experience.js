@@ -37,7 +37,7 @@ function Experience(props) {
                                     <div className="job_body">
                                         {item.job_location ? <div className="job_location">
                                             <b>{translate({lang: lang, info: "location"})}: </b>
-                                            {item.job_location}
+                                            {translate({lang: lang, info: item.job_location})}
                                         </div> : null}
                                         {item.company_description ? <div className="company_description">
                                             <b>{translate({lang: lang, info: "company_profile"})}: </b>
