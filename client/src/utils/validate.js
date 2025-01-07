@@ -21,7 +21,7 @@ export const validateInput = (input="", type)=>{
         // // At least one digit, (?=.*?[0-9])
         // // At least one special character, (?=.*?[#?!@$%^&*-])
         // // Minimum eight in length .{8,}
-        // break
+        break
       default:
         regex = ''
         break
