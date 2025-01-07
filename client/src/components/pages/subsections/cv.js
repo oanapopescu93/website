@@ -17,7 +17,7 @@ function Cv(props){
             setClosed('')
         }
     }
-	
+    
     return <div id="cv_tag" className={"tag_container " + closed}>
         <div className="tag_close shadow_convex" onClick={()=>{handleSlide()}}>x</div>
         <div className="tag shadow_convex">            

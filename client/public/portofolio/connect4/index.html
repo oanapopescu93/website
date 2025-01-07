@@ -1,0 +1,58 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta http-equiv="content" content="text/html" charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="">
+        <meta name="spacing-bottom keywords" content="game, connect, four">
+        <meta name="author" content="Oana Popescu">
+        <meta name="copyright" content="2025. All rights reserved.">
+        <meta name="robots" content="follow, noarchive, nosnippet, notranslate"/>
+
+        <link rel="shortcut icon" type="image/ico" href="./img/logo.ico">
+        <link rel="apple-touch-icon" type="image/png" href="./img/logo.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="./img/logo.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="114x114" href="./img/logo.png">
+        <link rel="icon" type="image/png" href="./img/logo.png">
+
+        <title>Connect 4</title> 
+
+        <link href="./style.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div class="connect_4_container">
+            <header>
+                <img src="./img/logo.png" alt="connect_4_image" title="connect_4_image" />
+                <h1>Connect 4</h1>
+            </header>
+            <div class="connect_4_players" id="connect_4_players">
+                <div class="connect_4_players_box">
+                    <label for="player_1">Player 1</label>
+                    <input type="text" id="player_1" name="player_1" placeholder="Enter Player 1's name">
+                    <div class="connect_4_players_color accent01"></div>
+                </div>
+                <div class="connect_4_players_box">
+                    <label for="player_2">Player 2</label>
+                    <input type="text" id="player_2" name="player_2" placeholder="Enter Player 2's name">
+                    <div class="connect_4_players_color accent02"></div>
+                </div>
+                <button id="startButton" type="button" class="button_dark">Start game</button>
+            </div>
+            <div id="connect_4_game_container" class="connect_4_game_container">
+                <div class="connect_4_turn_container">
+                    <div id="connect_4_turn"></div>
+                </div>
+                <div class="connect_4_game" id="connect_4_game"></div>
+                <div id="restartButton_container" class="restartButton_container">
+                    <button id="restartButton" type="button" class="button_dark">Restart game</button>
+                </div>
+            </div>
+        </div>
+        <footer><h6>Copyright &copy; <span id="copyright_year"></span> Oana Popescu. All rights reserved.</h6></footer>
+    </body>
+</html>
+
+<script defer="defer" src="./script.js"></script>

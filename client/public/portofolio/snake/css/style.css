@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, address {
 }
 
 /*---------------------footer---------------------*/
-footer { 	
+footer {
     padding: 10px 0px;
     color:#5E5E3C;
 	position:absolute;

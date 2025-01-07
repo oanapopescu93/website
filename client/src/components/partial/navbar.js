@@ -43,14 +43,14 @@ function Navbar(props){
 		dispatch(changePopup(payload))
 	}
 	
-	return <div id = "mynavbar" className="mynavbar">			
-			<Container>	
+	return <div id = "mynavbar" className="mynavbar">
+			<Container>
 				<div id="menu" onClick={()=>handleMenu()}>
 					<span className="sr-only">Toggle navigation</span>
 					<span className={"bar1 " + change}></span>
 					<span className={"bar2 " + change}></span>
 					<span className={"bar3 " + change}></span>
-				</div>					
+				</div>
 				<div className={"navbar-box 1 " + moveAway}>
 					<ul className="nav-left">
 						<li onClick={()=>scroll_anywhere("header")}><span><FontAwesomeIcon icon={faHouse} /></span></li>
@@ -59,7 +59,7 @@ function Navbar(props){
 						<li onClick={()=>scroll_anywhere("contact")}><span>{translate({lang: lang, info: "contact"})}</span></li>						
 					</ul>
 				</div>
-				<ul className="nav-right">					
+				<ul className="nav-right">
 					<li>
 						<a href={myContact.linkedin} rel="noopener noreferrer" target="_blank">
 							<FontAwesomeIcon icon={faLinkedinIn} />
@@ -72,7 +72,7 @@ function Navbar(props){
 					</li>
 					<li onClick={()=>handleSettings()}><FontAwesomeIcon icon={faGear} /></li>
 				</ul>
-			</Container>		
+			</Container>
 	</div>
 }
 

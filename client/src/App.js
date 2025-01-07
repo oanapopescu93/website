@@ -12,7 +12,7 @@ const socket = io()
 
 function App(){
   	let my_console = function(){
-		let oldConsole = null	
+		let oldConsole = null
 		function enable(){
 			if(oldConsole == null) return
 			window['console']['log'] = oldConsole
@@ -29,14 +29,14 @@ function App(){
 	}()
 
   	useEffect(() => {
-		//my_console.disable()
-		socket.connect()		
+		my_console.disable()
+		socket.connect()
 		return () => {
 			socket.disconnect()
 		}
 	}, [])	
 
-  	setInterval(function(){		  
+  	setInterval(function(){ 
     	socket.emit('heartbeat', { data: "ping" })
   	}, 15000)
 

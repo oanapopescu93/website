@@ -1,0 +1,173 @@
+body{
+    background-color: #1b1931;
+    color: #21615a;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.connect_4_container{
+    width: 100%;
+    max-width: 600px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+    margin: 0px;
+}
+.accent01{
+    background-color: #21615a;
+}
+.accent02{
+    background-color: #a31233;
+}
+input{
+    border: solid 1px #d5d6d6;
+    background-color: #d5d6d6;
+    color: #424657;
+    border-radius: 5px;
+    height: 25px;
+}
+.button_dark, .button_light{
+    border-radius: 5px;
+    height: 30px;
+    width: 100%;
+    max-width: 150px;
+    padding: 5px 10px;
+    font-size: 16px;
+    line-height: 16px;
+    cursor: pointer;
+}
+.button_dark{
+    border: solid 1px #21615a;
+    background-color: #21615a;
+    color: #d5d6d6;
+}
+.button_light{
+    border: solid 1px #d5d6d6;
+    background-color: #d5d6d6;
+    color: #424657;
+}
+
+.connet_4_container{
+    text-align: center;
+    padding: 20px;
+}
+header{    
+    margin-bottom: 20px;
+}
+header img{
+    width: 100%;
+    max-width: 50px;
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+header h1{
+    font-size: 32px;
+    line-height: 32px;
+    display: inline-block;
+    vertical-align: middle;
+}
+footer{
+    text-align: center;
+    padding: 5px 10px;
+}
+
+.connect_4_players_box{
+    text-align: left;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+.connect_4_players_box label{
+    display: block;
+    margin-bottom: 5px;
+    color: #d5d6d6;
+}
+.connect_4_players_box input{
+    width: 100%;
+}
+.connect_4_players_color{
+    position: absolute;
+    z-index: 1;
+    top: 23px;
+    right: 0px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
+
+.connect_4_players{
+    display: block;
+    margin-bottom: 20px;
+}
+.connect_4_game_container{
+    display: none;
+}
+
+.connect_4_game{
+    margin: 0px auto;
+    display: inline-block;
+    border-radius: 10px;
+    border: solid 1px #d5d6d6;
+    padding: 5px;
+}
+.connect_4_turn_container{
+    border-bottom: solid 1px #d5d6d6;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#connect_4_turn{
+    display: inline-block;
+    background-color: #d5d6d6;
+    color: #424657;
+    border-radius: 5px 5px 0px 0px;
+    padding: 5px 10px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.connect_4_column{
+    display: inline-block;
+    vertical-align: top;
+    width: 40px;
+    padding: 3px;
+}
+.connect_4_column:hover{
+    background-color: rgba(213, 214, 214, 0.1);
+}
+.connect_4_cell{
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 3px;
+}
+.connect_4_dot{
+    width: 35px;
+    height: 35px;
+    border: solid 1px #d5d6d6;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.connect_4_cell.player1 .connect_4_dot{
+    background-color: #21615a;
+}
+.connect_4_cell.player2 .connect_4_dot{
+    background-color: #a31233;
+}
+.connect_4_cell.player1.winner .connect_4_dot{
+    background-color: #3bab9e;
+    border: solid 2px #d5d6d6;
+}
+.connect_4_cell.player2.winner .connect_4_dot{
+    background-color: #e8305b;
+    border: solid 2px #d5d6d6;
+}
+
+#restartButton_container{
+    display: none;
+    text-align: center;
+    padding: 0px 10px;
+    margin: 20px 0px;
+}

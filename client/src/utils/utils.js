@@ -6,7 +6,7 @@ export const isEmpty = (element)=>{
   return empty
 }
 
-export const formatDate = (date, format = 'd.m.Y H:i')=>{	//d.m.Y H:i, d-m-Y H:i, m/d/Y H:i, d-m-Y h:i A, m/d/Y h:i A
+export const formatDate = (date, format = 'd.m.Y H:i')=>{//d.m.Y H:i, d-m-Y H:i, m/d/Y H:i, d-m-Y h:i A, m/d/Y h:i A
   let d = new Date(date)
   const pad = (num) => (num < 10 ? '0' : '') + num // Helper function to pad numbers with leading zeros
 
@@ -201,7 +201,7 @@ export const scroll_anywhere = function(link){
 }
 
 export const handleChangeMode = (choice) => {
-	switch (choice) {
+  switch (choice) {
     case 'light':
       document.documentElement.style.setProperty('--bg', '#dedede')
       document.documentElement.style.setProperty('--color', '#333')

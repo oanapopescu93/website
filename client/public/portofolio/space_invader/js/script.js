@@ -13,7 +13,7 @@ $(document).ready(function() {
 });
 
 function canvas_game(canvas_id){
-	var self = this;	
+	var self = this;
 	var count_frame = 0;
 	var score = 0;
 	
@@ -32,14 +32,14 @@ function canvas_game(canvas_id){
 	var start_game = Date.now();
 	
 	var enemyList = [];
-	var foodList = [];	
-	var bulletList = [];	
+	var foodList = [];
+	var bulletList = [];
 	
 	var collision_width_food = false;
 	var collision_width_enemy = false;
 			
-	this.ready = function(){			
-		self.createCanvas(canvas_width, canvas_height);			
+	this.ready = function(){
+		self.createCanvas(canvas_width, canvas_height);
 		ctx.font = '30px Arial';
 		
 		for(i=0; i<3; i++){
@@ -95,7 +95,7 @@ function canvas_game(canvas_id){
 		var dir_x = 5 + Math.random() * 5;
 		var dir_y = 5 + Math.random() * 5;
 		var color = "red"
-		self.generate_enemy(id, x, y, dir_x, dir_y, width, height, color);			
+		self.generate_enemy(id, x, y, dir_x, dir_y, width, height, color);
 	}
 	
 	this.generate_food = function(id, x, y, dir_x, dir_y, w, h, color){
@@ -106,7 +106,7 @@ function canvas_game(canvas_id){
 		var food_dir_y = dir_y;
 		var food_w = w;
 		var food_h = h;
-		var food_color = color;			
+		var food_color = color;
 		
 		var food = {
 			x: food_x,
@@ -141,7 +141,7 @@ function canvas_game(canvas_id){
 		var bullet_dir_y = dir_y;
 		var bullet_w = w;
 		var bullet_h = h;
-		var bullet_color = color;			
+		var bullet_color = color;
 		
 		var bullet = {
 			x: bullet_x,
@@ -187,9 +187,8 @@ function canvas_game(canvas_id){
 		for(var i in enemyList){
 			self.update_entity(enemyList[i]);
 			var collision = self.test_collision_entities(player, enemyList[i]);
-			if(collision){	
+			if(collision){
 				collision_width_enemy = true;
-				//console.warn('collision_width_enemy', collision_width_enemy);	
 			} 
 		}
 		for(var i in foodList){
@@ -198,12 +197,11 @@ function canvas_game(canvas_id){
 			if(collision){
 				collision_width_food = true;
 				delete foodList[i];
-				//console.warn('collision_width_food', collision_width_food);	
 			} 
 		}
 		for(var i in bulletList){
 			self.update_entity(bulletList[i]);
-			for(var j in enemyList){					
+			for(var j in enemyList){
 				var collision = self.test_collision_entities(bulletList[i], enemyList[j]);
 				if(collision){
 					delete bulletList[i];
@@ -214,43 +212,37 @@ function canvas_game(canvas_id){
 		}
 		
 		if(count_frame % 4 == 0){
-			if(collision_width_enemy){						
-				//console.warn('collision_width_enemy', count_frame, collision_width_enemy);	
+			if(collision_width_enemy){
 				collision_width_enemy = false;
 				player.health--;
 			}
-			if(collision_width_food){						
-				//console.warn('collision_width_food', count_frame, collision_width_food);	
+			if(collision_width_food){
 				collision_width_food = false;
 				player.health++;
 				score = score + 10;
 				if(player.health > 10){
 					player.health = 10;
-				}					
-			}				
+				}
+			}
 		}
-		
-		
-		
-		if(player.health <= 0){						
-			var time_survived = (Date.now() - start_game)/1000;
-			//console.warn("LOST ", time_survived);
+
+		if(player.health <= 0){
 			self.resetGame();
 		}
 				
 		self.draw_entity(player);
 		ctx.font = '12px Arial';
-		ctx.fillStyle = "white";			
+		ctx.fillStyle = "white";
 		ctx.fillText('Health: ' + player.health, 5, 20);
 		ctx.fillText('Score: ' + score, 430, 20);
 	}		
 	this.update_entity = function(entity){
 		self.update_entity_position(entity);
-		self.draw_entity(entity);			
+		self.draw_entity(entity);
 	}	
-	this.update_entity_position = function(entity){		
+	this.update_entity_position = function(entity){
 		entity.x = entity.x + entity.dir_x;
-		entity.y = entity.y + entity.dir_y;	
+		entity.y = entity.y + entity.dir_y;
 
 		if(entity.name != "B"){
 			if(entity.x < 0 || entity.x > canvas_width){
@@ -264,7 +256,7 @@ function canvas_game(canvas_id){
 	}
 	
 	this.resetGame = function(){
-		player.health = 10;	
+		player.health = 10;
 		start_game = Date.now();
 		count_frame = 0;
 		score = 0;
@@ -273,14 +265,13 @@ function canvas_game(canvas_id){
 		bulletList = [];
 		
 		for(i=0; i<3; i++){
-			self.generate_enemy_random();				
+			self.generate_enemy_random();
 		}
 		self.generate_food_random();
 	}
 	
 	this.draw_entity = function(entity){
 		ctx.fillStyle = entity.color;
-		//ctx.fillText(entity.name, entity.x, entity.y);
 		ctx.fillRect(entity.x-entity.width/2, entity.y-entity.height/2, entity.width, entity.height);
 		ctx.fillStyle = "black";
 	}
@@ -306,7 +297,7 @@ function canvas_game(canvas_id){
 		}
 		return self.collision_entities(rect01, rect02);
 	}
-	this.collision_entities = function(rect01, rect02){	
+	this.collision_entities = function(rect01, rect02){
 		var cond01 = rect01.x <= rect02.x + rect02.width;
 		var cond02 = rect01.y <= rect02.y + rect02.height;
 		var cond03 = rect02.x <= rect01.x + rect01.width;
@@ -323,16 +314,16 @@ function canvas_game(canvas_id){
 			var mouse_x = mouse.clientX - left;
 			var mouse_y = mouse.clientY - top;
 			
-			if(mouse_x < player.width/2){									
+			if(mouse_x < player.width/2){
 				mouse_x = player.width/2;
 			}
-			if(mouse_y < player.height/2){									
+			if(mouse_y < player.height/2){
 				mouse_y = player.height/2;
 			}
-			if(mouse_x > canvas_width - player.width/2){									
+			if(mouse_x > canvas_width - player.width/2){
 				mouse_x = canvas_width - player.width/2;
 			}
-			if(mouse_y > canvas_height - player.height/2){									
+			if(mouse_y > canvas_height - player.height/2){
 				mouse_y = canvas_height - player.height/2;
 			}
 			

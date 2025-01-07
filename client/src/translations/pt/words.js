@@ -114,6 +114,7 @@ var word_bank = {
     portofolio_title17: "Jogo da cobra",
     portofolio_title18: "Space Invaders",
     portofolio_title19: "Jogo dos verbos irregulares",
+    portofolio_title20: "Connect 4",
 
     portofolio_description01: "Uma plataforma de gerenciamento de frota construída com React, Redux e DevExtreme, integrando o Leaflet para mapas e NodeJS para os serviços de back-end.",
     portofolio_description02: "Um jogo de cassino online com React e NodeJS, utilizando Socket.IO para interações em tempo real, MySQL para gerenciamento de dados e HTML Canvas para componentes visuais.",

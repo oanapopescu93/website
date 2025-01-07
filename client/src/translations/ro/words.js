@@ -114,6 +114,7 @@ var word_bank = {
     portofolio_title17: "Jocul șarpelui",
     portofolio_title18: "Space Invaders",
     portofolio_title19: "Joc de întrebări despre verbele neregulate",
+    portofolio_title20: "Connect 4",
 
     portofolio_description01: "O platformă de gestionare a flotelor construită cu React, Redux și DevExtreme, integrând Leaflet pentru hărți și NodeJS pentru serviciile back-end.",
     portofolio_description02: "Un joc de cazino online cu React și NodeJS, utilizând Socket.IO pentru interacțiuni în timp real, MySQL pentru gestionarea datelor și HTML Canvas pentru componente vizuale.",

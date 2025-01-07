@@ -2,31 +2,13 @@ var nodemailer = require('nodemailer')
 var constants = require('../var/constants')
 
 const transports = {
-    // gmail: nodemailer.createTransport({
-    //     host: 'smtp.gmail.com',
-    //     port: 587,
-    //     secure: false,
-    //     auth: {
-    //         user: constants.GMAIL_USER,
-    //         pass: constants.GMAIL_PASS
-    //     }
-    // }),
-    // yahoo: nodemailer.createTransport({
-    //     host: 'smtp.mail.yahoo.com',
-    //     port: 465,
-    //     secure: true,
-    //     auth: {
-    //         user: constants.YAHOO_USER,
-    //         pass: constants.YAHOO_PASS
-    //     }
-    // }),
     default: nodemailer.createTransport({
         host: "smtp.mailtrap.io",
-		port: 2525,
-		auth: {
-			user: constants.AUTH_USER,
-			pass: constants.AUTH_PASS
-		}
+        port: 2525,
+        auth: {
+            user: constants.AUTH_USER,
+            pass: constants.AUTH_PASS
+        }
     })
 }
 
@@ -46,15 +28,15 @@ function getTransport(email) {
 }
 
 function sendEmail(reason, e){
-	return new Promise((resolve, reject)=>{
-		if(!e.email){
-			resolve({send: "email_no_send"})
-		}
-		let email = e.email
-		const transport = getTransport(email)
-
-		let subject = ''
-		let html = ''
+    return new Promise((resolve, reject)=>{
+        if(!e.email){
+            resolve({send: "email_no_send"})
+        }
+        let email = e.email
+        const transport = getTransport(email)
+        
+        let subject = ''
+        let html = ''
         let success_message = "email_send"
         switch (reason) {            
             case "contact":
@@ -64,26 +46,26 @@ function sendEmail(reason, e){
                 }
                 html = html + "<p><b>Message: </b> " + e.message + "</p>"
                 success_message = "email_send"
-        }			
-
-		let mailOptions = {
-			from: constants.AUTH_FROM,
-			to: email,
-			subject: subject,
-			html: html
-		}
+        }
         
-		transport.sendMail(mailOptions, (error, info)=>{
-			if (error) {
-			    console.log('error--> ', error, mailOptions)
-				resolve({send: "email_no_send"})
-			} else {
-				resolve({send: success_message})
-			}
-		})
+        let mailOptions = {
+            from: constants.AUTH_FROM,
+            to: email,
+            subject: subject,
+            html: html
+        }
+        
+        transport.sendMail(mailOptions, (error, info)=>{
+            if (error) {
+                console.log('error--> ', error, mailOptions)
+                resolve({send: "email_no_send"})
+            } else {
+                resolve({send: success_message})
+            }
+        })
     })
 }
 
 module.exports = {
-	sendEmail,
+    sendEmail,
 }

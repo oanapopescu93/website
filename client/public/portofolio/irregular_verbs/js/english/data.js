@@ -29,7 +29,7 @@ var verbs = [
 	
 	{id: "F", first_form: "fall", second_form: "fell", third_form: "fallen", translate: "a cadea"},
 	{id: "F", first_form: "feel", second_form: "felt", third_form: "felt", translate: "a simti"},
-	{id: "F", first_form: "feed", second_form: "fed", third_form: "fed", translate: "a hrani"},	
+	{id: "F", first_form: "feed", second_form: "fed", third_form: "fed", translate: "a hrani"},
 	{id: "F", first_form: "fight", second_form: "fought", third_form: "fought", translate: "a lupta"},
 	{id: "F", first_form: "find", second_form: "found", third_form: "found", translate: "a gasi"},
 	{id: "F", first_form: "fly", second_form: "flew", third_form: "flown", translate: "a zbura"},

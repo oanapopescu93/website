@@ -114,6 +114,7 @@ var word_bank = {
     portofolio_title17: "贪吃蛇游戏",
     portofolio_title18: "太空侵略者",
     portofolio_title19: "不规则动词游戏",
+    portofolio_title20: "Connect 4",
 
     portofolio_description01: "一个使用 React，Redux 和 DevExtreme 构建的车队管理平台，集成 Leaflet 用于地图，并使用 NodeJS 提供后端服务。",
     portofolio_description02: "一个在线赌场游戏，基于 React 和 NodeJS，使用 Socket.IO 实时交互，MySQL 管理数据，HTML Canvas 提供可视化组件。",

@@ -19,11 +19,11 @@ function Page(props) {
     let dispatch = useDispatch()
 
     useEffect(() => {
-		dispatch(bringPayload())
-		setInterval(function () {		  
+        dispatch(bringPayload())
+        setInterval(function () {  
             socket.emit('heartbeat', { data: "ping" })
         }, 15000)
-	}, [])
+    }, [])
 
     useEffect(() => {
         const handleLoginRead = (data)=>{
@@ -39,9 +39,9 @@ function Page(props) {
                 }
                 dispatch(changePopup(payload))
             }
-        }        
-		socket.on('login_read', handleLoginRead)
-		return () => {
+        }
+        socket.on('login_read', handleLoginRead)
+        return () => {
             socket.off('login_read', handleLoginRead)
         }
     }, [socket])
@@ -53,16 +53,16 @@ function Page(props) {
 
     return <>    
         {(() => {
-			if(!isEmpty(user.uuid)){
-				if(home && home.loaded){
+            if(!isEmpty(user.uuid)){
+                if(home && home.loaded){
                     return <Home {...props} home={home} user={user} settings={settings} />
                 } else {
                     return <Loader />
                 }
-			} else {
-				return <LoginPage {...props} settings={settings} />
-			}
-		})()}
+            } else {
+                return <LoginPage {...props} settings={settings} />
+            }
+        })()}
         <Popup {...props} home={home} settings={settings} page={page} />
     </>
 }

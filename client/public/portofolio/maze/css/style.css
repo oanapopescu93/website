@@ -149,7 +149,7 @@ body{
 	left:0px;
 	right:0px;
 	width:100%;
-	background:var(--transparent_7);	
+	background:var(--transparent_7);
 	z-index:9999;
 	visibility: visible;
 }
@@ -177,7 +177,7 @@ body{
 }
 .button_icon{
 	border:solid 1px transparent;
-	padding:0px;	
+	padding:0px;
 	text-align:center;
 	font-size:40px;
 	line-height:36px;

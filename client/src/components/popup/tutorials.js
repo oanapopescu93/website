@@ -3,33 +3,36 @@ import { translate } from '../../translations/translate'
 import { Row, Col } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import Dropdown from 'react-bootstrap/Dropdown'
+import DropdownButton from 'react-bootstrap/DropdownButton'
 
 function Tutorials(props){
     const {home, settings} = props
     const {lang} = settings
 
     const [tutorials, setTutorials] = useState(home.tutorials)
-	const [tutorialHeader, setTutorialHeader] = useState([translate({lang: lang, info: "all"})])	
-    const [active, setActive] = useState(0)	
+	const [tutorialHeader, setTutorialHeader] = useState([translate({lang: lang, info: "all"})])
+    const [titleHeader, setTitleHeader] = useState(tutorialHeader[0])
 
     useEffect(() => {
 		let tutorial_header = [translate({lang: lang, info: "all"})]
 		for(let i in tutorials){
 			if(!tutorial_header.includes(tutorials[i].type)){
 				tutorial_header.push(tutorials[i].type)
-			}	
+			}
 		}
 		setTutorialHeader(tutorial_header)
 	}, [])
 
-    function handleTutorialClick(index, type){	
-        setActive(index)
+    function handleTutorialClick(type){
+        setTitleHeader(type)
 		switch (type) {
 			case "javascript":
 			case "react":
 			case "node":
 			case "python":
-			case "embedded c":
+            case "embedded c":
+            case "c++":
 				const my_tutorials = home.tutorials.filter((x) => x.type === type)
 				setTutorials(my_tutorials)
 				break
@@ -40,14 +43,13 @@ function Tutorials(props){
     
     return <>
         <div id="tutorial_header_container">
-            {(() => {
-                return <>
-                    {tutorialHeader.map(function(item, i){
-                        const style = active === i ? 'active' : '';  
-                        return <div key={i} className={style} id={item} onClick={()=>{handleTutorialClick(i, item)}}>{item}</div>
-                    })}
-                </>					
-            })()}
+            <DropdownButton title={titleHeader} id="language_button" onSelect={handleTutorialClick}>
+                {tutorialHeader.map(function(item, i){
+                    return <Dropdown.Item key={i} eventKey={item}>
+                        <span>{item}</span>
+                    </Dropdown.Item>                        
+                })}
+            </DropdownButton>
         </div>
         <div id="tutorial_box_container">
             {(() => {

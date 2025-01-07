@@ -42,10 +42,10 @@ io.on('connection', function(socket) {
     } catch (e){
       console.log('[error]','login_read :', e)
     }
-	})
+  })
   socket.on('heartbeat', function(data) {
-		console.log('heartbeat', data)
-	})
+    console.log('heartbeat', data)
+  })
   socket.on('disconnect', function() {  
     console.log('Got disconnect!')
   })

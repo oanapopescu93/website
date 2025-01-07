@@ -1,5 +1,5 @@
 function cardGame(title){
-    var self = this;	
+    var self = this;
 	var cards = $('.mycard');
 	var game = new MixandMatch(100, cards);
 	var nr = ['01', '02', '03', '04', '05', '06', '07', '08'];
@@ -11,9 +11,8 @@ function cardGame(title){
 		
 		$(".overlay_text_small").click(function(){
 			game.startGame();
-			game.suffleCards($('.mycard'));			
-		});	
-			
+			game.suffleCards($('.mycard'));
+		});
 		
 		$('body').on('click', '.mycard', function (e) {
 			game.flipCard($(e.currentTarget));
@@ -44,7 +43,7 @@ function cardGame(title){
 				k = k + 1;
 				if(k > 7){k = 0;}
 				$('.card_row').last().find('.mycard').last().find('.card-front').append('<img src="img/img'+nr[k]+'.png" class="spider">');
-			}			
+			}
 		}
 	}
 	 
@@ -58,7 +57,7 @@ function MixandMatch(totalTime, cards) {
 	this.timeRemaining = totalTime;
 	this.timer = $('#timer span');
 	this.flips = $('#flips span');
-	var downloadTimer;	
+	var downloadTimer;
 	
 	this.startGame = function(){
 		$('#overlay').addClass('closed');
@@ -72,7 +71,7 @@ function MixandMatch(totalTime, cards) {
 		timerGame();
 	};
 	
-	function timerGame(){		
+	function timerGame(){
 		
 		downloadTimer = setInterval(function(){
 		  self.timeRemaining = self.timeRemaining - 1;
@@ -85,12 +84,12 @@ function MixandMatch(totalTime, cards) {
 	}
 	
 	this.flipCard = function(card){
-		if(canflipCard(card)){	
+		if(canflipCard(card)){
 
 			switch($('.clicked').length) {
 				case 0:
 					card.addClass('clicked');
-					break;				
+					break;
 				case 1:
 					card.addClass('clicked');
 					
@@ -109,10 +108,10 @@ function MixandMatch(totalTime, cards) {
 						} else {
 							$('.clicked').removeClass('clicked');
 						}	
-					}, 1000);					
+					}, 1000);
 					
 					
-					break;				
+					break;
 			}		
 			
 		
@@ -124,9 +123,9 @@ function MixandMatch(totalTime, cards) {
 	function canflipCard(card){
 		if(card.hasClass('clicked')){
 			return false;
-		} else {			
+		} else {
 			return true;
-		}		
+		}
 	}
 	
 	function WinGame(){
@@ -148,7 +147,7 @@ function MixandMatch(totalTime, cards) {
 		var x, j;
 		
 		for (var i = cards.length - 1; i > 0; i--) {
-			j = Math.floor(Math.random() * (i + 1));			
+			j = Math.floor(Math.random() * (i + 1));
 			x = cards.eq(i).html();
 			cards.eq(i).html(cards.eq(j).html());
 			cards.eq(j).html(x);

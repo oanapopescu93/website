@@ -5,12 +5,12 @@ $(document).ready(function(){
 
 function irregular_verbs_game(id){
 	var self = this;
-    var title = "English";	
-	this.ready = function(){	
-		self.main_structure(id);		
-		$('body').off('click').on('click', '.quiz_verb_group li', function (e) {	
-			var quiz = new quiz_game("irregular_verbs_game_english");	
-			quiz.ready($(e.currentTarget));	
+    var title = "English";
+	this.ready = function(){
+		self.main_structure(id);
+		$('body').off('click').on('click', '.quiz_verb_group li', function (e) {
+			var quiz = new quiz_game("irregular_verbs_game_english");
+			quiz.ready($(e.currentTarget));
 		});
 	}	
 	this.main_structure = function(id){
@@ -27,24 +27,24 @@ function quiz_game(id){
 	var result_answers = [];
 	var score = 0;
 	
-	this.ready = function(elem){		
+	this.ready = function(elem){
 		self.generate_group_quiz(elem);
 	}
 	
-	this.generate_group_quiz = function(elem){		
+	this.generate_group_quiz = function(elem){
 		var str = elem.text();
-		var letters = str.split(", ");		
+		var letters = str.split(", ");
 		verb_group = [];
-		for(var i in letters){			
+		for(var i in letters){
 			for(var j in verbs){
 				if(verbs[j].id == letters[i]){
 					verb_group.push(verbs[j]);
-				}				
+				}
 			}
 		}
 		
 		if(verb_group.length > 0){
-			$("#"+ id + ' .quiz_verb_group_container').empty();	
+			$("#"+ id + ' .quiz_verb_group_container').empty();
 			$('#'+id+' .quiz_verb_group_container').append('<div class="row"><div id="first_form" class="col-sm-3 box_answer"><p class="text-center">'+verb_group[0].first_form+'</p></div><div id="second_form" class="col-sm-3 box_answer"><input class="text-center" type="text"></input></div><div id="third_form" class="col-sm-3 box_answer"><input class="text-center" type="text"></input></div><div id="translate" class="col-sm-3 box_answer"><input class="text-center" type="text"></input></div></div>');
 			$('#'+id+' .quiz_verb_group_container').append('<div class="row"><div class="col-sm-12"><button class="button_green" id="check">Check</button></div></div>');
 			$('#'+id+' .quiz_verb_group_container').append('<div class="row"><div id="result" class="col-sm-12 text-center"></div>');
@@ -58,7 +58,7 @@ function quiz_game(id){
 		}
 	}
 	
-	this.box_answer_click = function(box_answer){			
+	this.box_answer_click = function(box_answer){
 		self.verify_answer(question_nr);
 	}
 	
@@ -70,7 +70,7 @@ function quiz_game(id){
 		var form01 = verb_group[nr].second_form;
 		var form02 = verb_group[nr].third_form;
 		var translate = verb_group[nr].translate;
-		var form03 = translate.split(", ");		
+		var form03 = translate.split(", ");
 		var myanswer = {};
 		
 		if(form01 != myform01 || form02 != myform02 || !form03.includes(myform03)){
@@ -92,7 +92,7 @@ function quiz_game(id){
 					$('#'+id+' #result').append('<p>Traducerea e gresite</p>');
 					$('#translate').append('<p class="text-center">'+translate+'</p>');
 				}
-			}			
+			}
 			
 			myanswer.form00 = verb_group[nr].first_form;
 			myanswer.form01 = verb_group[nr].second_form;
@@ -113,19 +113,19 @@ function quiz_game(id){
 				myanswer.myform03 = myform03;
 			} else {
 				myanswer.myform03 = "-";
-			}			
+			}
 			result_answers.push(myanswer);
 		} else {
-			$('#'+id+' #result').append('<p>Raspuns corect!</p>');			
+			$('#'+id+' #result').append('<p>Raspuns corect!</p>');
 			score++;
 		}
 		
 		$('#check').parent().parent().remove();
 		$('#'+id+' .quiz_verb_group_container').append('<div class="row"><div class="col-sm-12"><button class="button_green" id="next_question">Next question</button></div></div>');
 		
-		$('body').off('click').on('click', '#next_question', function (e) {	
+		$('body').off('click').on('click', '#next_question', function (e) {
 			question_nr = question_nr + 1;
-			if(question_nr < verb_group.length){			
+			if(question_nr < verb_group.length){
 				self.next_question(question_nr);
 			} else {
 				self.finish_quiz();
@@ -133,11 +133,11 @@ function quiz_game(id){
 		});
 	}
 	
-	this.next_question = function(nr){	
+	this.next_question = function(nr){
 		$('#'+id+' .quiz_verb_group_container').empty();
 		$('#'+id+' .quiz_verb_group_container').append('<div class="row"><div id="first_form" class="col-sm-3 box_answer"><p class="text-center">'+verb_group[nr].first_form+'</p></div><div id="second_form" class="col-sm-3 box_answer"><input class="text-center" type="text"></input></div><div id="third_form" class="col-sm-3 box_answer"><input class="text-center" type="text"></input></div><div id="translate" class="col-sm-3 box_answer"><input class="text-center" type="text"></input></div></div>');
 		$('#'+id+' .quiz_verb_group_container').append('<div class="row"><div class="col-sm-12"><button class="button_green" id="check">Check</button></div></div>');
-		$('#'+id+' .quiz_verb_group_container').append('<div class="row"><div id="result" class="col-sm-12 text-center"></div>');		
+		$('#'+id+' .quiz_verb_group_container').append('<div class="row"><div id="result" class="col-sm-12 text-center"></div>');
 	}
 	
 	this.finish_quiz = function(){
@@ -162,7 +162,7 @@ function quiz_game(id){
 			
 		$('#'+id).off('click').on('click', '#try_again', function (e) {
 			var game = new irregular_verbs_game("irregular_verbs_game_english");
-			game.ready();	
+			game.ready();
 		});
 	}
 	

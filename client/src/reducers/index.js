@@ -6,9 +6,9 @@ import pageReducer from './page'
 import popupReducer from './popup'
 import settingsReducer from './settings'
 
-const allReducers = combineReducers({	
+const allReducers = combineReducers({
 	auth: authReducer,
-	home: homeReducer,	
+	home: homeReducer,
 	page: pageReducer,
 	popup: popupReducer,
 	settings: settingsReducer

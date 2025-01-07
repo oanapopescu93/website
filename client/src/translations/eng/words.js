@@ -114,6 +114,7 @@ var word_bank = {
     portofolio_title17: "Snake game",
     portofolio_title18: "Space Invaders",
     portofolio_title19: "Irregular verbs quiz game",
+    portofolio_title20: "Connect 4",
 
     portofolio_description01: "A fleet management platform built with React, Redux, and DevExtreme, integrating Leaflet for mapping and NodeJS for backend services.",
     portofolio_description02: "An online casino game using React and NodeJS, featuring Socket.IO for real-time interactions, MySQL for data management, and HTML Canvas for visual components.",

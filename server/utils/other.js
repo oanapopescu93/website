@@ -5,7 +5,7 @@ function sort_array_obj(array, sort_by){
 	switch (typeof sort_by) {
 		case 'string': // sort array of objects
 			while (!sorted){
-				sorted = true				
+				sorted = true
 				for(let i=0; i<array.length-1; i++){
 					if (array[i][sort_by] > array[i+1][sort_by]) {
 						let t = array[i+1]
@@ -14,7 +14,7 @@ function sort_array_obj(array, sort_by){
 						sorted = false
 					  }
 				}
-			}			
+			}
 			break
 		case 'undefined': // sort a simple array
 			while (!sorted){
@@ -28,9 +28,9 @@ function sort_array_obj(array, sort_by){
 					  }
 				}
 			}
-			break			
+			break
 	}
-  	return array
+	return array
 }
 function get_device(headers){
 	let device = 0 // 0 = computer, 1 = mobile, 2 = other
@@ -57,7 +57,7 @@ function check_streak(result){
 
 	for(let i = 0; i < result.length-1; i++){
 		let date01 = new Date(parseInt(result[i].login_date))
-		var day01 = date01.getDate()			
+		var day01 = date01.getDate()
 		let date02 = new Date(parseInt(result[i+1].login_date))
 		var day02 = date02.getDate()
 		let period = parseInt(result[i+1].login_date)-parseInt(result[i].login_date)
@@ -83,7 +83,7 @@ function get_extra_data(){
 	return new Promise((resolve, reject)=>{
 		let url = get_geolocation('3b154170258741fb81976e7f34d61938')
 		axios.get(url).then(response => {
-			resolve(response)	
+			resolve(response)
 		}).catch(error => {
 			console.log('get_extra_data_error--> ', error)
 			resolve(false)
@@ -98,7 +98,7 @@ function get_exchangerate(){
 	return new Promise((resolve, reject)=>{
 		let url = get_exchangerate_api('3e2179a6f6b4ea34c973f0d5')
 		axios.get(url).then(response => {
-			resolve(response)	
+			resolve(response)
 		}).catch(error => {
 			console.log('get_exchangerate_error--> ', error)
 			resolve(false)

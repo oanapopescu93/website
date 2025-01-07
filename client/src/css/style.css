@@ -1110,33 +1110,6 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
 }
 
 /* TUTORIAL POPUP */
-#tutorial_header_container{
-    border-bottom:solid 1px var(--color);
-    height: 30px;
-}
-#tutorial_header_container div{
-    display:inline-block;
-    width:16.66%;
-    height: 30px;
-    border:solid 1px var(--color);
-    color:var(--color);
-    padding: var(--padding_small) var(--padding);
-    border-radius: var(--padding) var(--padding) 0px 0px;
-    cursor: pointer;
-    font-size: 12px;
-    margin-bottom:-1px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-#tutorial_header_container div.active{
-    border:solid 1px var(--accent);
-    color:var(--accent);
-}
-#tutorial_header_container div:hover, #tutorial_header_container div:active, #tutorial_header_container div:focus{
-    border:solid 1px var(--accent);
-    color:var(--accent);
-}
 #tutorial_box_container{
 	height: 230px;
     overflow-x: hidden;

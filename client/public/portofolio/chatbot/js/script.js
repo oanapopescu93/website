@@ -4,7 +4,7 @@ $(document).ready(function(){
 });
 
 function website(){
-	var self = this;	
+	var self = this;
 	var chatbot_name = "Oana";
 	var titles = [];
 	var errors = 0
@@ -32,29 +32,29 @@ function website(){
 		$('body').off('click', '.chatbot_button_options').on('click', '.chatbot_button_options', function () {
 			var ready = $(this).attr('ready');
 			if(ready == 'yes'){
-				var option = $(this).attr('option').replace(/_/g, ' ');			
-				var search_word = $(this).attr('result');	
+				var option = $(this).attr('option').replace(/_/g, ' ');
+				var search_word = $(this).attr('result');
 				$(".chatbot_input").prop('disabled', false);  
 				$("#chatbot_button").prop('disabled', false); 
 				$(this).parent().find('.talk_contact_yes').attr('ready', 'no');
 				$(this).parent().find('.talk_contact_no').attr('ready', 'no');
-				wait_reply(3).then(function(data) {			
+				wait_reply(3).then(function(data) {
 					write_reply(option, search_word);
-				});	
+				});
 			}
 		});
 	}
 	
-	this.chat_send_text = function(text){	
+	this.chat_send_text = function(text){
 		$('input').blur();
 		$('#chatbot_input').val('');
 		$('#chatbot_textarea').append('<div class="text_chat"><div class="text_me"><p><b>Me:</b></p><p>'+text+'</p></div><div>');
-		wait_reply(6).then(function(data) {			
+		wait_reply(6).then(function(data) {
 			write_reply(text);
-		});	
+		});
 	}
 	
-	function get_title_knowledgeBase(){		
+	function get_title_knowledgeBase(){
 		for(var i in knowledgeBase){
 			titles.push(knowledgeBase[i][0]);
 		}
@@ -63,10 +63,10 @@ function website(){
 		
 	function get_bigrams(string){
 		var s = string.toLowerCase();
-		var v = [];	
-		var res = "";		
+		var v = [];
+		var res = "";
 		
-		for (var i=0; i<s.length-1; i++){		
+		for (var i=0; i<s.length-1; i++){
 			var res = s[i].concat(s[i+1]);
 			v.push(res);
 		}
@@ -112,7 +112,7 @@ function website(){
 		
 		for(var i in titles){
 			for(var j in titles[i]){
-				title = titles[i][j];			
+				title = titles[i][j];
 				relevance = string_similarity(search, title);
 				obj = {title: title, relevance: relevance, i: i};
 				results.push(obj);
@@ -141,19 +141,19 @@ function website(){
 	}
 	
 	function wait_reply(x){
-		return new Promise(function(resolve, reject){			
+		return new Promise(function(resolve, reject){
 			$('#chatbot_textarea').append('<div id="wait_container" class="text_chat"><div class="text_oana"><p><b>Oana:</b></p><p id="wait"></p></div></div>');
 			$("#chatbot_textarea").scrollTop($("#chatbot_textarea")[0].scrollHeight);
 			
 			var i = 0;
 			var j = 0;
 			var Wait = setInterval(function() {
-				i = ++i % 4;											
+				i = ++i % 4;
 				$("#wait").html("Typing"+Array(i+1).join("."));
 				
-				j++	
+				j++
 				if(j > x){
-					clearInterval(Wait);					
+					clearInterval(Wait);
 					$("#wait_container").remove();
 					resolve(true);
 				}
@@ -162,37 +162,37 @@ function website(){
 	}
 
 	function write_reply(search, search_word){
-		return new Promise(function(resolve, reject){			
+		return new Promise(function(resolve, reject){
 			var chatbot_text = self.refreshSearch(search)
 			var text_list_found = chatbot_text.includes("///");
 			if(text_list_found){
 				var text_list = chatbot_text.split('///')
 				for(var i in text_list){
-					if(i == 0){	
+					if(i == 0){
 						$('#chatbot_textarea').append('<div class="text_chat"><div class="text_oana"><p><b>'+chatbot_name+':</b></p><p>'+text_list[i]+'</p></div><div>');	
 					} else {
 						$('#chatbot_textarea').append('<div class="text_chat"><div class="text_oana"><p>'+text_list[i]+'</p></div><div>');
-					}					
+					}
 				}
 				check_special = text_list[text_list.length-1];
 			} else {
-				if(typeof search_word != "undefined" && search_word != ""){	
+				if(typeof search_word != "undefined" && search_word != ""){
 					var q = search_word.split(' ').join('+')
 					var google_search = "https://google.com/search?q="+q;
 					$('#chatbot_textarea').append('<div class="text_chat"><div class="text_oana"><p><b>'+chatbot_name+':</b></p><p>'+chatbot_text+' <a target="_blank" href="'+google_search+'">'+q+'</a></p></div><div>');
 				} else {
 					$('#chatbot_textarea').append('<div class="text_chat"><div class="text_oana"><p><b>'+chatbot_name+':</b></p><p>'+chatbot_text+'</p></div><div>');
-				}				
+				}
 				
 				check_special = chatbot_text;
 			}
 			$(".chatbot_input").prop('disabled', false);  
-			$("#chatbot_button").prop('disabled', false);	
-			$("#chatbot_textarea").scrollTop($("#chatbot_textarea")[0].scrollHeight);			
+			$("#chatbot_button").prop('disabled', false);
+			$("#chatbot_textarea").scrollTop($("#chatbot_textarea")[0].scrollHeight);
 
 			if(typeof check_special != "undefined"){
 				self.check_special_questions(check_special, search, search_word);
-			}			
+			}
 			
 			var objDiv = document.getElementById("chatbot_textarea");
 			objDiv.scrollTop = objDiv.scrollHeight;
@@ -220,7 +220,7 @@ function website(){
 					chat_options = "<div ready='yes' option='talk_overview_yes' class='chatbot_button_options'>Yes</div><div ready='yes' option='talk_overview_no' class='chatbot_button_options'>No</div>"
 					$(".chatbot_input").prop('disabled', true); 
 					$("#chatbot_button").prop('disabled', true); 
-					break;		
+					break;
 				case "Would you like to contact me?":
 					chat_options = "<div ready='yes' option='talk_contact_yes' class='chatbot_button_options'>Yes</div><div ready='yes' option='talk_contact_no' class='chatbot_button_options'>No</div>"
 					$(".chatbot_input").prop('disabled', true); 
@@ -234,7 +234,7 @@ function website(){
 	
 	function footer_time(){
 		var date = new Date();
-		date = date.getFullYear();		
+		date = date.getFullYear();
 		$('#copyright_year').text(date);
 	}
 }

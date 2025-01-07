@@ -27,7 +27,7 @@ h2{
 	padding-top:20px;
 	padding-bottom:20px;
 }
-.mycard{	
+.mycard{
 	height: 175px;
     width: 125px;
     display: inline-block;
@@ -39,7 +39,7 @@ h2{
 	position:relative;
 	text-align:center;
 	height:100%;
-	backface-visibility:hidden;	
+	backface-visibility:hidden;
 	border-radius:15px;
 	overflow:hidden;
 	transition: transform 0.5s ease-in-out;
@@ -128,7 +128,7 @@ h2{
 	display:none;
 }
 .overlay_text{
-	margin:auto;	
+	margin:auto;
 }
 .overlay_text h5{
 	color: #FF6D00;
@@ -151,7 +151,7 @@ footer ~ div {
 }
 
 @media (max-width: 767px) {
-    .mycard{	
+    .mycard{
 		height: 140px;
 		width: 90px;
 	}
@@ -198,7 +198,7 @@ footer ~ div {
 	.card_info{
 		margin-bottom:10px;
 	}
-    .mycard{	
+    .mycard{
 		height: 100px;
 		width: 65px;
 	}
@@ -244,7 +244,7 @@ footer ~ div {
 		font-size:10px;
 		line-height:10px;
 	}
-    .mycard{	
+    .mycard{
 		height: 90px;
 		width: 58px;
 	}

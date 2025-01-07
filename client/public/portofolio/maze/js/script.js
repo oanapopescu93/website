@@ -17,7 +17,7 @@ var myAnswer = false
 
 $(document).ready(() => {
 	$('#hidden_box').hide()
-	$('body').off('click').on('click', '#button_maze_start', (e) => {	
+	$('body').off('click').on('click', '#button_maze_start', (e) => {
 		if($('#button_maze_select').val() == ""){
 			alert('Please choose a level')
 		} else {
@@ -26,7 +26,7 @@ $(document).ready(() => {
 				$("#maze_container div canvas").remove()
 			} 
 			game = new mazeGame()
-			game.ready()		
+			game.ready()
 		}		
 	})
 })
@@ -63,7 +63,7 @@ function mazeGame(){
 		}
 	}
 	
-	this.main_structure = () => {	
+	this.main_structure = () => {
 		$("#maze_container div").append('<canvas id="myCanvas">Your browser does not support the HTML5 canvas tag.</canvas>')
 		$('#hidden_box').show()
 		switch($('#button_maze_select').val()) {
@@ -79,12 +79,12 @@ function mazeGame(){
 			case '8':
 				cell_w = canvas_width/8
 				break
-			default:			
+			default:
 				cell_w = 40
 		}
 		
 		cols = Math.floor(canvas_width/cell_w)
-		rows = Math.floor(canvas_height/cell_w)	
+		rows = Math.floor(canvas_height/cell_w)
 		
 		self.createCanvas(canvas_width, canvas_height)
 		self.createCells(rows, cols)
@@ -99,28 +99,28 @@ function mazeGame(){
 		mouse.moveMouse(0, 0, move)
 		mouse.show(ctx)
 		
-		$('body').off('click').on('click', '.button_icon', (e) => {	
+		$('body').off('click').on('click', '.button_icon', (e) => {
 			let id = $(e.target).attr('id')
 
-			if(id == "button_maze_up"){ // top				
+			if(id == "button_maze_up"){ // top
 				if(possible_move(mouse.i, mouse.j, 'top')){
 					let move = mouse.move
 					move = [true, false, false, false]
 					self.moveMouse(mouse.i, mouse.j - 1, move)
 				}
-			} else if(id == "button_maze_right"){ // right				
+			} else if(id == "button_maze_right"){ // right
 				if(possible_move(mouse.i, mouse.j, 'right')){
 					let move = mouse.move
 					move = [false, true, false, false]
 					self.moveMouse(mouse.i, mouse.j - 1, move)
 				}				
-			} else if(id == "button_maze_down"){ // bottom				
+			} else if(id == "button_maze_down"){ // bottom
 				if(possible_move(mouse.i, mouse.j, 'bottom')){
 					let move = mouse.move
 					move = [false, false, true, false]
 					self.moveMouse(mouse.i, mouse.j - 1, move)
 				}				
-			} else if(id == "button_maze_left"){ // left				
+			} else if(id == "button_maze_left"){ // left
 				if(possible_move(mouse.i, mouse.j, 'left')){
 					let move = mouse.move
 					move = [false, false, false, true]
@@ -170,12 +170,12 @@ function mazeGame(){
 		cheese.show(ctx)
 
 		mouse.moveMouse(i, j, move)
-		mouse.show(ctx)		
+		mouse.show(ctx)
 	}
 	
 	this.createCanvas = (canvas_width, canvas_height) => {
 		let canvas = document.getElementById("myCanvas")
-		ctx = canvas.getContext("2d")		
+		ctx = canvas.getContext("2d")
 		canvas.width  = canvas_width
 		canvas.height = canvas_height
 	}
@@ -186,7 +186,7 @@ function mazeGame(){
 				let cell = new Cell(i, j)
 				cells.push(cell)
 			}
-		}		
+		}
 		
 		myCell = cells[0]
 		myCell.visited = true
@@ -200,7 +200,7 @@ function mazeGame(){
 				myCell.visited = true
 				myStack.push(myCell)
 				next = myCell.checkNeighbours()
-			} else if(myStack.length > 0){	
+			} else if(myStack.length > 0){
 				myStack.pop()
 				myCell = myStack[myStack.length - 1]
 				myCell.visited = true
@@ -209,7 +209,7 @@ function mazeGame(){
 		}		
 	}
 			
-	this.drawCells = () => {		
+	this.drawCells = () => {
 		for(let i in cells){
 			cells[i].show(ctx, "#013300", '#7f8000')
 		}
@@ -227,25 +227,25 @@ function mazeGame(){
 	
 	this.removeWalls = (myCell, next) => {
 		// next went down
-		if(next.i == myCell.i && next.j == myCell.j + 1){			
+		if(next.i == myCell.i && next.j == myCell.j + 1){
 			myCell.wall[2] = false
 			next.wall[0] = false
 		}
 		
 		// next went right
-		if(next.i == myCell.i + 1 && next.j == myCell.j){			
+		if(next.i == myCell.i + 1 && next.j == myCell.j){
 			myCell.wall[1] = false
 			next.wall[3] = false
 		}
 		
 		// next went top
-		if(next.i == myCell.i && next.j == myCell.j - 1){			
+		if(next.i == myCell.i && next.j == myCell.j - 1){
 			myCell.wall[0] = false
 			next.wall[2] = false
 		}
 		
 		// next went left
-		if(next.i == myCell.i - 1 && next.j == myCell.j){			
+		if(next.i == myCell.i - 1 && next.j == myCell.j){
 			myCell.wall[3] = false
 			next.wall[1] = false
 		}
@@ -255,10 +255,10 @@ function mazeGame(){
 		if(myAnswer){
 			self.getRoute()
 		}
-		myAnswer = false		
+		myAnswer = false
 	}
 
-	this.getRoute = () => {		
+	this.getRoute = () => {
 		for (let i in cells) {
 			cells[i].visited = false
 		}
@@ -267,7 +267,7 @@ function mazeGame(){
 		let myStack = []
 		let myCell = cells[0]
 		myCell.visited = true
-		myStack.push(myCell)		
+		myStack.push(myCell)
 		let next = myCell.getNextNeighbour()
 		
 		while (self.check_all_visited() > 0) {
@@ -303,7 +303,7 @@ function mazeGame(){
 	}
 }	
 
-function Mouse(i, j){	
+function Mouse(i, j){
 	this.i = i
 	this.j = j
 	this.move = [false, false, false, false]  // top, right, bottom, left
@@ -329,23 +329,23 @@ function Mouse(i, j){
 
 		let last_cell = {i: Math.sqrt(cells.length) - 1, j: Math.sqrt(cells.length) - 1}
 				
-		if(last_cell.i == this.i && last_cell.j == this.j){			
+		if(last_cell.i == this.i && last_cell.j == this.j){
 			message('You won')
 		}
 		
-		ctx.beginPath()		
+		ctx.beginPath()
 		
-		if(this.move[0]){			
+		if(this.move[0]){
 			img.src = "img/mouse-up.png"
 		}
-		if(this.move[1]){			
+		if(this.move[1]){
 			img.src = "img/mouse-right.png"
 		}
 		if(this.move[2]){
-			img.src = "img/mouse-down.png"			
+			img.src = "img/mouse-down.png"
 		}
 		if(this.move[3]){
-			img.src = "img/mouse-left.png"			
+			img.src = "img/mouse-left.png"
 		}
 		
 		img.onload = () => {
@@ -384,17 +384,17 @@ function Cheese(i, j) {
 }
 
 
-function Cell(i, j){	
+function Cell(i, j){
 	this.i = i
 	this.j = j
 	this.wall = [true, true, true, true]  // top, right, bottom, left
 	this.visited = false
 	
-	this.show = (ctx, color, border) => {		
+	this.show = (ctx, color, border) => {
 		let x = i * cell_w
 		let y = j * cell_w
 		
-		ctx.beginPath()		
+		ctx.beginPath()
 		
 		if(this.wall[0]){
 			ctx.moveTo(x, y)
@@ -433,10 +433,10 @@ function Cell(i, j){
 	this.checkNeighbours = () => {
 		let neighbours = []
 		
-		let top = cells[index(i, j-1, cols)]	
+		let top = cells[index(i, j-1, cols)]
 		let right = cells[index(i+1, j, cols)]
 		let bottom = cells[index(i, j+1, cols)]
-		let left = cells[index(i-1, j, cols)]	
+		let left = cells[index(i-1, j, cols)]
 		
 		if(top && !top.visited){
 			neighbours.push(top)
@@ -484,7 +484,7 @@ function Cell(i, j){
 				neighbours.push(nextCell)
 			}
 		}
-		if(neighbours.length > 0){			
+		if(neighbours.length > 0){
 			return neighbours[0]
 		}
 		return
@@ -515,7 +515,7 @@ function possible_move(i, j, move){
 		case 'bottom':
 			if(!wall[2]){
 				possible_move_mouse = true
-			}					
+			}
 			break
 		case 'left':
 			if(!wall[3]){
@@ -540,8 +540,8 @@ function message(title, text){
 		if($("#maze_container div canvas").length > 0){
 			$("#maze_container div canvas").remove()
 		} 
-		$('#button_maze_select').val('')	
-		$("#title_box").show()	
+		$('#button_maze_select').val('')
+		$("#title_box").show()
 		$('#hidden_box').hide()
 	})
 
@@ -556,8 +556,8 @@ function message(title, text){
 					$("#maze_container div canvas").remove()
 				} 
 				game = new mazeGame()
-				game.ready()			
+				game.ready()
 			}
-		}			
+		}
 	})
 }

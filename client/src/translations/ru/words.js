@@ -114,6 +114,7 @@ var word_bank = {
     portofolio_title17: "Игра со змеей",
     portofolio_title18: "Space Invaders",
     portofolio_title19: "Игра с неправильными глаголами",
+    portofolio_title20: "Connect 4",
 
     portofolio_description01: "Платформа для управления флотом, построенная с использованием React, Redux и DevExtreme, интегрируя Leaflet для карт и NodeJS для бэкэнда.",
     portofolio_description02: "Онлайн-казино-игра на React и NodeJS, использующая Socket.IO для взаимодействий в реальном времени, MySQL для управления данными и HTML Canvas для визуальных компонентов.",

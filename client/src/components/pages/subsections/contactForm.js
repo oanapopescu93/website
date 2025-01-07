@@ -20,7 +20,7 @@ function ContactForm(props){
         message: { fill: true, validate: true, fill_message: "fill_field", validate_message: "validate_message" },
     }
 
-    const [errors, setErrors] = useState(defaultErrors)	
+    const [errors, setErrors] = useState(defaultErrors)
 
     function sendForm(){
 		validateSubmit()

@@ -105,7 +105,7 @@ module.exports = Object.freeze({
         {name: "NodeJs / Express", value: 60, type: "backend"},
         {name: "Websockets", value: 50, type: "backend"},
         {name: "MySQL", value: 30, type: "backend"},
-        {name: "Version control GIT", value: 50, type: "other"},	
+        {name: "Version control GIT", value: 50, type: "other"},
         {name: "HTML Canvas", value: 90, type: "frontend"},
         {name: "Photoshop", value: 30, type: "other"},
     ],
@@ -216,7 +216,7 @@ module.exports = Object.freeze({
     ],
     PORTOFOLIO_LIST: ["webapps", "websites", "games"],
     PORTOFOLIO_ITEMS: {
-        webapps: [	
+        webapps: [
             {
                 title: "portofolio_title01",
                 link: "https://idriveglobal.com/fleet-management-platform/",
@@ -254,7 +254,7 @@ module.exports = Object.freeze({
                 img_alt: "chat tic-toc and weather nodejs app",
                 img_title: "chat tic-toc and weather nodejs app",
                 description: "portofolio_description04"
-            },	
+            },
         ],
         websites: [            
             {
@@ -316,7 +316,7 @@ module.exports = Object.freeze({
                 img_title: "exclusive doors",
                 status: "still in localhost",
                 description: "portofolio_description010"
-            },	
+            },
             {
                 title: "portofolio_title11",
                 link: "https://www.pizzahutdelivery.ro/ro",
@@ -344,9 +344,18 @@ module.exports = Object.freeze({
                 img_alt: "ape rider biciclete",
                 img_title: "ape rider biciclete",
                 description: "portofolio_description013"
-            },	
+            },
         ],        
-        games: [		
+        games: [
+            {
+                title: "portofolio_title20",
+                link: "/portofolio/connect4/index.html",
+                src: "/img/pics/connect4.jpg",
+                used: ["HTML", "CSS", "Bootstrap", "Javascript"],
+                git: "https://github.com/oanapopescu93/connect4",
+                img_alt: "connect 4 game",
+                img_title: "connect 4 game",
+            },
             {
                 title: "portofolio_title14",
                 link: "/portofolio/flip_cards/game-flip-card.html",
@@ -357,15 +366,6 @@ module.exports = Object.freeze({
                 img_title: "halloween flip card game",
             },
             {
-                title: "portofolio_title15",
-                link: "/portofolio/chatbot/index.html",
-                src: "/img/pics/chatbot.png",
-                used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "Machine Learning"],
-                git: "https://github.com/oanapopescu93/chatbot",
-                img_alt: "chatbot",
-                img_title: "speak with oana chatbot",
-            },
-            {
                 title: "portofolio_title16",
                 link: "/portofolio/maze/index.html",
                 src: "/img/pics/maze.png",
@@ -373,7 +373,16 @@ module.exports = Object.freeze({
                 git: "https://github.com/oanapopescu93/backtrack_mouse_maze",
                 img_alt: "backtracking maze game",
                 img_title: "backtracking maze game",
-            },	
+            },
+            {
+                title: "portofolio_title15",
+                link: "/portofolio/chatbot/index.html",
+                src: "/img/pics/chatbot.png",
+                used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "Machine Learning"],
+                git: "https://github.com/oanapopescu93/chatbot",
+                img_alt: "chatbot",
+                img_title: "speak with oana chatbot",
+            },            
             {
                 title: "portofolio_title17",
                 link: "/portofolio/snake/index.html",
@@ -382,7 +391,7 @@ module.exports = Object.freeze({
                 git: "https://github.com/oanapopescu93/snake_game",
                 img_alt: "snake game",
                 img_title: "snake game",
-            },			
+            },
             {
                 title: "portofolio_title18",
                 link: "/portofolio/space_invader/index.html",
@@ -488,6 +497,13 @@ module.exports = Object.freeze({
             used: ["python"],
             link: "https://github.com/oanapopescu93/tutorial_python_basics",
             type: "python",
+        },
+        {
+            name: "Tic Tac Toe",
+            description: "A Tic Tac Toe game in C++",
+            used: ["C++"],
+            link: "https://github.com/oanapopescu93/tic_tac_toe_cpp",
+            type: "c++",
         },
     ],
 })

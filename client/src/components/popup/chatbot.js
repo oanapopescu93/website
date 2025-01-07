@@ -158,7 +158,7 @@ function ChatBot(props) {
         scrollToBottom()
     }
 
-    function scrollToBottom(){		
+    function scrollToBottom(){
 		if(chatbot_textarea && chatbot_textarea.current){
 			let board = chatbot_textarea.current
 			let height = $(board)[0].scrollHeight

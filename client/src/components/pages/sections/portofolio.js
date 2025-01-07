@@ -41,9 +41,9 @@ function Portofolio(props) {
         ]
     }
 
-    const [active, setActive] = useState(0)	
+    const [active, setActive] = useState(0)
 
-    let dispatch = useDispatch()	
+    let dispatch = useDispatch()
 
     function portofolioClick(index){
         setActive(index)

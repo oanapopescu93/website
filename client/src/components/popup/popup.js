@@ -27,12 +27,12 @@ function Popup(props){
 
     let title = popup_title ? translate({lang: lang, info: popup_title}) : ""
     let style = template
-
-  	function closeModal(){
+    
+    function closeModal(){
         if(template !== "isMinor"){ //prevents modal from closing without making a choice
             dispatch(changePopup(false))
         }
-	}    
+    }    
 
     return <Modal id="myModal" className={"mymodal " + style} show={open} onHide={closeModal} size={size} centered> 
         {title !== "" ? <Modal.Header>
@@ -45,7 +45,7 @@ function Popup(props){
             {title === "" && !sticky ? <div className="closeButton" onClick={closeModal}>
                 <span>X</span>
             </div> : null}
-            {(() => {			
+            {(() => {
                 switch (template) {
                     case "settings":
                         return <Settings settings={settings} home={home} />                        
