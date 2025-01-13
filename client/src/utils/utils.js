@@ -226,7 +226,7 @@ export const handleChangeMode = (choice) => {
 
       document.documentElement.style.setProperty('--header', '#2A2A30')
 
-      document.documentElement.style.setProperty('--transparent_white', 'rgba(255, 255, 255, 0.1)')
+      document.documentElement.style.setProperty('--transparent_white', 'rgba(42, 42, 48, 0.5)')
       break
     default:
       break
