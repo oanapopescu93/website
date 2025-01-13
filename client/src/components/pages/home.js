@@ -5,6 +5,7 @@ import Top from '../partial/top'
 import Footer from '../partial/footer'
 import Cv from './subsections/cv'
 import Tutorial from './subsections/tutorial'
+import ChatbotButton from '../partial/chatbotButton'
 
 function Home(props) {
     const { user } = props
@@ -28,6 +29,7 @@ function Home(props) {
         <Section template="portofolio" {...props} />
         <Section template="contact" {...props} />
         <Top />
+        <ChatbotButton {...props} />
         {parseInt(guest) === 0 ? <Cv {...props} /> : null}
         <Tutorial {...props} />
         <Footer {...props} />

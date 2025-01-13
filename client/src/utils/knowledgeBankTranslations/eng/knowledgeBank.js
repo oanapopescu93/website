@@ -12,7 +12,7 @@ var info = {
 
 var experience = [
     {
-        job_title: "Javascript/React developer", 
+        job_title: "Javascript / React developer", 
         period: "October 2018 - Present", 
         company_name: "Idrive Global", 
         company_description: "Professional Dash Camera for Fleet Monitoring & GPS Tracking", 
@@ -33,7 +33,7 @@ var experience = [
         ],
     },
     {
-        job_title: "Frontend/Javascript/React developer", 
+        job_title: "Frontend / Javascript / React developer", 
         period: "2017 - present", 
         company_name: "Freelancer",
         job_location: "Romania, Bucharest", 

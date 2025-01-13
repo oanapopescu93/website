@@ -738,7 +738,7 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
 #top {
     position: fixed;
     bottom: 40px;
-    right: 10px;
+    right: 18px;
     text-align: right;
     z-index: 9999;
     color: var(--color);
@@ -753,6 +753,21 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
 }
 #top:hover{
 	color: var(--accent);
+}
+
+/* Chatbot Button */
+#chatbotButton{
+    position: fixed;
+    bottom: 100px;
+    right: 10px;
+    text-align: right;
+    z-index: 9999;
+    color: var(--color);
+	width: 60px;
+    cursor: pointer;
+}
+#chatbotButton img{
+    width: 100%;
 }
 
 /* HEADER */
@@ -841,13 +856,13 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
     border-radius: 0px var(--radius) var(--radius) 0px;
     border: solid 1px var(--color);
     padding: var(--padding_big);
-    height: 600px;
+    height: 550px;
     overflow: auto;
 }
 .about_content_box h4{
 	font-size: 20px;
-    padding: var(--padding) 0px;
-	margin-bottom:var(--padding);
+    padding: var(--padding_small) 0px;
+	margin:var(--padding) 0px;
 	border-bottom:solid 1px var(--color);
 }
 .about_content_box .skill_pie{
@@ -861,6 +876,7 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
   background-color: var(--bg);
   border:solid 3px var(--bg);
   border-radius:50px;
+  margin-bottom: var(--padding_small);
 }
 .language_bar {
     text-align: right;
@@ -990,7 +1006,8 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
 /* CONTACT */
 .contact_info{
     color: var(--accent);
-    margin-bottom: var(--padding);
+    padding: var(--padding_small) var(--padding);
+    margin-bottom: var(--padding_small);
 }
 .contact_info svg{
     margin-right: var(--padding_small);
@@ -1119,6 +1136,23 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
 }
 .tutorial_box{
     margin-top: var(--padding);
+}
+.tutorial_image, .tutorial_info{
+    display: inline-block;
+    vertical-align: top;
+    padding: var(--padding_small);
+}
+.tutorial_image{
+    width: 100%;
+    max-width: 70px;
+}
+.tutorial_image_box{
+    width: 100%;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.tutorial_image img{
+    width: 100%;
 }
 .grid-info .used span.box, .used span.box, #tutorial_box_container span.box{
     border: solid 1px var(--color);
@@ -1252,9 +1286,9 @@ textarea.shadow_convex, input.shadow_convex, button.shadow_convex, .shadow_conve
 
 /* FOOTER */
 footer { 
-	background-color:var(--color);   
+	background-color: var(--navbar_bg);
+    color: var(--navbar_color);
     padding: var(--padding) 0px;
-    color: var(--bg);
 }
 
 /* MEDIA */
@@ -1305,9 +1339,34 @@ footer {
         font-size: 20px;
         line-height: 20px;
     }
+    #header {
+        background-image: none !important;
+        background-color: var(--header) !important;
+    }
+    .header_title{
+        background-color: transparent!important;
+        box-shadow: none!important;
+        padding: 0px;
+    }
     .header_title_container .mybutton{
-        margin: var(--padding) auto;
-        display: block;
+        width: 150px;
+    }
+    .logo {
+        width: 50px;
+    }
+    #chatbotButton {
+        bottom: 40px;
+        width: 40px;
+    }
+    #top {
+        display: none!important;
+    }
+    .scroll{
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .full-height-content{
+        padding: var(--padding) 0px;
     }
     #about_tabs_main{
         padding-right:var(--padding);
@@ -1359,17 +1418,22 @@ footer {
         max-width: 450px;
     }
 }
-@media (max-width: 480px) {
-    #header {
-        background-image:none!important;
-		background-color:var(--header)!important;
-    }
-    .header_title{
-        background-color: transparent!important;
-        box-shadow: none!important;
-    }
+@media (max-width: 480px) {    
     #carousel_portofolio{
         max-width: 300px;
+    }
+    .header_title_container .mybutton{
+        margin: var(--padding) auto;
+        display: block;
+    }
+}
+
+@media (max-width: 768px) and (orientation: landscape){
+    .scroll {
+        bottom: 30px;
+    }
+    .about_content_box {
+        height: 200px;
     }
 }
 

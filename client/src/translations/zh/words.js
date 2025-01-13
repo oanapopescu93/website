@@ -32,8 +32,8 @@ var word_bank = {
     romanian: "罗马尼亚语",
     native: "母语",
 
-    job_title01: "Javascript/React开发者",
-    job_title02: "前端开发者/Javascript/React",
+    job_title01: "Javascript / React 开发者",
+    job_title02: "前端开发者 Javascript / React",
     job_title03: "前端开发者",
     job_title04: "前端开发者",
     period01: "2018年10月 - 现在",
@@ -101,7 +101,7 @@ var word_bank = {
     portofolio_title03: "The Book Mouse",
     portofolio_title04: "聊天应用，井字游戏与天气",
     portofolio_title05: "Salomon Romania",
-    portofolio_title06: "Idrive Global",
+    portofolio_title06: "Iris",
     portofolio_title07: "RealGym 体育俱乐部",
     portofolio_title08: "Noblisime",
     portofolio_title09: "Konart",
@@ -116,6 +116,7 @@ var word_bank = {
     portofolio_title18: "太空侵略者",
     portofolio_title19: "不规则动词游戏",
     portofolio_title20: "Connect 4",
+    portofolio_title21: "Battleship",
 
     portofolio_description01: "一个使用 React，Redux 和 DevExtreme 构建的车队管理平台，集成 Leaflet 用于地图，并使用 NodeJS 提供后端服务。",
     portofolio_description02: "一个在线赌场游戏，基于 React 和 NodeJS，使用 Socket.IO 实时交互，MySQL 管理数据，HTML Canvas 提供可视化组件。",

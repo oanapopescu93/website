@@ -213,7 +213,7 @@ export const handleChangeMode = (choice) => {
 
       document.documentElement.style.setProperty('--header', '#f8f8f8')
 
-      document.documentElement.style.setProperty('--transparent_white', 'rgba(255, 255, 255, 0.5)')
+      document.documentElement.style.setProperty('--transparent_white', 'rgba(0, 0, 0, 0.1)')
       break
     case 'dark':
       document.documentElement.style.setProperty('--bg', '#2A2A30')

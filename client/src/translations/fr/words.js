@@ -32,8 +32,8 @@ var word_bank = {
     romanian: "Roumain",
     native: "Natif",
 
-    job_title01: "Développeur Javascript/React",
-    job_title02: "Développeur Frontend/Javascript/React",
+    job_title01: "Développeur Javascript / React",
+    job_title02: "Développeur Frontend / Javascript / React",
     job_title03: "Développeur Frontend",
     job_title04: "Développeur Frontend",
     period01: "Octobre 2018 - Présent",
@@ -101,7 +101,7 @@ var word_bank = {
     portofolio_title03: "The Book Mouse",
     portofolio_title04: "Chat, Tic-Tac-Toe et application météo",
     portofolio_title05: "Salomon Roumanie",
-    portofolio_title06: "Idrive Global",
+    portofolio_title06: "Iris",
     portofolio_title07: "Clubul Sportiv RealGym",
     portofolio_title08: "Noblisime",
     portofolio_title09: "Konart",
@@ -116,6 +116,7 @@ var word_bank = {
     portofolio_title18: "Space Invaders",
     portofolio_title19: "Jeu de quiz sur les verbes irréguliers",
     portofolio_title20: "Connect 4",
+    portofolio_title21: "Battleship",
 
     portofolio_description01: "Une plateforme de gestion de flotte construite avec React, Redux et DevExtreme, intégrant Leaflet pour la cartographie et NodeJS pour les services backend.",
     portofolio_description02: "Un jeu de casino en ligne utilisant React et NodeJS, avec Socket.IO pour les interactions en temps réel, MySQL pour la gestion des données et HTML Canvas pour les composants visuels.",

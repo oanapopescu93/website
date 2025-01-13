@@ -99,12 +99,12 @@ module.exports = Object.freeze({
     },
     SKILLS_TITLE: ['frontend', 'backend', 'other'],
     SKILLS: [
-        {name: "HTML / CSS / Bootstrap", value: 100, type: "frontend"},
-        {name: "JavaScript / Jquery", value: 100, type: "frontend"},
-        {name: "React / Redux", value: 90, type: "frontend"},
-        {name: "NodeJs / Express", value: 60, type: "backend"},
-        {name: "Websockets", value: 50, type: "backend"},
-        {name: "MySQL", value: 30, type: "backend"},
+        {name: "HTML, CSS, Bootstrap", value: 100, type: "frontend"},
+        {name: "JavaScript, Jquery", value: 100, type: "frontend"},
+        {name: "React, Redux", value: 90, type: "frontend"},
+        {name: "NodeJs, Express", value: 75, type: "backend"},
+        {name: "Websockets", value: 75, type: "backend"},
+        {name: "MySQL", value: 50, type: "backend"},
         {name: "Version control GIT", value: 50, type: "other"},
         {name: "HTML Canvas", value: 90, type: "frontend"},
         {name: "Photoshop", value: 30, type: "other"},
@@ -154,6 +154,7 @@ module.exports = Object.freeze({
             link_company: "https://idriveglobal.com",
             projects: [
                 {project_name: "Nexus", project_link: "https://idriveglobal.com/fleet-management-platform/"},
+                {project_name: "Iris", project_link: "https://idriveglobal.com/fleet-management-platform/"},
             ],
         },
         {
@@ -208,6 +209,7 @@ module.exports = Object.freeze({
                 "job_description_list043",
                 "job_description_list044",
             ],
+            link_company: "https://www.expremio.com/",
             projects: [
                 {project_name: "Pizza Hut Delivery", project_link: "portofolio"},
                 {project_name: "City Grill", project_link: "portofolio"},
@@ -256,7 +258,16 @@ module.exports = Object.freeze({
                 description: "portofolio_description04"
             },
         ],
-        websites: [            
+        websites: [
+            {
+                title: "portofolio_title06",
+                link: "https://idriveglobal.com/fleet-management-platform/",
+                src: "/img/pics/globalcenter.png",
+                used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "React", "Redux", "HTML Canvas", "DevExtreme", "Leaflet"],
+                img_alt: "idrive global",
+                img_title: "idrive global",
+                description: "portofolio_description06"
+            },          
             {
                 title: "portofolio_title05",
                 link: "https://www.salomon.ro",
@@ -266,16 +277,7 @@ module.exports = Object.freeze({
                 img_alt: "salomon",
                 img_title: "salomon",
                 description: "portofolio_description05"
-            },
-            {
-                title: "portofolio_title06",
-                link: "https://idriveglobal.com/fleet-management-platform/",
-                src: "/img/pics/globalcenter.png",
-                used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "React", "Redux", "HTML Canvas", "DevExtreme", "Leaflet"],
-                img_alt: "idrive global",
-                img_title: "idrive global",
-                description: "portofolio_description06"
-            },
+            },            
             {
                 title: "portofolio_title07",
                 link: "http://clubulsportivrealgym.ro",
@@ -351,7 +353,7 @@ module.exports = Object.freeze({
                 title: "portofolio_title20",
                 link: "/portofolio/connect4/index.html",
                 src: "/img/pics/connect4.jpg",
-                used: ["HTML", "CSS", "Bootstrap", "Javascript"],
+                used: ["HTML", "CSS", "Javascript"],
                 git: "https://github.com/oanapopescu93/connect4",
                 img_alt: "connect 4 game",
                 img_title: "connect 4 game",
@@ -364,6 +366,15 @@ module.exports = Object.freeze({
                 git: "https://github.com/oanapopescu93/flip_cards",
                 img_alt: "halloween flip card game",
                 img_title: "halloween flip card game",
+            },
+            {
+                title: "portofolio_title21",
+                link: "/portofolio/battleship/index.html",
+                src: "/img/pics/battleship.jpg",
+                used: ["HTML", "CSS", "Javascript"],
+                git: "https://github.com/oanapopescu93/battleship",
+                img_alt: "battleship game",
+                img_title: "battleship card game",
             },
             {
                 title: "portofolio_title16",
@@ -454,7 +465,7 @@ module.exports = Object.freeze({
             description: "chat with socket.io, weather app, and tic-toc game",
             used: ["javascript", "jquery", "nodejs", "socket.io", "express"],
             link: "https://github.com/oanapopescu93/nodeapp",
-            type: "node",
+            type: "nodejs",
         },
         {
             name: "HTML Canvas graphics",

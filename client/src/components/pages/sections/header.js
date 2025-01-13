@@ -1,39 +1,25 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import { translate } from '../../../translations/translate'
 import { scroll_anywhere } from '../../../utils/utils'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import logo_icon_blue from '../../../img/logo-rat-blue.png'
-import { changePopup } from '../../../reducers/popup'
 
 function Header(props) {
     const { settings } = props
-    const { lang } = settings
-	
-	let dispatch = useDispatch()
-
-	function handleChatBot(){
-		let payload = {
-			open: true,
-			template: "chatbot",
-			title: translate({lang: lang, info: "chatbot"}),
-			size: "lg",
-		}
-		dispatch(changePopup(payload))
-	}
+    const { lang } = settings	
 
     return <Container>
         <Row>
             <Col sm={12}>
                 <div className="header_title_container">
-                    <div className="header_title text-center shadow_convex">
+                    <div className="header_title text-center shadow_concav">
                         <Row>
                             <Col sm={12}>
                                 <img className="logo" alt="logo_icon" src={logo_icon_blue} />
                                 <h1 className="text-uppercase">Oana Popescu</h1>
-                                <h2 className="text-uppercase color_text_blue">Frontend/Javascript/React developer</h2>
+                                <h2 className="text-uppercase color_text_blue">Frontend / Javascript / React developer</h2>
                             </Col>
                         </Row>
                         <Row>
@@ -53,9 +39,6 @@ function Header(props) {
                                     </Button>
                                     <Button type="button" className="mybutton button_accent shadow_convex" onClick={()=>scroll_anywhere("contact")}>
                                         {translate({lang: lang, info: "contact_me"})}
-                                    </Button>
-                                    <Button type="button" className="mybutton button_accent shadow_convex" onClick={()=>handleChatBot()}>
-                                        {translate({lang: lang, info: "chatbot"})}
                                     </Button>
                                 </div>                        
                             </Col>
