@@ -249,13 +249,13 @@ module.exports = Object.freeze({
                 description: "portofolio_description03"
             },
             {
-                title: "portofolio_title04",
-                src: "/img/pics/nodejs-image.png",
-                used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "NodeJS", "Express", "Socket.IO"],
-                git: "https://github.com/oanapopescu93/nodeapp",
-                img_alt: "chat tic-toc and weather nodejs app",
-                img_title: "chat tic-toc and weather nodejs app",
-                description: "portofolio_description04"
+                title: "portofolio_title22",
+                src: "/img/pics/blockchain.png",
+                used: ["NodeJS", "Express", "Websockets", "Blockchain", "React", "Javascript", "CSS"],
+                git: "https://github.com/oanapopescu93/blockchain",
+                img_alt: "blockchain app",
+                img_title: "blockchain app",
+                description: "portofolio_description22"
             },
         ],
         websites: [
@@ -317,7 +317,7 @@ module.exports = Object.freeze({
                 img_alt: "exclusive doors",
                 img_title: "exclusive doors",
                 status: "still in localhost",
-                description: "portofolio_description010"
+                description: "portofolio_description10"
             },
             {
                 title: "portofolio_title11",
@@ -326,7 +326,7 @@ module.exports = Object.freeze({
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "Photoshop"],
                 img_alt: "pizza hut delivery",
                 img_title: "pizza hut delivery",
-                description: "portofolio_description011"
+                description: "portofolio_description11"
             },
             {
                 title: "portofolio_title12",
@@ -336,7 +336,7 @@ module.exports = Object.freeze({
                 platform: "October CMS",
                 img_alt: "city grill",
                 img_title: "city grill",
-                description: "portofolio_description012"
+                description: "portofolio_description12"
             }, 
             {
                 title: "portofolio_title13",
@@ -345,7 +345,7 @@ module.exports = Object.freeze({
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "Photoshop"],
                 img_alt: "ape rider biciclete",
                 img_title: "ape rider biciclete",
-                description: "portofolio_description013"
+                description: "portofolio_description13"
             },
         ],        
         games: [
@@ -411,7 +411,7 @@ module.exports = Object.freeze({
                 git: "https://github.com/oanapopescu93/space_invader",
                 img_alt: "space invaders",
                 img_title: "space invaders - game to cure office boredom",
-                description: "portofolio_description018"
+                description: "portofolio_description18"
             },
             {
                 title: "portofolio_title19",
