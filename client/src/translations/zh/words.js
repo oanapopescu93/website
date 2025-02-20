@@ -118,6 +118,7 @@ var word_bank = {
     portofolio_title20: "Connect 4",
     portofolio_title21: "Battleship",
     portofolio_title22: "Blockchain explorer",
+    portofolio_title23: "任务管理器",
 
     portofolio_description01: "一个使用 React，Redux 和 DevExtreme 构建的车队管理平台，集成 Leaflet 用于地图，并使用 NodeJS 提供后端服务。",
     portofolio_description02: "一个在线赌场游戏，基于 React 和 NodeJS，使用 Socket.IO 实时交互，MySQL 管理数据，HTML Canvas 提供可视化组件。",
@@ -134,6 +135,7 @@ var word_bank = {
     portofolio_description13: "Ape Rider 的网站展示自行车，使用 Bootstrap 和 JavaScript 开发，通过 Photoshop 提升图形效果。",
     portofolio_description18: "一个用于消磨办公室无聊的 HTML Canvas 和 JavaScript 游戏。",
     portofolio_description22: "This project consists of a blockchain backend and a React frontend that interacts with it. It also supports peer-to-peer (P2P) communication for decentralized interaction.",
+    portofolio_description23: "一个任务管理器，可以创建、删除或更新任务，将其导出为CSV文件，或导入现有的CSV文件。",
 
     email: "电子邮件",
     phone: "电话",

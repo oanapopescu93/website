@@ -118,6 +118,7 @@ var word_bank = {
     portofolio_title20: "Connect 4",
     portofolio_title21: "Battleship",
     portofolio_title22: "Blockchain explorer",
+    portofolio_title23: "Диспетчер задач",
 
     portofolio_description01: "Платформа для управления флотом, построенная с использованием React, Redux и DevExtreme, интегрируя Leaflet для карт и NodeJS для бэкэнда.",
     portofolio_description02: "Онлайн-казино-игра на React и NodeJS, использующая Socket.IO для взаимодействий в реальном времени, MySQL для управления данными и HTML Canvas для визуальных компонентов.",
@@ -134,6 +135,7 @@ var word_bank = {
     portofolio_description13: "Сайт Ape Rider для показа велосипедов, разработанный с использованием Bootstrap и JavaScript, с графикой, улучшенной через Photoshop.",
     portofolio_description18: "Игра на HTML Canvas и JavaScript для борьбы с скукой в офисе.",
     portofolio_description22: "This project consists of a blockchain backend and a React frontend that interacts with it. It also supports peer-to-peer (P2P) communication for decentralized interaction.",
+    portofolio_description23: "Диспетчер задач, который позволяет создавать, удалять или обновлять задачи, экспортировать их в файл CSV или импортировать существующие CSV-файлы.",
 
     email: "Электронная почта",
     phone: "Телефон",

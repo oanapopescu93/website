@@ -343,9 +343,18 @@ module.exports = Object.freeze({
                 link: "http://aperider.com/",
                 src: "/img/pics/aperider.png",
                 used: ["HTML", "CSS", "Bootstrap", "Javascript", "Jquery", "Photoshop"],
-                img_alt: "ape rider biciclete",
-                img_title: "ape rider biciclete",
+                img_alt: "ape rider bikes",
+                img_title: "ape rider bikes",
                 description: "portofolio_description13"
+            },
+            {
+                title: "portofolio_title23",                
+                src: "/img/pics/task_manager.png",
+                used: ["HTML", "CSS", "Javascript"],
+                git: "https://github.com/oanapopescu93/task_manager",
+                img_alt: "task manager",
+                img_title: "task manager",
+                description: "portofolio_description23"
             },
         ],        
         games: [

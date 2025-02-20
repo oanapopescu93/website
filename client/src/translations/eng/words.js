@@ -118,6 +118,7 @@ var word_bank = {
     portofolio_title20: "Connect 4",
     portofolio_title21: "Battleship",
     portofolio_title22: "Blockchain explorer",
+    portofolio_title23: "Task manager",
 
     portofolio_description01: "A fleet management platform built with React, Redux, and DevExtreme, integrating Leaflet for mapping and NodeJS for backend services.",
     portofolio_description02: "An online casino game using React and NodeJS, featuring Socket.IO for real-time interactions, MySQL for data management, and HTML Canvas for visual components.",
@@ -134,6 +135,7 @@ var word_bank = {
     portofolio_description13: "Ape Rider website showcasing bicycles, developed with Bootstrap and JavaScript, featuring graphics enhanced by Photoshop.",
     portofolio_description18: "A HTML Canvas and Javascript game to cure office boredom",
     portofolio_description22: "This project consists of a blockchain backend and a React frontend that interacts with it. It also supports peer-to-peer (P2P) communication for decentralized interaction.",
+    portofolio_description23: "A task manager that creates a task manager when you can create, delete or update your task, export them as a CSV file or import existing CSV.",
 
     email: "Email",
     phone: "Phone",

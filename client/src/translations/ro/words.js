@@ -118,6 +118,7 @@ var word_bank = {
     portofolio_title20: "Connect 4",
     portofolio_title21: "Battleship",
     portofolio_title22: "Blockchain explorer",
+    portofolio_title23: "Manager de sarcini",
 
     portofolio_description01: "O platformă de gestionare a flotelor construită cu React, Redux și DevExtreme, integrând Leaflet pentru hărți și NodeJS pentru serviciile back-end.",
     portofolio_description02: "Un joc de cazino online cu React și NodeJS, utilizând Socket.IO pentru interacțiuni în timp real, MySQL pentru gestionarea datelor și HTML Canvas pentru componente vizuale.",
@@ -134,6 +135,7 @@ var word_bank = {
     portofolio_description13: "Site-ul Ape Rider care prezintă biciclete, dezvoltat cu Bootstrap și JavaScript, cu grafica îmbunătățită prin Photoshop.",
     portofolio_description18: "Un joc HTML Canvas și JavaScript pentru a omorî plictiseala la birou.",
     portofolio_description22: "This project consists of a blockchain backend and a React frontend that interacts with it. It also supports peer-to-peer (P2P) communication for decentralized interaction.",
+    portofolio_description23: "Un manager de sarcini care vă permite să creați, ștergeți sau actualizați sarcini, să le exportați ca fișier CSV sau să importați fișiere CSV existente.",
 
     email: "E-mail",
     phone: "Telefon",

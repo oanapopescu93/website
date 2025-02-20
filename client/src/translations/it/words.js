@@ -118,6 +118,7 @@ var word_bank = {
     portofolio_title20: "Connect 4",
     portofolio_title21: "Battleship",
     portofolio_title22: "Blockchain explorer",
+    portofolio_title23: "Gestore di attività",
 
     portofolio_description01: "Una piattaforma di gestione delle flotte costruita con React, Redux e DevExtreme, integrando Leaflet per le mappe e NodeJS per i servizi di backend.",
     portofolio_description02: "Un gioco da casinò online con React e NodeJS, utilizzando Socket.IO per interazioni in tempo reale, MySQL per la gestione dei dati e HTML Canvas per componenti visivi.",
@@ -134,6 +135,7 @@ var word_bank = {
     portofolio_description13: "Il sito di Ape Rider che mostra biciclette, sviluppato con Bootstrap e JavaScript, con grafica migliorata tramite Photoshop.",
     portofolio_description18: "Un gioco HTML Canvas e JavaScript per uccidere la noia in ufficio.",
     portofolio_description22: "This project consists of a blockchain backend and a React frontend that interacts with it. It also supports peer-to-peer (P2P) communication for decentralized interaction.",
+    portofolio_description23: "Un gestore di attività che consente di creare, eliminare o aggiornare attività, esportarle come file CSV o importare file CSV esistenti.",
 
     email: "E-mail",
     phone: "Telefono",

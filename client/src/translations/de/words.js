@@ -118,6 +118,7 @@ var word_bank = {
     portofolio_title20: "Connect 4",
     portofolio_title21: "Battleship",
     portofolio_title22: "Blockchain explorer",
+    portofolio_title23: "Aufgabenmanager",
 
     portofolio_description01: "Eine Flottenmanagement-Plattform, entwickelt mit React, Redux und DevExtreme, integriert Leaflet für Kartendarstellung und NodeJS für Backend-Dienste.",
     portofolio_description02: "Ein Online-Casino-Spiel mit React und NodeJS, featuring Socket.IO für Echtzeit-Interaktionen, MySQL für Datenverwaltung und HTML Canvas für visuelle Komponenten.",
@@ -134,6 +135,7 @@ var word_bank = {
     portofolio_description13: "Ape Rider-Website, die Fahrräder präsentiert, entwickelt mit Bootstrap und JavaScript, mit Grafiken, die durch Photoshop verbessert wurden.",
     portofolio_description18: "Ein HTML Canvas und JavaScript-Spiel, um die Büro-Langeweile zu vertreiben.",
     portofolio_description22: "This project consists of a blockchain backend and a React frontend that interacts with it. It also supports peer-to-peer (P2P) communication for decentralized interaction.",
+    portofolio_description23: "Ein Aufgabenmanager, mit dem Sie Aufgaben erstellen, löschen oder aktualisieren, sie als CSV-Datei exportieren oder vorhandene CSV-Dateien importieren können.",
 
     email: "E-Mail",
     phone: "Telefon",
