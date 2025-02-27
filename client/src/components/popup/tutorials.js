@@ -6,6 +6,13 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import Dropdown from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 
+import javascript from "../../img/languages/javascript.png"
+import react from "../../img/languages/react.png"
+import nodejs from "../../img/languages/nodejs.png"
+import c from "../../img/languages/c.png"
+import python from "../../img/languages/python.png"
+import cpp from "../../img/languages/c++.png"
+
 function Tutorials(props){
     const {home, settings} = props
     const {lang} = settings
@@ -13,6 +20,15 @@ function Tutorials(props){
     const [tutorials, setTutorials] = useState(home.tutorials)
 	const [tutorialHeader, setTutorialHeader] = useState([translate({lang: lang, info: "all"})])
     const [titleHeader, setTitleHeader] = useState(tutorialHeader[0])
+
+    let images = [
+        {type: "javascript", img: javascript},
+        {type: "react", img: react},
+        {type: "nodejs", img: nodejs},
+        {type: "embedded c", img: c},
+        {type: "python", img: python},
+        {type: "c++", img: cpp},
+    ]
 
     useEffect(() => {
 		let tutorial_header = [translate({lang: lang, info: "all"})]
@@ -54,20 +70,29 @@ function Tutorials(props){
         <div id="tutorial_box_container">
             {(() => {
                 if(typeof tutorials !== "undefined" && tutorials !== null){
-                    if(tutorials.length>0){
+                    if(tutorials.length > 0){
                         return <>
                             {tutorials.map(function(item1, i){
+                                const {name, description, used, type} = item1                                
+                                let image = images.filter((x)=>x.type === type)
                                 return <div key={i} className="tutorial_box">
                                     <Row>
                                         <Col xs={9} sm={8} md={10}>
-                                            <h4 className="tutorial_name">{item1.name}</h4>
-                                            <p>{translate({lang: lang, info: "description"})}: {item1.description}</p>
-                                            <p>{translate({lang: lang, info: "what_I_used"})}</p>
-                                            <>
-                                                {item1.used.map(function(item2, j){
-                                                    return <span key={j} className="box">{item2}</span> 
-                                                })}
-                                            </>
+                                            <div className="tutorial_image">
+                                                <div className="tutorial_image_box">
+                                                    <img src={image[0] ? image[0].img : ""} alt="python" title="python"/>
+                                                </div>
+                                            </div>
+                                            <div className="tutorial_info">
+                                                <h4 className="tutorial_name">{name}</h4>
+                                                <p>{translate({lang: lang, info: "description"})}: {description}</p>
+                                                <p>{translate({lang: lang, info: "what_I_used"})}</p>
+                                                <>
+                                                    {used.map(function(item2, j){
+                                                        return <span key={j} className="box">{item2}</span> 
+                                                    })}
+                                                </>
+                                            </div>
                                         </Col>
                                         <Col xs={3} sm={4} md={2}>
                                             <a className="tutorial_link" href={tutorials[i].link} target="_blank" rel="noopener noreferrer">

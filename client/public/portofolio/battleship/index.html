@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta http-equiv="content" content="text/html" charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="Battleship game in Javascript">
+        <meta name="spacing-bottom keywords" content="game, battleship, javascript">
+        <meta name="author" content="Oana Popescu">
+        <meta name="copyright" content="2025. All rights reserved.">
+        <meta name="robots" content="follow, noarchive, nosnippet, notranslate"/>
+
+        <link rel="shortcut icon" type="image/ico" href="./img/icon.ico">
+        <link rel="apple-touch-icon" type="image/png" href="./img/icon.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="./img/icon.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="114x114" href="./img/icon.png">
+        <link rel="icon" type="image/png" href="./img/icon.png">
+
+        <title>Battleship</title> 
+
+        <link href="./style.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div class="battleship_game_container">
+            <header> 
+                <img src="./img/logo.png" title="Battleship" alt="Battleship"/>
+                <h1>Battleship</h1>                
+            </header>
+            <div class="battleship_game">
+                <div class="grid_info">                
+                    <h3 id="turn"></h3>
+                    <h3 id="info"></h3>
+                </div>
+                <div class="grid_box">
+                    <h2>Player</h2>
+                    <div class="grid grid_user"></div>
+                </div>
+                <div class="grid_box hidden">
+                    <h2>Computer</h2>
+                    <div class="grid grid_computer hidden_enemy"></div>
+                </div>   
+                <div class="grid_box">
+                    <button type="button" id="rotate" class="button">Rotate Your Ships</button>
+                    <div class="grid grid_display">
+                        <div class="grid_display_ships"></div>
+                        <ul class="grid_display_legend">
+                            <li>1. Destroyer</li>
+                            <li>2. Submarine</li>
+                            <li>3. Cruiser</li>
+                            <li>4. Battleship</li>
+                            <li>5. Carrier</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="battleship_game_buttons">                    
+                    <button type="button" id="start" class="button">Start Game</button>
+                    <button type="button" id="clear" class="button">Clear</button>
+                </div>
+            </div>
+        </div>
+        <footer><h6>Copyright &copy; <span id="copyright_year"></span> Oana Popescu. All rights reserved.</h6></footer>
+    </body>
+</html>
+
+<script defer="defer" src="./script.js"></script>

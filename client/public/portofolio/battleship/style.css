@@ -1,0 +1,224 @@
+:root {    
+    --bg:white;
+    --color:#333;
+
+    --battleBg: #bbd6ff;
+    --battleColor: #418dff;
+
+    --padding: 10px;
+    --padding_small: 5px;
+    --padding_big: 20px;
+    --radius:25px;
+
+    --boomBg: red;
+    --boomColor: darkRed;
+    --missBg: white;
+    --missColor: #418dff;
+}
+
+body{
+    background-color: var(--bg);
+    color: var(--color);
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    line-height: 14px;
+}
+body *{
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6, p{
+    margin: 0px;
+}
+h1{
+    font-size: 30px;
+    line-height: 30px;
+}
+h2{
+    font-size: 20px;
+    line-height: 20px;
+}
+h6{
+    font-size: 10px;
+    line-height: 10px;
+}
+ul{
+    margin: 0px;
+    padding: 0px;
+    list-style-type:none;
+}
+
+.battleship_game_container{
+    padding: var(--padding_big);
+    text-align: center;
+}
+header{
+    margin-bottom: var(--padding_big);
+}
+header img{
+    width: 100%;
+    max-width: 100px;
+    margin-bottom: var(--padding_small);
+}
+footer{
+    padding: var(--padding);
+    text-align: center;
+}
+.button{
+    display: inline-block;
+    width: 100%;
+    max-width: 150px;
+    background-color: var(--color);
+    border: solid 1px var(--color);
+    color: var(--bg);
+    border-radius: var(--radius);
+    padding: var(--padding_small) var(--padding);
+    cursor: pointer;
+}
+.button:hover, .button:active, .button:focus{
+    background-color: var(--bg);
+    color: var(--color);
+}
+
+.hidden{
+    display: none!important;
+}
+
+.battleship_game_container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: var(--padding_big);
+}
+.grid_info, .grid_box{
+    display: inline-block;
+    vertical-align: top;
+    padding: var(--padding);
+}
+.grid_info{
+    width: 100%;
+    height: 50px;
+}
+.grid_box h2{
+    margin-bottom: var(--padding_small);
+}
+.grid{
+    width: 302px;
+    height: 302px;
+}
+.grid_user, .grid_computer{    
+    border: solid 1px var(--battleColor);
+}
+.grid_computer{    
+    border: solid 1px var(--battleColor);
+    cursor: pointer;
+}
+.square{
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    vertical-align: top;
+    background-color: var(--battleBg);
+    border: solid 1px var(--battleColor);
+    width: 30px;
+    height: 30px;
+}
+.square.ship{
+    background-color: var(--bg);
+    border: solid 1px var(--battleBg);
+}
+
+.grid_display{
+    padding: var(--padding);
+    height: auto;
+}
+.grid_display .ship{
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    vertical-align: top;
+    margin: var(--padding_small);
+    background-color: var(--battleBg);
+    border: solid 1px var(--battleColor);
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+.destroyer_container {
+    width: 60px;
+    height: 30px;
+}
+.vertical .destroyer_container {
+    width: 30px;
+    height: 60px;
+}
+.submarine_container {
+    width: 90px;
+    height: 30px;
+}
+.vertical .submarine_container {
+    width: 30px;
+    height: 90px;
+}
+.cruiser_container {
+    width: 90px;
+    height: 30px;
+}
+.vertical .cruiser_container {
+    width: 30px;
+    height: 90px;
+}
+.battleship_container {
+    width: 120px;
+    height: 30px;
+}
+.vertical .battleship_container {
+    width: 30px;
+    height: 120px;
+}
+.carrier_container {
+    width: 150px;
+    height: 30px;
+}
+.vertical .carrier_container {
+    width: 30px;
+    height: 150px;
+}
+.grid_computer.hidden_enemy .square.ship{
+    background-color: var(--battleBg);
+    border: solid 1px var(--battleColor);
+}
+
+.grid_display .ship .number{
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    text-align: center;
+    color: var(--battleColor);
+}
+.grid_display li{
+    color: var(--battleColor);
+}
+.grid_display ul{
+    margin-top: var(--padding);
+}
+
+.boom::before, .miss::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 9px;
+    left: 9px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
+.boom::before {
+    background-color: var(--boomBg);
+    border: solid 1px var(--boomColor);
+}
+.miss::before {
+    background-color: var(--missBg);
+    border: solid 1px var(--missColor);
+}
